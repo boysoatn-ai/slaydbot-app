@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dizayn tanlash — AI Slayd Bot</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root {
+    --bg: var(--tg-theme-bg-color, #ffffff);
+    --bg2: var(--tg-theme-secondary-bg-color, #f2f4f8);
+    --fg: var(--tg-theme-text-color, #111827);
+    --muted: var(--tg-theme-hint-color, #6b7280);
+    --link: var(--tg-theme-link-color, #2563eb);
+    --btn: var(--tg-theme-button-color, #2563eb);
+    --btn-fg: var(--tg-theme-button-text-color, #ffffff);
+    --card: var(--tg-theme-section-bg-color, #ffffff);
+    --ring: #2563eb;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 15px/1.4 -apple-system, "Segoe UI", Roboto, Inter, system-ui, sans-serif; }
+  body { padding: 0 0 92px; }
+  header { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 14px 6px;
+    border-bottom: 1px solid rgba(127,127,127,.15); }
+  h1 { font-size: 17px; margin: 0 0 8px; }
+  .sub { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+  .tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 6px; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: 0 0 auto; padding: 7px 12px; border-radius: 999px; background: var(--bg2); color: var(--fg);
+    font-size: 13px; font-weight: 600; border: 1.5px solid transparent; cursor: pointer; white-space: nowrap; }
+  .tab.active { background: var(--btn); color: var(--btn-fg); }
+  .section { padding: 10px 14px 0; }
+  .section h2 { font-size: 14px; margin: 6px 0 8px; color: var(--muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: .04em; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (min-width: 560px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  .card { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--card);
+    border: 2px solid transparent; cursor: pointer; transition: transform .12s, border-color .12s, box-shadow .12s;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.06); }
+  .card:active { transform: scale(.98); }
+  .card.sel { border-color: var(--ring); box-shadow: 0 0 0 3px rgba(37,99,235,.25), 0 6px 18px rgba(0,0,0,.12); }
+  .card img { display: block; width: 100%; aspect-ratio: 8/3; object-fit: cover; background: var(--bg2); }
+  .card .cap { display: flex; align-items: center; gap: 6px; padding: 7px 9px; font-size: 12.5px; font-weight: 600; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex: 0 0 auto;
+    background: linear-gradient(135deg, var(--c1) 50%, var(--c2) 50%); }
+  .check { position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--btn); color: var(--btn-fg); display: none; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+  .card.sel .check { display: flex; }
+  .pal { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px 0 8px; }
+  .pal::-webkit-scrollbar { display: none; }
+  .sw { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; }
+  .sw .c { width: 40px; height: 40px; border-radius: 50%; border: 3px solid transparent;
+    background: linear-gradient(135deg, var(--c1) 55%, var(--c2) 55%); box-shadow: inset 0 0 0 2px var(--bg); }
+  .sw.active .c { border-color: var(--ring); }
+  .sw span { font-size: 11px; color: var(--muted); }
+  .subs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  @media (min-width: 560px) { .subs { grid-template-columns: repeat(4, 1fr); } }
+  .subj { border-radius: 12px; overflow: hidden; background: var(--card); border: 2px solid transparent;
+    cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+  .subj.sel { border-color: var(--ring); }
+  .subj img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--bg2); }
+  .subj .cap { padding: 5px 7px; font-size: 11.5px; font-weight: 600; text-align: center; }
+  .subj.auto .cap { padding: 14px 7px; }
+  footer { position: fixed; left: 0; right: 0; bottom: 0; background: var(--bg); padding: 10px 14px
+    calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(127,127,127,.15); z-index: 5; }
+  .summary { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .summary b { color: var(--fg); }
+  .btn { width: 100%; padding: 13px; border: 0; border-radius: 12px; background: var(--btn); color: var(--btn-fg);
+    font-size: 16px; font-weight: 700; cursor: pointer; }
+  .btn:disabled { opacity: .5; }
+  .hint { padding: 20px 14px; color: var(--muted); font-size: 13px; text-align: center; }
+  .rand { font-size: 13px; color: var(--link); cursor: pointer; float: right; font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎨 Dizayn tanlash <span class="rand" id="rand">🎲 Tasodifiy</span></h1>
+  <p class="sub">Uslubni tanlang, so‘ng rangni — 60 ta dizayn. Mavzuga mos bezaklar avtomatik.</p>
+  <div class="tabs" id="tabs"></div>
+</header>
+
+<div class="section">
+  <h2>Rang</h2>
+  <div class="pal" id="pal"></div>
+</div>
+
+<div class="section">
+  <h2 id="gridTitle">Dizaynlar</h2>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="section">
+  <h2>Yo‘nalish bezagi</h2>
+  <div class="subs" id="subs"></div>
+</div>
+
+<footer>
+  <div class="summary" id="summary">Dizayn tanlanmagan</div>
+  <button class="btn" id="ok" disabled>✅ Tanlash</button>
+</footer>
+
+<script>
+(async function () {
+  const tg = window.Telegram && window.Telegram.WebApp;
+  if (tg) { tg.ready(); tg.expand(); }
+  const q = new URLSearchParams(location.search);
+  const data = await fetch('data.json?v=2').then(r => r.json());
+  const state = { style: q.get('style') || data.styles[0].key, palette: q.get('palette') || '',
+                  subject: q.get('subject') || 'auto', theme: '' };
+  const $ = id => document.getElementById(id);
+
+  function renderTabs() {
+    $('tabs').innerHTML = data.styles.map(s =>
+      `<div class="tab ${s.key === state.style ? 'active' : ''}" data-k="${s.key}">${s.emoji} ${s.name}</div>`).join('');
+    $('tabs').querySelectorAll('.tab').forEach(el => el.onclick = () => { state.style = el.dataset.k; state.theme = ''; render(); });
+  }
+  function renderPal() {
+    $('pal').innerHTML = `<div class="sw ${!state.palette ? 'active' : ''}" data-k=""><div class="c" style="--c1:#9ca3af;--c2:#d1d5db"></div><span>Hammasi</span></div>` +
+      data.palettes.map(p => `<div class="sw ${p.key === state.palette ? 'active' : ''}" data-k="${p.key}">
+        <div class="c" style="--c1:${p.primary};--c2:${p.accent}"></div><span>${p.name}</span></div>`).join('');
+    $('pal').querySelectorAll('.sw').forEach(el => el.onclick = () => { state.palette = el.dataset.k; render(); });
+  }
+  function renderGrid() {
+    const st = data.styles.find(s => s.key === state.style);
+    const pals = state.palette ? data.palettes.filter(p => p.key === state.palette) : data.palettes;
+    $('gridTitle').textContent = `${st.emoji} ${st.name} — ${st.desc}`;
+    $('grid').innerHTML = pals.map(p => {
+      const key = `${st.key}-${p.key}`;
+      return `<div class="card ${key === state.theme ? 'sel' : ''}" data-k="${key}">
+        <img loading="lazy" src="img/themes/${key}.jpg" alt="${st.name} ${p.name}">
+        <div class="check">✓</div>
+        <div class="cap"><span class="dot" style="--c1:${p.primary};--c2:${p.accent}"></span>${p.name}</div></div>`;
+    }).join('');
+    $('grid').querySelectorAll('.card').forEach(el => el.onclick = () => {
+      state.theme = el.dataset.k; if (tg) tg.HapticFeedback.selectionChanged(); render();
+    });
+  }
+  function renderSubs() {
+    const list = [{ key: 'auto', name: '✨ Avtomatik (mavzudan)' }].concat(data.subjects.filter(s => s.key !== 'general'));
+    $('subs').innerHTML = list.map(s => s.key === 'auto'
+      ? `<div class="subj auto ${state.subject === 'auto' ? 'sel' : ''}" data-k="auto"><div class="cap">${s.name}</div></div>`
+      : `<div class="subj ${state.subject === s.key ? 'sel' : ''}" data-k="${s.key}"><img loading="lazy" src="img/subjects/${s.key}.jpg" alt=""><div class="cap">${s.name}</div></div>`).join('');
+    $('subs').querySelectorAll('.subj').forEach(el => el.onclick = () => { state.subject = el.dataset.k; render(); });
+  }
+  function renderFooter() {
+    const ok = !!state.theme;
+    const [sk, pk] = state.theme ? state.theme.split('-') : ['', ''];
+    const st = data.styles.find(s => s.key === sk), p = data.palettes.find(x => x.key === pk);
+    const subj = state.subject === 'auto' ? 'avtomatik' : (data.subjects.find(s => s.key === state.subject) || {}).name;
+    $('summary').innerHTML = ok ? `Tanlandi: <b>${st.name} · ${p.name}</b> · bezak: <b>${subj}</b>` : 'Dizaynni bosib tanlang';
+    $('ok').disabled = !ok;
+    if (tg) {
+      if (ok) { tg.MainButton.setText('✅ Tanlash'); tg.MainButton.show(); tg.MainButton.enable(); }
+      else tg.MainButton.hide();
+    }
+  }
+  function render() { renderTabs(); renderPal(); renderGrid(); renderSubs(); renderFooter(); }
+
+  function submit() {
+    if (!state.theme) return;
+    const payload = JSON.stringify({ v: 1, theme: state.theme, subject: state.subject });
+    if (tg && tg.initDataUnsafe && tg.initDataUnsafe.query_id) {
+      // inline tugmadan ochilgan: botga answerWebAppQuery kerak — bizda reply tugma, bu holat zaxira
+      tg.sendData(payload);
+    } else if (tg) {
+      tg.sendData(payload);
+    } else {
+      alert(payload);
+    }
+  }
+  $('ok').onclick = submit;
+  if (tg) tg.MainButton.onClick(submit);
+  $('rand').onclick = () => {
+    const s = data.styles[Math.floor(Math.random() * data.styles.length)];
+    const p = data.palettes[Math.floor(Math.random() * data.palettes.length)];
+    state.style = s.key; state.palette = ''; state.theme = `${s.key}-${p.key}`; render();
+    document.querySelector('.card.sel')?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  };
+  render();
+})();
+</script>
+</body>
+</html>

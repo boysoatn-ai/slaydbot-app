@@ -1,0 +1,188 @@
+{
+ "styles": [
+  {
+   "key": "minimal",
+   "name": "Minimal",
+   "emoji": "⬜",
+   "desc": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+   "dark": false
+  },
+  {
+   "key": "corporate",
+   "name": "Biznes",
+   "emoji": "🏢",
+   "desc": "ishbilarmon: rangli yon panel, kartalar",
+   "dark": false
+  },
+  {
+   "key": "academic",
+   "name": "Akademik",
+   "emoji": "🎓",
+   "desc": "serif shrift, ramka, universitet uslubi",
+   "dark": false
+  },
+  {
+   "key": "gradient",
+   "name": "Gradient",
+   "emoji": "🌈",
+   "desc": "yumshoq gradient fonlar, zamonaviy",
+   "dark": false
+  },
+  {
+   "key": "dark",
+   "name": "Qorong‘u",
+   "emoji": "🌙",
+   "desc": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+   "dark": true
+  },
+  {
+   "key": "vivid",
+   "name": "Yorqin",
+   "emoji": "🎨",
+   "desc": "katta rang bloklari, jasur sarlavhalar",
+   "dark": false
+  }
+ ],
+ "palettes": [
+  {
+   "key": "ocean",
+   "name": "Okean",
+   "emoji": "🔵",
+   "primary": "#0F3D6E",
+   "accent": "#14B8C9"
+  },
+  {
+   "key": "emerald",
+   "name": "Zumrad",
+   "emoji": "🟢",
+   "primary": "#0B6B4F",
+   "accent": "#E8A93A"
+  },
+  {
+   "key": "violet",
+   "name": "Binafsha",
+   "emoji": "🟣",
+   "primary": "#5B21B6",
+   "accent": "#F472B6"
+  },
+  {
+   "key": "sunset",
+   "name": "Quyosh",
+   "emoji": "🟠",
+   "primary": "#C2410C",
+   "accent": "#F59E0B"
+  },
+  {
+   "key": "ruby",
+   "name": "Yoqut",
+   "emoji": "🔴",
+   "primary": "#9F1239",
+   "accent": "#F43F5E"
+  },
+  {
+   "key": "teal",
+   "name": "Firuza",
+   "emoji": "🩵",
+   "primary": "#0F766E",
+   "accent": "#2DD4BF"
+  },
+  {
+   "key": "gold",
+   "name": "Oltin",
+   "emoji": "🟡",
+   "primary": "#1F2937",
+   "accent": "#D4A017"
+  },
+  {
+   "key": "slate",
+   "name": "Grafit",
+   "emoji": "⚫",
+   "primary": "#18181B",
+   "accent": "#84CC16"
+  },
+  {
+   "key": "indigo",
+   "name": "Indigo",
+   "emoji": "🟦",
+   "primary": "#1E3A8A",
+   "accent": "#F97316"
+  },
+  {
+   "key": "forest",
+   "name": "O‘rmon",
+   "emoji": "🌲",
+   "primary": "#14532D",
+   "accent": "#A3E635"
+  }
+ ],
+ "subjects": [
+  {
+   "key": "physics",
+   "name": "Fizika"
+  },
+  {
+   "key": "engineering",
+   "name": "Muhandislik"
+  },
+  {
+   "key": "biology",
+   "name": "Biologiya"
+  },
+  {
+   "key": "medicine",
+   "name": "Tibbiyot"
+  },
+  {
+   "key": "chemistry",
+   "name": "Kimyo"
+  },
+  {
+   "key": "math",
+   "name": "Matematika"
+  },
+  {
+   "key": "it",
+   "name": "IT / Dasturlash"
+  },
+  {
+   "key": "business",
+   "name": "Biznes / Iqtisod"
+  },
+  {
+   "key": "history",
+   "name": "Tarix / O‘zbekiston"
+  },
+  {
+   "key": "language",
+   "name": "Til / Adabiyot"
+  },
+  {
+   "key": "sport",
+   "name": "Sport"
+  },
+  {
+   "key": "kids",
+   "name": "Bolalar"
+  },
+  {
+   "key": "geography",
+   "name": "Geografiya / Ekologiya"
+  },
+  {
+   "key": "art",
+   "name": "San’at / Madaniyat"
+  },
+  {
+   "key": "law",
+   "name": "Huquq"
+  },
+  {
+   "key": "education",
+   "name": "Ta’lim"
+  },
+  {
+   "key": "general",
+   "name": "Umumiy"
+  }
+ ]
+}
