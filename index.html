@@ -110,12 +110,19 @@
   const data = await fetch('data.json?v=2').then(r => r.json());
   const state = { style: q.get('style') || data.styles[0].key, palette: q.get('palette') || '',
                   subject: q.get('subject') || 'auto', theme: '' };
+  // Har doim bitta dizayn tanlangan bo'lsin — «Tanlash» tugmasi hech qachon o'chiq qolmaydi
+  function ensureTheme() {
+    const [sk, pk] = state.theme ? state.theme.split('-') : ['', ''];
+    const palOk = pk && (!state.palette || pk === state.palette);
+    if (sk === state.style && palOk) return;
+    state.theme = `${state.style}-${state.palette || pk || data.palettes[0].key}`;
+  }
   const $ = id => document.getElementById(id);
 
   function renderTabs() {
     $('tabs').innerHTML = data.styles.map(s =>
       `<div class="tab ${s.key === state.style ? 'active' : ''}" data-k="${s.key}">${s.emoji} ${s.name}</div>`).join('');
-    $('tabs').querySelectorAll('.tab').forEach(el => el.onclick = () => { state.style = el.dataset.k; state.theme = ''; render(); });
+    $('tabs').querySelectorAll('.tab').forEach(el => el.onclick = () => { state.style = el.dataset.k; render(); });
   }
   function renderPal() {
     $('pal').innerHTML = `<div class="sw ${!state.palette ? 'active' : ''}" data-k=""><div class="c" style="--c1:#9ca3af;--c2:#d1d5db"></div><span>Hammasi</span></div>` +
@@ -157,7 +164,7 @@
       else tg.MainButton.hide();
     }
   }
-  function render() { renderTabs(); renderPal(); renderGrid(); renderSubs(); renderFooter(); }
+  function render() { ensureTheme(); renderTabs(); renderPal(); renderGrid(); renderSubs(); renderFooter(); }
 
   function submit() {
     if (!state.theme) return;
