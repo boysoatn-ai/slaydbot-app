@@ -246,6 +246,7 @@
     var eventId = uuid();
     var body = Object.assign({}, P, { fbc: cookie("_fbc"), fbp: cookie("_fbp"), event_id: eventId });
     if (window.fbq) fbq("trackCustom", "ClickToBot", { ad_id: P.ad_id }, { eventID: eventId });
+    if (window.fbq) fbq("track", "Lead", { content_name: "telegram_bot" }, { eventID: "lead_" + eventId });   // Leads kampaniyasi optimizatsiyasi uchun
     var done = false;
     function go(url) {
       if (done) return; done = true; location.href = url;
