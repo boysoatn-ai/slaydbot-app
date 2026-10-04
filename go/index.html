@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0b1430">
-<title>Slayd Ol — taqdimot Telegram'da</title>
+<title>Slayd Ol — slayd Telegram'da</title>
 <meta name="description" content="Mavzuni yozing — rejani bepul ko'rasiz, dizaynni tanlaysiz, tayyor PPTX + PDF Telegram'ga keladi.">
 <script src="config.js"></script>
 <style>
@@ -26,8 +26,9 @@
   h1 .t { color:var(--yellow); display:block; }
   .lead { font-size:16.5px; color:#d5dbef; margin:0 0 16px; }
   .cta { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:17px 16px; border:0; border-radius:16px;
-         background:var(--tg); color:#fff; font-size:17.5px; font-weight:800; text-decoration:none; box-shadow:0 12px 30px rgba(42,171,238,.35); cursor:pointer; }
+         background:linear-gradient(180deg,#ffd84d,#f5b301); color:#1a1300; font-size:17.5px; font-weight:850; text-decoration:none; box-shadow:0 12px 30px rgba(245,179,1,.4), inset 0 1px 0 rgba(255,255,255,.5); animation:pulse 2.2s ease-in-out infinite; cursor:pointer; }
   .cta:active { transform:scale(.985); }
+  @keyframes pulse { 0%,100% { box-shadow:0 12px 30px rgba(245,179,1,.35) } 50% { box-shadow:0 12px 42px rgba(245,179,1,.7) } }
   .cta svg { flex:none; }
   .micro { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--muted); margin-top:10px; }
   .micro span::before { content:"✓ "; color:var(--ok); font-weight:800; }
@@ -95,7 +96,7 @@
   .w { display:flex; gap:12px; align-items:center; background:linear-gradient(90deg,var(--card),var(--bg2)); border:1px solid var(--line); border-radius:16px; padding:12px 14px; }
   .w em { font-style:normal; font-size:26px; } .w b { display:block; } .w span { color:var(--muted); font-size:14px; }
 
-  .final { margin-top:36px; text-align:center; background:radial-gradient(400px 220px at 50% 0%,rgba(42,171,238,.22),transparent),var(--bg2);
+  .final { margin-top:36px; text-align:center; background:radial-gradient(400px 220px at 50% 0%,rgba(245,179,1,.2),transparent),var(--bg2);
            border:1px solid var(--line); border-radius:20px; padding:22px 16px 18px; }
   .final h2 { margin-bottom:6px; } .final p { margin:0 0 14px; color:var(--muted); }
   .legal { color:#6f7a94; font-size:11.5px; text-align:center; margin-top:20px; }
@@ -111,11 +112,11 @@
 
   <!-- 1. Hero -->
   <div class="brand"><i>S</i>Slayd Ol · Telegram bot</div>
-  <h1>23:50.<span class="t">Slayd hali ham bo'shmi?</span></h1>
-  <p class="lead">Mavzuni yozing — rejasini bepul ko'rasiz, dizaynni tanlaysiz, tayyor taqdimot <b>PPTX + PDF</b> bo'lib Telegram'ga keladi.</p>
+  <h1>23:50.<span class="t">Slayd hali ham tayyor emasmi?</span></h1>
+  <p class="lead">Mavzuni yozing — rejasini bepul ko'rasiz, dizaynni tanlaysiz, tayyor slayd <b>PPTX + PDF</b> bo'lib Telegram'ga keladi.</p>
   <a class="cta" data-go href="https://t.me/slaydol_bot?start=m_noad">
-    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M2.5 11.3 20.6 4.2c.9-.3 1.6.2 1.3 1.5l-3.1 14.5c-.2 1-.9 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 14.2 2.4 12.8c-1-.3-1-1 .1-1.5Z" fill="#fff"/></svg>
-    Telegram'da taqdimot yaratish
+    <svg width="22" height="22" viewBox="0 0 24 24"><path fill-rule="nonzero" d="M2.5 11.3 20.6 4.2c.9-.3 1.6.2 1.3 1.5l-3.1 14.5c-.2 1-.9 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 14.2 2.4 12.8c-1-.3-1-1 .1-1.5Z" fill="#1a1300"/></svg>
+    Telegram'da slayd yaratish
   </a>
   <div class="micro"><span>Reja bepul</span><span>Ro'yxatdan o'tish yo'q</span><span>2–3 daqiqa</span></div>
 
@@ -134,8 +135,8 @@
   <!-- 2. Story -->
   <section>
     <div class="story">
-      <div class="ph"><img src="img/girl_sad.jpg" alt="" loading="lazy"><div class="cap"><b>23:50</b><span>Ertaga taqdimot, hali boshlanmagan</span></div></div>
-      <div class="ph am"><img src="img/girl_happy.jpg" alt="" loading="lazy"><div class="cap"><b>Ertalab 9:00</b><span>Taqdimot tayyor, uyqu ham bo'ldi</span></div></div>
+      <div class="ph"><img src="img/girl_sad.jpg" alt="" loading="lazy"><div class="cap"><b>23:50</b><span>Ertaga topshirish kerak, slayd hali yo'q</span></div></div>
+      <div class="ph am"><img src="img/girl_happy.jpg" alt="" loading="lazy"><div class="cap"><b>Ertalab 9:00</b><span>Slayd tayyor, uyqu ham bo'ldi</span></div></div>
     </div>
   </section>
 
@@ -179,8 +180,8 @@
     <h2>Kim uchun</h2>
     <div class="who">
       <div class="w"><em>🎓</em><div><b>Talabalar</b><span>seminar, mustaqil ta'lim, kurs ishi himoyasi</span></div></div>
-      <div class="w"><em>🏫</em><div><b>Kollej va litsey o'quvchilari</b><span>dars uchun taqdimotlar</span></div></div>
-      <div class="w"><em>👩‍🏫</em><div><b>O'qituvchilar</b><span>yangi mavzu uchun dars taqdimoti</span></div></div>
+      <div class="w"><em>🏫</em><div><b>Kollej va litsey o'quvchilari</b><span>dars uchun slaydlar</span></div></div>
+      <div class="w"><em>👩‍🏫</em><div><b>O'qituvchilar</b><span>yangi mavzu uchun dars slaydlari</span></div></div>
     </div>
   </section>
 
@@ -195,7 +196,7 @@
     Sayt reklama samaradorligini o'lchash uchun Meta Pixel ishlatadi. Ism, telefon va shaxsiy ma'lumotlar Meta'ga yuborilmaydi.</p>
 </div>
 
-<footer id="sticky"><a class="cta" id="go" data-go href="https://t.me/slaydol_bot?start=m_noad">Telegram'da taqdimot yaratish →</a></footer>
+<footer id="sticky"><a class="cta" id="go" data-go href="https://t.me/slaydol_bot?start=m_noad">Telegram'da slayd yaratish →</a></footer>
 
 <script>
 (function () {
