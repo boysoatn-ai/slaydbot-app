@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Slayd Ol — taqdimot 2 daqiqada</title>
+<meta name="description" content="Mavzuni yozing — AI 2 daqiqada tayyor taqdimot (PPTX + PDF) qiladi. 2 500 so‘mdan. Telegramda.">
+<script src="config.js"></script>
+<style>
+  :root { --bg:#0b1220; --card:#121b2f; --fg:#f3f6ff; --muted:#a9b4cc; --accent:#22d3ee; --accent2:#f59e0b; --btn:#2aabee; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 -apple-system,"Segoe UI",Roboto,Inter,system-ui,sans-serif; }
+  .wrap { max-width:520px; margin:0 auto; padding:20px 16px 120px; }
+  .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:18px; letter-spacing:.2px; }
+  .logo i { width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#3b82f6); display:inline-block; position:relative; }
+  .logo i::after { content:""; position:absolute; left:8px; top:11px; width:18px; height:3px; background:#fff; border-radius:2px; box-shadow:0 6px 0 #fff, 0 12px 0 #fff; }
+  h1 { font-size:30px; line-height:1.15; margin:22px 0 10px; font-weight:800; }
+  h1 b { color:var(--accent); }
+  .sub { color:var(--muted); font-size:16px; margin:0 0 18px; }
+  .pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+  .pill { background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:999px; padding:7px 12px; font-size:13.5px; }
+  .strip { display:flex; gap:10px; overflow-x:auto; scrollbar-width:none; margin:0 -16px; padding:4px 16px 10px; }
+  .strip::-webkit-scrollbar { display:none; }
+  .strip img { flex:0 0 220px; aspect-ratio:8/3; object-fit:cover; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:var(--card); }
+  .steps { display:grid; gap:10px; margin:18px 0; }
+  .step { display:flex; gap:12px; background:var(--card); border-radius:14px; padding:12px 14px; align-items:flex-start; }
+  .step b { display:block; font-size:15px; }
+  .step span { color:var(--muted); font-size:14px; }
+  .n { flex:0 0 30px; height:30px; border-radius:50%; background:rgba(34,211,238,.15); color:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:800; }
+  .price { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:6px 0 18px; }
+  .pr { background:var(--card); border-radius:14px; padding:12px 14px; }
+  .pr b { font-size:20px; display:block; }
+  .pr small { color:var(--muted); }
+  .pr.pro { border:1px solid rgba(245,158,11,.5); }
+  .proof { color:var(--muted); font-size:14px; text-align:center; margin:8px 0 0; }
+  footer { position:fixed; left:0; right:0; bottom:0; padding:12px 16px calc(12px + env(safe-area-inset-bottom)); background:linear-gradient(180deg, rgba(11,18,32,0), var(--bg) 35%); }
+  .cta { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; max-width:520px; margin:0 auto; padding:16px; border:0; border-radius:14px; background:var(--btn); color:#fff; font-size:18px; font-weight:800; text-decoration:none; box-shadow:0 10px 30px rgba(42,171,238,.35); cursor:pointer; }
+  .cta:active { transform:scale(.99); }
+  .legal { color:#6f7a94; font-size:11.5px; text-align:center; margin-top:18px; }
+  .legal a { color:#8b96b3; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo"><i></i> Slayd Ol</div>
+  <h1>Taqdimot <b>2 daqiqada</b> — mavzuni yozing, qolganini AI qiladi</h1>
+  <p class="sub">Talabalar uchun Telegram bot: tayyor PPTX + PDF, 60 ta dizayn, mavzuga mos rasmlar, animatsiyalar. Rejani to‘lovdan oldin bepul ko‘rasiz.</p>
+
+  <div class="pills">
+    <span class="pill">📊 PPTX + PDF</span><span class="pill">🎨 60 dizayn</span><span class="pill">🖼 Rasmlar</span>
+    <span class="pill">📚 Manbalar</span><span class="pill">✏️ Bepul tahrir</span><span class="pill">📝 Referat ham</span>
+  </div>
+
+  <div class="strip" id="strip"></div>
+
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div><b>Mavzuni yozing</b><span>yoki PDF/Word faylni yuboring</span></div></div>
+    <div class="step"><div class="n">2</div><div><b>Rejani ko‘ring — bepul</b><span>yoqmasa qayta tuzdiring, talab qo‘shing</span></div></div>
+    <div class="step"><div class="n">3</div><div><b>Dizaynni tanlang</b><span>6 uslub × 10 rang, fanga mos bezaklar</span></div></div>
+    <div class="step"><div class="n">4</div><div><b>2 daqiqada fayl keladi</b><span>PPTX + PDF, AI sifat bahosi va bepul tuzatish</span></div></div>
+  </div>
+
+  <div class="price">
+    <div class="pr"><small>Standart</small><b>2 500 so‘m</b><small>12 slaydgacha · 4 000 — 20 slayd</small></div>
+    <div class="pr pro"><small>⭐ Premium</small><b>7 500 so‘m</b><small>manbalar, jadval, diagramma, ma’ruza matni</small></div>
+  </div>
+  <p class="proof">🎁 Do‘stlaringizni taklif qilib bepul taqdimot oling</p>
+  <p class="legal">Sayt reklama samaradorligini o‘lchash uchun Meta Pixel ishlatadi. Ism, telefon va shaxsiy ma’lumotlar Meta’ga yuborilmaydi.
+    Bot — o‘quv yordamchisi: tayyor materialni topshirishdan oldin o‘qib chiqing.</p>
+</div>
+
+<footer><a class="cta" id="go" href="#">✈️ Telegram’da ochish</a></footer>
+
+<script>
+(function () {
+  var C = window.GO_CONFIG || {};
+  var BOT = "https://t.me/" + (C.bot || "slaydol_bot");
+  var q = new URLSearchParams(location.search);
+  var P = {};
+  ["campaign_id", "adset_id", "ad_id", "ad_name", "placement", "fbclid"].forEach(function (k) { P[k] = q.get(k) || ""; });
+  P.page_url = location.href.slice(0, 500);
+  try { sessionStorage.setItem("go_params", JSON.stringify(P)); } catch (e) {}
+
+  // Dizayn namunalari
+  var themes = ["corporate-ocean", "gradient-violet", "dark-teal", "vivid-sunset", "academic-emerald", "minimal-slate"];
+  document.getElementById("strip").innerHTML = themes.map(function (t) {
+    return '<img loading="lazy" alt="dizayn" src="../img/themes/' + t + '.jpg">';
+  }).join("");
+
+  function uuid() {
+    if (crypto && crypto.randomUUID) return crypto.randomUUID();
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0; return (c === "x" ? r : (r & 3 | 8)).toString(16); });
+  }
+  function cookie(name) { var m = document.cookie.match("(?:^|; )" + name + "=([^;]*)"); return m ? decodeURIComponent(m[1]) : ""; }
+  function post(path, body, ms) {
+    if (!C.apiBase) return Promise.reject(new Error("no api"));
+    var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    var t = setTimeout(function () { ctrl && ctrl.abort(); }, ms);
+    return fetch(C.apiBase.replace(/\/$/, "") + path, { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body), signal: ctrl ? ctrl.signal : undefined, keepalive: true })
+      .then(function (r) { clearTimeout(t); return r; });
+  }
+
+  // Meta Pixel (bazaviy kod) — faqat pixelId berilgan bo'lsa
+  if (C.pixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq("init", C.pixelId);
+    fbq("track", "PageView", {}, { eventID: uuid() });
+  }
+  post("/api/t/view", P, 3000).catch(function () {});
+
+  var busy = false;
+  document.getElementById("go").addEventListener("click", function (ev) {
+    ev.preventDefault();
+    if (busy) return; busy = true;
+    var eventId = uuid();
+    var body = Object.assign({}, P, { fbc: cookie("_fbc"), fbp: cookie("_fbp"), event_id: eventId });
+    if (window.fbq) fbq("trackCustom", "ClickToBot", { ad_id: P.ad_id }, { eventID: eventId });
+    var done = false;
+    function go(url) { if (done) return; done = true; location.href = url; }
+    setTimeout(function () { go(BOT + "?start=m_noad"); }, 1500);          // API sekin bo'lsa — baribir botga
+    post("/api/t/click", body, 1500).then(function (r) { return r.json(); })
+      .then(function (d) { go(d && d.token ? BOT + "?start=m_" + d.token : BOT + "?start=m_noad"); })
+      .catch(function () { go(BOT + "?start=m_noad"); });
+  });
+})();
+</script>
+</body>
+</html>
