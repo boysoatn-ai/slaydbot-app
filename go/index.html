@@ -70,7 +70,7 @@
     Bot — o‘quv yordamchisi: tayyor materialni topshirishdan oldin o‘qib chiqing.</p>
 </div>
 
-<footer><a class="cta" id="go" href="#">✈️ Telegram’da ochish</a></footer>
+<footer><a class="cta" id="go" href="https://t.me/slaydol_bot?start=m_noad">✈️ Telegram’da ochish</a></footer>
 
 <script>
 (function () {
@@ -98,7 +98,8 @@
     if (!C.apiBase) return Promise.reject(new Error("no api"));
     var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
     var t = setTimeout(function () { ctrl && ctrl.abort(); }, ms);
-    return fetch(C.apiBase.replace(/\/$/, "") + path, { method: "POST", headers: { "Content-Type": "application/json" },
+    // text/plain — "oddiy so'rov": CORS preflight (OPTIONS) yo'q, 1,5 s byudjetga sig'adi
+    return fetch(C.apiBase.replace(/\/$/, "") + path, { method: "POST", headers: { "Content-Type": "text/plain" },
       body: JSON.stringify(body), signal: ctrl ? ctrl.signal : undefined, keepalive: true })
       .then(function (r) { clearTimeout(t); return r; });
   }
@@ -121,7 +122,10 @@
     var body = Object.assign({}, P, { fbc: cookie("_fbc"), fbp: cookie("_fbp"), event_id: eventId });
     if (window.fbq) fbq("trackCustom", "ClickToBot", { ad_id: P.ad_id }, { eventID: eventId });
     var done = false;
-    function go(url) { if (done) return; done = true; location.href = url; }
+    function go(url) {
+      if (done) return; done = true; location.href = url;
+      setTimeout(function () { busy = false; done = false; }, 3000);   // Telegram'dan qaytsa tugma yana ishlaydi
+    }
     setTimeout(function () { go(BOT + "?start=m_noad"); }, 1500);          // API sekin bo'lsa — baribir botga
     post("/api/t/click", body, 1500).then(function (r) { return r.json(); })
       .then(function (d) { go(d && d.token ? BOT + "?start=m_" + d.token : BOT + "?start=m_noad"); })
