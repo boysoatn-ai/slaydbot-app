@@ -9,117 +9,107 @@
 <meta name="description" content="Mavzuni yozing — rejasini bepul ko'rasiz, tayyor slayd PPTX + PDF bo'lib Telegram'ga keladi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
 <script src="../config.js"></script>
 <style>
   :root { --night:#121735; --night2:#1b2250; --ink:#0d1130; --paper:#f6f7fb; --mist:#a3abd0; --sun:#ffc93c; --sun2:#ffab1a; --mint:#4ee0a6;
-          --line:rgba(255,255,255,.1); --display:"Unbounded","Onest",system-ui,sans-serif; --text:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; }
+          --line:rgba(255,255,255,.1); --display:"Onest",system-ui,sans-serif; --text:"Onest",-apple-system,"Segoe UI",Roboto,sans-serif; }
   * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   html,body { margin:0; background:var(--night); color:var(--paper); font:17px/1.5 var(--text); }
-  .wrap { max-width:460px; margin:0 auto; padding:18px 18px 130px; overflow:hidden; }
+  .wrap { max-width:440px; margin:0 auto; padding:16px 18px 120px; overflow:hidden; }
   .brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:15px; }
   .brand i { width:30px; height:30px; border-radius:9px; background:var(--sun); color:var(--ink); display:grid; place-items:center; font:800 15px var(--display); font-style:normal; }
-  h1 { font:800 clamp(44px,13.5vw,60px)/.98 var(--display); letter-spacing:-.035em; margin:30px 0 16px; }
-  h1 span { display:block; color:var(--sun); }
-  .lead { font-size:19px; line-height:1.4; color:#dfe3f6; margin:0 0 26px; }
+  h1 { font:800 clamp(30px,8.6vw,38px)/1.08 var(--display); letter-spacing:-.02em; margin:22px 0 12px; }
+  h1 span { color:var(--sun); }
+  .lead { font-size:18px; line-height:1.4; color:#dfe3f6; margin:0 0 20px; }
   .lead b { color:#fff; }
+  .cta { display:flex; align-items:center; justify-content:center; gap:12px; width:100%; min-height:66px; padding:14px 16px;
+         border-radius:18px; background:linear-gradient(180deg,var(--sun),var(--sun2)); color:var(--ink); font:800 20px var(--text); text-decoration:none; text-align:left;
+         box-shadow:0 12px 34px rgba(255,171,26,.42), inset 0 1px 0 rgba(255,255,255,.55); animation:pulse 2.4s ease-in-out infinite; }
+  .cta:active { transform:scale(.985); }
+  .cta:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+  .cta small { display:block; font:500 13px var(--text); opacity:.75; }
+  @keyframes pulse { 50% { box-shadow:0 12px 48px rgba(255,171,26,.75), inset 0 1px 0 rgba(255,255,255,.55); } }
 
-  .stage { position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden; box-shadow:0 24px 50px rgba(0,0,0,.45),0 0 0 1px var(--line); background:#fff; }
-  .blank,.done { position:absolute; inset:0; }
-  .blank { display:flex; flex-direction:column; justify-content:center; padding:0 7%; background:#fff; }
-  .blank small { font-size:11px; color:#b7bccf; margin-bottom:6px; }
-  .typed { font:600 clamp(15px,4.6vw,20px)/1.2 var(--display); color:#1d2340; min-height:1.2em; }
-  .typed::after { content:""; display:inline-block; width:2px; height:1em; background:#1d2340; margin-left:3px; vertical-align:-2px; animation:blink 1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity:0 } }
-  .done { opacity:0; transform:scale(1.04); transition:opacity .6s ease, transform .8s cubic-bezier(.2,.7,.2,1);
-          background:linear-gradient(120deg,#1b2a6b 0%,#2c3fa0 58%,#c98a1b 140%); color:#fff; display:grid; grid-template-columns:1.25fr 1fr; }
-  .stage.on .done { opacity:1; transform:none; }
-  .done .t { padding:9% 0 0 8%; display:flex; flex-direction:column; }
-  .done small { font-size:clamp(9px,2.5vw,11px); color:var(--sun); font-weight:700; }
-  .done h3 { font:800 clamp(15px,4.8vw,21px)/1.12 var(--display); margin:6px 0 8px; }
-  .done .bar { width:28%; height:3px; border-radius:2px; background:var(--sun); }
-  .done ul { list-style:none; padding:0; margin:auto 0 12%; font-size:clamp(8px,2.4vw,10.5px); color:#dfe4ff; }
-  .done li::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--sun); margin-right:6px; vertical-align:1px; }
-  .done .art { position:relative; }
-  .done .art::before { content:""; position:absolute; inset:12% 12% 12% 4%; border-radius:12px;
-     background:radial-gradient(circle at 50% 38%,#ffd977 0 18%,transparent 19%),conic-gradient(from 200deg at 50% 100%,#3d55c9,#6c7fe0,#3d55c9);
-     box-shadow:inset 0 0 0 2px rgba(255,255,255,.18); }
-  .stamp { position:absolute; right:10px; top:10px; font-size:12px; font-weight:700; color:var(--ink); background:var(--mint); border-radius:6px; padding:3px 9px; opacity:0; transition:opacity .3s .6s; }
-  .stage.on .stamp { opacity:1; }
+  /* phone: what actually happens */
+  .phone { margin-top:28px; background:#17212b; border-radius:22px; padding:12px; box-shadow:0 20px 44px rgba(0,0,0,.4), 0 0 0 1px var(--line); }
+  .phone header { display:flex; align-items:center; gap:10px; padding:2px 4px 10px; border-bottom:1px solid rgba(255,255,255,.06); }
+  .phone header i { width:34px; height:34px; border-radius:50%; background:var(--sun); color:var(--ink); display:grid; place-items:center; font:800 14px var(--display); font-style:normal; }
+  .phone header b { display:block; font-size:14.5px; } .phone header small { color:#6c7883; font-size:12px; }
+  .msgs { display:flex; flex-direction:column; gap:8px; padding-top:12px; font-size:14.5px; }
+  .m { max-width:88%; padding:8px 11px; border-radius:14px; line-height:1.38; }
+  .me { align-self:flex-end; background:#2b5278; border-bottom-right-radius:4px; }
+  .bot { align-self:flex-start; background:#182533; border-bottom-left-radius:4px; }
+  .time { display:block; text-align:right; font-size:11px; color:#7d8b99; margin-top:2px; }
+  .file { display:flex; align-items:center; gap:10px; }
+  .file .ic { width:40px; height:40px; border-radius:50%; background:#3a8ee6; display:grid; place-items:center; flex:none; }
+  .file b { display:block; font-size:14px; } .file small { color:#7d8b99; font-size:12px; }
+  .prev { display:grid; grid-template-columns:repeat(3,1fr); gap:5px; margin-top:8px; }
+  .s { aspect-ratio:16/9; border-radius:5px; overflow:hidden; position:relative; padding:6% 7%; display:flex; flex-direction:column; }
+  .s b { font:800 7.5px/1.15 var(--display); max-width:62%; }
+  .s i { display:block; height:2.5px; border-radius:2px; background:currentColor; opacity:.35; margin-top:3px; width:50%; }
+  .s i:first-of-type { margin-top:auto; }
+  .s u { position:absolute; right:6%; top:18%; bottom:18%; width:32%; border-radius:4px; }
+  .s1 { background:linear-gradient(120deg,#1b2a6b,#2c3fa0); color:#fff; } .s1 u { background:radial-gradient(circle at 50% 35%,#ffd977 0 22%,transparent 23%),#4b62d4; }
+  .s2 { background:#f4efe4; color:#3b2a14; } .s2 u { background:linear-gradient(160deg,#2f5d8a,#173653); }
+  .s3 { background:#fff; color:#1d2340; } .s3 u { background:linear-gradient(to top,#ffab1a 0 45%,#ffe2a1 45% 70%,#eef1fb 70%); }
 
-  .steps { list-style:none; counter-reset:s; padding:0; margin:34px 0 0; display:grid; gap:16px; }
-  .steps li { counter-increment:s; display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:center; font-size:19px; font-weight:700; }
-  .steps li::before { content:counter(s); width:44px; height:44px; border-radius:12px; display:grid; place-items:center; font:800 18px var(--display); color:var(--ink); background:var(--sun); }
+  .steps { list-style:none; counter-reset:s; padding:0; margin:30px 0 0; display:grid; gap:14px; }
+  .steps li { counter-increment:s; display:grid; grid-template-columns:40px 1fr; gap:12px; align-items:center; font-size:18px; font-weight:700; }
+  .steps li::before { content:counter(s); width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font:800 17px var(--display); color:var(--ink); background:var(--sun); }
   .steps small { display:block; font-size:15px; font-weight:400; color:var(--mist); }
-
-  .story { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:36px; }
+  .story { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:32px; }
   .story figure { margin:0; position:relative; }
   .story img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:14px; display:block; }
   .story figcaption { position:absolute; left:8px; bottom:8px; font:800 15px var(--display); background:rgba(13,17,48,.82); padding:4px 9px; border-radius:8px; }
   .story figure + figure figcaption { color:var(--sun); }
-  .note { text-align:center; color:var(--mist); font-size:15px; margin-top:28px; }
-
+  .note { text-align:center; color:var(--mist); font-size:15px; margin-top:26px; }
   footer { position:fixed; left:0; right:0; bottom:0; z-index:9; padding:12px 14px calc(12px + env(safe-area-inset-bottom));
-           background:linear-gradient(180deg,rgba(18,23,53,0),rgba(18,23,53,.94) 30%); }
-  .cta { display:flex; align-items:center; justify-content:center; gap:12px; max-width:440px; margin:0 auto; min-height:68px; padding:16px;
-         border-radius:18px; background:linear-gradient(180deg,var(--sun),var(--sun2)); color:var(--ink); font:800 20px var(--text); text-decoration:none;
-         box-shadow:0 12px 34px rgba(255,171,26,.45), inset 0 1px 0 rgba(255,255,255,.55); animation:pulse 2.4s ease-in-out infinite; }
-  .cta:active { transform:scale(.985); }
-  .cta:focus-visible { outline:3px solid #fff; outline-offset:3px; }
-  .cta small { display:block; font:500 12.5px var(--text); opacity:.75; }
-  @keyframes pulse { 50% { box-shadow:0 12px 48px rgba(255,171,26,.75), inset 0 1px 0 rgba(255,255,255,.55); } }
+           background:linear-gradient(180deg,rgba(18,23,53,0),rgba(18,23,53,.95) 30%); transform:translateY(120%); transition:transform .25s ease; }
+  footer.on { transform:none; }
+  footer .cta { max-width:420px; margin:0 auto; }
   @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none !important; transition:none !important; } }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="brand"><i>S</i>Slayd Ol</div>
+  <h1>Slaydlar endi <span>muammo emas</span></h1>
+  <p class="lead">Mavzuni yozing — <b>2–3 daqiqada</b> rasmlar va dizayn bilan tayyor slayd Telegram'ga keladi.</p>
+  <a class="cta" data-go href="https://t.me/slaydol_bot?start=m_noad"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 11.3 20.6 4.2c.9-.3 1.6.2 1.3 1.5l-3.1 14.5c-.2 1-.9 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 14.2 2.4 12.8c-1-.3-1-1 .1-1.5Z" fill="#0d1130"/></svg><span>Slayd tayyorlash<small>Telegram'da ochiladi · reja bepul</small></span></a>
 
-  <h1>Slaydlar endi <span>muammo emas.</span></h1>
-  <p class="lead">Mavzuni yozing — <b>2–3 daqiqada</b> tayyor slayd Telegram'ga keladi.</p>
-
-  <div class="stage" id="stage" aria-label="Bo'sh slayd tayyor slaydga aylanadi">
-    <div class="blank"><small>Mavzu</small><div class="typed" id="typed"></div></div>
-    <div class="done" aria-hidden="true">
-      <div class="t"><small>Tarix, 12 slayd</small><h3>Amir Temur davlati</h3><span class="bar"></span>
-        <ul><li>Davlatning tashkil topishi</li><li>Ilm-fan va me'morchilik</li><li>Tarixiy ahamiyati</li></ul></div>
-      <div class="art"></div>
+  <div class="phone" aria-label="Botda qanday ko'rinadi">
+    <header><i>S</i><div><b>Slayd Ol</b><small>bot</small></div></header>
+    <div class="msgs">
+      <div class="m me">Amir Temur davlati, 12 slayd<span class="time">23:50</span></div>
+      <div class="m bot">Reja tayyor ✅ Ko'rib chiqing va dizaynni tanlang.<span class="time">23:50</span></div>
+      <div class="m bot"><div class="file"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><b>Amir_Temur_davlati.pptx</b><small>12 slayd · PPTX + PDF</small></div></div>
+        <div class="prev">
+          <div class="s s1"><b>Amir Temur davlati</b><i></i><i></i><u></u></div>
+          <div class="s s2"><b>Davlatning tashkil topishi</b><i></i><i></i><u></u></div>
+          <div class="s s3"><b>Ilm-fan va me'morchilik</b><i></i><i></i><u></u></div>
+        </div><span class="time">23:52</span></div>
     </div>
-    <span class="stamp">Tayyor ✓</span>
   </div>
 
   <ol class="steps">
     <li><div>Mavzuni yozasiz<small>yoki faylni yuborasiz</small></div></li>
     <li><div>Rejani bepul ko'rasiz<small>yoqmasa, o'zgartirasiz</small></div></li>
-    <li><div>Tayyor faylni olasiz<small>PPTX + PDF, rasmlar va dizayn bilan</small></div></li>
+    <li><div>Tayyor faylni olasiz<small>PowerPoint'da ochiladi, tahrirlanadi</small></div></li>
   </ol>
 
   <div class="story">
     <figure><img src="../img/girl_sad.jpg" alt="Kechasi slayd ustida qiynalgan talaba" loading="lazy"><figcaption>23:50</figcaption></figure>
     <figure><img src="../img/girl_happy.jpg" alt="Ertalab tayyor slayd bilan xursand talaba" loading="lazy"><figcaption>9:00 ✓</figcaption></figure>
   </div>
-
   <p class="note">Talabalar, o'quvchilar va o'qituvchilar uchun.<br>Reja bepul, ro'yxatdan o'tish shart emas.</p>
 </div>
 
-<footer><a class="cta" id="go" data-go href="https://t.me/slaydol_bot?start=m_noad">
-  <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 11.3 20.6 4.2c.9-.3 1.6.2 1.3 1.5l-3.1 14.5c-.2 1-.9 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 14.2 2.4 12.8c-1-.3-1-1 .1-1.5Z" fill="#0d1130"/></svg>
-  <span>Slayd tayyorlash<small>Telegram'da ochiladi · reja bepul</small></span></a></footer>
+<footer id="sticky"><a class="cta" id="go" data-go href="https://t.me/slaydol_bot?start=m_noad"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 11.3 20.6 4.2c.9-.3 1.6.2 1.3 1.5l-3.1 14.5c-.2 1-.9 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 14.2 2.4 12.8c-1-.3-1-1 .1-1.5Z" fill="#0d1130"/></svg><span>Slayd tayyorlash<small>Telegram'da ochiladi · reja bepul</small></span></a></footer>
 
 <script>
 (function () {
-  // Bo'sh slayd → tayyor slayd (bir martalik sahna)
-  var stage = document.getElementById("stage"), typed = document.getElementById("typed");
-  var text = "Amir Temur davlati", i = 0;
-  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce) { typed.textContent = text; stage.classList.add("on"); }
-  else {
-    setTimeout(function tick() {
-      typed.textContent = text.slice(0, ++i);
-      if (i < text.length) setTimeout(tick, 70); else setTimeout(function () { stage.classList.add("on"); }, 650);
-    }, 700);
-  }
-
   var C = window.GO_CONFIG || {};
   var BOT = "https://t.me/" + (C.bot || "slaydol_bot");
   var q = new URLSearchParams(location.search);
@@ -127,6 +117,10 @@
   ["campaign_id", "adset_id", "ad_id", "ad_name", "placement", "fbclid"].forEach(function (k) { P[k] = q.get(k) || ""; });
   P.page_url = location.href.slice(0, 500);
   try { sessionStorage.setItem("go_params", JSON.stringify(P)); } catch (e) {}
+
+  var first = document.querySelector("[data-go]"), sticky = document.getElementById("sticky");
+  function onScroll() { sticky.classList.toggle("on", first.getBoundingClientRect().bottom < 0); }
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
 
   function uuid() {
