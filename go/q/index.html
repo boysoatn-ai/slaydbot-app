@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Slayd testi — Slayd Ol</title>
+<meta name="description" content="Kichik test: slayd haqida qancha bilasiz?">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800;900&display=swap" rel="stylesheet">
+<script src="../config.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#121735;--card:#1c2350;--line:rgba(255,255,255,.12);--txt:#fff;--mut:#aab4dc;--gold:#ffc93c;--ok:#2fbf71;--bad:#e5484d}
+body{background:var(--bg);color:var(--txt);font-family:Onest,Inter,system-ui,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}
+.w{max-width:520px;margin:0 auto;padding:20px 16px 120px}
+.top{display:flex;align-items:center;justify-content:space-between;font-weight:800;color:var(--mut);font-size:14px}
+.top b{color:#fff}
+.chip{display:inline-block;margin-top:22px;background:var(--gold);color:#0d1433;font-weight:800;border-radius:999px;padding:6px 14px;font-size:14px}
+h1{font-size:30px;line-height:1.08;font-weight:900;letter-spacing:-.02em;margin:12px 0 18px}
+h1 em{font-style:normal;color:var(--gold)}
+.media{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.sl{border-radius:12px!important}
+.opts{display:flex;gap:10px}
+.opt{flex:1;background:var(--card);border:2px solid var(--line);color:#fff;border-radius:18px;padding:16px 8px;font:900 26px/1 Onest,sans-serif;cursor:pointer;transition:.15s}
+.opt small{display:block;font-size:13px;color:var(--gold);margin-bottom:6px;font-weight:800}
+.opt:active{transform:scale(.97)}
+.opt.ok{border-color:var(--ok);background:rgba(47,191,113,.18)} .opt.no{border-color:var(--bad);background:rgba(229,72,77,.15)}
+.opts.done .opt{pointer-events:none}
+.res{display:none;margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.res.on{display:block;animation:up .35s ease}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.verdict{font-size:22px;font-weight:900;margin-bottom:8px}
+.res p{color:#dfe4fa;line-height:1.45;font-size:16px}
+.res ol{margin:10px 0 0 20px;color:#dfe4fa;line-height:1.5}
+.res ol b{color:#fff}
+.offer{display:none;margin-top:16px;border-radius:22px;padding:18px;background:linear-gradient(160deg,#25307a,#1a2260);border:1px solid rgba(255,201,60,.35)}
+.offer.on{display:block;animation:up .4s ease .1s both}
+.offer h2{font-size:22px;line-height:1.15;font-weight:900;margin-bottom:12px}
+.offer h2 em{font-style:normal;color:var(--gold)}
+.offer>ul{list-style:none;margin:12px 0 16px;color:#dfe4fa;font-size:15px;line-height:1.6}
+.cta{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;text-decoration:none;color:#0d1130;
+ background:linear-gradient(180deg,#ffd84d,#f5b301);border-radius:18px;padding:15px 14px;box-shadow:0 12px 36px rgba(245,179,1,.4);font-weight:900;font-size:20px}
+.cta span{display:flex;flex-direction:column;line-height:1.1}
+.cta small{font-size:13px;font-weight:700;opacity:.75}
+footer{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(18,23,53,.92);
+ backdrop-filter:blur(10px);transform:translateY(110%);transition:.25s}
+footer.on{transform:none} footer .cta{max-width:520px;margin:0 auto}
+.sl .lab{font-size:.07em!important;width:1.7em!important;height:1.7em!important;border-width:2px!important}
+.skip{display:block;text-align:center;margin-top:14px;color:var(--mut);font-size:14px}
+
+.sl{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:left}
+.bad{background:#fff;color:#c9b400;padding:3.2% 4%;font-family:'Times New Roman',serif}
+.bad h3{font-size:.042em;font-weight:400;color:#d8c400;margin-bottom:1.2%}
+.bad p{font-size:.0225em;line-height:1.25;text-align:justify}
+.good{background:linear-gradient(135deg,#14205a,#2a47c9);color:#fff;padding:5% 5.5%;font-family:Inter,sans-serif;display:flex;gap:5%}
+.good .tx{flex:1.25;display:flex;flex-direction:column}
+.good small{font-size:.026em;font-weight:800;color:#ffc93c;letter-spacing:.08em}
+.good h3{font-size:.07em;font-weight:900;line-height:1;margin:2% 0 5%}
+.good li{list-style:none;font-size:.032em;font-weight:600;margin-top:3.2%;display:flex;gap:.5em;align-items:center}
+.good li b{width:1.5em;height:1.5em;border-radius:.4em;background:#ffc93c;color:#14205a;display:grid;place-items:center;font-size:.8em;flex:none}
+.good .pic{flex:1;border-radius:12px;position:relative;overflow:hidden;
+  background:linear-gradient(to top,#c9873a 0 28%,#f0c27a 28% 30%,#7cc4ea 30%)}
+.good .pic i{position:absolute;bottom:28%;background:#2f7fb8;border-radius:50% 50% 0 0}
+.good .pic .d1{left:30%;width:40%;height:34%;background:radial-gradient(circle at 40% 30%,#4fb3e8,#1f5f99)}
+.good .pic .w{position:absolute;bottom:28%;left:22%;width:56%;height:20%;background:#e9d3a6}
+.good .pic .m1,.good .pic .m2{position:absolute;bottom:28%;width:7%;height:52%;background:#e2c58d}
+.good .pic .m1{left:10%}.good .pic .m2{right:10%}
+.lab{position:absolute;top:4%;right:3%;border-radius:50%;display:grid;place-items:center;font-family:Inter,sans-serif;
+  font-weight:900;line-height:1;color:#0d1433;background:#ffc93c;box-shadow:0 6px 18px rgba(0,0,0,.35);border:4px solid #fff}
+
+</style>
+</head>
+<body>
+<div class="w">
+  <div class="top"><b>Slayd Ol</b><span>Telegram bot</span></div>
+  <span class="chip" id="chip"></span>
+  <h1 id="q"></h1>
+  <div class="media" id="media"></div>
+  <div class="opts" id="opts"></div>
+  <div class="res" id="res"><div class="verdict" id="verdict"></div><div id="exp"></div></div>
+  <div class="offer" id="offer">
+    <h2>Bunday <em>to'g'ri slaydni</em> bot 2 daqiqada tayyorlaydi</h2>
+    <div id="ex"></div>
+    <ul><li>✍️ Mavzuni yozasiz</li><li>📋 Rejani bepul ko'rasiz</li><li>📎 Tayyor fayl Telegram'ga keladi (PPTX + PDF)</li></ul>
+    <a class="cta" data-go href="https://t.me/slaydol_bot?start=m_noad"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 11.3 20.6 4.2c.9-.3 1.6.2 1.3 1.5l-3.1 14.5c-.2 1-.9 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 14.2 2.4 12.8c-1-.3-1-1 .1-1.5Z" fill="#0d1130"/></svg><span>Slayd tayyorlash<small>Telegram'da ochiladi · reja bepul</small></span></a>
+  </div>
+  <a class="skip" href="#" id="skip">Javobsiz o'tish →</a>
+</div>
+<footer id="sticky"><a class="cta" data-go href="https://t.me/slaydol_bot?start=m_noad"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 11.3 20.6 4.2c.9-.3 1.6.2 1.3 1.5l-3.1 14.5c-.2 1-.9 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 14.2 2.4 12.8c-1-.3-1-1 .1-1.5Z" fill="#0d1130"/></svg><span>Slayd tayyorlash<small>Telegram'da ochiladi · reja bepul</small></span></a></footer>
+
+<script>
+(function () {
+  var BAD = "<div class=\"sl bad\" style=\"width:100%\"><h3>Amir Temur davlati</h3><p>Amir Temur 1336-yil Kesh yaqinidagi Xo'ja Ilg'or qishlog'ida tug'ilgan. U 1370-yilda Movarounnahrda hokimiyatni qo'lga olib, Samarqandni poytaxt qildi. Davlat tarkibiga Xuroson, Eron, Kavkaz, Hindistonning shimoliy qismi va boshqa hududlar kirgan. Temur davlatni boshqarishda \u00abTemur tuzuklari\u00bbga tayangan. Uning davrida me'morchilik, savdo, hunarmandchilik va ilm-fan rivojlangan. Samarqandda Bibixonim masjidi, Go'ri Amir maqbarasi, Shohi Zinda ansambli qurilgan. Buyuk ipak yo'li orqali savdo kengaygan, karvonsaroylar barpo etilgan. Temur 1405-yilda O'trorda vafot etgan, uning vorislari davrida ham madaniyat gullab-yashnagan va Ulug'bek rasadxonasi qurilgan.</p></div>", GOOD = "<div class=\"sl good\" style=\"width:100%\"><div class=\"tx\"><small>TARIX</small><h3>Amir Temur davlati</h3><ul><li><b>1</b>1370 \u2014 Samarqand poytaxt</li><li><b>2</b>\u00abTemur tuzuklari\u00bb \u2014 qonunlar</li><li><b>3</b>Me'morchilik va savdo</li></ul></div><div class=\"pic\"><span class=\"w\"></span><span class=\"m1\"></span><span class=\"m2\"></span><i class=\"d1\"></i></div></div>", BADL = "<div class=\"sl bad\" style=\"width:100%\"><h3>Amir Temur davlati</h3><p>Amir Temur 1336-yil Kesh yaqinidagi Xo'ja Ilg'or qishlog'ida tug'ilgan. U 1370-yilda Movarounnahrda hokimiyatni qo'lga olib, Samarqandni poytaxt qildi. Davlat tarkibiga Xuroson, Eron, Kavkaz, Hindistonning shimoliy qismi va boshqa hududlar kirgan. Temur davlatni boshqarishda \u00abTemur tuzuklari\u00bbga tayangan. Uning davrida me'morchilik, savdo, hunarmandchilik va ilm-fan rivojlangan. Samarqandda Bibixonim masjidi, Go'ri Amir maqbarasi, Shohi Zinda ansambli qurilgan. Buyuk ipak yo'li orqali savdo kengaygan, karvonsaroylar barpo etilgan. Temur 1405-yilda O'trorda vafot etgan, uning vorislari davrida ham madaniyat gullab-yashnagan va Ulug'bek rasadxonasi qurilgan.</p><div class=\"lab\" style=\"width:12px;height:12px;font-size:7px\">A</div></div>", GOODL = "<div class=\"sl good\" style=\"width:100%\"><div class=\"tx\"><small>TARIX</small><h3>Amir Temur davlati</h3><ul><li><b>1</b>1370 \u2014 Samarqand poytaxt</li><li><b>2</b>\u00abTemur tuzuklari\u00bb \u2014 qonunlar</li><li><b>3</b>Me'morchilik va savdo</li></ul></div><div class=\"pic\"><span class=\"w\"></span><span class=\"m1\"></span><span class=\"m2\"></span><i class=\"d1\"></i></div><div class=\"lab\" style=\"width:12px;height:12px;font-size:7px\">B</div></div>";
+  var Q = {
+    ab: { chip: "🧠 Talabalar testi", q: "Qaysi slayd <em>5 baho</em> oladi?",
+      media: BADL + GOODL,
+      opts: [["A", "A"], ["B", "B"]], right: "B",
+      exp: { ok: "To'g'ri! 🎉", no: "Afsus, to'g'ri javob — B",
+        text: "<p><b>B</b> — bitta slaydda bitta fikr: katta sarlavha, 3 ta qisqa band va rasm. <b>A</b> — matn devori: o'qituvchi uni o'qimaydi, sariq harf oq fonda ko'rinmaydi.</p>" } },
+    err: { chip: "🔍 Diqqat testi", q: "Bu slaydda <em>3 ta xato</em> bor. Nechtasini topdingiz?",
+      media: BAD, opts: [["1", "1 ta"], ["2", "2 ta"], ["3", "3 ta"]], right: "3",
+      exp: { ok: "Zo'r ko'z! 👀 Mana ular:", no: "Yaxshi urinish! Mana 3 ta xato:",
+        text: "<ol><li><b>Matn juda ko'p.</b> Slaydda 5–6 qatordan oshmasin.</li><li><b>Sariq harf oq fonda.</b> Orqa qatordan o'qib bo'lmaydi.</li><li><b>Rasm yo'q, sarlavha kichik.</b> Ko'z hech narsaga tushmaydi.</li></ol>" } },
+    num: { chip: "🎤 Himoyaga tayyormisiz?", q: "10 daqiqalik nutq uchun <em>nechta slayd</em> kerak?",
+      media: "", opts: [["5", "5"], ["10", "10"], ["20", "20"]], right: "10",
+      exp: { ok: "To'g'ri! 🎯", no: "Afsus, to'g'ri javob — 10 atrofida",
+        text: "<p>Oddiy qoida: <b>1 slayd ≈ 1 daqiqa</b>. 10 daqiqaga 9–12 slayd: muqova, reja, 6–8 asosiy slayd va xulosa. 5 tasi kam, 20 tasiga vaqt yetmaydi.</p>" } }
+  };
+  var C = window.GO_CONFIG || {};
+  var BOT = "https://t.me/" + (C.bot || "slaydol_bot");
+  var q = new URLSearchParams(location.search);
+  var key = Q[q.get("q")] ? q.get("q") : "ab", D = Q[key];
+  var $ = function (id) { return document.getElementById(id); };
+  $("chip").textContent = D.chip; $("q").innerHTML = D.q; $("media").innerHTML = D.media;
+  $("ex").innerHTML = key === "ab" ? "" : GOOD;
+  function fit() { Array.prototype.forEach.call(document.querySelectorAll(".sl"), function (s) { s.style.fontSize = s.offsetWidth + "px"; }); }
+  D.opts.forEach(function (o) {
+    var b = document.createElement("button"); b.className = "opt"; b.dataset.v = o[0];
+    b.innerHTML = (key === "ab" ? "<small>Slayd</small>" : "<small>Javob</small>") + o[1];
+    b.onclick = function () { answer(o[0]); }; $("opts").appendChild(b);
+  });
+  var answered = false;
+  function answer(v) {
+    if (answered) return; answered = true;
+    $("opts").classList.add("done");
+    Array.prototype.forEach.call(document.querySelectorAll(".opt"), function (b) {
+      if (b.dataset.v === D.right) b.classList.add("ok"); else if (b.dataset.v === v) b.classList.add("no"); });
+    var ok = v === D.right;
+    $("verdict").textContent = ok ? D.exp.ok : D.exp.no; $("verdict").style.color = ok ? "var(--ok)" : "var(--gold)";
+    $("exp").innerHTML = D.exp.text;
+    $("res").classList.add("on"); $("offer").classList.add("on"); $("skip").style.display = "none";
+    setTimeout(fit, 30); setTimeout(function () { $("res").scrollIntoView({ behavior: "smooth", block: "start" }); }, 80);
+    $("sticky").classList.add("on");
+    if (window.fbq) fbq("trackCustom", "QuizAnswer", { quiz: key, correct: ok });
+  }
+  $("skip").onclick = function (e) { e.preventDefault(); answer("__skip"); };
+  addEventListener("resize", fit); fit();
+
+  // ---- tracking (go/index.html bilan bir xil) ----
+  var P = {};
+  ["campaign_id", "adset_id", "ad_id", "ad_name", "placement", "fbclid"].forEach(function (k) { P[k] = q.get(k) || ""; });
+  P.page_url = location.href.slice(0, 500);
+  try { sessionStorage.setItem("go_params", JSON.stringify(P)); } catch (e) {}
+  function uuid() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0; return (c === "x" ? r : (r & 3 | 8)).toString(16); });
+  }
+  function cookie(name) { var m = document.cookie.match("(?:^|; )" + name + "=([^;]*)"); return m ? decodeURIComponent(m[1]) : ""; }
+  function post(path, body, ms) {
+    if (!C.apiBase) return Promise.reject(new Error("no api"));
+    var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    var t = setTimeout(function () { ctrl && ctrl.abort(); }, ms);
+    return fetch(C.apiBase.replace(/\/$/, "") + path, { method: "POST", headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify(body), signal: ctrl ? ctrl.signal : undefined, keepalive: true })
+      .then(function (r) { clearTimeout(t); return r; });
+  }
+  if (C.pixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq("init", C.pixelId);
+    fbq("track", "PageView", {}, { eventID: uuid() });
+  }
+  post("/api/t/view", P, 3000).catch(function () {});
+  var busy = false;
+  function onGo(ev) {
+    ev.preventDefault();
+    if (busy) return; busy = true;
+    var eventId = uuid();
+    var body = Object.assign({}, P, { fbc: cookie("_fbc"), fbp: cookie("_fbp"), event_id: eventId });
+    if (window.fbq) fbq("trackCustom", "ClickToBot", { ad_id: P.ad_id }, { eventID: eventId });
+    if (window.fbq) fbq("track", "Lead", { content_name: "telegram_bot" }, { eventID: "lead_" + eventId });
+    var done = false;
+    function go(url) {
+      if (done) return; done = true; location.href = url;
+      setTimeout(function () { busy = false; done = false; }, 3000);
+    }
+    setTimeout(function () { go(BOT + "?start=m_noad"); }, 1500);
+    post("/api/t/click", body, 1500).then(function (r) { return r.json(); })
+      .then(function (d) { go(d && d.token ? BOT + "?start=m_" + d.token : BOT + "?start=m_noad"); })
+      .catch(function () { go(BOT + "?start=m_noad"); });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("[data-go]"), function (a) { a.addEventListener("click", onGo); });
+})();
+</script>
+</body>
+</html>
