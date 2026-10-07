@@ -41,6 +41,20 @@
    "emoji": "🎨",
    "desc": "katta rang bloklari, jasur sarlavhalar",
    "dark": false
+  },
+  {
+   "key": "playful",
+   "name": "Bolalar",
+   "emoji": "🧸",
+   "desc": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+   "dark": false
+  },
+  {
+   "key": "sport",
+   "name": "Sport",
+   "emoji": "⚡",
+   "desc": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+   "dark": false
   }
  ],
  "palettes": [
