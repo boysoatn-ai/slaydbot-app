@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tayyor ishlar — Slayd Ol</title>
+<meta name="description" content="Slayd Ol botida yaqinda tayyorlangan taqdimotlar: muqova va eng qiziq sahifalar.">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-f: #f4f5f9; --surface-f: #ffffff; --fg-f: #10131a; --muted-f: #5d6576; --accent-f: #2f6bff; --accent-fg-f: #ffffff;
+    --bg: var(--tg-theme-secondary-bg-color, var(--bg-f));
+    --surface: var(--tg-theme-section-bg-color, var(--tg-theme-bg-color, var(--surface-f)));
+    --fg: var(--tg-theme-text-color, var(--fg-f));
+    --muted: var(--tg-theme-hint-color, var(--muted-f));
+    --accent: var(--tg-theme-button-color, var(--accent-f));
+    --accent-fg: var(--tg-theme-button-text-color, var(--accent-fg-f));
+    --line: color-mix(in srgb, var(--fg) 10%, transparent);
+    --soft: color-mix(in srgb, var(--accent) 12%, var(--surface));
+    --vip: #b7862a; --pro: #7a4cf0;
+    --r: 18px;
+    --ease: cubic-bezier(.16, 1, .3, 1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg-f: #0e1117; --surface-f: #171b23; --fg-f: #eef1f6; --muted-f: #98a1b3; --accent-f: #5b8cff; }
+  }
+  :root[data-theme="dark"] { --bg-f: #0e1117; --surface-f: #171b23; --fg-f: #eef1f6; --muted-f: #98a1b3; --accent-f: #5b8cff; }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); }
+  body { font: 15px/1.45 -apple-system, "SF Pro Text", "Segoe UI", Roboto, system-ui, sans-serif;
+    padding: 0 0 calc(96px + env(safe-area-inset-bottom)); -webkit-font-smoothing: antialiased; }
+  ::selection { background: color-mix(in srgb, var(--accent) 30%, transparent); }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 10px; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 16px; }
+
+  /* ——— Ochilish */
+  .intro { padding: 22px 0 6px; }
+  .brand { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; font-weight: 600; }
+  .brand svg { width: 18px; height: 18px; color: var(--accent); }
+  h1 { font: 800 clamp(26px, 7.4vw, 34px)/1.08 Manrope, system-ui, sans-serif; letter-spacing: -0.025em;
+    margin: 12px 0 10px; text-wrap: balance; }
+  .lead { margin: 0; color: var(--muted); font-size: 15px; max-width: 46ch; text-wrap: pretty; }
+  .proof { margin: 14px 0 0; font-weight: 600; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .proof b { color: var(--accent); }
+  .proof:empty { display: none; }
+
+  .flow { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin: 16px 0 4px; font-size: 13px; color: var(--muted); }
+  .flow span { display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; white-space: nowrap; font-size: 12.5px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--line); color: var(--fg); font-weight: 600; }
+  .flow em { font-style: normal; }
+  .flow svg { width: 14px; height: 14px; color: var(--accent); }
+  .flow i { width: 6px; height: 1px; background: var(--muted); opacity: .5; }
+
+  .privacy { display: flex; gap: 10px; align-items: flex-start; margin: 14px 0 0; padding: 11px 13px;
+    border-radius: 14px; background: var(--soft); font-size: 13px; line-height: 1.4; }
+  .privacy svg { flex: 0 0 18px; width: 18px; height: 18px; color: var(--accent); margin-top: 1px; }
+
+  .filters { display: flex; gap: 6px; margin: 22px 0 12px; overflow-x: auto; scrollbar-width: none; }
+  .filters::-webkit-scrollbar { display: none; }
+  .chip { flex: 0 0 auto; border: 1px solid var(--line); background: var(--surface); padding: 7px 13px;
+    border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .2s var(--ease); }
+  .chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+  /* ——— Ishlar */
+  .feed { display: grid; gap: 18px; }
+  .work { background: var(--surface); border-radius: var(--r); overflow: hidden;
+    box-shadow: 0 1px 2px rgba(10, 14, 25, .05), 0 8px 24px -12px rgba(10, 14, 25, .18);
+    animation: rise .6s var(--ease) both; animation-delay: calc(var(--i, 0) * 60ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); filter: blur(4px); } }
+  @media (prefers-reduced-motion: reduce) { .work { animation: none; } }
+
+  .reel { position: relative; }
+  .track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; background: #0b0d12; }
+  .track::-webkit-scrollbar { display: none; }
+  .track button { flex: 0 0 100%; scroll-snap-align: center; border: 0; padding: 0; background: none; cursor: zoom-in;
+    aspect-ratio: 16 / 9; }
+  .track img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .dots { position: absolute; left: 50%; bottom: 9px; transform: translateX(-50%); display: flex; gap: 5px; padding: 5px 7px;
+    border-radius: 10px; background: rgba(8, 10, 16, .45); pointer-events: none; }
+  .dots i { width: 6px; height: 6px; border-radius: 6px; background: rgba(255,255,255,.55); transition: width .3s var(--ease), background .3s; }
+  .dots i.on { width: 16px; background: #fff; }
+  .label { position: absolute; top: 9px; right: 9px; padding: 3px 8px; border-radius: 8px; font-size: 11px; font-weight: 700;
+    color: #fff; background: rgba(8, 10, 16, .62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); pointer-events: none; }
+
+  .body { padding: 13px 15px 15px; }
+  .topic { font: 700 17px/1.28 Manrope, system-ui, sans-serif; letter-spacing: -0.01em; margin: 0 0 8px; text-wrap: balance; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 12px; color: var(--muted); font-size: 13px; align-items: center; }
+  .meta .tier { font-weight: 700; color: var(--fg); }
+  .meta .tier.pro { color: var(--pro); }
+  .meta .tier.vip { color: var(--vip); }
+  .meta .liked { display: inline-flex; align-items: center; gap: 4px; color: #1f9d55; font-weight: 600; }
+  .meta .liked svg { width: 14px; height: 14px; }
+  .same { margin-top: 12px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;
+    padding: 11px 14px; border-radius: 12px; border: 0; background: var(--soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; cursor: pointer; transition: transform .15s var(--ease), background .2s; }
+  .same:active { transform: scale(.98); }
+  .same svg { width: 16px; height: 16px; }
+
+  /* ——— Bo'sh / yuklanmoqda / xato */
+  .state { text-align: center; padding: 34px 18px; background: var(--surface); border-radius: var(--r); }
+  .state h2 { font: 700 18px/1.3 Manrope, system-ui, sans-serif; margin: 10px 0 6px; }
+  .state p { margin: 0; color: var(--muted); font-size: 14px; }
+  .state svg { width: 40px; height: 40px; color: var(--accent); }
+  .skel { height: 300px; border-radius: var(--r); background: linear-gradient(100deg, var(--surface) 30%, var(--soft) 50%, var(--surface) 70%);
+    background-size: 300% 100%; animation: shimmer 1.4s linear infinite; }
+  @keyframes shimmer { to { background-position: -150% 0; } }
+
+  .more { text-align: center; color: var(--muted); font-size: 13px; margin: 22px 0 0; }
+
+  /* ——— Pastki tugmalar (Telegram tugmalari bo'lmasa) */
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--line); }
+  .bar .wrap { display: flex; gap: 8px; padding: 0; }
+  .bar button { flex: 1; border: 0; border-radius: 13px; padding: 13px 10px; font-weight: 700; font-size: 14.5px; cursor: pointer;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar .main { background: var(--accent); color: var(--accent-fg); flex: 1.25; }
+  .bar .alt { background: var(--surface); border: 1px solid var(--line); }
+  body.native .bar { display: none; }
+  body.native { padding-bottom: 24px; }
+
+  /* ——— Ko'ruvchi */
+  .viewer { position: fixed; inset: 0; z-index: 20; background: rgba(5, 6, 10, .94); display: grid; place-items: center;
+    opacity: 0; pointer-events: none; transition: opacity .25s var(--ease); }
+  .viewer.open { opacity: 1; pointer-events: auto; }
+  .viewer img { max-width: 100vw; max-height: 86vh; object-fit: contain; border-radius: 6px;
+    transform: scale(.96); transition: transform .35s var(--ease); }
+  .viewer.open img { transform: none; }
+  .viewer .x { position: absolute; top: calc(12px + env(safe-area-inset-top)); right: 12px; width: 40px; height: 40px;
+    border-radius: 20px; border: 0; background: rgba(255,255,255,.14); color: #fff; display: grid; place-items: center; cursor: pointer; }
+  .viewer .x svg { width: 20px; height: 20px; }
+  .viewer .cap { position: absolute; bottom: calc(18px + env(safe-area-inset-bottom)); left: 16px; right: 16px; text-align: center;
+    color: rgba(255,255,255,.8); font-size: 13px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-slides" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 15l2 2 4-4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+</svg>
+
+<main class="wrap">
+  <section class="intro">
+    <div class="brand"><svg><use href="#i-slides"/></svg><span>Slayd Ol</span></div>
+    <h1 id="h1">Talabalar uchun tayyorlangan so‘nggi taqdimotlar</h1>
+    <p class="lead" id="lead">Har bir ishdan muqova va eng qiziq 2 ta sahifa. Yoqqan dizaynni tanlang — sizga ham xuddi shunday tayyorlab beramiz.</p>
+    <p class="proof" id="proof"></p>
+    <div class="flow" aria-label="">
+      <span><svg><use href="#i-edit"/></svg><em id="f1">Mavzu yozasiz</em></span>
+      <span><svg><use href="#i-clock"/></svg><em id="f2">3–5 daqiqa</em></span>
+      <span><svg><use href="#i-file"/></svg><em id="f3">PPTX + PDF</em></span>
+    </div>
+    <p class="privacy"><svg><use href="#i-lock"/></svg><span id="privacy">Maxfiylik: ismlar, o‘qituvchi, guruh va boshqa shaxsiy ma’lumotlar olib tashlangan. Faqat mavzu bo‘yicha tayyorlangan ishlar ko‘rsatiladi.</span></p>
+  </section>
+
+  <div class="filters" id="filters" role="group"></div>
+  <section class="feed" id="feed" aria-live="polite">
+    <div class="skel"></div><div class="skel"></div>
+  </section>
+  <p class="more" id="more"></p>
+</main>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <button class="main" id="ctaMain" type="button">Menga ham taqdimot</button>
+    <button class="alt" id="ctaAlt" type="button">HEMIS topshirig‘i</button>
+  </div>
+</div>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="">
+  <button class="x" id="vx" type="button" aria-label="Yopish"><svg><use href="#i-x"/></svg></button>
+  <img id="vimg" alt="">
+  <div class="cap" id="vcap"></div>
+</div>
+
+<script>
+(() => {
+  const W = window.Telegram && window.Telegram.WebApp;
+  const tg = W && W.platform && W.platform !== 'unknown' ? W : null;      // brauzerda ochilsa — oddiy sahifa
+  const BOT = new URLSearchParams(location.search).get('bot') || 'slaydol_bot';
+  const ru = ((tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) || navigator.language || '')
+    .toLowerCase().startsWith('ru');
+  const L = ru ? {
+    h1: 'Последние презентации, сделанные для студентов',
+    lead: 'Из каждой работы — обложка и 2 самые интересные страницы. Понравился дизайн — сделаем вам так же.',
+    f1: 'Пишете тему', f2: '3–5 минут', f3: 'PPTX + PDF',
+    privacy: 'Конфиденциальность: имена, преподаватель, группа и другие личные данные удалены. Показываются только работы, сделанные по теме.',
+    main: 'Хочу такую же', alt: 'Задание HEMIS', same: 'Хочу в этом дизайне',
+    all: 'Все', std: 'Стандарт', pro: 'Премиум', vip: 'VIP',
+    slides: n => `${n} слайдов`, liked: 'Понравилось',
+    ago: d => d <= 0 ? 'сегодня' : d === 1 ? 'вчера' : `${d} дн. назад`,
+    proof: s => [s.week >= 20 && `За неделю — <b>${fmt(s.week)}</b> работ`, s.like_rate >= 70 && `<b>${s.like_rate}%</b> оценок положительные`].filter(Boolean).join(' · '),
+    emptyH: 'Первые работы скоро появятся', emptyP: 'Мы показываем только работы с хорошей оценкой и без личных данных. Загляните чуть позже — или закажите свою.',
+    errH: 'Не удалось загрузить', errP: 'Проверьте интернет и откройте снова.',
+    more: 'Показаны последние работы. Подборка обновляется каждые 3 часа.',
+    shown: (i, n) => `${i} / ${n}`, cover: 'Обложка', page: 'Страница', close: 'Закрыть',
+  } : {
+    h1: 'Talabalar uchun tayyorlangan so‘nggi taqdimotlar',
+    lead: 'Har bir ishdan muqova va eng qiziq 2 ta sahifa. Yoqqan dizaynni tanlang — sizga ham xuddi shunday tayyorlab beramiz.',
+    f1: 'Mavzu yozasiz', f2: '3–5 daqiqa', f3: 'PPTX + PDF',
+    privacy: 'Maxfiylik: ismlar, o‘qituvchi, guruh va boshqa shaxsiy ma’lumotlar olib tashlangan. Faqat mavzu bo‘yicha tayyorlangan ishlar ko‘rsatiladi.',
+    main: 'Menga ham taqdimot', alt: 'HEMIS topshirig‘i', same: 'Shu dizaynda tayyorlash',
+    all: 'Hammasi', std: 'Standart', pro: 'Premium', vip: 'VIP',
+    slides: n => `${n} slayd`, liked: 'Yoqdi',
+    ago: d => d <= 0 ? 'bugun' : d === 1 ? 'kecha' : `${d} kun oldin`,
+    proof: s => [s.week >= 20 && `Shu haftada <b>${fmt(s.week)}</b> ta ish tayyorlandi`, s.like_rate >= 70 && `<b>${s.like_rate}%</b> baho ijobiy`].filter(Boolean).join(' · '),
+    emptyH: 'Birinchi ishlar tez orada shu yerda', emptyP: 'Bu yerda faqat yaxshi baho olgan va shaxsiy ma’lumotsiz ishlar chiqadi. Birozdan keyin qarang — yoki o‘zingiznikini buyurtma qiling.',
+    errH: 'Yuklab bo‘lmadi', errP: 'Internetni tekshirib, qayta oching.',
+    more: 'Oxirgi ishlar ko‘rsatilgan. Ro‘yxat har 3 soatda yangilanadi.',
+    shown: (i, n) => `${i} / ${n}`, cover: 'Muqova', page: 'Sahifa', close: 'Yopish',
+  };
+  const $ = id => document.getElementById(id);
+  const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  document.documentElement.lang = ru ? 'ru' : 'uz';
+  for (const k of ['h1', 'lead', 'f1', 'f2', 'f3', 'privacy']) $(k).textContent = L[k];
+  $('ctaMain').textContent = L.main; $('ctaAlt').textContent = L.alt; $('vx').setAttribute('aria-label', L.close);
+
+  // ——— Botga qaytish (sotuv): klaviatura tugmasidan ochilgan bo'lsa sendData, aks holda havola
+  function send(payload) {
+    try { tg && tg.HapticFeedback && tg.HapticFeedback.impactOccurred('medium'); } catch (e) {}
+    if (tg && !tg.initData) { try { tg.sendData(JSON.stringify(payload)); return; } catch (e) {} }
+    const start = payload.a === 'hemis' ? 'hemis' : 'gallery';
+    const url = `https://t.me/${BOT}?start=${start}`;
+    if (tg && tg.openTelegramLink) { tg.openTelegramLink(url); setTimeout(() => tg.close(), 300); }
+    else location.href = url;
+  }
+  const goPpt = () => send({ a: 'ppt' });
+  const goHemis = () => send({ a: 'hemis' });
+  $('ctaMain').onclick = goPpt; $('ctaAlt').onclick = goHemis;
+
+  if (tg) {
+    tg.ready(); tg.expand();
+    try { tg.setHeaderColor('secondary_bg_color'); tg.setBackgroundColor('secondary_bg_color'); } catch (e) {}
+    if (tg.MainButton) {
+      tg.MainButton.setParams({ text: L.main, is_visible: true });
+      tg.MainButton.onClick(goPpt);
+      document.body.classList.add('native');
+      if (tg.SecondaryButton && tg.isVersionAtLeast && tg.isVersionAtLeast('7.10')) {
+        tg.SecondaryButton.setParams({ text: L.alt, is_visible: true, position: 'left' });
+        tg.SecondaryButton.onClick(goHemis);
+      } else {
+        document.body.classList.remove('native');                 // eski Telegram: HEMIS — sahifadagi tugmada
+        $('ctaMain').style.display = 'none';
+      }
+    }
+  }
+
+  // ——— Ma'lumot
+  let data = { items: [], stats: {} }, filter = 'all';
+  const day = Math.floor(Date.now() / 86400000);
+
+  function renderFilters() {
+    const tiers = [...new Set(data.items.map(x => x.tier))];
+    if (tiers.length < 2) { $('filters').innerHTML = ''; return; }
+    const keys = ['all', ...['std', 'pro', 'vip'].filter(t => tiers.includes(t))];
+    $('filters').innerHTML = keys.map(k => `<button class="chip" type="button" data-k="${k}" aria-pressed="${k === filter}">${L[k]}</button>`).join('');
+    $('filters').querySelectorAll('.chip').forEach(b => b.onclick = () => { filter = b.dataset.k; renderFilters(); renderFeed(); });
+  }
+
+  function card(x, i) {
+    const pics = (x.images || []).slice(0, 3);
+    const ago = L.ago(day - Math.floor((x.day || 0) / 86400));
+    return `<article class="work" style="--i:${Math.min(i, 6)}">
+      <div class="reel">
+        <div class="track" data-n="${pics.length}">
+          ${pics.map((src, j) => `<button type="button" data-src="${esc(src)}" data-j="${j}" aria-label="${j ? L.page + ' ' + j : L.cover}">
+            <img src="${esc(src)}" alt="${esc(x.topic)} — ${j ? L.page + ' ' + j : L.cover}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" width="800" height="450"></button>`).join('')}
+        </div>
+        <span class="label">${L.shown(1, pics.length)}</span>
+        <div class="dots">${pics.map((_, j) => `<i class="${j ? '' : 'on'}"></i>`).join('')}</div>
+      </div>
+      <div class="body">
+        <h2 class="topic">${esc(x.topic)}</h2>
+        <div class="meta">
+          <span class="tier ${esc(x.tier)}">${L[x.tier] || ''}</span>
+          <span>${L.slides(x.slides)}</span>
+          ${x.theme_label ? `<span>${esc(x.theme_label)}</span>` : ''}
+          <span>${ago}</span>
+          ${x.liked ? `<span class="liked"><svg><use href="#i-heart"/></svg>${L.liked}</span>` : ''}
+        </div>
+        <button class="same" type="button" data-theme="${esc(x.theme || '')}">${L.same}<svg><use href="#i-arrow"/></svg></button>
+      </div>
+    </article>`;
+  }
+
+  function renderFeed() {
+    const list = data.items.filter(x => filter === 'all' || x.tier === filter);
+    if (!list.length) {
+      $('feed').innerHTML = `<div class="state"><svg><use href="#i-slides"/></svg><h2>${L.emptyH}</h2><p>${L.emptyP}</p></div>`;
+      $('more').textContent = '';
+      return;
+    }
+    $('feed').innerHTML = list.map(card).join('');
+    $('more').textContent = L.more;
+    $('feed').querySelectorAll('.work').forEach((el, k) => {
+      const track = el.querySelector('.track'), dots = el.querySelectorAll('.dots i'), label = el.querySelector('.label');
+      const n = +track.dataset.n;
+      track.addEventListener('scroll', () => {
+        const j = Math.round(track.scrollLeft / track.clientWidth);
+        dots.forEach((d, q) => d.classList.toggle('on', q === j));
+        label.textContent = L.shown(j + 1, n);
+      }, { passive: true });
+      track.querySelectorAll('button').forEach(b => b.onclick = () => openViewer(b.dataset.src, list[k].topic));
+      el.querySelector('.same').onclick = e => send({ a: 'gallery', theme: e.currentTarget.dataset.theme });
+    });
+  }
+
+  // ——— Ko'ruvchi (rasmni kattalashtirish)
+  const viewer = $('viewer');
+  function openViewer(src, cap) {
+    $('vimg').src = src; $('vimg').alt = cap; $('vcap').textContent = cap;
+    viewer.classList.add('open');
+    if (tg && tg.BackButton) { tg.BackButton.show(); }
+  }
+  function closeViewer() { viewer.classList.remove('open'); if (tg && tg.BackButton) tg.BackButton.hide(); }
+  viewer.onclick = e => { if (e.target !== $('vimg')) closeViewer(); };
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeViewer(); });
+  if (tg && tg.BackButton) tg.BackButton.onClick(closeViewer);
+
+  fetch('data.json?t=' + Math.floor(Date.now() / 600000), { cache: 'no-cache' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(d => {
+      data = { items: Array.isArray(d.items) ? d.items : [], stats: d.stats || {} };
+      $('proof').innerHTML = L.proof(data.stats);
+      renderFilters(); renderFeed();
+    })
+    .catch(() => {
+      $('feed').innerHTML = `<div class="state"><svg><use href="#i-slides"/></svg><h2>${L.errH}</h2><p>${L.errP}</p></div>`;
+    });
+})();
+</script>
+</body>
+</html>
