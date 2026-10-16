@@ -136,6 +136,9 @@
   .viewer .x svg { width: 20px; height: 20px; }
   .viewer .cap { position: absolute; bottom: calc(18px + env(safe-area-inset-bottom)); left: 16px; right: 16px; text-align: center;
     color: rgba(255,255,255,.8); font-size: 13px; }
+  /* Rasmni saqlab olishdan himoya: uzoq bosish menyusi, sudrab olib tashlash va belgilash o'chiq */
+  img { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+  .reel, .viewer { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
 </style>
 </head>
 <body>
@@ -318,6 +321,10 @@
   }
 
   // ——— Ko'ruvchi (rasmni kattalashtirish)
+  // Rasmni saqlab bo'lmasin: kontekst menyu (o'ng tugma / uzoq bosish) va sudrash bloklanadi
+  ['contextmenu', 'dragstart', 'selectstart'].forEach(ev => document.addEventListener(ev, e => {
+    if (e.target.closest && e.target.closest('.reel, .viewer, img')) e.preventDefault();
+  }));
   const viewer = $('viewer');
   function openViewer(src, cap) {
     $('vimg').src = src; $('vimg').alt = cap; $('vcap').textContent = cap;
