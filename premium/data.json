@@ -1,0 +1,461 @@
+{
+ "cats": [
+  {
+   "key": "classic",
+   "uz": "Klassik",
+   "ru": "Классика"
+  },
+  {
+   "key": "minimal",
+   "uz": "Minimal",
+   "ru": "Минимал"
+  },
+  {
+   "key": "photo",
+   "uz": "Fotoli",
+   "ru": "Фото"
+  },
+  {
+   "key": "creative",
+   "uz": "Kreativ",
+   "ru": "Креатив"
+  },
+  {
+   "key": "data",
+   "uz": "Raqamli",
+   "ru": "Данные"
+  },
+  {
+   "key": "soft",
+   "uz": "Yumshoq",
+   "ru": "Мягкие"
+  }
+ ],
+ "items": [
+  {
+   "key": "pro-royal",
+   "slug": "royal",
+   "num": 1,
+   "name": "Royal Classic",
+   "cat": "classic",
+   "desc": {
+    "uz": "klassik serif, oltin chiziqlar, katta tarixiy rasm",
+    "ru": "классический serif, золотые линии, большое историческое фото"
+   },
+   "fits": {
+    "uz": "tarix, adabiyot, madaniyat, yetakchilik",
+    "ru": "история, литература, культура"
+   },
+   "c1": "#10151D",
+   "c2": "#D6A955"
+  },
+  {
+   "key": "pro-minimal",
+   "slug": "minimal",
+   "num": 2,
+   "name": "Modern Minimal",
+   "cat": "minimal",
+   "desc": {
+    "uz": "keng bo‘sh joy, toza grid, sodda shrift",
+    "ru": "много воздуха, чистая сетка, простой шрифт"
+   },
+   "fits": {
+    "uz": "biznes, ta’lim, ilm-fan, hisobot",
+    "ru": "бизнес, образование, наука, отчёты"
+   },
+   "c1": "#F7F8FA",
+   "c2": "#2563EB"
+  },
+  {
+   "key": "pro-nature",
+   "slug": "nature",
+   "num": 3,
+   "name": "Nature Elegant",
+   "cat": "photo",
+   "desc": {
+    "uz": "tabiiy fotosurat, organik shakllar, yashil ohang",
+    "ru": "природные фото, органичные формы, зелёные тона"
+   },
+   "fits": {
+    "uz": "biologiya, ekologiya, geografiya, qishloq xo‘jaligi",
+    "ru": "биология, экология, география"
+   },
+   "c1": "#F3F6EC",
+   "c2": "#3F7A3A"
+  },
+  {
+   "key": "pro-tech",
+   "slug": "tech",
+   "num": 4,
+   "name": "Tech Future",
+   "cat": "creative",
+   "desc": {
+    "uz": "raqamli vizual, neon gradient, shisha kartalar",
+    "ru": "цифровые визуалы, неоновый градиент, стеклянные карточки"
+   },
+   "fits": {
+    "uz": "IT, sun’iy intellekt, muhandislik, innovatsiya",
+    "ru": "IT, ИИ, инженерия, инновации"
+   },
+   "c1": "#0B1026",
+   "c2": "#A78BFA"
+  },
+  {
+   "key": "pro-islamic",
+   "slug": "islamic",
+   "num": 5,
+   "name": "Islamic Geometric",
+   "cat": "classic",
+   "desc": {
+    "uz": "girih naqshi, ravoq shakllari, firuza va oltin",
+    "ru": "орнамент гирих, арки, бирюза и золото"
+   },
+   "fits": {
+    "uz": "me’morchilik, milliy meros, tarix, amaliy san’at",
+    "ru": "архитектура, наследие, история, ремёсла"
+   },
+   "c1": "#F5EEDC",
+   "c2": "#0E5B50"
+  },
+  {
+   "key": "pro-infographic",
+   "slug": "infographic",
+   "num": 6,
+   "name": "Infographic Modern",
+   "cat": "data",
+   "desc": {
+    "uz": "raqamlar, timeline, diagramma, ko‘rsatkich paneli",
+    "ru": "цифры, хронология, панель показателей"
+   },
+   "fits": {
+    "uz": "statistika, iqtisod, tadqiqot, xronologiya",
+    "ru": "статистика, экономика, исследования"
+   },
+   "c1": "#0B1F33",
+   "c2": "#F0B44D"
+  },
+  {
+   "key": "pro-card",
+   "slug": "card",
+   "num": 7,
+   "name": "Card Style",
+   "cat": "minimal",
+   "desc": {
+    "uz": "modul kartalar, ikonkalar, aniq grid",
+    "ru": "модульные карточки, иконки, чёткая сетка"
+   },
+   "fits": {
+    "uz": "asosiy fikrlar, taqqoslash, bosqichlar, ta’lim",
+    "ru": "ключевые идеи, сравнение, этапы"
+   },
+   "c1": "#F7F2E8",
+   "c2": "#B9802F"
+  },
+  {
+   "key": "pro-artistic",
+   "slug": "artistic",
+   "num": 8,
+   "name": "Artistic Clean",
+   "cat": "creative",
+   "desc": {
+    "uz": "editorial kompozitsiya, bo‘yoq dog‘lari, katta tasvir",
+    "ru": "редакционная композиция, пятна краски, крупное изображение"
+   },
+   "fits": {
+    "uz": "san’at, adabiyot, kreativ loyiha, madaniyat",
+    "ru": "искусство, литература, творчество"
+   },
+   "c1": "#F8F6F1",
+   "c2": "#1E67A8"
+  },
+  {
+   "key": "pro-luxury",
+   "slug": "luxury",
+   "num": 9,
+   "name": "Luxury Dark",
+   "cat": "photo",
+   "desc": {
+    "uz": "kino darajasidagi foto, dramatik yorug‘lik, chuqur fon",
+    "ru": "кинематографичное фото, драматичный свет, глубокий фон"
+   },
+   "fits": {
+    "uz": "sayohat, geografiya, strategiya, tarix",
+    "ru": "путешествия, география, история"
+   },
+   "c1": "#071A36",
+   "c2": "#E8D2A0"
+  },
+  {
+   "key": "pro-glass",
+   "slug": "glass",
+   "num": 10,
+   "name": "Glass Modern",
+   "cat": "soft",
+   "desc": {
+    "uz": "yarim shaffof kartalar, qatlamli gradient, nozik chegara",
+    "ru": "полупрозрачные карточки, слоистый градиент"
+   },
+   "fits": {
+    "uz": "texnologiya, tibbiyot, ilm-fan, raqamli mahsulot",
+    "ru": "технологии, медицина, наука"
+   },
+   "c1": "#12182E",
+   "c2": "#7DD3FC"
+  },
+  {
+   "key": "pro-bento",
+   "slug": "bento",
+   "num": 11,
+   "name": "Bento Editorial",
+   "cat": "data",
+   "desc": {
+    "uz": "turli o‘lchamdagi kartalar, bitta katta vizual",
+    "ru": "карточки разного размера и одно большое фото"
+   },
+   "fits": {
+    "uz": "ta’lim, talaba hayoti, tushuntiruvchi taqdimot",
+    "ru": "образование, студенческая жизнь"
+   },
+   "c1": "#F6F1E8",
+   "c2": "#2F5FC8"
+  },
+  {
+   "key": "pro-type",
+   "slug": "type",
+   "num": 12,
+   "name": "Type as Hero",
+   "cat": "creative",
+   "desc": {
+    "uz": "juda katta tipografika, bitta asosiy fikr",
+    "ru": "очень крупная типографика, одна главная мысль"
+   },
+   "fits": {
+    "uz": "iqlim, ijtimoiy muammo, kampaniya, nutq",
+    "ru": "климат, социальные темы, выступления"
+   },
+   "c1": "#F5F3EE",
+   "c2": "#E0401C"
+  },
+  {
+   "key": "pro-brutal",
+   "slug": "brutal",
+   "num": 13,
+   "name": "Neo-Brutalist",
+   "cat": "creative",
+   "desc": {
+    "uz": "qalin chegara, keskin rang maydoni, grafik stiker",
+    "ru": "толстые рамки, яркие плашки, графичные стикеры"
+   },
+   "fits": {
+    "uz": "raqamli madaniyat, yoshlar, marketing, innovatsiya",
+    "ru": "цифровая культура, молодёжь, маркетинг"
+   },
+   "c1": "#FFFDF2",
+   "c2": "#101010"
+  },
+  {
+   "key": "pro-cinematic",
+   "slug": "cinematic",
+   "num": 14,
+   "name": "Cinematic Full-Bleed",
+   "cat": "photo",
+   "desc": {
+    "uz": "butun slayd foto, qorong‘i overlay, qisqa matn",
+    "ru": "фото на весь слайд, тёмный оверлей, короткий текст"
+   },
+   "fits": {
+    "uz": "geografiya, sayohat, tabiat, tarixiy joylar",
+    "ru": "география, путешествия, природа"
+   },
+   "c1": "#101820",
+   "c2": "#E9B949"
+  },
+  {
+   "key": "pro-zine",
+   "slug": "zine",
+   "num": 15,
+   "name": "Zine Collage",
+   "cat": "creative",
+   "desc": {
+    "uz": "qog‘oz qirqimlari, foto kollaj, tekstura",
+    "ru": "бумажные вырезки, фотоколлаж, текстура"
+   },
+   "fits": {
+    "uz": "san’at tarixi, madaniyat, ijod, adabiyot",
+    "ru": "история искусства, культура, литература"
+   },
+   "c1": "#F3E9D8",
+   "c2": "#C8402B"
+  },
+  {
+   "key": "pro-soft3d",
+   "slug": "soft3d",
+   "num": 16,
+   "name": "Soft 3D Objects",
+   "cat": "soft",
+   "desc": {
+    "uz": "yumshoq 3D shakllar, silliq soyalar, pastel ranglar",
+    "ru": "мягкие 3D-формы, плавные тени, пастель"
+   },
+   "fits": {
+    "uz": "biologiya, kimyo, maktab fanlari, texnologiya",
+    "ru": "биология, химия, школьные предметы"
+   },
+   "c1": "#F5F7FC",
+   "c2": "#5B53D6"
+  },
+  {
+   "key": "pro-data",
+   "slug": "data",
+   "num": 17,
+   "name": "Data Storytelling",
+   "cat": "data",
+   "desc": {
+    "uz": "bitta asosiy topilma, katta raqam, sodda diagramma",
+    "ru": "одна главная находка, крупная цифра, простая диаграмма"
+   },
+   "fits": {
+    "uz": "iqtisod, tadqiqot, biznes, statistika",
+    "ru": "экономика, исследования, бизнес"
+   },
+   "c1": "#081B2B",
+   "c2": "#F3B54A"
+  },
+  {
+   "key": "pro-warm",
+   "slug": "warm",
+   "num": 18,
+   "name": "Warm Tactile Editorial",
+   "cat": "classic",
+   "desc": {
+    "uz": "iliq qog‘oz teksturasi, nafis serif, haqiqiy foto",
+    "ru": "тёплая бумажная текстура, изящный serif, живое фото"
+   },
+   "fits": {
+    "uz": "adabiyot, tarix, hunarmandchilik, inson hikoyalari",
+    "ru": "литература, история, ремёсла"
+   },
+   "c1": "#F0E5D2",
+   "c2": "#7C452B"
+  },
+  {
+   "key": "pro-mono",
+   "slug": "mono",
+   "num": 19,
+   "name": "Monochrome Geometric",
+   "cat": "minimal",
+   "desc": {
+    "uz": "oq-qora foto, geometrik chiziqlar, kuchli kontrast",
+    "ru": "чёрно-белое фото, геометрия, сильный контраст"
+   },
+   "fits": {
+    "uz": "me’morchilik, dizayn, falsafa, muhandislik",
+    "ru": "архитектура, дизайн, философия"
+   },
+   "c1": "#FFFFFF",
+   "c2": "#111111"
+  },
+  {
+   "key": "pro-teal",
+   "slug": "teal",
+   "num": 20,
+   "name": "Restorative Teal",
+   "cat": "soft",
+   "desc": {
+    "uz": "sokin teal, organik shakllar, keng bo‘sh joy",
+    "ru": "спокойный бирюзовый, органичные формы"
+   },
+   "fits": {
+    "uz": "sog‘lom turmush, ta’lim, farovonlik, ekologiya",
+    "ru": "здоровье, образование, экология"
+   },
+   "c1": "#E8F3EF",
+   "c2": "#2E7D70"
+  },
+  {
+   "key": "pro-meros-ivory",
+   "slug": "meros-ivory",
+   "num": 21,
+   "name": "Meros · Ivory & Gold",
+   "cat": "classic",
+   "desc": {
+    "uz": "fil suyagi va oltin, nozik girih naqshi",
+    "ru": "слоновая кость и золото, тонкий орнамент"
+   },
+   "fits": {
+    "uz": "tarix, adabiyot, madaniyat",
+    "ru": "история, литература, культура"
+   },
+   "c1": "#F7F1E6",
+   "c2": "#8E6A2C"
+  },
+  {
+   "key": "pro-meros-midnight",
+   "slug": "meros-midnight",
+   "num": 22,
+   "name": "Meros · Midnight Blue",
+   "cat": "classic",
+   "desc": {
+    "uz": "tungi ko‘k va oltin, naqshli fon",
+    "ru": "ночной синий и золото, узорный фон"
+   },
+   "fits": {
+    "uz": "tarix, yetakchilik, davlatchilik",
+    "ru": "история, государственность"
+   },
+   "c1": "#0A1730",
+   "c2": "#E2B85E"
+  },
+  {
+   "key": "pro-meros-emerald",
+   "slug": "meros-emerald",
+   "num": 23,
+   "name": "Meros · Emerald",
+   "cat": "classic",
+   "desc": {
+    "uz": "zumrad va oltin, sharqona naqsh",
+    "ru": "изумруд и золото, восточный орнамент"
+   },
+   "fits": {
+    "uz": "me’morchilik, ekologiya, madaniy meros",
+    "ru": "архитектура, экология, наследие"
+   },
+   "c1": "#0A3A33",
+   "c2": "#E3C47D"
+  },
+  {
+   "key": "pro-meros-bronze",
+   "slug": "meros-bronze",
+   "num": 24,
+   "name": "Meros · Black & Bronze",
+   "cat": "classic",
+   "desc": {
+    "uz": "qora va bronza, dramatik yorug‘lik",
+    "ru": "чёрный и бронза, драматичный свет"
+   },
+   "fits": {
+    "uz": "tarix, san’at, an’analar",
+    "ru": "история, искусство, традиции"
+   },
+   "c1": "#0D0A07",
+   "c2": "#DDA645"
+  },
+  {
+   "key": "pro-meros-lavender",
+   "slug": "meros-lavender",
+   "num": 25,
+   "name": "Meros · Lavender Sunset",
+   "cat": "soft",
+   "desc": {
+    "uz": "lavanda va shaftoli, yumshoq naqsh",
+    "ru": "лаванда и персик, мягкий орнамент"
+   },
+   "fits": {
+    "uz": "til, adabiyot, san’at, ta’lim",
+    "ru": "языки, литература, искусство"
+   },
+   "c1": "#EEE2F3",
+   "c2": "#6A3AA3"
+  }
+ ]
+}
