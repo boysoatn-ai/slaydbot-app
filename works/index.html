@@ -332,7 +332,16 @@
   fetch('data.json?t=' + Math.floor(Date.now() / 600000), { cache: 'no-cache' })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(d => {
-      data = { items: Array.isArray(d.items) ? d.items : [], stats: d.stats || {} };
+      let items = Array.isArray(d.items) ? d.items : [];
+      // Har ochilishda boshqa ishlar tepada — ro'yxat navbatma-navbat aylanadi (hammasi baribir ko'rinadi)
+      if (items.length > 3) {
+        let off;
+        try { off = +(localStorage.getItem('gal_off') || 0); localStorage.setItem('gal_off', String(off + 3)); }
+        catch (e) { off = Math.floor(Math.random() * items.length); }
+        off = off % items.length;
+        items = items.slice(off).concat(items.slice(0, off));
+      }
+      data = { items, stats: d.stats || {} };
       $('proof').innerHTML = L.proof(data.stats);
       renderFilters(); renderFeed();
     })
