@@ -671,6 +671,60 @@
    "c1": "#0A0F14",
    "c2": "#48C7E8",
    "std": true
+  },
+  {
+   "key": "pro-burgundy-editorial",
+   "slug": "burgundy-editorial",
+   "num": 36,
+   "name": "Burgundy Editorial",
+   "cat": "classic",
+   "desc": {
+    "uz": "jurnal kompozitsiyasi, nafis serif, fil suyagi qog‘oz va vino rangi",
+    "ru": "журнальная композиция, изящный serif, бумага цвета слоновой кости и бордо"
+   },
+   "fits": {
+    "uz": "adabiyot, tarix, madaniyat, moda, universitet",
+    "ru": "литература, история, культура, мода, университет"
+   },
+   "c1": "#F7F1E8",
+   "c2": "#8E2A4E",
+   "std": false
+  },
+  {
+   "key": "pro-burgundy-gold",
+   "slug": "burgundy-gold",
+   "num": 37,
+   "name": "Burgundy Gold Luxe",
+   "cat": "photo",
+   "desc": {
+    "uz": "chuqur vino fon, nozik oltin ramka va metallik aksent",
+    "ru": "глубокий винный фон, тонкая золотая рамка, металлический акцент"
+   },
+   "fits": {
+    "uz": "biznes, investitsiya, brend, tadbir, premium mahsulot",
+    "ru": "бизнес, инвестиции, бренд, мероприятия, премиум-продукт"
+   },
+   "c1": "#3E0D1F",
+   "c2": "#E2C482",
+   "std": false
+  },
+  {
+   "key": "pro-burgundy-modern",
+   "slug": "burgundy-modern",
+   "num": 38,
+   "name": "Burgundy Modern Classic",
+   "cat": "minimal",
+   "desc": {
+    "uz": "tartibli grid, katta raqamlar, och panellar va vino aksent",
+    "ru": "строгая сетка, крупные цифры, светлые панели и винный акцент"
+   },
+   "fits": {
+    "uz": "ta’lim, psixologiya, sog‘liq, biznes hisoboti",
+    "ru": "образование, психология, здоровье, бизнес-отчёты"
+   },
+   "c1": "#FAF7F3",
+   "c2": "#7A263A",
+   "std": false
   }
  ]
 }
