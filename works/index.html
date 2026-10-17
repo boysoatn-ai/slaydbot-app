@@ -6,6 +6,7 @@
 <title>Oxirgi tayyorlangan ishlar — Slayd Ol</title>
 <meta name="description" content="Slayd Ol botida yaqinda tayyorlangan taqdimotlar: muqova va eng qiziq sahifalar.">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="../go/config.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -95,10 +96,29 @@
   .meta .tier.vip { color: var(--vip); }
   .meta .liked { display: inline-flex; align-items: center; gap: 4px; color: #1f9d55; font-weight: 600; }
   .meta .liked svg { width: 14px; height: 14px; }
-  .same { margin-top: 12px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;
+  .acts { display: flex; gap: 8px; margin-top: 12px; }
+  .like { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 7px; padding: 11px 14px; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--fg); font-weight: 700; font-size: 14px;
+    cursor: pointer; font-variant-numeric: tabular-nums; transition: transform .15s var(--ease), background .2s, color .2s; }
+  .like svg { width: 17px; height: 17px; color: #e5484d; fill: none; stroke: currentColor; stroke-width: 2; transition: transform .25s var(--ease); }
+  .like[aria-pressed="true"] { background: color-mix(in srgb, #e5484d 12%, var(--surface)); border-color: color-mix(in srgb, #e5484d 35%, transparent); }
+  .like[aria-pressed="true"] svg { fill: currentColor; transform: scale(1.12); }
+  .like:active { transform: scale(.96); }
+  .like[disabled] { opacity: .55; cursor: default; }
+  .same { flex: 1; min-width: 0; display: flex; justify-content: center; align-items: center; gap: 8px;
     padding: 11px 14px; border-radius: 12px; border: 0; background: var(--soft); color: var(--accent);
     font-weight: 700; font-size: 14px; cursor: pointer; transition: transform .15s var(--ease), background .2s; }
   .same:active { transform: scale(.98); }
+  /* Kompyuterda — keng ekran: 2–3 ustun */
+  @media (min-width: 760px) {
+    .wrap { max-width: 1240px; padding: 0 28px; }
+    .intro { max-width: 760px; }
+    .feed { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 22px; }
+    .bar .wrap { max-width: 640px; }
+    .viewer img { max-width: 92vw; max-height: 88vh; }
+  }
+  /* Telegram to'liq ekran rejimi — tepadagi tizim/Telegram tugmalari ostida qolmasin */
+  body.full { padding-top: calc(var(--tg-safe-area-inset-top, 0px) + var(--tg-content-safe-area-inset-top, 0px)); }
   .same svg { width: 16px; height: 16px; }
 
   /* ——— Bo'sh / yuklanmoqda / xato */
@@ -201,12 +221,12 @@
     privacy: 'Конфиденциальность: имена, преподаватель, группа и другие личные данные удалены. Показываются только работы, сделанные по теме.',
     main: 'Хочу такую же', alt: 'Задание HEMIS', same: 'Хочу в этом дизайне',
     all: 'Все', std: 'Стандарт', pro: 'Премиум', vip: 'VIP',
-    slides: n => `${n} слайдов`, liked: 'Понравилось',
+    slides: n => `${n} слайдов`, likes: n => n ? `Понравилось: ${fmt(n)}` : 'Нравится', likeHint: 'Отметьте, если работа нравится',
     ago: d => d <= 0 ? 'сегодня' : d === 1 ? 'вчера' : `${d} дн. назад`,
     proof: s => [s.week >= 20 && `За неделю — <b>${fmt(s.week)}</b> работ`, s.like_rate >= 70 && `<b>${s.like_rate}%</b> оценок положительные`].filter(Boolean).join(' · '),
     emptyH: 'Первые работы скоро появятся', emptyP: 'Мы показываем только работы с хорошей оценкой и без личных данных. Загляните чуть позже — или закажите свою.',
     errH: 'Не удалось загрузить', errP: 'Проверьте интернет и откройте снова.',
-    more: 'Показаны последние работы. Подборка обновляется каждые 3 часа.',
+    more: 'Сверху — самые новые работы. Подборка обновляется каждый час.',
     shown: (i, n) => `${i} / ${n}`, cover: 'Обложка', page: 'Страница', close: 'Закрыть',
   } : {
     h1: 'Talabalar uchun tayyorlangan so‘nggi taqdimotlar',
@@ -215,12 +235,12 @@
     privacy: 'Maxfiylik: ismlar, o‘qituvchi, guruh va boshqa shaxsiy ma’lumotlar olib tashlangan. Faqat mavzu bo‘yicha tayyorlangan ishlar ko‘rsatiladi.',
     main: 'Menga ham taqdimot', alt: 'HEMIS topshirig‘i', same: 'Shu dizaynda tayyorlash',
     all: 'Hammasi', std: 'Standart', pro: 'Premium', vip: 'VIP',
-    slides: n => `${n} slayd`, liked: 'Yoqdi',
+    slides: n => `${n} slayd`, likes: n => n ? `${fmt(n)} kishiga yoqdi` : 'Yoqdi', likeHint: 'Ish yoqqan bo‘lsa, belgilang',
     ago: d => d <= 0 ? 'bugun' : d === 1 ? 'kecha' : `${d} kun oldin`,
     proof: s => [s.week >= 20 && `Shu haftada <b>${fmt(s.week)}</b> ta ish tayyorlandi`, s.like_rate >= 70 && `<b>${s.like_rate}%</b> baho ijobiy`].filter(Boolean).join(' · '),
     emptyH: 'Birinchi ishlar tez orada shu yerda', emptyP: 'Bu yerda faqat yaxshi baho olgan va shaxsiy ma’lumotsiz ishlar chiqadi. Birozdan keyin qarang — yoki o‘zingiznikini buyurtma qiling.',
     errH: 'Yuklab bo‘lmadi', errP: 'Internetni tekshirib, qayta oching.',
-    more: 'Oxirgi ishlar ko‘rsatilgan. Ro‘yxat har 3 soatda yangilanadi.',
+    more: 'Eng yangi ishlar tepada. Ro‘yxat har soatda yangilanadi.',
     shown: (i, n) => `${i} / ${n}`, cover: 'Muqova', page: 'Sahifa', close: 'Yopish',
   };
   const $ = id => document.getElementById(id);
@@ -245,6 +265,11 @@
 
   if (tg) {
     tg.ready(); tg.expand();
+    // Kompyuterda (Telegram Desktop / macOS / Web) — katta oynada: to'liq ekran (Bot API 8.0+)
+    const desktop = ['tdesktop', 'macos', 'web', 'weba', 'webk', 'unigram'].includes(tg.platform);
+    if (desktop && tg.requestFullscreen && tg.isVersionAtLeast && tg.isVersionAtLeast('8.0')) {
+      try { tg.requestFullscreen(); document.body.classList.add('full'); } catch (e) {}
+    }
     try { tg.setHeaderColor('secondary_bg_color'); tg.setBackgroundColor('secondary_bg_color'); } catch (e) {}
     if (tg.MainButton) {
       tg.MainButton.setParams({ text: L.main, is_visible: true });
@@ -291,9 +316,12 @@
           <span>${L.slides(x.slides)}</span>
           ${x.theme_label ? `<span>${esc(x.theme_label)}</span>` : ''}
           <span>${ago}</span>
-          ${x.liked ? `<span class="liked"><svg><use href="#i-heart"/></svg>${L.liked}</span>` : ''}
         </div>
-        <button class="same" type="button" data-theme="${esc(x.theme || '')}">${L.same}<svg><use href="#i-arrow"/></svg></button>
+        <div class="acts">
+          <button class="like" type="button" data-id="${esc(x.id)}" aria-pressed="${mine.has(x.id)}" title="${L.likeHint}"
+            ${API ? '' : 'disabled'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.3-4.5-9.3-9C1.3 8.3 3.3 4.6 6.9 4.6c2 0 3.5 1.1 5.1 2.9 1.6-1.8 3.1-2.9 5.1-2.9 3.6 0 5.6 3.7 4.2 6.9-2 4.5-9.3 9-9.3 9z"/></svg><span>${L.likes(total(x))}</span></button>
+          <button class="same" type="button" data-theme="${esc(x.theme || '')}">${L.same}<svg><use href="#i-arrow"/></svg></button>
+        </div>
       </div>
     </article>`;
   }
@@ -317,6 +345,7 @@
       }, { passive: true });
       track.querySelectorAll('button').forEach(b => b.onclick = () => openViewer(b.dataset.src, list[k].topic));
       el.querySelector('.same').onclick = e => send({ a: 'gallery', theme: e.currentTarget.dataset.theme });
+      el.querySelector('.like').onclick = e => like(e.currentTarget, list[k]);
     });
   }
 
@@ -336,21 +365,60 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeViewer(); });
   if (tg && tg.BackButton) tg.BackButton.onClick(closeViewer);
 
+  // ——— ❤️ Ovozlar: «N kishiga yoqdi» (bot API orqali; bir odam — bitta ovoz, qayta bosilsa qaytadi)
+  const API = ((window.GO_CONFIG && window.GO_CONFIG.apiBase) || '').replace(/\/$/, '');
+  const counts = {}, mine = new Set();
+  const total = x => (counts[x.id] || 0) + (x.liked ? 1 : 0);        // x.liked — egasi ham «👍 Yoqdi» bosgan
+  let DEV = '';
+  try { DEV = localStorage.getItem('gal_dev') || ''; } catch (e) {}
+  if (!DEV) {
+    const a = new Uint8Array(12); (window.crypto || {}).getRandomValues ? crypto.getRandomValues(a) : a.forEach((_, i) => a[i] = Math.random() * 256);
+    DEV = 'w' + Array.from(a, b => b.toString(16).padStart(2, '0')).join('');
+    try { localStorage.setItem('gal_dev', DEV); } catch (e) {}
+  }
+  function api(body) {
+    return fetch(API + '/api/t/view', { method: 'POST', headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(Object.assign({ init: (tg && tg.initData) || '', dev: DEV }, body)) })
+      .then(r => r.ok ? r.json() : Promise.reject(r.status));
+  }
+  function paintLikes() {
+    document.querySelectorAll('.like').forEach(b => {
+      const x = data.items.find(i => i.id === b.dataset.id); if (!x) return;
+      b.setAttribute('aria-pressed', String(mine.has(x.id)));
+      b.querySelector('span').textContent = L.likes(total(x));
+    });
+  }
+  function loadVotes() {
+    if (!API || !data.items.length) return;
+    api({ g: 'counts', ids: data.items.map(x => x.id) })
+      .then(r => { Object.assign(counts, r.counts || {}); (r.mine || []).forEach(id => mine.add(id)); paintLikes(); })
+      .catch(() => {});
+  }
+  function like(btn, x) {
+    if (!API || btn.disabled) return;
+    const was = mine.has(x.id), before = counts[x.id] || 0;
+    was ? mine.delete(x.id) : mine.add(x.id);                       // darhol ko'rinadi, keyin server tasdiqlaydi
+    counts[x.id] = Math.max(0, before + (was ? -1 : 1));
+    paintLikes();
+    try { tg && tg.HapticFeedback && tg.HapticFeedback.impactOccurred(was ? 'light' : 'medium'); } catch (e) {}
+    btn.disabled = true;
+    api({ g: 'like', id: x.id })
+      .then(r => { counts[x.id] = r.count || 0; r.liked ? mine.add(x.id) : mine.delete(x.id); })
+      .catch(() => { counts[x.id] = before; was ? mine.add(x.id) : mine.delete(x.id); })
+      .finally(() => { btn.disabled = false; paintLikes(); });
+  }
+
   fetch('data.json?t=' + Math.floor(Date.now() / 600000), { cache: 'no-cache' })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(d => {
-      let items = Array.isArray(d.items) ? d.items : [];
-      // Har ochilishda boshqa ishlar tepada — ro'yxat navbatma-navbat aylanadi (hammasi baribir ko'rinadi)
-      if (items.length > 3) {
-        let off;
-        try { off = +(localStorage.getItem('gal_off') || 0); localStorage.setItem('gal_off', String(off + 3)); }
-        catch (e) { off = Math.floor(Math.random() * items.length); }
-        off = off % items.length;
-        items = items.slice(off).concat(items.slice(0, off));
-      }
+      // Qat'iy tartib: eng oxirgi tayyorlangan ish — eng tepada (kun bo'yicha, kun ichida bot yozgan tartib — yangisi oldin)
+      const items = (Array.isArray(d.items) ? d.items : [])
+        .map((x, i) => [x, i]).sort((a, b) => ((b[0].ts || b[0].day || 0) - (a[0].ts || a[0].day || 0)) || (a[1] - b[1]))
+        .map(p => p[0]);
       data = { items, stats: d.stats || {} };
       $('proof').innerHTML = L.proof(data.stats);
       renderFilters(); renderFeed();
+      loadVotes();
     })
     .catch(() => {
       $('feed').innerHTML = `<div class="state"><svg><use href="#i-slides"/></svg><h2>${L.errH}</h2><p>${L.errP}</p></div>`;
