@@ -62,6 +62,8 @@
   .btn { width: 100%; padding: 13px; border: 0; border-radius: 12px; background: var(--btn); color: var(--btn-fg);
     font-size: 16px; font-weight: 700; cursor: pointer; }
   .btn:disabled { opacity: .5; }
+  .stdtag { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 8px; margin-left: 6px;
+    background: rgba(37, 99, 235, .12); color: var(--btn, #2563eb); white-space: nowrap; vertical-align: middle; }
 </style>
 </head>
 <body>
@@ -85,15 +87,22 @@
     uz: { title: '👑 Premium dizaynlar', all: 'Hammasi',
           sub: '35 ta dizayn. Namunadagi rasm — faqat misol: sizning taqdimotingizda mavzuingiz rasmi bo‘ladi.',
           fits: 'Mos mavzular', inside: 'Ichki slaydlar shunday ko‘rinadi', none: 'Dizaynni bosib tanlang',
-          chosen: 'Tanlandi', ok: '✅ Shu dizaynni tanlash' },
+          chosen: 'Tanlandi', ok: '✅ Shu dizaynni tanlash', std: 'Standartda ham',
+          subStd: 'Standart variantda ochiq 10 ta premium dizayn. Qolgan 25 tasi — Premium va VIP’da.' },
     ru: { title: '👑 Премиум-дизайны', all: 'Все',
           sub: '35 дизайнов. Фото в примере — только образец: в вашей презентации будет фото по вашей теме.',
           fits: 'Подходит для', inside: 'Так выглядят внутренние слайды', none: 'Нажмите на дизайн',
-          chosen: 'Выбрано', ok: '✅ Выбрать этот дизайн' },
+          chosen: 'Выбрано', ok: '✅ Выбрать этот дизайн', std: 'И в Стандарте',
+          subStd: '10 премиум-дизайнов, открытых в варианте Стандарт. Остальные 25 — в Premium и VIP.' },
   }[lang];
   const $ = id => document.getElementById(id);
-  $('h1').textContent = L.title; $('sub').textContent = L.sub; document.documentElement.lang = lang;
-  const data = await fetch('data.json?v=2').then(r => r.json());
+  const stdOnly = q.get('std') === '1';           // Standart variantdan ochilgan — faqat ochiq 10 tasi
+  $('h1').textContent = L.title; $('sub').textContent = stdOnly ? L.subStd : L.sub; document.documentElement.lang = lang;
+  const data = await fetch('data.json?v=3').then(r => r.json());
+  if (stdOnly) {
+    data.items = data.items.filter(it => it.std);
+    data.cats = data.cats.filter(c => data.items.some(it => it.cat === c.key));
+  }
   const state = { cat: '', key: '' };
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -107,13 +116,13 @@
     const items = data.items.filter(it => !state.cat || it.cat === state.cat);
     $('list').innerHTML = items.map(it => `
       <div class="card ${it.key === state.key ? 'sel' : ''}" data-k="${it.key}">
-        <div class="img"><img loading="lazy" src="img/${it.slug}.jpg?v=2" alt="${esc(it.name)}">
+        <div class="img"><img loading="lazy" src="img/${it.slug}.jpg?v=3" alt="${esc(it.name)}">
           <div class="num">${String(it.num).padStart(2, '0')}</div><div class="check">✓</div></div>
         <div class="body">
-          <div class="name"><span class="dot" style="--c1:${it.c1};--c2:${it.c2}"></span>${esc(it.name)}</div>
+          <div class="name"><span class="dot" style="--c1:${it.c1};--c2:${it.c2}"></span>${esc(it.name)}${it.std && !stdOnly ? ` <span class="stdtag">${L.std}</span>` : ''}</div>
           <div class="desc">${esc(it.desc[lang])}</div>
           <div class="fits">${L.fits}: ${esc(it.fits[lang])}</div>
-          <div class="inner"><img loading="lazy" src="img/${it.slug}-in.jpg?v=2" alt=""><p>${L.inside}</p></div>
+          <div class="inner"><img loading="lazy" src="img/${it.slug}-in.jpg?v=3" alt=""><p>${L.inside}</p></div>
         </div>
       </div>`).join('');
     $('list').querySelectorAll('.card').forEach(el => el.onclick = () => {
