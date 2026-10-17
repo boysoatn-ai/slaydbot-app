@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VIP Exclusive — Slayd Ol</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root {
+    --bg: var(--tg-theme-bg-color, #ffffff);
+    --bg2: var(--tg-theme-secondary-bg-color, #f2f4f8);
+    --fg: var(--tg-theme-text-color, #111827);
+    --muted: var(--tg-theme-hint-color, #6b7280);
+    --btn: var(--tg-theme-button-color, #2563eb);
+    --btn-fg: var(--tg-theme-button-text-color, #ffffff);
+    --card: var(--tg-theme-section-bg-color, #ffffff);
+    --gold: #c9a45c;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 15px/1.4 -apple-system, "Segoe UI", Roboto, Inter, system-ui, sans-serif; }
+  body { padding: 0 0 96px; }
+  header { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 12px 16px 6px;
+    border-bottom: 1px solid rgba(127,127,127,.15); }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13px; margin: 0 0 10px; }
+  .tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 6px; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: 0 0 auto; padding: 7px 13px; border-radius: 999px; background: var(--bg2); color: var(--fg);
+    font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .tab.active { background: var(--btn); color: var(--btn-fg); }
+  .list { padding: 12px 16px; display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 620px) { .list { grid-template-columns: 1fr 1fr; } }
+  .card { border-radius: var(--radius); overflow: hidden; background: var(--card); cursor: pointer;
+    border: 2px solid transparent; transition: transform .12s, border-color .12s;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.08); }
+  .card:active { transform: scale(.985); }
+  .card.sel { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(198,154,74,.3), 0 8px 22px rgba(0,0,0,.14); }
+  .img { position: relative; }
+  .img img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--bg2); }
+  .num { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,.55); color: #fff; font-size: 12px;
+    font-weight: 700; padding: 3px 8px; border-radius: 999px; }
+  .check { position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--gold); color: #fff; display: none; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 800; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
+  .card.sel .check { display: flex; }
+  .body { padding: 10px 12px 12px; }
+  .name { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; }
+  .dot { width: 14px; height: 14px; border-radius: 50%; flex: 0 0 auto;
+    background: linear-gradient(135deg, var(--c1) 50%, var(--c2) 50%); box-shadow: 0 0 0 1px rgba(127,127,127,.3); }
+  .desc { color: var(--fg); font-size: 13px; margin-top: 4px; opacity: .85; }
+  .fits { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .inner { display: none; margin-top: 10px; }
+  .card.sel .inner { display: block; }
+  .inner img { display: block; width: 100%; border-radius: 10px; background: var(--bg2); }
+  .inner p { color: var(--muted); font-size: 11.5px; margin: 6px 0 0; }
+  footer { position: fixed; left: 0; right: 0; bottom: 0; background: var(--bg); padding: 10px 16px
+    calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(127,127,127,.15); z-index: 5; }
+  .summary { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .summary b { color: var(--fg); }
+  .btn { width: 100%; padding: 13px; border: 0; border-radius: 12px; background: var(--btn); color: var(--btn-fg);
+    font-size: 16px; font-weight: 700; cursor: pointer; }
+  .btn:disabled { opacity: .5; }
+  .stdtag { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 8px; margin-left: 6px;
+    background: rgba(201, 164, 92, .18); color: #9a7130; white-space: nowrap; vertical-align: middle; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="h1">💎 VIP Exclusive</h1>
+  <p class="sub" id="sub"></p>
+  <div class="tabs" id="tabs"></div>
+</header>
+<div class="list" id="list"></div>
+<footer>
+  <div class="summary" id="summary"></div>
+  <button class="btn" id="ok" disabled></button>
+</footer>
+<script>
+(async function () {
+  const tg = window.Telegram && window.Telegram.WebApp;
+  if (tg) { tg.ready(); tg.expand(); }
+  const q = new URLSearchParams(location.search);
+  const lang = q.get('lang') === 'ru' ? 'ru' : 'uz';
+  const L = {
+    uz: { title: '💎 VIP Exclusive', all: 'Hammasi',
+          sub: '10 ta dizayn, faqat VIP variantda. Muqova mavzungizga moslab maxsus chiziladi, ichki rasmlar ham shu uslubda. Rasmdagi muqova — namuna.',
+          fits: 'Mos mavzular', inside: 'Ichki slaydlar shunday ko‘rinadi', none: 'Dizaynni bosib tanlang',
+          chosen: 'Tanlandi', ok: '💎 Shu dizaynni tanlash', std: 'VIP' },
+    ru: { title: '💎 VIP Exclusive', all: 'Все',
+          sub: '10 дизайнов, только в варианте VIP. Обложка рисуется специально под вашу тему, картинки внутри — в том же стиле. Обложка на картинке — пример.',
+          fits: 'Подходит для', inside: 'Так выглядят внутренние слайды', none: 'Нажмите на дизайн',
+          chosen: 'Выбрано', ok: '💎 Выбрать этот дизайн', std: 'VIP' },
+  }[lang];
+  const $ = id => document.getElementById(id);
+  $('h1').textContent = L.title; $('sub').textContent = L.sub; document.documentElement.lang = lang;
+  const data = await fetch('data.json?v=1').then(r => r.json());
+  data.cats = [];                                  // 10 ta — toifasiz, bitta ro'yxat
+  const state = { cat: '', key: '' };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function renderTabs() {
+    if (!data.cats.length) { $('tabs').style.display = 'none'; return; }
+    const tabs = [{ key: '', label: L.all }].concat(data.cats.map(c => ({ key: c.key, label: c[lang] })));
+    $('tabs').innerHTML = tabs.map(t =>
+      `<div class="tab ${t.key === state.cat ? 'active' : ''}" data-k="${t.key}">${esc(t.label)}</div>`).join('');
+    $('tabs').querySelectorAll('.tab').forEach(el => el.onclick = () => { state.cat = el.dataset.k; render(); });
+  }
+  function renderList() {
+    const items = data.items.filter(it => !state.cat || it.cat === state.cat);
+    $('list').innerHTML = items.map(it => `
+      <div class="card ${it.key === state.key ? 'sel' : ''}" data-k="${it.key}">
+        <div class="img"><img loading="lazy" src="img/${it.slug}.jpg?v=1" alt="${esc(it.name)}">
+          <div class="num">${it.num}</div><div class="check">✓</div></div>
+        <div class="body">
+          <div class="name"><span class="dot" style="--c1:${it.c1};--c2:${it.c2}"></span>${esc(it.name)}<span class="stdtag">💎 ${L.std}</span></div>
+          <div class="desc">${esc(it.desc[lang])}</div>
+          <div class="fits">${L.fits}: ${esc(it.fits[lang])}</div>
+          <div class="inner"><img loading="lazy" src="img/${it.slug}-in.jpg?v=1" alt=""><p>${L.inside}</p></div>
+        </div>
+      </div>`).join('');
+    $('list').querySelectorAll('.card').forEach(el => el.onclick = () => {
+      state.key = el.dataset.k; if (tg) tg.HapticFeedback.selectionChanged(); render();
+      el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+  }
+  function renderFooter() {
+    const it = data.items.find(x => x.key === state.key);
+    $('summary').innerHTML = it ? `${L.chosen}: <b>${esc(it.name)}</b>` : L.none;
+    $('ok').textContent = L.ok; $('ok').disabled = !it;
+    if (tg) {
+      if (it) { tg.MainButton.setText(L.ok); tg.MainButton.show(); tg.MainButton.enable(); }
+      else tg.MainButton.hide();
+    }
+  }
+  function render() { renderTabs(); renderList(); renderFooter(); }
+  function submit() {
+    if (!state.key) return;
+    const payload = JSON.stringify({ v: 1, theme: state.key, subject: 'auto' });
+    if (tg) tg.sendData(payload); else alert(payload);
+  }
+  $('ok').onclick = submit;
+  if (tg) tg.MainButton.onClick(submit);
+  render();
+})();
+</script>
+</body>
+</html>
