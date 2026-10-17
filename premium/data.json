@@ -29,6 +29,16 @@
    "key": "soft",
    "uz": "Yumshoq",
    "ru": "Мягкие"
+  },
+  {
+   "key": "science",
+   "uz": "Ilmiy",
+   "ru": "Наука"
+  },
+  {
+   "key": "tech",
+   "uz": "Texnik",
+   "ru": "Техника"
   }
  ],
  "items": [
@@ -456,6 +466,176 @@
    },
    "c1": "#EEE2F3",
    "c2": "#6A3AA3"
+  },
+  {
+   "key": "pro-swiss",
+   "slug": "swiss",
+   "num": 26,
+   "name": "Swiss International",
+   "cat": "minimal",
+   "desc": {
+    "uz": "qat’iy grid, katta sans-serif, qizil aksent va bo‘sh joy",
+    "ru": "строгая сетка, крупный гротеск, красный акцент и воздух"
+   },
+   "fits": {
+    "uz": "biznes, universitet, rasmiy hisobot",
+    "ru": "бизнес, университет, официальный отчёт"
+   },
+   "c1": "#FFFFFF",
+   "c2": "#E53935"
+  },
+  {
+   "key": "pro-journal",
+   "slug": "journal",
+   "num": 27,
+   "name": "Scientific Journal",
+   "cat": "science",
+   "desc": {
+    "uz": "ilmiy jurnal sahifasi, rasm izohi, manba va diagramma",
+    "ru": "страница научного журнала: подписи, источники, диаграммы"
+   },
+   "fits": {
+    "uz": "biologiya, kimyo, fizika, tibbiyot, tadqiqot",
+    "ru": "биология, химия, физика, медицина, исследования"
+   },
+   "c1": "#F7F4EC",
+   "c2": "#247C83"
+  },
+  {
+   "key": "pro-couture",
+   "slug": "couture",
+   "num": 28,
+   "name": "Haute Couture Editorial",
+   "cat": "photo",
+   "desc": {
+    "uz": "nafis serif, katta sifatli foto, jurnal kompozitsiyasi",
+    "ru": "изящный serif, крупное фото, журнальная композиция"
+   },
+   "fits": {
+    "uz": "moda, san’at, adabiyot, brend",
+    "ru": "мода, искусство, литература, бренд"
+   },
+   "c1": "#F4EFE6",
+   "c2": "#C5A46D"
+  },
+  {
+   "key": "pro-consulting",
+   "slug": "consulting",
+   "num": 29,
+   "name": "Executive Consulting",
+   "cat": "minimal",
+   "desc": {
+    "uz": "bitta asosiy xulosa, framework, muammo → dalil → yechim",
+    "ru": "один главный вывод, фреймворк, проблема → факты → решение"
+   },
+   "fits": {
+    "uz": "biznes-reja, strategiya, loyiha himoyasi, investitsiya",
+    "ru": "бизнес-план, стратегия, защита проекта"
+   },
+   "c1": "#FFFFFF",
+   "c2": "#2F6BBD"
+  },
+  {
+   "key": "pro-architecture",
+   "slug": "architecture",
+   "num": 30,
+   "name": "Architecture Portfolio",
+   "cat": "tech",
+   "desc": {
+    "uz": "arxitektura fotosi, chizma chiziqlari, material va geometriya",
+    "ru": "архитектурное фото, линии чертежа, материалы и геометрия"
+   },
+   "fits": {
+    "uz": "qurilish, shaharsozlik, dizayn, geografiya",
+    "ru": "строительство, урбанистика, дизайн, география"
+   },
+   "c1": "#F2F0EA",
+   "c2": "#7B6F5B"
+  },
+  {
+   "key": "pro-blueprint",
+   "slug": "blueprint",
+   "num": 31,
+   "name": "Blueprint Engineering",
+   "cat": "tech",
+   "desc": {
+    "uz": "ko‘k chizma foni, texnik chiziqlar, sxema va izohlar",
+    "ru": "синий чертёж, технические линии, схемы и подписи"
+   },
+   "fits": {
+    "uz": "muhandislik, fizika, robototexnika, mexanika",
+    "ru": "инженерия, физика, робототехника, механика"
+   },
+   "c1": "#0B2D4D",
+   "c2": "#54D6E8"
+  },
+  {
+   "key": "pro-wabi",
+   "slug": "wabi",
+   "num": 32,
+   "name": "Japanese Wabi-Sabi",
+   "cat": "soft",
+   "desc": {
+    "uz": "tabiiy tekstura, assimetriya, nozik siyoh chizig‘i va bo‘shliq",
+    "ru": "природная текстура, асимметрия, тонкая линия туши и пустота"
+   },
+   "fits": {
+    "uz": "falsafa, madaniyat, adabiyot, ekologiya",
+    "ru": "философия, культура, литература, экология"
+   },
+   "c1": "#F1E9DA",
+   "c2": "#B86D4B"
+  },
+  {
+   "key": "pro-retro",
+   "slug": "retro",
+   "num": 33,
+   "name": "Retro-Futurism",
+   "cat": "creative",
+   "desc": {
+    "uz": "retro-futuristik geometriya, ufq to‘ri, gradient va katta sarlavha",
+    "ru": "ретрофутуризм: горизонт-сетка, градиент, крупный заголовок"
+   },
+   "fits": {
+    "uz": "kosmos, texnologiya tarixi, innovatsiya",
+    "ru": "космос, история технологий, инновации"
+   },
+   "c1": "#17112D",
+   "c2": "#FF6B35"
+  },
+  {
+   "key": "pro-iso",
+   "slug": "iso",
+   "num": 34,
+   "name": "Isometric World",
+   "cat": "tech",
+   "desc": {
+    "uz": "izometrik fazoviy sahna, jarayon va bog‘liqliklar",
+    "ru": "изометрическая сцена, процессы и связи"
+   },
+   "fits": {
+    "uz": "shahar, logistika, ekotizim, ishlab chiqarish, biologiya",
+    "ru": "город, логистика, экосистемы, производство"
+   },
+   "c1": "#F7F8FA",
+   "c2": "#2D5B83"
+  },
+  {
+   "key": "pro-terminal",
+   "slug": "terminal",
+   "num": 35,
+   "name": "Data Terminal",
+   "cat": "data",
+   "desc": {
+    "uz": "analitik panellar, katta raqamlar, vaqt qatorlari, jadvallar",
+    "ru": "аналитические панели, крупные цифры, таблицы"
+   },
+   "fits": {
+    "uz": "statistika, iqtisod, moliya, IT monitoring",
+    "ru": "статистика, экономика, финансы, IT-мониторинг"
+   },
+   "c1": "#0A0F14",
+   "c2": "#48C7E8"
   }
  ]
 }
