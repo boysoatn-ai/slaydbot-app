@@ -96,6 +96,9 @@
   .meta .tier.vip { color: var(--vip); }
   .meta .liked { display: inline-flex; align-items: center; gap: 4px; color: #1f9d55; font-weight: 600; }
   .meta .liked svg { width: 14px; height: 14px; }
+  .meta .views { display: inline-flex; align-items: center; gap: 4px; font-variant-numeric: tabular-nums; }
+  .meta .views[hidden] { display: none; }
+  .meta .views svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
   .acts { display: flex; gap: 8px; margin-top: 12px; }
   .like { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 7px; padding: 11px 14px; border-radius: 12px;
     border: 1px solid var(--line); background: var(--surface); color: var(--fg); font-weight: 700; font-size: 14px;
@@ -222,6 +225,7 @@
     main: 'Хочу такую же', alt: 'Задание HEMIS', same: 'Хочу в этом дизайне',
     all: 'Все', std: 'Стандарт', pro: 'Премиум', vip: 'VIP',
     slides: n => `${n} слайдов`, likes: n => n ? `Понравилось: ${fmt(n)}` : 'Нравится', likeHint: 'Отметьте, если работа нравится',
+    views: n => `Просмотров: ${fmt(n)}`,
     ago: d => d <= 0 ? 'сегодня' : d === 1 ? 'вчера' : `${d} дн. назад`,
     proof: s => [s.week >= 20 && `За неделю — <b>${fmt(s.week)}</b> работ`, s.like_rate >= 70 && `<b>${s.like_rate}%</b> оценок положительные`].filter(Boolean).join(' · '),
     emptyH: 'Первые работы скоро появятся', emptyP: 'Мы показываем только работы с хорошей оценкой и без личных данных. Загляните чуть позже — или закажите свою.',
@@ -236,6 +240,7 @@
     main: 'Menga ham taqdimot', alt: 'HEMIS topshirig‘i', same: 'Shu dizaynda tayyorlash',
     all: 'Hammasi', std: 'Standart', pro: 'Premium', vip: 'VIP',
     slides: n => `${n} slayd`, likes: n => n ? `${fmt(n)} kishiga yoqdi` : 'Yoqdi', likeHint: 'Ish yoqqan bo‘lsa, belgilang',
+    views: n => `${fmt(n)} marta ko‘rildi`,
     ago: d => d <= 0 ? 'bugun' : d === 1 ? 'kecha' : `${d} kun oldin`,
     proof: s => [s.week >= 20 && `Shu haftada <b>${fmt(s.week)}</b> ta ish tayyorlandi`, s.like_rate >= 70 && `<b>${s.like_rate}%</b> baho ijobiy`].filter(Boolean).join(' · '),
     emptyH: 'Birinchi ishlar tez orada shu yerda', emptyP: 'Bu yerda faqat yaxshi baho olgan va shaxsiy ma’lumotsiz ishlar chiqadi. Birozdan keyin qarang — yoki o‘zingiznikini buyurtma qiling.',
@@ -316,6 +321,7 @@
           <span>${L.slides(x.slides)}</span>
           ${x.theme_label ? `<span>${esc(x.theme_label)}</span>` : ''}
           <span>${ago}</span>
+          <span class="views" data-id="${esc(x.id)}" ${views[x.id] ? '' : 'hidden'} aria-label="${views[x.id] ? L.views(views[x.id]) : ''}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>${fmt(views[x.id] || 0)}</b></span>
         </div>
         <div class="acts">
           <button class="like" type="button" data-id="${esc(x.id)}" aria-pressed="${mine.has(x.id)}" title="${L.likeHint}"
@@ -346,6 +352,7 @@
       track.querySelectorAll('button').forEach(b => b.onclick = () => openViewer(b.dataset.src, list[k].topic));
       el.querySelector('.same').onclick = e => send({ a: 'gallery', theme: e.currentTarget.dataset.theme });
       el.querySelector('.like').onclick = e => like(e.currentTarget, list[k]);
+      watchSeen(el, list[k].id);
     });
   }
 
@@ -367,7 +374,7 @@
 
   // ——— ❤️ Ovozlar: «N kishiga yoqdi» (bot API orqali; bir odam — bitta ovoz, qayta bosilsa qaytadi)
   const API = ((window.GO_CONFIG && window.GO_CONFIG.apiBase) || '').replace(/\/$/, '');
-  const counts = {}, mine = new Set();
+  const counts = {}, mine = new Set(), views = {};
   const total = x => (counts[x.id] || 0) + (x.liked ? 1 : 0);        // x.liked — egasi ham «👍 Yoqdi» bosgan
   let DEV = '';
   try { DEV = localStorage.getItem('gal_dev') || ''; } catch (e) {}
@@ -388,12 +395,45 @@
       b.querySelector('span').textContent = L.likes(total(x));
     });
   }
+  function paintViews() {
+    document.querySelectorAll('.views').forEach(v => {
+      const n = views[v.dataset.id] || 0;
+      v.hidden = !n; v.setAttribute('aria-label', n ? L.views(n) : '');
+      v.querySelector('b').textContent = fmt(n);
+    });
+  }
   function loadVotes() {
     if (!API || !data.items.length) return;
     api({ g: 'counts', ids: data.items.map(x => x.id) })
-      .then(r => { Object.assign(counts, r.counts || {}); (r.mine || []).forEach(id => mine.add(id)); paintLikes(); })
+      .then(r => {
+        Object.assign(counts, r.counts || {}); Object.assign(views, r.views || {});
+        (r.mine || []).forEach(id => mine.add(id)); paintLikes(); paintViews();
+      })
       .catch(() => {});
   }
+  // ——— 👁 Ko'rishlar: karta ekranning yarmidan ko'pida 1 soniya tursa — «ko'rildi» (bir odam bir ishni bir marta)
+  const seenSent = new Set(), seenQueue = new Set(), seenTimers = new Map();
+  let seenFlush = null;
+  function flushSeen() {
+    seenFlush = null;
+    if (!API || !seenQueue.size) return;
+    const ids = [...seenQueue]; seenQueue.clear();
+    api({ g: 'seen', ids })
+      .then(r => { Object.entries(r.views || {}).forEach(([id, n]) => { views[id] = Math.max(views[id] || 0, n); }); paintViews(); })
+      .catch(() => ids.forEach(id => seenSent.delete(id)));
+  }
+  const seenObs = ('IntersectionObserver' in window) ? new IntersectionObserver(entries => entries.forEach(en => {
+    const id = en.target.dataset.seen;
+    if (en.isIntersecting && en.intersectionRatio >= 0.5) {
+      if (seenSent.has(id) || seenTimers.has(id)) return;
+      seenTimers.set(id, setTimeout(() => {
+        seenTimers.delete(id); seenSent.add(id); seenQueue.add(id);
+        if (!seenFlush) seenFlush = setTimeout(flushSeen, 1500);
+      }, 1000));
+    } else if (seenTimers.has(id)) { clearTimeout(seenTimers.get(id)); seenTimers.delete(id); }
+  }), { threshold: [0, 0.5] }) : null;
+  function watchSeen(el, id) { if (seenObs && API) { el.dataset.seen = id; seenObs.observe(el); } }
+  document.addEventListener('visibilitychange', () => { if (document.hidden && seenQueue.size) flushSeen(); });
   function like(btn, x) {
     if (!API || btn.disabled) return;
     const was = mine.has(x.id), before = counts[x.id] || 0;
