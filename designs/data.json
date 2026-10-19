@@ -2992,5 +2992,205 @@
    "c2": "#A3E635",
    "inner": "../img/themes/sport-forest.jpg"
   }
+ ],
+ "styles": [
+  {
+   "key": "minimal",
+   "emoji": "⬜",
+   "name": {
+    "uz": "Minimal",
+    "ru": "Минимал"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   }
+  },
+  {
+   "key": "corporate",
+   "emoji": "🏢",
+   "name": {
+    "uz": "Biznes",
+    "ru": "Бизнес"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   }
+  },
+  {
+   "key": "academic",
+   "emoji": "🎓",
+   "name": {
+    "uz": "Akademik",
+    "ru": "Академический"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   }
+  },
+  {
+   "key": "gradient",
+   "emoji": "🌈",
+   "name": {
+    "uz": "Gradient",
+    "ru": "Градиент"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   }
+  },
+  {
+   "key": "dark",
+   "emoji": "🌙",
+   "name": {
+    "uz": "Qorong‘u",
+    "ru": "Тёмный"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   }
+  },
+  {
+   "key": "vivid",
+   "emoji": "🎨",
+   "name": {
+    "uz": "Yorqin",
+    "ru": "Яркий"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   }
+  },
+  {
+   "key": "playful",
+   "emoji": "🧸",
+   "name": {
+    "uz": "Bolalar",
+    "ru": "Детский"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   }
+  },
+  {
+   "key": "sport",
+   "emoji": "⚡",
+   "name": {
+    "uz": "Sport",
+    "ru": "Спорт"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   }
+  }
+ ],
+ "palettes": [
+  {
+   "key": "ocean",
+   "emoji": "🔵",
+   "name": {
+    "uz": "Okean",
+    "ru": "Океан"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9"
+  },
+  {
+   "key": "emerald",
+   "emoji": "🟢",
+   "name": {
+    "uz": "Zumrad",
+    "ru": "Изумруд"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A"
+  },
+  {
+   "key": "violet",
+   "emoji": "🟣",
+   "name": {
+    "uz": "Binafsha",
+    "ru": "Фиолетовый"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6"
+  },
+  {
+   "key": "sunset",
+   "emoji": "🟠",
+   "name": {
+    "uz": "Quyosh",
+    "ru": "Закат"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B"
+  },
+  {
+   "key": "ruby",
+   "emoji": "🔴",
+   "name": {
+    "uz": "Yoqut",
+    "ru": "Рубин"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E"
+  },
+  {
+   "key": "teal",
+   "emoji": "🩵",
+   "name": {
+    "uz": "Firuza",
+    "ru": "Бирюза"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF"
+  },
+  {
+   "key": "gold",
+   "emoji": "🟡",
+   "name": {
+    "uz": "Oltin",
+    "ru": "Золото"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017"
+  },
+  {
+   "key": "slate",
+   "emoji": "⚫",
+   "name": {
+    "uz": "Grafit",
+    "ru": "Графит"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16"
+  },
+  {
+   "key": "indigo",
+   "emoji": "🟦",
+   "name": {
+    "uz": "Indigo",
+    "ru": "Индиго"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316"
+  },
+  {
+   "key": "forest",
+   "emoji": "🌲",
+   "name": {
+    "uz": "O‘rmon",
+    "ru": "Лес"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635"
+  }
  ]
 }

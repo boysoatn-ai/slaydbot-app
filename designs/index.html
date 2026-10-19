@@ -14,26 +14,34 @@
     --btn: var(--tg-theme-button-color, #2563eb);
     --btn-fg: var(--tg-theme-button-text-color, #ffffff);
     --card: var(--tg-theme-section-bg-color, #ffffff);
-    --vip: #7c3aed; --pro: #b7862f; --ok: #16a34a;
+    --std: #2563eb; --vip: #7c3aed; --pro: #b7862f; --ok: #16a34a; --con: #0f766e;
     --radius: 14px;
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { margin: 0; background: var(--bg); color: var(--fg);
     font: 15px/1.4 -apple-system, "Segoe UI", Roboto, Inter, system-ui, sans-serif; }
-  body { padding: 0 0 120px; }
-  header { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 12px 16px 4px;
+  body { padding: 0 0 170px; }
+  header { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 12px 4px;
     border-bottom: 1px solid rgba(127,127,127,.15); }
-  h1 { font-size: 18px; margin: 0 0 2px; }
-  .sub { color: var(--muted); font-size: 12.5px; margin: 0 0 8px; }
+  h1 { font-size: 17px; margin: 0 0 8px 4px; }
+  /* 4 ta asosiy bo'lim: Standart · Premium · VIP · Konstruktor */
+  .kinds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 8px; }
+  .kind { border: 2px solid transparent; border-radius: 12px; background: var(--bg2); color: var(--fg); padding: 7px 4px 6px;
+    font: inherit; cursor: pointer; text-align: center; line-height: 1.15; min-height: 52px; }
+  .kind b { display: block; font-size: 12.5px; }
+  .kind small { display: block; font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+  .kind i { font-style: normal; font-size: 16px; display: block; }
+  .kind.active { background: color-mix(in srgb, var(--k) 14%, var(--bg)); border-color: var(--k); }
+  .kind.active b { color: var(--k); }
   .tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 6px; }
   .tabs::-webkit-scrollbar { display: none; }
-  .tab { flex: 0 0 auto; padding: 7px 12px; border-radius: 999px; background: var(--bg2); color: var(--fg);
-    font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; border: 0; font-family: inherit; }
-  .tab.active { background: var(--btn); color: var(--btn-fg); }
-  .tiers .tab { font-size: 12px; padding: 5px 10px; }
-  .tiers .tab.active { background: var(--fg); color: var(--bg); }
-  h2 { font-size: 15px; margin: 18px 16px 2px; display: flex; align-items: center; gap: 8px; }
-  h2 small { color: var(--muted); font-weight: 500; font-size: 12px; }
+  .tab { flex: 0 0 auto; padding: 6px 11px; border-radius: 999px; background: var(--bg2); color: var(--fg);
+    font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap; border: 0; font-family: inherit; }
+  .tab.active { background: var(--fg); color: var(--bg); }
+  .intro { margin: 12px 16px 2px; padding: 10px 12px; border-radius: 12px; font-size: 13px;
+    background: color-mix(in srgb, var(--k, var(--btn)) 10%, var(--bg)); }
+  .intro b { color: var(--k); }
+  h2 { font-size: 15px; margin: 16px 16px 2px; }
   .note { color: var(--muted); font-size: 12px; margin: 0 16px 6px; }
   .grid { padding: 8px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   @media (min-width: 620px) { .grid { grid-template-columns: repeat(3, 1fr); } }
@@ -51,20 +59,34 @@
   .card.locked .thumb img { filter: saturate(.75) brightness(.92); }
   .badge { position: absolute; bottom: 6px; left: 6px; font-size: 10.5px; font-weight: 800; color: #fff;
     padding: 2px 7px; border-radius: 999px; letter-spacing: .2px; }
-  .badge.vip { background: var(--vip); }
-  .badge.pro { background: var(--pro); }
-  .badge.open { background: var(--ok); }
-  .lock { position: absolute; right: 6px; bottom: 6px; width: 26px; height: 26px; border-radius: 50%;
+  .badge.vip { background: var(--vip); } .badge.pro { background: var(--pro); } .badge.open { background: var(--ok); }
+  .lock { position: absolute; right: 6px; top: 6px; width: 26px; height: 26px; border-radius: 50%;
     background: rgba(0,0,0,.6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; }
   .check { position: absolute; top: 6px; right: 6px; width: 24px; height: 24px; border-radius: 50%; background: var(--btn);
     color: var(--btn-fg); display: none; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
   .card.sel .check { display: flex; }
+  .card.sel .lock { display: none; }
   .name { padding: 7px 9px 8px; font-size: 12.5px; font-weight: 650; display: flex; gap: 6px; align-items: center;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .dot { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 auto;
     background: linear-gradient(135deg, var(--c1) 50%, var(--c2) 50%); box-shadow: 0 0 0 1px rgba(127,127,127,.3); }
   .empty { padding: 24px 16px; color: var(--muted); text-align: center; }
-  /* tanlangan dizayn haqida */
+  /* Konstruktor */
+  .step { margin: 14px 16px 4px; font-weight: 700; font-size: 14px; }
+  .styles { padding: 4px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .st { border: 2px solid transparent; border-radius: 12px; background: var(--bg2); padding: 9px 10px; cursor: pointer; }
+  .st b { font-size: 13.5px; } .st div { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .st.active { border-color: var(--con); background: color-mix(in srgb, var(--con) 10%, var(--bg)); }
+  .pals { padding: 4px 16px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .pal { border: 2px solid transparent; border-radius: 12px; padding: 6px 2px 5px; text-align: center; cursor: pointer;
+    background: var(--bg2); font-size: 10.5px; font-weight: 600; }
+  .pal span { display: block; width: 30px; height: 30px; margin: 0 auto 4px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--c1) 50%, var(--c2) 50%); box-shadow: 0 0 0 1px rgba(127,127,127,.3); }
+  .pal.active { border-color: var(--con); }
+  .preview { margin: 12px 16px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,.1); }
+  .preview img { display: block; width: 100%; background: var(--bg2); }
+  .preview p { margin: 0; padding: 8px 10px; font-size: 12.5px; background: var(--card); }
+  /* tanlangan dizayn */
   .sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; background: var(--bg);
     border-top: 1px solid rgba(127,127,127,.18); padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
     box-shadow: 0 -8px 24px rgba(0,0,0,.08); }
@@ -87,9 +109,8 @@
 <body>
 <header>
   <h1 id="h1"></h1>
-  <p class="sub" id="sub"></p>
+  <div class="kinds" id="kinds"></div>
   <div class="tabs" id="tabs"></div>
-  <div class="tabs tiers" id="tiers"></div>
 </header>
 <main id="main"></main>
 <div class="hint" id="hint"></div>
@@ -103,42 +124,55 @@
   const tier = ['pro', 'vip'].includes(q.get('tier')) ? q.get('tier') : 'std';   // foydalanuvchi tanlagan variant
   const rec = (q.get('rec') || '').split(',').filter(Boolean);
   const L = {
-    uz: { title: '🎨 Barcha dizaynlar', all: 'Hammasi', anyTier: 'Barchasi', mine: '✨ Mavzuingizga mos',
-          mineNote: 'Mavzu va auditoriyangizga qarab tanlandi',
-          sub: n => `${n} ta dizayn. Namunadagi rasm — misol: taqdimotingizda o‘z mavzuingiz rasmi bo‘ladi.`,
-          groups: { vip: '💎 VIP Exclusive', pro: '👑 Premium', std: '🎨 Oddiy dizaynlar' },
-          notes: { vip: 'Faqat VIP variantida', pro: 'Premium va VIP’da (yashil belgilisi — Standartda ham)', std: 'Barcha variantlarda' },
-          badge: { vip: 'VIP', pro: 'PREMIUM', open: 'OCHIQ' },
+    uz: { title: '🎨 Dizayn tanlash', all: 'Hammasi', mine: '✨ Mavzuingizga mos', mineNote: 'Mavzu va auditoriyangizga qarab tanlandi',
+          kinds: { std: 'Standart', pro: 'Premium', vip: 'VIP Exclusive', con: 'Konstruktor' },
+          small: { std: n => `${n} ta`, pro: n => `${n} ta`, vip: n => `${n} ta`, con: () => 'rangi o‘zingiz' },
+          intro: {
+            std: 'Barcha variantlarda ochiq. Muqovada mavzuingiz rasmi bo‘ladi.',
+            pro: { ok: 'Sizning variantingizda <b>hammasi ochiq</b>. Muqovada katta rasm, nafis bezak.',
+                   std: '<b>Premium</b> variantdagi dizaynlar. Yashil «OCHIQ» belgililari — Standartda ham ochiq. 🔒 belgilisini tanlasangiz, Premium’ga o‘tishni taklif qilamiz.' },
+            vip: { ok: 'Sizning VIP variantingizda <b>hammasi ochiq</b>. Muqova mavzuingizga moslab maxsus chiziladi.',
+                   no: 'Faqat <b>VIP</b> variantida: muqova mavzuingizga moslab maxsus chiziladi. Tanlasangiz, VIP’ga o‘tishni taklif qilamiz.' },
+            con: 'Uslubni, keyin rangni o‘zingiz tanlang — pastda natija ko‘rinadi. Barcha variantlarda ochiq.' },
+          step1: '1. Uslub', step2: '2. Rang', badge: { vip: 'VIP', pro: 'PREMIUM', open: 'OCHIQ' },
           pick: 'Dizaynni bosib tanlang', ok: '✅ Shu dizaynni tanlash', fits: 'Mos',
           lockPro: '🔒 Bu dizayn Premium variantida. Tanlasangiz, Premium’ga o‘tishni taklif qilamiz.',
           lockVip: '🔒 Bu dizayn faqat 💎 VIP variantida. Tanlasangiz, VIP’ga o‘tishni taklif qilamiz.',
-          okPro: '👑 Premium bilan tanlash', okVip: '💎 VIP bilan tanlash', empty: 'Bu bo‘limda dizayn yo‘q' },
-    ru: { title: '🎨 Все дизайны', all: 'Все', anyTier: 'Все', mine: '✨ Подходят вашей теме',
-          mineNote: 'Подобраны по теме и аудитории',
-          sub: n => `${n} дизайнов. Фото в примере — образец: в презентации будет фото по вашей теме.`,
-          groups: { vip: '💎 VIP Exclusive', pro: '👑 Премиум', std: '🎨 Обычные дизайны' },
-          notes: { vip: 'Только в варианте VIP', pro: 'В Premium и VIP (с зелёной меткой — и в Стандарте)', std: 'Во всех вариантах' },
-          badge: { vip: 'VIP', pro: 'PREMIUM', open: 'ОТКРЫТ' },
+          okPro: '👑 Premium bilan tanlash', okVip: '💎 VIP bilan tanlash', empty: 'Bu bo‘limda dizayn yo‘q',
+          conSample: 'Namuna: muqova va 2 ta ichki slayd' },
+    ru: { title: '🎨 Выбор дизайна', all: 'Все', mine: '✨ Подходят вашей теме', mineNote: 'Подобраны по теме и аудитории',
+          kinds: { std: 'Стандарт', pro: 'Премиум', vip: 'VIP Exclusive', con: 'Конструктор' },
+          small: { std: n => `${n} шт.`, pro: n => `${n} шт.`, vip: n => `${n} шт.`, con: () => 'свой цвет' },
+          intro: {
+            std: 'Открыты во всех вариантах. На обложке — фото по вашей теме.',
+            pro: { ok: 'В вашем варианте <b>все открыты</b>. Крупное фото на обложке, изящное оформление.',
+                   std: 'Дизайны варианта <b>Premium</b>. С зелёной меткой «ОТКРЫТ» — доступны и в Стандарте. Если выберете дизайн с 🔒, предложим перейти на Premium.' },
+            vip: { ok: 'В вашем VIP <b>все открыты</b>. Обложка рисуется специально под вашу тему.',
+                   no: 'Только в варианте <b>VIP</b>: обложка рисуется специально под тему. Если выберете, предложим перейти на VIP.' },
+            con: 'Выберите стиль, затем цвет — результат внизу. Открыто во всех вариантах.' },
+          step1: '1. Стиль', step2: '2. Цвет', badge: { vip: 'VIP', pro: 'PREMIUM', open: 'ОТКРЫТ' },
           pick: 'Нажмите на дизайн', ok: '✅ Выбрать этот дизайн', fits: 'Для',
           lockPro: '🔒 Этот дизайн — в варианте Premium. Если выберете, предложим перейти на Premium.',
           lockVip: '🔒 Этот дизайн только в 💎 VIP. Если выберете, предложим перейти на VIP.',
-          okPro: '👑 Выбрать с Premium', okVip: '💎 Выбрать с VIP', empty: 'В этом разделе нет дизайнов' },
+          okPro: '👑 Выбрать с Premium', okVip: '💎 Выбрать с VIP', empty: 'В этом разделе нет дизайнов',
+          conSample: 'Пример: обложка и 2 внутренних слайда' },
   }[lang];
+  const ICON = { std: '🎨', pro: '👑', vip: '💎', con: '🛠' };
+  const COLOR = { std: 'var(--std)', pro: 'var(--pro)', vip: 'var(--vip)', con: 'var(--con)' };
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const tx = v => (v && typeof v === 'object') ? (v[lang] || v.uz) : (v || '');
   document.documentElement.lang = lang;
-  const data = await fetch('data.json?v=1').then(r => r.json());
+  const data = await fetch('data.json?v=2').then(r => r.json());
   const byKey = Object.fromEntries(data.items.map(it => [it.key, it]));
   const avail = it => it.tier === 'std' || (it.tier === 'pro' ? (tier !== 'std' || !!it.open) : tier === 'vip');
   const recItems = rec.map(k => byKey[k]).filter(Boolean);
-  const sec0 = q.get('sec');
-  const state = { sec: data.sections.some(s => s.key === sec0) ? sec0 : '', tier: '', key: q.get('cur') && byKey[q.get('cur')] ? q.get('cur') : '' };
-  // o'z variantidagilar oldin: VIP — VIP, Premium — Premium, Standart — oddiy (keyin qulfli yuqori darajalar)
-  const order = { vip: ['vip', 'pro', 'std'], pro: ['pro', 'vip', 'std'], std: ['std', 'pro', 'vip'] }[tier];
+  const cur = q.get('cur') && byKey[q.get('cur')] ? q.get('cur') : '';
+  const kinds0 = ['std', 'pro', 'vip', 'con'];
+  const kind0 = kinds0.includes(q.get('kind')) ? q.get('kind') : (cur ? byKey[cur].tier : tier);
+  const state = { kind: kind0, sec: '', key: cur, style: '', pal: '' };
 
   $('h1').textContent = L.title;
-  $('sub').textContent = L.sub(data.items.length);
 
   function card(it) {
     const lock = !avail(it);
@@ -149,56 +183,93 @@
         ${lock ? '<span class="lock">🔒</span>' : ''}<span class="check">✓</span></div>
       <div class="name"><span class="dot" style="--c1:${it.c1};--c2:${it.c2}"></span>${esc(tx(it.name))}</div></div>`;
   }
+  function renderKinds() {
+    const n = t => data.items.filter(it => it.tier === t).length;
+    $('kinds').innerHTML = kinds0.map(k => `<button class="kind ${k === state.kind ? 'active' : ''}" data-k="${k}" style="--k:${COLOR[k]}">
+      <i>${ICON[k]}</i><b>${L.kinds[k]}</b><small>${L.small[k](k === 'con' ? 0 : n(k))}</small></button>`).join('');
+    $('kinds').querySelectorAll('.kind').forEach(el => el.onclick = () => {
+      state.kind = el.dataset.k; state.sec = ''; render(true);
+    });
+  }
   function renderTabs() {
-    const tabs = [{ key: '', label: L.all }].concat(data.sections.map(s => ({ key: s.key, label: s[lang] })));
+    if (state.kind === 'con') { $('tabs').innerHTML = ''; $('tabs').hidden = true; return; }
+    $('tabs').hidden = false;
+    const inKind = data.items.filter(it => it.tier === state.kind);
+    const secs = data.sections.filter(s => inKind.some(it => it.sec.includes(s.key)));
+    const tabs = [{ key: '', label: `${L.all} · ${inKind.length}` }].concat(secs.map(s => ({ key: s.key,
+      label: `${s[lang]} · ${inKind.filter(it => it.sec.includes(s.key)).length}` })));
     $('tabs').innerHTML = tabs.map(t => `<button class="tab ${t.key === state.sec ? 'active' : ''}" data-k="${t.key}">${esc(t.label)}</button>`).join('');
     $('tabs').querySelectorAll('.tab').forEach(el => el.onclick = () => { state.sec = el.dataset.k; render(true); });
-    const inSec = data.items.filter(it => !state.sec || it.sec.includes(state.sec));
-    const tiers = [{ key: '', label: `${L.anyTier} · ${inSec.length}` }].concat(order.map(t => ({ key: t,
-      label: `${L.groups[t]} · ${inSec.filter(it => it.tier === t).length}` })));
-    $('tiers').innerHTML = tiers.map(t => `<button class="tab ${t.key === state.tier ? 'active' : ''}" data-k="${t.key}">${esc(t.label)}</button>`).join('');
-    $('tiers').querySelectorAll('.tab').forEach(el => el.onclick = () => { state.tier = el.dataset.k; render(true); });
+  }
+  function intro(kind) {
+    const i = L.intro[kind];
+    if (kind === 'pro') return tier === 'std' ? i.std : i.ok;
+    if (kind === 'vip') return tier === 'vip' ? i.ok : i.no;
+    return i;
   }
   function renderMain() {
-    let html = '';
-    if (recItems.length && !state.sec && !state.tier) {
+    const kind = state.kind;
+    let html = `<div class="intro" style="--k:${COLOR[kind]}">${intro(kind)}</div>`;
+    if (kind === 'con') { $('main').innerHTML = html + constructor(); bindConstructor(); return; }
+    if (kind === tier && recItems.length && !state.sec) {
       html += `<h2>${L.mine}</h2><p class="note">${L.mineNote}</p><div class="rec">${recItems.map(card).join('')}</div>`;
     }
-    for (const t of order) {
-      if (state.tier && state.tier !== t) continue;
-      const items = data.items.filter(it => it.tier === t && (!state.sec || it.sec.includes(state.sec)));
-      if (!items.length) continue;
-      if (t !== 'std') items.sort((a, b) => (avail(b) - avail(a)) || (a.num - b.num));
-      html += `<h2>${L.groups[t]} <small>${items.length}</small></h2><p class="note">${L.notes[t]}</p><div class="grid">${items.map(card).join('')}</div>`;
-    }
-    $('main').innerHTML = html || `<div class="empty">${L.empty}</div>`;
+    const items = data.items.filter(it => it.tier === kind && (!state.sec || it.sec.includes(state.sec)));
+    if (kind !== 'std') items.sort((a, b) => (avail(b) - avail(a)) || (a.num - b.num));
+    const secName = state.sec ? data.sections.find(s => s.key === state.sec)[lang] : `${ICON[kind]} ${L.kinds[kind]}`;
+    html += items.length ? `<h2>${esc(secName)}</h2><div class="grid">${items.map(card).join('')}</div>` : `<div class="empty">${L.empty}</div>`;
+    $('main').innerHTML = html;
     $('main').querySelectorAll('.card').forEach(el => el.onclick = () => {
       state.key = el.dataset.k; if (tg && tg.HapticFeedback) tg.HapticFeedback.selectionChanged();
       $('main').querySelectorAll('.card').forEach(c => c.classList.toggle('sel', c.dataset.k === state.key));
       renderSheet();
     });
   }
+  // 🛠 Konstruktor: uslub → rang → `uslub-rang` (oddiy dizayn)
+  function constructor() {
+    const st = data.styles.map(s => `<div class="st ${s.key === state.style ? 'active' : ''}" data-s="${s.key}">
+        <b>${s.emoji} ${esc(tx(s.name))}</b><div>${esc(tx(s.desc))}</div></div>`).join('');
+    const pal = data.palettes.map(p => `<div class="pal ${p.key === state.pal ? 'active' : ''}" data-p="${p.key}">
+        <span style="--c1:${p.c1};--c2:${p.c2}"></span>${esc(tx(p.name))}</div>`).join('');
+    const key = state.style && state.pal ? `${state.style}-${state.pal}` : '';
+    const prev = key ? `<div class="preview"><img src="../img/themes/${key}.jpg?v=2" alt=""><p>${L.conSample}</p></div>` : '';
+    return `<div class="step">${L.step1}</div><div class="styles">${st}</div>
+      <div class="step">${L.step2}</div><div class="pals">${pal}</div>${prev}`;
+  }
+  function bindConstructor() {
+    const pick = () => {
+      state.key = state.style && state.pal ? `${state.style}-${state.pal}` : '';
+      const y = window.scrollY; renderMain(); renderSheet(); window.scrollTo({ top: y });
+    };
+    $('main').querySelectorAll('.st').forEach(el => el.onclick = () => {
+      state.style = el.dataset.s; if (!state.pal) state.pal = data.palettes[0].key; pick();
+    });
+    $('main').querySelectorAll('.pal').forEach(el => el.onclick = () => {
+      state.pal = el.dataset.p; if (!state.style) state.style = data.styles[0].key; pick();
+    });
+  }
   function renderSheet() {
     const it = byKey[state.key];
-    $('hint').hidden = !!it; $('hint').textContent = L.pick;
-    if (!it) { $('sheet').hidden = true; if (tg) tg.MainButton.hide(); return; }
+    const show = it && (state.kind !== 'con' || it.tier === 'std');
+    $('hint').hidden = !!show; $('hint').textContent = L.pick;
+    if (!show) { $('sheet').hidden = true; if (tg) tg.MainButton.hide(); return; }
     const lock = !avail(it);
     const okText = !lock ? L.ok : (it.tier === 'vip' ? L.okVip : L.okPro);
     $('sheet').hidden = false;
     $('sheet').innerHTML = `<div class="row"><div class="info"><b>${esc(tx(it.name))}</b>
         <div class="d">${esc(tx(it.desc))}${it.fits ? ` · ${L.fits}: ${esc(tx(it.fits))}` : ''}</div></div>
         <button class="x" id="close" aria-label="×">✕</button></div>
-      <img class="inner" src="${it.inner}" alt="">
+      ${state.kind === 'con' ? '' : `<img class="inner" src="${it.inner}" alt="">`}
       ${lock ? `<div class="lockmsg ${it.tier}">${it.tier === 'vip' ? L.lockVip : L.lockPro}</div>` : ''}
       <button class="btn" id="ok">${okText}</button>`;
-    $('close').onclick = () => { state.key = ''; renderMain(); renderSheet(); };
+    $('close').onclick = () => { state.key = ''; if (state.kind === 'con') { state.style = ''; state.pal = ''; } renderMain(); renderSheet(); };
     $('ok').onclick = submit;
-    if (tg) tg.MainButton.hide();   // pastdagi o'z tugmamiz yetarli (ikkita bo'lmasin)
+    if (tg) tg.MainButton.hide();   // pastdagi o'z tugmamiz yetarli
   }
-  function render(top) { renderTabs(); renderMain(); renderSheet(); if (top) window.scrollTo({ top: 0 }); }
+  function render(top) { renderKinds(); renderTabs(); renderMain(); renderSheet(); if (top) window.scrollTo({ top: 0 }); }
   function submit() {
     if (!state.key) return;
-    const payload = JSON.stringify({ v: 1, theme: state.key, subject: 'auto', from: 'catalog' });
+    const payload = JSON.stringify({ v: 1, theme: state.key, subject: 'auto', from: state.kind === 'con' ? 'constructor' : 'catalog' });
     if (tg && tg.sendData) tg.sendData(payload); else alert(payload);
   }
   render(false);
