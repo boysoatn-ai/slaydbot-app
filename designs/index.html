@@ -2,6 +2,7 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dizaynlar — Slayd Ol</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -70,6 +71,8 @@
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .dot { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 auto;
     background: linear-gradient(135deg, var(--c1) 50%, var(--c2) 50%); box-shadow: 0 0 0 1px rgba(127,127,127,.3); }
+  .showall { margin: 4px 16px 0; border: 0; background: var(--bg2); color: var(--fg); font: inherit; font-size: 13px;
+    font-weight: 600; padding: 8px 12px; border-radius: 10px; cursor: pointer; }
   .empty { padding: 24px 16px; color: var(--muted); text-align: center; }
   /* Konstruktor */
   .step { margin: 14px 16px 4px; font-weight: 700; font-size: 14px; }
@@ -139,7 +142,8 @@
           lockPro: '🔒 Bu dizayn Premium variantida. Tanlasangiz, Premium’ga o‘tishni taklif qilamiz.',
           lockVip: '🔒 Bu dizayn faqat 💎 VIP variantida. Tanlasangiz, VIP’ga o‘tishni taklif qilamiz.',
           okPro: '👑 Premium bilan tanlash', okVip: '💎 VIP bilan tanlash', empty: 'Bu bo‘limda dizayn yo‘q',
-          conSample: 'Namuna: muqova va 2 ta ichki slayd' },
+          conSample: 'Namuna: muqova va 2 ta ichki slayd',
+          cnt: n => `${n} ta`, of: (n, t) => `${n} ta (jami ${t} ta)`, showAll: t => `⬅️ Hammasini ko‘rsatish (${t} ta)` },
     ru: { title: '🎨 Выбор дизайна', all: 'Все', mine: '✨ Подходят вашей теме', mineNote: 'Подобраны по теме и аудитории',
           kinds: { std: 'Стандарт', pro: 'Премиум', vip: 'VIP Exclusive', con: 'Конструктор' },
           small: { std: n => `${n} шт.`, pro: n => `${n} шт.`, vip: n => `${n} шт.`, con: () => 'свой цвет' },
@@ -155,7 +159,8 @@
           lockPro: '🔒 Этот дизайн — в варианте Premium. Если выберете, предложим перейти на Premium.',
           lockVip: '🔒 Этот дизайн только в 💎 VIP. Если выберете, предложим перейти на VIP.',
           okPro: '👑 Выбрать с Premium', okVip: '💎 Выбрать с VIP', empty: 'В этом разделе нет дизайнов',
-          conSample: 'Пример: обложка и 2 внутренних слайда' },
+          conSample: 'Пример: обложка и 2 внутренних слайда',
+          cnt: n => `${n} шт.`, of: (n, t) => `${n} из ${t}`, showAll: t => `⬅️ Показать все (${t})` },
   }[lang];
   const ICON = { std: '🎨', pro: '👑', vip: '💎', con: '🛠' };
   const COLOR = { std: 'var(--std)', pro: 'var(--pro)', vip: 'var(--vip)', con: 'var(--con)' };
@@ -163,7 +168,7 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const tx = v => (v && typeof v === 'object') ? (v[lang] || v.uz) : (v || '');
   document.documentElement.lang = lang;
-  const data = await fetch('data.json?v=2').then(r => r.json());
+  const data = await fetch('data.json?v=3&t=' + Math.floor(Date.now() / 600000)).then(r => r.json());
   const byKey = Object.fromEntries(data.items.map(it => [it.key, it]));
   const avail = it => it.tier === 'std' || (it.tier === 'pro' ? (tier !== 'std' || !!it.open) : tier === 'vip');
   const recItems = rec.map(k => byKey[k]).filter(Boolean);
@@ -216,9 +221,13 @@
     }
     const items = data.items.filter(it => it.tier === kind && (!state.sec || it.sec.includes(state.sec)));
     if (kind !== 'std') items.sort((a, b) => (avail(b) - avail(a)) || (a.num - b.num));
-    const secName = state.sec ? data.sections.find(s => s.key === state.sec)[lang] : `${ICON[kind]} ${L.kinds[kind]}`;
-    html += items.length ? `<h2>${esc(secName)}</h2><div class="grid">${items.map(card).join('')}</div>` : `<div class="empty">${L.empty}</div>`;
+    const total = data.items.filter(it => it.tier === kind).length;
+    const secName = state.sec ? `${data.sections.find(s => s.key === state.sec)[lang]} — ${L.of(items.length, total)}`
+      : `${ICON[kind]} ${L.kinds[kind]} — ${L.cnt(total)}`;
+    html += `<h2>${esc(secName)}</h2>` + (state.sec ? `<button class="showall" id="showall">${L.showAll(total)}</button>` : '');
+    html += items.length ? `<div class="grid">${items.map(card).join('')}</div>` : `<div class="empty">${L.empty}</div>`;
     $('main').innerHTML = html;
+    if ($('showall')) $('showall').onclick = () => { state.sec = ''; render(true); };
     $('main').querySelectorAll('.card').forEach(el => el.onclick = () => {
       state.key = el.dataset.k; if (tg && tg.HapticFeedback) tg.HapticFeedback.selectionChanged();
       $('main').querySelectorAll('.card').forEach(c => c.classList.toggle('sel', c.dataset.k === state.key));

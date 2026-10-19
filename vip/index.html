@@ -95,7 +95,7 @@
   }[lang];
   const $ = id => document.getElementById(id);
   $('h1').textContent = L.title; $('sub').textContent = L.sub; document.documentElement.lang = lang;
-  const data = await fetch('data.json?v=1').then(r => r.json());
+  const data = await fetch('data.json?v=30').then(r => r.json());
   data.cats = [];                                  // 30 ta — toifasiz, bitta ro'yxat (toifalar — dizayn menyusi islohotida)
   const state = { cat: '', key: '' };
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
