@@ -1,0 +1,2996 @@
+{
+ "sections": [
+  {
+   "key": "history",
+   "uz": "🏛 Tarix va madaniyat",
+   "ru": "🏛 История и культура"
+  },
+  {
+   "key": "nature",
+   "uz": "🌿 Tabiat va ekologiya",
+   "ru": "🌿 Природа и экология"
+  },
+  {
+   "key": "science",
+   "uz": "🔬 Fan va texnologiya",
+   "ru": "🔬 Наука и технологии"
+  },
+  {
+   "key": "business",
+   "uz": "📊 Biznes va raqamlar",
+   "ru": "📊 Бизнес и цифры"
+  },
+  {
+   "key": "art",
+   "uz": "🎨 San’at va ijod",
+   "ru": "🎨 Искусство и творчество"
+  },
+  {
+   "key": "school",
+   "uz": "🧸 Maktab va bolalar",
+   "ru": "🧸 Школа и дети"
+  },
+  {
+   "key": "formal",
+   "uz": "🎓 Rasmiy va jiddiy",
+   "ru": "🎓 Строгий, официальный"
+  }
+ ],
+ "items": [
+  {
+   "key": "pro-vip-royal",
+   "tier": "vip",
+   "sec": [
+    "history",
+    "formal"
+   ],
+   "name": "Imperial Royal",
+   "num": 1,
+   "desc": {
+    "uz": "to‘q ko‘k va oltin, kechki saroy, nafis ramka",
+    "ru": "тёмно-синий и золото, вечерний дворец, изящная рамка"
+   },
+   "fits": {
+    "uz": "tarix, davlat, rasmiy taqdimot, yetakchilik",
+    "ru": "история, государство, официальные доклады, лидерство"
+   },
+   "c1": "#06152F",
+   "c2": "#D9A441",
+   "inner": "../vip/img/vip-royal-in.jpg"
+  },
+  {
+   "key": "pro-vip-alpine",
+   "tier": "vip",
+   "sec": [
+    "nature"
+   ],
+   "name": "Nature Luxe",
+   "num": 2,
+   "desc": {
+    "uz": "katta tabiat manzarasi, toza ko‘l, botanika kartalari",
+    "ru": "большой природный пейзаж, чистое озеро, ботанические карточки"
+   },
+   "fits": {
+    "uz": "ekologiya, biologiya, geografiya, turizm",
+    "ru": "экология, биология, география, туризм"
+   },
+   "c1": "#073D3B",
+   "c2": "#B7D49A",
+   "inner": "../vip/img/vip-alpine-in.jpg"
+  },
+  {
+   "key": "pro-vip-cosmos",
+   "tier": "vip",
+   "sec": [
+    "science"
+   ],
+   "name": "Cosmic Universe",
+   "num": 3,
+   "desc": {
+    "uz": "koinot chuqurligi, sayyoralar, yorug‘lik izlari",
+    "ru": "глубина космоса, планеты, световые следы"
+   },
+   "fits": {
+    "uz": "kosmos, fizika, astronomiya, IT, ilm-fan",
+    "ru": "космос, физика, астрономия, IT, наука"
+   },
+   "c1": "#050A2D",
+   "c2": "#8FA8FF",
+   "inner": "../vip/img/vip-cosmos-in.jpg"
+  },
+  {
+   "key": "pro-vip-glass",
+   "tier": "vip",
+   "sec": [
+    "science",
+    "business"
+   ],
+   "name": "Modern Glass",
+   "num": 4,
+   "desc": {
+    "uz": "shaffof shisha shakllar, muzli panellar, toza ko‘k",
+    "ru": "прозрачные стеклянные формы, матовые панели, чистый синий"
+   },
+   "fits": {
+    "uz": "texnologiya, mahsulot, xizmat, startap",
+    "ru": "технологии, продукт, сервис, стартап"
+   },
+   "c1": "#F4F8FF",
+   "c2": "#1875D1",
+   "inner": "../vip/img/vip-glass-in.jpg"
+  },
+  {
+   "key": "pro-vip-art",
+   "tier": "vip",
+   "sec": [
+    "art"
+   ],
+   "name": "Art Gallery",
+   "num": 5,
+   "desc": {
+    "uz": "marmar haykal, jasur bo‘yoq zarbalari, krem qog‘oz",
+    "ru": "мраморный бюст, смелые мазки краски, кремовая бумага"
+   },
+   "fits": {
+    "uz": "san’at, adabiyot, falsafa, ijodiy loyihalar",
+    "ru": "искусство, литература, философия, творческие проекты"
+   },
+   "c1": "#F4E7D0",
+   "c2": "#B5461A",
+   "inner": "../vip/img/vip-art-in.jpg"
+  },
+  {
+   "key": "pro-vip-neon",
+   "tier": "vip",
+   "sec": [
+    "science"
+   ],
+   "name": "Future City",
+   "num": 6,
+   "desc": {
+    "uz": "neon megapolis, tungi yorug‘lik, ufq to‘ri",
+    "ru": "неоновый мегаполис, ночные огни, сетка горизонта"
+   },
+   "fits": {
+    "uz": "smart city, arxitektura, innovatsiya, transport",
+    "ru": "умный город, архитектура, инновации, транспорт"
+   },
+   "c1": "#030B24",
+   "c2": "#7FA0FF",
+   "inner": "../vip/img/vip-neon-in.jpg"
+  },
+  {
+   "key": "pro-vip-luxe",
+   "tier": "vip",
+   "sec": [
+    "formal",
+    "business"
+   ],
+   "name": "Minimal Luxe",
+   "num": 7,
+   "desc": {
+    "uz": "krem devor, keramika, yumshoq soya, keng bo‘shliq",
+    "ru": "кремовая стена, керамика, мягкие тени, много воздуха"
+   },
+   "fits": {
+    "uz": "biznes, portfolio, hisobot, psixologiya",
+    "ru": "бизнес, портфолио, отчёт, психология"
+   },
+   "c1": "#F4F0E8",
+   "c2": "#8C6A45",
+   "inner": "../vip/img/vip-luxe-in.jpg"
+  },
+  {
+   "key": "pro-vip-dark",
+   "tier": "vip",
+   "sec": [
+    "business"
+   ],
+   "name": "Dark Prestige",
+   "num": 8,
+   "desc": {
+    "uz": "qora-qizil fon, dramatik yorug‘lik, oltin raqamlar",
+    "ru": "чёрно-красный фон, драматичный свет, золотые цифры"
+   },
+   "fits": {
+    "uz": "strategiya, investitsiya, sport, liderlik",
+    "ru": "стратегия, инвестиции, спорт, лидерство"
+   },
+   "c1": "#17070B",
+   "c2": "#D8A34A",
+   "inner": "../vip/img/vip-dark-in.jpg"
+  },
+  {
+   "key": "pro-vip-dream",
+   "tier": "vip",
+   "sec": [
+    "school"
+   ],
+   "name": "Kids Dream",
+   "num": 9,
+   "desc": {
+    "uz": "yorqin 3D sahna, bulutlar va yulduzlar, yumaloq kartalar",
+    "ru": "яркая 3D-сцена, облака и звёзды, круглые карточки"
+   },
+   "fits": {
+    "uz": "boshlang‘ich sinf, maktab darsi, bolalar mavzulari",
+    "ru": "начальная школа, школьный урок, детские темы"
+   },
+   "c1": "#152B91",
+   "c2": "#FFD43B",
+   "inner": "../vip/img/vip-dream-in.jpg"
+  },
+  {
+   "key": "pro-vip-heritage",
+   "tier": "vip",
+   "sec": [
+    "history"
+   ],
+   "name": "Culture Heritage",
+   "num": 10,
+   "desc": {
+    "uz": "o‘zbek koshinlari, tarixiy me’morchilik, girih naqsh",
+    "ru": "узбекские изразцы, историческая архитектура, гирих"
+   },
+   "fits": {
+    "uz": "tarix, me’morchilik, turizm, milliy qadriyatlar",
+    "ru": "история, архитектура, туризм, национальные ценности"
+   },
+   "c1": "#07384A",
+   "c2": "#E9B66B",
+   "inner": "../vip/img/vip-heritage-in.jpg"
+  },
+  {
+   "key": "pro-vip-kinetic",
+   "tier": "vip",
+   "sec": [
+    "business",
+    "art"
+   ],
+   "name": "Kinetic Editorial",
+   "num": 11,
+   "desc": {
+    "uz": "jasur poster tipografikasi, qiya bloklar, asimmetriya",
+    "ru": "смелая постерная типографика, диагональные блоки"
+   },
+   "fits": {
+    "uz": "marketing, strategiya, pitch, kampaniya",
+    "ru": "маркетинг, стратегия, питч, кампания"
+   },
+   "c1": "#F4F0E8",
+   "c2": "#FF4D24",
+   "inner": "../vip/img/vip-kinetic-in.jpg"
+  },
+  {
+   "key": "pro-vip-holo",
+   "tier": "vip",
+   "sec": [
+    "science"
+   ],
+   "name": "Holographic Lab",
+   "num": 12,
+   "desc": {
+    "uz": "kamalak tusli materiallar, spektral gradient, 3D obyektlar",
+    "ru": "переливающиеся материалы, спектральный градиент, 3D-объекты"
+   },
+   "fits": {
+    "uz": "mahsulot innovatsiyasi, ilm-fan, IT, dizayn",
+    "ru": "инновации продукта, наука, IT, дизайн"
+   },
+   "c1": "#F7F8FC",
+   "c2": "#6A5AE0",
+   "inner": "../vip/img/vip-holo-in.jpg"
+  },
+  {
+   "key": "pro-vip-pop",
+   "tier": "vip",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": "Neo-Brutalist Pop",
+   "num": 13,
+   "desc": {
+    "uz": "qalin chiziqlar, qattiq soya, sariq stiker, poster energiyasi",
+    "ru": "толстые линии, жёсткая тень, жёлтый стикер, энергия плаката"
+   },
+   "fits": {
+    "uz": "kreativ kampaniya, yoshlar, ta’lim, brend",
+    "ru": "креативные кампании, молодёжь, образование, бренд"
+   },
+   "c1": "#F8F1E5",
+   "c2": "#FFD928",
+   "inner": "../vip/img/vip-pop-in.jpg"
+  },
+  {
+   "key": "pro-vip-data",
+   "tier": "vip",
+   "sec": [
+    "business",
+    "science"
+   ],
+   "name": "Data Noir",
+   "num": 14,
+   "desc": {
+    "uz": "grafit sahna, mint signallar, aniq to‘r va katta raqamlar",
+    "ru": "графитовая сцена, мятные сигналы, точная сетка и крупные цифры"
+   },
+   "fits": {
+    "uz": "analitika, KPI, moliya, texnik hisobot",
+    "ru": "аналитика, KPI, финансы, технический отчёт"
+   },
+   "c1": "#090D12",
+   "c2": "#00E0B8",
+   "inner": "../vip/img/vip-data-in.jpg"
+  },
+  {
+   "key": "pro-vip-atelier",
+   "tier": "vip",
+   "sec": [
+    "art",
+    "history"
+   ],
+   "name": "Analog Atelier",
+   "num": 15,
+   "desc": {
+    "uz": "film donachalari, qog‘oz qatlamlari, qo‘l yozuvi izohlari",
+    "ru": "плёночное зерно, слои бумаги, рукописные пометки"
+   },
+   "fits": {
+    "uz": "brend tarixi, sayohat, keys-stadi, loyiha jarayoni",
+    "ru": "история бренда, путешествия, кейсы, процесс проекта"
+   },
+   "c1": "#E8D9C2",
+   "c2": "#733B2D",
+   "inner": "../vip/img/vip-atelier-in.jpg"
+  },
+  {
+   "key": "pro-vip-ocean",
+   "tier": "vip",
+   "sec": [
+    "nature"
+   ],
+   "name": "Ocean Vibe",
+   "num": 16,
+   "desc": {
+    "uz": "havodan okean, suv oqimi, mineral teksturalar",
+    "ru": "океан с высоты, течение воды, минеральные текстуры"
+   },
+   "fits": {
+    "uz": "suv, okean, turizm, sog‘lomlashtirish, ekologiya",
+    "ru": "вода, океан, туризм, оздоровление, экология"
+   },
+   "c1": "#F2FBFA",
+   "c2": "#0B8A8A",
+   "inner": "../vip/img/vip-ocean-in.jpg"
+  },
+  {
+   "key": "pro-vip-islamic",
+   "tier": "vip",
+   "sec": [
+    "history"
+   ],
+   "name": "Royal Islamic",
+   "num": 17,
+   "desc": {
+    "uz": "islomiy geometriya, ravoqlar, koshin va oltin",
+    "ru": "исламская геометрия, арки, изразцы и золото"
+   },
+   "fits": {
+    "uz": "me’morchilik, tarix, madaniy meros, din tarixi",
+    "ru": "архитектура, история, культурное наследие, история религии"
+   },
+   "c1": "#071C3C",
+   "c2": "#D9A441",
+   "inner": "../vip/img/vip-islamic-in.jpg"
+  },
+  {
+   "key": "pro-vip-cinema",
+   "tier": "vip",
+   "sec": [
+    "art",
+    "history"
+   ],
+   "name": "Cinematic Pro",
+   "num": 18,
+   "desc": {
+    "uz": "kino kadri, keng panorama, hikoya bosqichlari",
+    "ru": "кадр из фильма, широкая панорама, этапы истории"
+   },
+   "fits": {
+    "uz": "keys-stadi, loyiha hikoyasi, sayohat, biografiya",
+    "ru": "кейсы, история проекта, путешествия, биография"
+   },
+   "c1": "#0B0D10",
+   "c2": "#F3A45C",
+   "inner": "../vip/img/vip-cinema-in.jpg"
+  },
+  {
+   "key": "pro-vip-3d",
+   "tier": "vip",
+   "sec": [
+    "art",
+    "science"
+   ],
+   "name": "Creative 3D",
+   "num": 19,
+   "desc": {
+    "uz": "haykaltarosh 3D obyektlar, kamalak material, nafis kompozitsiya",
+    "ru": "скульптурные 3D-объекты, перламутровый материал, изящная композиция"
+   },
+   "fits": {
+    "uz": "mahsulot taqdimoti, kreativ pitch, dizayn",
+    "ru": "презентация продукта, креативный питч, дизайн"
+   },
+   "c1": "#F8F7FF",
+   "c2": "#6B4EFF",
+   "inner": "../vip/img/vip-3d-in.jpg"
+  },
+  {
+   "key": "pro-vip-eco",
+   "tier": "vip",
+   "sec": [
+    "nature",
+    "science"
+   ],
+   "name": "Eco Future",
+   "num": 20,
+   "desc": {
+    "uz": "yashil fasadlar, barqaror arxitektura, toza diagrammalar",
+    "ru": "зелёные фасады, устойчивая архитектура, чистые схемы"
+   },
+   "fits": {
+    "uz": "barqarorlik, ESG, arxitektura, energiya",
+    "ru": "устойчивое развитие, ESG, архитектура, энергетика"
+   },
+   "c1": "#173D2D",
+   "c2": "#B7D49A",
+   "inner": "../vip/img/vip-eco-in.jpg"
+  },
+  {
+   "key": "pro-vip-boutique",
+   "tier": "vip",
+   "sec": [
+    "business"
+   ],
+   "name": "Luxury Boutique",
+   "num": 21,
+   "desc": {
+    "uz": "baxmal bordo, mahsulot/interyer foto, oltin chiziqlar",
+    "ru": "бархатное бордо, фото интерьера или продукта, золотые линии"
+   },
+   "fits": {
+    "uz": "brend, marketing, premium mahsulot, savdo, xizmat",
+    "ru": "бренд, маркетинг, премиум-продукт, сервис"
+   },
+   "c1": "#30050D",
+   "c2": "#D6B36A",
+   "inner": "../vip/img/vip-boutique-in.jpg"
+  },
+  {
+   "key": "pro-vip-universe",
+   "tier": "vip",
+   "sec": [
+    "science"
+   ],
+   "name": "Cinematic Universe",
+   "num": 22,
+   "desc": {
+    "uz": "fazoviy chuqurlik, kinematik yorug‘lik, sokin panel",
+    "ru": "космическая глубина, кинематографичный свет, спокойные панели"
+   },
+   "fits": {
+    "uz": "kosmos, fizika, ilm-fan, texnologiya, kelajak",
+    "ru": "космос, физика, наука, технологии, будущее"
+   },
+   "c1": "#080E28",
+   "c2": "#7FD3FF",
+   "inner": "../vip/img/vip-universe-in.jpg"
+  },
+  {
+   "key": "pro-vip-academic",
+   "tier": "vip",
+   "sec": [
+    "formal",
+    "history"
+   ],
+   "name": "Elegant Academic",
+   "num": 23,
+   "desc": {
+    "uz": "kutubxona, kitob va qo‘lyozma, akademik tipografika",
+    "ru": "библиотека, книги и рукописи, академическая типографика"
+   },
+   "fits": {
+    "uz": "ta’lim, ilmiy tadqiqot, dissertatsiya, rasmiy ishlar",
+    "ru": "образование, наука, диссертация, официальные работы"
+   },
+   "c1": "#21170F",
+   "c2": "#C7A56A",
+   "inner": "../vip/img/vip-academic-in.jpg"
+  },
+  {
+   "key": "pro-vip-prestige",
+   "tier": "vip",
+   "sec": [
+    "business",
+    "formal"
+   ],
+   "name": "Burgundy Prestige",
+   "num": 24,
+   "desc": {
+    "uz": "chuqur bordo, oltin aksent, dramatik yorug‘lik",
+    "ru": "глубокое бордо, золотой акцент, драматичный свет"
+   },
+   "fits": {
+    "uz": "korporativ strategiya, investitsiya, biznes",
+    "ru": "корпоративная стратегия, инвестиции, бизнес"
+   },
+   "c1": "#3D0B1C",
+   "c2": "#CFA45E",
+   "inner": "../vip/img/vip-prestige-in.jpg"
+  },
+  {
+   "key": "pro-vip-imperial",
+   "tier": "vip",
+   "sec": [
+    "history"
+   ],
+   "name": "Imperial Signature",
+   "num": 25,
+   "desc": {
+    "uz": "kinematik tarixiy sahna, oltin naqsh, nafis serif",
+    "ru": "кинематографичная историческая сцена, золотой орнамент, изящный serif"
+   },
+   "fits": {
+    "uz": "tarix, madaniyat, davlat arboblari, rasmiy taqdimot",
+    "ru": "история, культура, государственные деятели, официальные доклады"
+   },
+   "c1": "#17100C",
+   "c2": "#D6AD5C",
+   "inner": "../vip/img/vip-imperial-in.jpg"
+  },
+  {
+   "key": "pro-vip-nature",
+   "tier": "vip",
+   "sec": [
+    "nature"
+   ],
+   "name": "Botanical Luxe",
+   "num": 26,
+   "desc": {
+    "uz": "realistik tabiat, tabiiy yorug‘lik, sokin yashil kartalar",
+    "ru": "реалистичная природа, естественный свет, спокойные зелёные карточки"
+   },
+   "fits": {
+    "uz": "tabiat, ekologiya, biologiya, geografiya",
+    "ru": "природа, экология, биология, география"
+   },
+   "c1": "#0E3023",
+   "c2": "#B6D29C",
+   "inner": "../vip/img/vip-nature-in.jpg"
+  },
+  {
+   "key": "pro-vip-gallery",
+   "tier": "vip",
+   "sec": [
+    "art"
+   ],
+   "name": "Sculpture Atelier",
+   "num": 27,
+   "desc": {
+    "uz": "galereya yorug‘ligi, badiiy asarlar, kuratorlik maketi",
+    "ru": "свет галереи, произведения искусства, кураторская вёрстка"
+   },
+   "fits": {
+    "uz": "san’at, adabiyot, madaniyat, ijodiy loyihalar",
+    "ru": "искусство, литература, культура, творческие проекты"
+   },
+   "c1": "#260B12",
+   "c2": "#D7B37A",
+   "inner": "../vip/img/vip-gallery-in.jpg"
+  },
+  {
+   "key": "pro-vip-city",
+   "tier": "vip",
+   "sec": [
+    "science"
+   ],
+   "name": "Future Transit",
+   "num": 28,
+   "desc": {
+    "uz": "futuristik shahar, blueprint qatlamlari, toza ko‘k aksent",
+    "ru": "футуристичный город, слои чертежа, чистый голубой акцент"
+   },
+   "fits": {
+    "uz": "arxitektura, shaharsozlik, infratuzilma, innovatsiya",
+    "ru": "архитектура, урбанистика, инфраструктура, инновации"
+   },
+   "c1": "#071D35",
+   "c2": "#59D8E8",
+   "inner": "../vip/img/vip-city-in.jpg"
+  },
+  {
+   "key": "pro-vip-minimal",
+   "tier": "vip",
+   "sec": [
+    "formal"
+   ],
+   "name": "Minimal Still-Life",
+   "num": 29,
+   "desc": {
+    "uz": "abstrakt 3D shakllar, marmar va qog‘oz, keng bo‘shliq",
+    "ru": "абстрактные 3D-формы, мрамор и бумага, много воздуха"
+   },
+   "fits": {
+    "uz": "universal premium, biznes, ta’lim, portfolio",
+    "ru": "универсальный премиум, бизнес, образование, портфолио"
+   },
+   "c1": "#F8F5EF",
+   "c2": "#8A6638",
+   "inner": "../vip/img/vip-minimal-in.jpg"
+  },
+  {
+   "key": "pro-vip-kids",
+   "tier": "vip",
+   "sec": [
+    "school"
+   ],
+   "name": "Children’s Dream",
+   "num": 30,
+   "desc": {
+    "uz": "3D personajlar, yumshoq yorug‘lik, rang-barang kartalar",
+    "ru": "3D-персонажи, мягкий свет, разноцветные карточки"
+   },
+   "fits": {
+    "uz": "bog‘cha, boshlang‘ich sinf, bolalar mavzulari",
+    "ru": "детский сад, начальная школа, детские темы"
+   },
+   "c1": "#EAF7FF",
+   "c2": "#B4501A",
+   "inner": "../vip/img/vip-kids-in.jpg"
+  },
+  {
+   "key": "pro-royal",
+   "tier": "pro",
+   "sec": [
+    "history",
+    "formal"
+   ],
+   "name": "Royal Classic",
+   "num": 1,
+   "desc": {
+    "uz": "klassik serif, oltin chiziqlar, katta tarixiy rasm",
+    "ru": "классический serif, золотые линии, большое историческое фото"
+   },
+   "fits": {
+    "uz": "tarix, adabiyot, madaniyat, yetakchilik",
+    "ru": "история, литература, культура"
+   },
+   "c1": "#10151D",
+   "c2": "#D6A955",
+   "inner": "../premium/img/royal-in.jpg"
+  },
+  {
+   "key": "pro-minimal",
+   "tier": "pro",
+   "sec": [
+    "formal",
+    "business"
+   ],
+   "name": "Modern Minimal",
+   "num": 2,
+   "desc": {
+    "uz": "keng bo‘sh joy, toza grid, sodda shrift",
+    "ru": "много воздуха, чистая сетка, простой шрифт"
+   },
+   "fits": {
+    "uz": "biznes, ta’lim, ilm-fan, hisobot",
+    "ru": "бизнес, образование, наука, отчёты"
+   },
+   "c1": "#F7F8FA",
+   "c2": "#2563EB",
+   "inner": "../premium/img/minimal-in.jpg"
+  },
+  {
+   "key": "pro-nature",
+   "tier": "pro",
+   "sec": [
+    "nature"
+   ],
+   "name": "Nature Elegant",
+   "num": 3,
+   "desc": {
+    "uz": "tabiiy fotosurat, organik shakllar, yashil ohang",
+    "ru": "природные фото, органичные формы, зелёные тона"
+   },
+   "fits": {
+    "uz": "biologiya, ekologiya, geografiya, qishloq xo‘jaligi",
+    "ru": "биология, экология, география"
+   },
+   "c1": "#F3F6EC",
+   "c2": "#3F7A3A",
+   "inner": "../premium/img/nature-in.jpg"
+  },
+  {
+   "key": "pro-tech",
+   "tier": "pro",
+   "sec": [
+    "science"
+   ],
+   "name": "Tech Future",
+   "num": 4,
+   "desc": {
+    "uz": "raqamli vizual, neon gradient, shisha kartalar",
+    "ru": "цифровые визуалы, неоновый градиент, стеклянные карточки"
+   },
+   "fits": {
+    "uz": "IT, sun’iy intellekt, muhandislik, innovatsiya",
+    "ru": "IT, ИИ, инженерия, инновации"
+   },
+   "c1": "#0B1026",
+   "c2": "#A78BFA",
+   "inner": "../premium/img/tech-in.jpg"
+  },
+  {
+   "key": "pro-islamic",
+   "tier": "pro",
+   "sec": [
+    "history"
+   ],
+   "name": "Islamic Geometric",
+   "num": 5,
+   "desc": {
+    "uz": "girih naqshi, ravoq shakllari, firuza va oltin",
+    "ru": "орнамент гирих, арки, бирюза и золото"
+   },
+   "fits": {
+    "uz": "me’morchilik, milliy meros, tarix, amaliy san’at",
+    "ru": "архитектура, наследие, история, ремёсла"
+   },
+   "c1": "#F5EEDC",
+   "c2": "#0E5B50",
+   "inner": "../premium/img/islamic-in.jpg"
+  },
+  {
+   "key": "pro-infographic",
+   "tier": "pro",
+   "sec": [
+    "business",
+    "science"
+   ],
+   "name": "Infographic Modern",
+   "num": 6,
+   "desc": {
+    "uz": "raqamlar, timeline, diagramma, ko‘rsatkich paneli",
+    "ru": "цифры, хронология, панель показателей"
+   },
+   "fits": {
+    "uz": "statistika, iqtisod, tadqiqot, xronologiya",
+    "ru": "статистика, экономика, исследования"
+   },
+   "c1": "#0B1F33",
+   "c2": "#F0B44D",
+   "inner": "../premium/img/infographic-in.jpg"
+  },
+  {
+   "key": "pro-card",
+   "tier": "pro",
+   "sec": [
+    "school",
+    "formal"
+   ],
+   "name": "Card Style",
+   "num": 7,
+   "desc": {
+    "uz": "modul kartalar, ikonkalar, aniq grid",
+    "ru": "модульные карточки, иконки, чёткая сетка"
+   },
+   "fits": {
+    "uz": "asosiy fikrlar, taqqoslash, bosqichlar, ta’lim",
+    "ru": "ключевые идеи, сравнение, этапы"
+   },
+   "c1": "#F7F2E8",
+   "c2": "#B9802F",
+   "inner": "../premium/img/card-in.jpg"
+  },
+  {
+   "key": "pro-artistic",
+   "tier": "pro",
+   "sec": [
+    "art"
+   ],
+   "name": "Artistic Clean",
+   "num": 8,
+   "desc": {
+    "uz": "editorial kompozitsiya, bo‘yoq dog‘lari, katta tasvir",
+    "ru": "редакционная композиция, пятна краски, крупное изображение"
+   },
+   "fits": {
+    "uz": "san’at, adabiyot, kreativ loyiha, madaniyat",
+    "ru": "искусство, литература, творчество"
+   },
+   "c1": "#F8F6F1",
+   "c2": "#1E67A8",
+   "inner": "../premium/img/artistic-in.jpg"
+  },
+  {
+   "key": "pro-luxury",
+   "tier": "pro",
+   "sec": [
+    "business"
+   ],
+   "name": "Luxury Dark",
+   "num": 9,
+   "desc": {
+    "uz": "kino darajasidagi foto, dramatik yorug‘lik, chuqur fon",
+    "ru": "кинематографичное фото, драматичный свет, глубокий фон"
+   },
+   "fits": {
+    "uz": "sayohat, geografiya, strategiya, tarix",
+    "ru": "путешествия, география, история"
+   },
+   "c1": "#071A36",
+   "c2": "#E8D2A0",
+   "inner": "../premium/img/luxury-in.jpg"
+  },
+  {
+   "key": "pro-glass",
+   "tier": "pro",
+   "sec": [
+    "science"
+   ],
+   "name": "Glass Modern",
+   "num": 10,
+   "desc": {
+    "uz": "yarim shaffof kartalar, qatlamli gradient, nozik chegara",
+    "ru": "полупрозрачные карточки, слоистый градиент"
+   },
+   "fits": {
+    "uz": "texnologiya, tibbiyot, ilm-fan, raqamli mahsulot",
+    "ru": "технологии, медицина, наука"
+   },
+   "c1": "#12182E",
+   "c2": "#7DD3FC",
+   "inner": "../premium/img/glass-in.jpg"
+  },
+  {
+   "key": "pro-bento",
+   "tier": "pro",
+   "sec": [
+    "school",
+    "business"
+   ],
+   "name": "Bento Editorial",
+   "num": 11,
+   "desc": {
+    "uz": "turli o‘lchamdagi kartalar, bitta katta vizual",
+    "ru": "карточки разного размера и одно большое фото"
+   },
+   "fits": {
+    "uz": "ta’lim, talaba hayoti, tushuntiruvchi taqdimot",
+    "ru": "образование, студенческая жизнь"
+   },
+   "c1": "#F6F1E8",
+   "c2": "#2F5FC8",
+   "inner": "../premium/img/bento-in.jpg"
+  },
+  {
+   "key": "pro-type",
+   "tier": "pro",
+   "sec": [
+    "art"
+   ],
+   "name": "Type as Hero",
+   "num": 12,
+   "desc": {
+    "uz": "juda katta tipografika, bitta asosiy fikr",
+    "ru": "очень крупная типографика, одна главная мысль"
+   },
+   "fits": {
+    "uz": "iqlim, ijtimoiy muammo, kampaniya, nutq",
+    "ru": "климат, социальные темы, выступления"
+   },
+   "c1": "#F5F3EE",
+   "c2": "#E0401C",
+   "inner": "../premium/img/type-in.jpg"
+  },
+  {
+   "key": "pro-brutal",
+   "tier": "pro",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": "Neo-Brutalist",
+   "num": 13,
+   "desc": {
+    "uz": "qalin chegara, keskin rang maydoni, grafik stiker",
+    "ru": "толстые рамки, яркие плашки, графичные стикеры"
+   },
+   "fits": {
+    "uz": "raqamli madaniyat, yoshlar, marketing, innovatsiya",
+    "ru": "цифровая культура, молодёжь, маркетинг"
+   },
+   "c1": "#FFFDF2",
+   "c2": "#101010",
+   "inner": "../premium/img/brutal-in.jpg"
+  },
+  {
+   "key": "pro-cinematic",
+   "tier": "pro",
+   "sec": [
+    "nature",
+    "art"
+   ],
+   "name": "Cinematic Full-Bleed",
+   "num": 14,
+   "desc": {
+    "uz": "butun slayd foto, qorong‘i overlay, qisqa matn",
+    "ru": "фото на весь слайд, тёмный оверлей, короткий текст"
+   },
+   "fits": {
+    "uz": "geografiya, sayohat, tabiat, tarixiy joylar",
+    "ru": "география, путешествия, природа"
+   },
+   "c1": "#101820",
+   "c2": "#E9B949",
+   "inner": "../premium/img/cinematic-in.jpg"
+  },
+  {
+   "key": "pro-zine",
+   "tier": "pro",
+   "sec": [
+    "art"
+   ],
+   "name": "Zine Collage",
+   "num": 15,
+   "desc": {
+    "uz": "qog‘oz qirqimlari, foto kollaj, tekstura",
+    "ru": "бумажные вырезки, фотоколлаж, текстура"
+   },
+   "fits": {
+    "uz": "san’at tarixi, madaniyat, ijod, adabiyot",
+    "ru": "история искусства, культура, литература"
+   },
+   "c1": "#F3E9D8",
+   "c2": "#C8402B",
+   "inner": "../premium/img/zine-in.jpg"
+  },
+  {
+   "key": "pro-soft3d",
+   "tier": "pro",
+   "sec": [
+    "school"
+   ],
+   "name": "Soft 3D Objects",
+   "num": 16,
+   "desc": {
+    "uz": "yumshoq 3D shakllar, silliq soyalar, pastel ranglar",
+    "ru": "мягкие 3D-формы, плавные тени, пастель"
+   },
+   "fits": {
+    "uz": "biologiya, kimyo, maktab fanlari, texnologiya",
+    "ru": "биология, химия, школьные предметы"
+   },
+   "c1": "#F5F7FC",
+   "c2": "#5B53D6",
+   "inner": "../premium/img/soft3d-in.jpg"
+  },
+  {
+   "key": "pro-data",
+   "tier": "pro",
+   "sec": [
+    "business"
+   ],
+   "name": "Data Storytelling",
+   "num": 17,
+   "desc": {
+    "uz": "bitta asosiy topilma, katta raqam, sodda diagramma",
+    "ru": "одна главная находка, крупная цифра, простая диаграмма"
+   },
+   "fits": {
+    "uz": "iqtisod, tadqiqot, biznes, statistika",
+    "ru": "экономика, исследования, бизнес"
+   },
+   "c1": "#081B2B",
+   "c2": "#F3B54A",
+   "inner": "../premium/img/data-in.jpg"
+  },
+  {
+   "key": "pro-warm",
+   "tier": "pro",
+   "sec": [
+    "history",
+    "art"
+   ],
+   "name": "Warm Tactile Editorial",
+   "num": 18,
+   "desc": {
+    "uz": "iliq qog‘oz teksturasi, nafis serif, haqiqiy foto",
+    "ru": "тёплая бумажная текстура, изящный serif, живое фото"
+   },
+   "fits": {
+    "uz": "adabiyot, tarix, hunarmandchilik, inson hikoyalari",
+    "ru": "литература, история, ремёсла"
+   },
+   "c1": "#F0E5D2",
+   "c2": "#7C452B",
+   "inner": "../premium/img/warm-in.jpg"
+  },
+  {
+   "key": "pro-mono",
+   "tier": "pro",
+   "sec": [
+    "formal",
+    "art"
+   ],
+   "name": "Monochrome Geometric",
+   "num": 19,
+   "desc": {
+    "uz": "oq-qora foto, geometrik chiziqlar, kuchli kontrast",
+    "ru": "чёрно-белое фото, геометрия, сильный контраст"
+   },
+   "fits": {
+    "uz": "me’morchilik, dizayn, falsafa, muhandislik",
+    "ru": "архитектура, дизайн, философия"
+   },
+   "c1": "#FFFFFF",
+   "c2": "#111111",
+   "inner": "../premium/img/mono-in.jpg"
+  },
+  {
+   "key": "pro-teal",
+   "tier": "pro",
+   "sec": [
+    "nature",
+    "science"
+   ],
+   "name": "Restorative Teal",
+   "num": 20,
+   "desc": {
+    "uz": "sokin teal, organik shakllar, keng bo‘sh joy",
+    "ru": "спокойный бирюзовый, органичные формы"
+   },
+   "fits": {
+    "uz": "sog‘lom turmush, ta’lim, farovonlik, ekologiya",
+    "ru": "здоровье, образование, экология"
+   },
+   "c1": "#E8F3EF",
+   "c2": "#2E7D70",
+   "inner": "../premium/img/teal-in.jpg"
+  },
+  {
+   "key": "pro-meros-ivory",
+   "tier": "pro",
+   "sec": [
+    "history",
+    "formal"
+   ],
+   "name": "Meros · Ivory Gold",
+   "num": 21,
+   "desc": {
+    "uz": "fil suyagi va oltin, nozik girih naqshi",
+    "ru": "слоновая кость и золото, тонкий орнамент"
+   },
+   "fits": {
+    "uz": "tarix, adabiyot, madaniyat",
+    "ru": "история, литература, культура"
+   },
+   "c1": "#F7F1E6",
+   "c2": "#8E6A2C",
+   "inner": "../premium/img/meros-ivory-in.jpg"
+  },
+  {
+   "key": "pro-meros-midnight",
+   "tier": "pro",
+   "sec": [
+    "history"
+   ],
+   "name": "Meros · Midnight Blue",
+   "num": 22,
+   "desc": {
+    "uz": "tungi ko‘k va oltin, naqshli fon",
+    "ru": "ночной синий и золото, узорный фон"
+   },
+   "fits": {
+    "uz": "tarix, yetakchilik, davlatchilik",
+    "ru": "история, государственность"
+   },
+   "c1": "#0A1730",
+   "c2": "#E2B85E",
+   "inner": "../premium/img/meros-midnight-in.jpg"
+  },
+  {
+   "key": "pro-meros-emerald",
+   "tier": "pro",
+   "sec": [
+    "history",
+    "nature"
+   ],
+   "name": "Meros · Emerald",
+   "num": 23,
+   "desc": {
+    "uz": "zumrad va oltin, sharqona naqsh",
+    "ru": "изумруд и золото, восточный орнамент"
+   },
+   "fits": {
+    "uz": "me’morchilik, ekologiya, madaniy meros",
+    "ru": "архитектура, экология, наследие"
+   },
+   "c1": "#0A3A33",
+   "c2": "#E3C47D",
+   "inner": "../premium/img/meros-emerald-in.jpg"
+  },
+  {
+   "key": "pro-meros-bronze",
+   "tier": "pro",
+   "sec": [
+    "history",
+    "art"
+   ],
+   "name": "Meros · Black Bronze",
+   "num": 24,
+   "desc": {
+    "uz": "qora va bronza, dramatik yorug‘lik",
+    "ru": "чёрный и бронза, драматичный свет"
+   },
+   "fits": {
+    "uz": "tarix, san’at, an’analar",
+    "ru": "история, искусство, традиции"
+   },
+   "c1": "#0D0A07",
+   "c2": "#DDA645",
+   "inner": "../premium/img/meros-bronze-in.jpg"
+  },
+  {
+   "key": "pro-meros-lavender",
+   "tier": "pro",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": "Meros · Lavender Sunset",
+   "num": 25,
+   "desc": {
+    "uz": "lavanda va shaftoli, yumshoq naqsh",
+    "ru": "лаванда и персик, мягкий орнамент"
+   },
+   "fits": {
+    "uz": "til, adabiyot, san’at, ta’lim",
+    "ru": "языки, литература, искусство"
+   },
+   "c1": "#EEE2F3",
+   "c2": "#6A3AA3",
+   "inner": "../premium/img/meros-lavender-in.jpg"
+  },
+  {
+   "key": "pro-swiss",
+   "tier": "pro",
+   "sec": [
+    "formal",
+    "business"
+   ],
+   "name": "Swiss International",
+   "num": 26,
+   "desc": {
+    "uz": "qat’iy grid, katta sans-serif, qizil aksent va bo‘sh joy",
+    "ru": "строгая сетка, крупный гротеск, красный акцент и воздух"
+   },
+   "fits": {
+    "uz": "biznes, universitet, rasmiy hisobot",
+    "ru": "бизнес, университет, официальный отчёт"
+   },
+   "c1": "#FFFFFF",
+   "c2": "#E53935",
+   "inner": "../premium/img/swiss-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-journal",
+   "tier": "pro",
+   "sec": [
+    "science",
+    "formal"
+   ],
+   "name": "Scientific Journal",
+   "num": 27,
+   "desc": {
+    "uz": "ilmiy jurnal sahifasi, rasm izohi, manba va diagramma",
+    "ru": "страница научного журнала: подписи, источники, диаграммы"
+   },
+   "fits": {
+    "uz": "biologiya, kimyo, fizika, tibbiyot, tadqiqot",
+    "ru": "биология, химия, физика, медицина, исследования"
+   },
+   "c1": "#F7F4EC",
+   "c2": "#247C83",
+   "inner": "../premium/img/journal-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-couture",
+   "tier": "pro",
+   "sec": [
+    "art"
+   ],
+   "name": "Haute Couture Editorial",
+   "num": 28,
+   "desc": {
+    "uz": "nafis serif, katta sifatli foto, jurnal kompozitsiyasi",
+    "ru": "изящный serif, крупное фото, журнальная композиция"
+   },
+   "fits": {
+    "uz": "moda, san’at, adabiyot, brend",
+    "ru": "мода, искусство, литература, бренд"
+   },
+   "c1": "#F4EFE6",
+   "c2": "#C5A46D",
+   "inner": "../premium/img/couture-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-consulting",
+   "tier": "pro",
+   "sec": [
+    "business"
+   ],
+   "name": "Executive Consulting",
+   "num": 29,
+   "desc": {
+    "uz": "bitta asosiy xulosa, framework, muammo → dalil → yechim",
+    "ru": "один главный вывод, фреймворк, проблема → факты → решение"
+   },
+   "fits": {
+    "uz": "biznes-reja, strategiya, loyiha himoyasi, investitsiya",
+    "ru": "бизнес-план, стратегия, защита проекта"
+   },
+   "c1": "#FFFFFF",
+   "c2": "#2F6BBD",
+   "inner": "../premium/img/consulting-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-architecture",
+   "tier": "pro",
+   "sec": [
+    "science",
+    "formal"
+   ],
+   "name": "Architecture Portfolio",
+   "num": 30,
+   "desc": {
+    "uz": "arxitektura fotosi, chizma chiziqlari, material va geometriya",
+    "ru": "архитектурное фото, линии чертежа, материалы и геометрия"
+   },
+   "fits": {
+    "uz": "qurilish, shaharsozlik, dizayn, geografiya",
+    "ru": "строительство, урбанистика, дизайн, география"
+   },
+   "c1": "#F2F0EA",
+   "c2": "#7B6F5B",
+   "inner": "../premium/img/architecture-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-blueprint",
+   "tier": "pro",
+   "sec": [
+    "science"
+   ],
+   "name": "Blueprint Engineering",
+   "num": 31,
+   "desc": {
+    "uz": "ko‘k chizma foni, texnik chiziqlar, sxema va izohlar",
+    "ru": "синий чертёж, технические линии, схемы и подписи"
+   },
+   "fits": {
+    "uz": "muhandislik, fizika, robototexnika, mexanika",
+    "ru": "инженерия, физика, робототехника, механика"
+   },
+   "c1": "#0B2D4D",
+   "c2": "#54D6E8",
+   "inner": "../premium/img/blueprint-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-wabi",
+   "tier": "pro",
+   "sec": [
+    "art",
+    "nature"
+   ],
+   "name": "Japanese Wabi-Sabi",
+   "num": 32,
+   "desc": {
+    "uz": "tabiiy tekstura, assimetriya, nozik siyoh chizig‘i va bo‘shliq",
+    "ru": "природная текстура, асимметрия, тонкая линия туши и пустота"
+   },
+   "fits": {
+    "uz": "falsafa, madaniyat, adabiyot, ekologiya",
+    "ru": "философия, культура, литература, экология"
+   },
+   "c1": "#F1E9DA",
+   "c2": "#B86D4B",
+   "inner": "../premium/img/wabi-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-retro",
+   "tier": "pro",
+   "sec": [
+    "art",
+    "science"
+   ],
+   "name": "Retro-Futurism",
+   "num": 33,
+   "desc": {
+    "uz": "retro-futuristik geometriya, ufq to‘ri, gradient va katta sarlavha",
+    "ru": "ретрофутуризм: горизонт-сетка, градиент, крупный заголовок"
+   },
+   "fits": {
+    "uz": "kosmos, texnologiya tarixi, innovatsiya",
+    "ru": "космос, история технологий, инновации"
+   },
+   "c1": "#17112D",
+   "c2": "#FF6B35",
+   "inner": "../premium/img/retro-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-iso",
+   "tier": "pro",
+   "sec": [
+    "science",
+    "school"
+   ],
+   "name": "Isometric World",
+   "num": 34,
+   "desc": {
+    "uz": "izometrik fazoviy sahna, jarayon va bog‘liqliklar",
+    "ru": "изометрическая сцена, процессы и связи"
+   },
+   "fits": {
+    "uz": "shahar, logistika, ekotizim, ishlab chiqarish, biologiya",
+    "ru": "город, логистика, экосистемы, производство"
+   },
+   "c1": "#F7F8FA",
+   "c2": "#2D5B83",
+   "inner": "../premium/img/iso-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-terminal",
+   "tier": "pro",
+   "sec": [
+    "science",
+    "business"
+   ],
+   "name": "Data Terminal",
+   "num": 35,
+   "desc": {
+    "uz": "analitik panellar, katta raqamlar, vaqt qatorlari, jadvallar",
+    "ru": "аналитические панели, крупные цифры, таблицы"
+   },
+   "fits": {
+    "uz": "statistika, iqtisod, moliya, IT monitoring",
+    "ru": "статистика, экономика, финансы, IT-мониторинг"
+   },
+   "c1": "#0A0F14",
+   "c2": "#48C7E8",
+   "inner": "../premium/img/terminal-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-burgundy-editorial",
+   "tier": "pro",
+   "sec": [
+    "formal",
+    "art"
+   ],
+   "name": "Burgundy Editorial",
+   "num": 36,
+   "desc": {
+    "uz": "jurnal kompozitsiyasi, nafis serif, fil suyagi qog‘oz va vino rangi",
+    "ru": "журнальная композиция, изящный serif, бумага цвета слоновой кости и бордо"
+   },
+   "fits": {
+    "uz": "adabiyot, tarix, madaniyat, moda, universitet",
+    "ru": "литература, история, культура, мода, университет"
+   },
+   "c1": "#F7F1E8",
+   "c2": "#8E2A4E",
+   "inner": "../premium/img/burgundy-editorial-in.jpg"
+  },
+  {
+   "key": "pro-burgundy-gold",
+   "tier": "pro",
+   "sec": [
+    "business",
+    "history"
+   ],
+   "name": "Burgundy Gold Luxe",
+   "num": 37,
+   "desc": {
+    "uz": "chuqur vino fon, nozik oltin ramka va metallik aksent",
+    "ru": "глубокий винный фон, тонкая золотая рамка, металлический акцент"
+   },
+   "fits": {
+    "uz": "biznes, investitsiya, brend, tadbir, premium mahsulot",
+    "ru": "бизнес, инвестиции, бренд, мероприятия, премиум-продукт"
+   },
+   "c1": "#3E0D1F",
+   "c2": "#E2C482",
+   "inner": "../premium/img/burgundy-gold-in.jpg"
+  },
+  {
+   "key": "pro-burgundy-modern",
+   "tier": "pro",
+   "sec": [
+    "formal",
+    "business"
+   ],
+   "name": "Burgundy Modern Classic",
+   "num": 38,
+   "desc": {
+    "uz": "tartibli grid, katta raqamlar, och panellar va vino aksent",
+    "ru": "строгая сетка, крупные цифры, светлые панели и винный акцент"
+   },
+   "fits": {
+    "uz": "ta’lim, psixologiya, sog‘liq, biznes hisoboti",
+    "ru": "образование, психология, здоровье, бизнес-отчёты"
+   },
+   "c1": "#FAF7F3",
+   "c2": "#7A263A",
+   "inner": "../premium/img/burgundy-modern-in.jpg"
+  },
+  {
+   "key": "minimal-ocean",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "science"
+   ],
+   "name": {
+    "uz": "Minimal · Okean",
+    "ru": "Минимал · Океан"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9",
+   "inner": "../img/themes/minimal-ocean.jpg"
+  },
+  {
+   "key": "minimal-emerald",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "nature"
+   ],
+   "name": {
+    "uz": "Minimal · Zumrad",
+    "ru": "Минимал · Изумруд"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A",
+   "inner": "../img/themes/minimal-emerald.jpg"
+  },
+  {
+   "key": "minimal-violet",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "art",
+    "science"
+   ],
+   "name": {
+    "uz": "Minimal · Binafsha",
+    "ru": "Минимал · Фиолетовый"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6",
+   "inner": "../img/themes/minimal-violet.jpg"
+  },
+  {
+   "key": "minimal-sunset",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "art"
+   ],
+   "name": {
+    "uz": "Minimal · Quyosh",
+    "ru": "Минимал · Закат"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B",
+   "inner": "../img/themes/minimal-sunset.jpg"
+  },
+  {
+   "key": "minimal-ruby",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "history",
+    "art"
+   ],
+   "name": {
+    "uz": "Minimal · Yoqut",
+    "ru": "Минимал · Рубин"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E",
+   "inner": "../img/themes/minimal-ruby.jpg"
+  },
+  {
+   "key": "minimal-teal",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "nature"
+   ],
+   "name": {
+    "uz": "Minimal · Firuza",
+    "ru": "Минимал · Бирюза"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF",
+   "inner": "../img/themes/minimal-teal.jpg"
+  },
+  {
+   "key": "minimal-gold",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "history"
+   ],
+   "name": {
+    "uz": "Minimal · Oltin",
+    "ru": "Минимал · Золото"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017",
+   "inner": "../img/themes/minimal-gold.jpg"
+  },
+  {
+   "key": "minimal-slate",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business"
+   ],
+   "name": {
+    "uz": "Minimal · Grafit",
+    "ru": "Минимал · Графит"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16",
+   "inner": "../img/themes/minimal-slate.jpg"
+  },
+  {
+   "key": "minimal-indigo",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "science"
+   ],
+   "name": {
+    "uz": "Minimal · Indigo",
+    "ru": "Минимал · Индиго"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316",
+   "inner": "../img/themes/minimal-indigo.jpg"
+  },
+  {
+   "key": "minimal-forest",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "business",
+    "nature"
+   ],
+   "name": {
+    "uz": "Minimal · O‘rmon",
+    "ru": "Минимал · Лес"
+   },
+   "desc": {
+    "uz": "toza, ko‘p bo‘sh joy, ingichka chiziqlar",
+    "ru": "чисто, много воздуха, тонкие линии"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635",
+   "inner": "../img/themes/minimal-forest.jpg"
+  },
+  {
+   "key": "corporate-ocean",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "science"
+   ],
+   "name": {
+    "uz": "Biznes · Okean",
+    "ru": "Бизнес · Океан"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9",
+   "inner": "../img/themes/corporate-ocean.jpg"
+  },
+  {
+   "key": "corporate-emerald",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "nature"
+   ],
+   "name": {
+    "uz": "Biznes · Zumrad",
+    "ru": "Бизнес · Изумруд"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A",
+   "inner": "../img/themes/corporate-emerald.jpg"
+  },
+  {
+   "key": "corporate-violet",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "art",
+    "science"
+   ],
+   "name": {
+    "uz": "Biznes · Binafsha",
+    "ru": "Бизнес · Фиолетовый"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6",
+   "inner": "../img/themes/corporate-violet.jpg"
+  },
+  {
+   "key": "corporate-sunset",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "art"
+   ],
+   "name": {
+    "uz": "Biznes · Quyosh",
+    "ru": "Бизнес · Закат"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B",
+   "inner": "../img/themes/corporate-sunset.jpg"
+  },
+  {
+   "key": "corporate-ruby",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "history",
+    "art"
+   ],
+   "name": {
+    "uz": "Biznes · Yoqut",
+    "ru": "Бизнес · Рубин"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E",
+   "inner": "../img/themes/corporate-ruby.jpg"
+  },
+  {
+   "key": "corporate-teal",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "nature"
+   ],
+   "name": {
+    "uz": "Biznes · Firuza",
+    "ru": "Бизнес · Бирюза"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF",
+   "inner": "../img/themes/corporate-teal.jpg"
+  },
+  {
+   "key": "corporate-gold",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "history"
+   ],
+   "name": {
+    "uz": "Biznes · Oltin",
+    "ru": "Бизнес · Золото"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017",
+   "inner": "../img/themes/corporate-gold.jpg"
+  },
+  {
+   "key": "corporate-slate",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal"
+   ],
+   "name": {
+    "uz": "Biznes · Grafit",
+    "ru": "Бизнес · Графит"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16",
+   "inner": "../img/themes/corporate-slate.jpg"
+  },
+  {
+   "key": "corporate-indigo",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "science"
+   ],
+   "name": {
+    "uz": "Biznes · Indigo",
+    "ru": "Бизнес · Индиго"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316",
+   "inner": "../img/themes/corporate-indigo.jpg"
+  },
+  {
+   "key": "corporate-forest",
+   "tier": "std",
+   "sec": [
+    "business",
+    "formal",
+    "nature"
+   ],
+   "name": {
+    "uz": "Biznes · O‘rmon",
+    "ru": "Бизнес · Лес"
+   },
+   "desc": {
+    "uz": "ishbilarmon: rangli yon panel, kartalar",
+    "ru": "деловой: цветная боковая панель, карточки"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635",
+   "inner": "../img/themes/corporate-forest.jpg"
+  },
+  {
+   "key": "academic-ocean",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history",
+    "science"
+   ],
+   "name": {
+    "uz": "Akademik · Okean",
+    "ru": "Академический · Океан"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9",
+   "inner": "../img/themes/academic-ocean.jpg"
+  },
+  {
+   "key": "academic-emerald",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history",
+    "nature"
+   ],
+   "name": {
+    "uz": "Akademik · Zumrad",
+    "ru": "Академический · Изумруд"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A",
+   "inner": "../img/themes/academic-emerald.jpg"
+  },
+  {
+   "key": "academic-violet",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history",
+    "art",
+    "science"
+   ],
+   "name": {
+    "uz": "Akademik · Binafsha",
+    "ru": "Академический · Фиолетовый"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6",
+   "inner": "../img/themes/academic-violet.jpg"
+  },
+  {
+   "key": "academic-sunset",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history",
+    "art"
+   ],
+   "name": {
+    "uz": "Akademik · Quyosh",
+    "ru": "Академический · Закат"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B",
+   "inner": "../img/themes/academic-sunset.jpg"
+  },
+  {
+   "key": "academic-ruby",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history",
+    "art"
+   ],
+   "name": {
+    "uz": "Akademik · Yoqut",
+    "ru": "Академический · Рубин"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E",
+   "inner": "../img/themes/academic-ruby.jpg"
+  },
+  {
+   "key": "academic-teal",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history",
+    "nature"
+   ],
+   "name": {
+    "uz": "Akademik · Firuza",
+    "ru": "Академический · Бирюза"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF",
+   "inner": "../img/themes/academic-teal.jpg"
+  },
+  {
+   "key": "academic-gold",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history"
+   ],
+   "name": {
+    "uz": "Akademik · Oltin",
+    "ru": "Академический · Золото"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017",
+   "inner": "../img/themes/academic-gold.jpg"
+  },
+  {
+   "key": "academic-slate",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history"
+   ],
+   "name": {
+    "uz": "Akademik · Grafit",
+    "ru": "Академический · Графит"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16",
+   "inner": "../img/themes/academic-slate.jpg"
+  },
+  {
+   "key": "academic-indigo",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history",
+    "science"
+   ],
+   "name": {
+    "uz": "Akademik · Indigo",
+    "ru": "Академический · Индиго"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316",
+   "inner": "../img/themes/academic-indigo.jpg"
+  },
+  {
+   "key": "academic-forest",
+   "tier": "std",
+   "sec": [
+    "formal",
+    "history",
+    "nature"
+   ],
+   "name": {
+    "uz": "Akademik · O‘rmon",
+    "ru": "Академический · Лес"
+   },
+   "desc": {
+    "uz": "serif shrift, ramka, universitet uslubi",
+    "ru": "serif-шрифт, рамка, университетский стиль"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635",
+   "inner": "../img/themes/academic-forest.jpg"
+  },
+  {
+   "key": "gradient-ocean",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school"
+   ],
+   "name": {
+    "uz": "Gradient · Okean",
+    "ru": "Градиент · Океан"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9",
+   "inner": "../img/themes/gradient-ocean.jpg"
+  },
+  {
+   "key": "gradient-emerald",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school",
+    "nature"
+   ],
+   "name": {
+    "uz": "Gradient · Zumrad",
+    "ru": "Градиент · Изумруд"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A",
+   "inner": "../img/themes/gradient-emerald.jpg"
+  },
+  {
+   "key": "gradient-violet",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school",
+    "art"
+   ],
+   "name": {
+    "uz": "Gradient · Binafsha",
+    "ru": "Градиент · Фиолетовый"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6",
+   "inner": "../img/themes/gradient-violet.jpg"
+  },
+  {
+   "key": "gradient-sunset",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school",
+    "art"
+   ],
+   "name": {
+    "uz": "Gradient · Quyosh",
+    "ru": "Градиент · Закат"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B",
+   "inner": "../img/themes/gradient-sunset.jpg"
+  },
+  {
+   "key": "gradient-ruby",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school",
+    "history",
+    "art"
+   ],
+   "name": {
+    "uz": "Gradient · Yoqut",
+    "ru": "Градиент · Рубин"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E",
+   "inner": "../img/themes/gradient-ruby.jpg"
+  },
+  {
+   "key": "gradient-teal",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school",
+    "nature"
+   ],
+   "name": {
+    "uz": "Gradient · Firuza",
+    "ru": "Градиент · Бирюза"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF",
+   "inner": "../img/themes/gradient-teal.jpg"
+  },
+  {
+   "key": "gradient-gold",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school",
+    "history"
+   ],
+   "name": {
+    "uz": "Gradient · Oltin",
+    "ru": "Градиент · Золото"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017",
+   "inner": "../img/themes/gradient-gold.jpg"
+  },
+  {
+   "key": "gradient-slate",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school",
+    "formal"
+   ],
+   "name": {
+    "uz": "Gradient · Grafit",
+    "ru": "Градиент · Графит"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16",
+   "inner": "../img/themes/gradient-slate.jpg"
+  },
+  {
+   "key": "gradient-indigo",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school"
+   ],
+   "name": {
+    "uz": "Gradient · Indigo",
+    "ru": "Градиент · Индиго"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316",
+   "inner": "../img/themes/gradient-indigo.jpg"
+  },
+  {
+   "key": "gradient-forest",
+   "tier": "std",
+   "sec": [
+    "science",
+    "school",
+    "nature"
+   ],
+   "name": {
+    "uz": "Gradient · O‘rmon",
+    "ru": "Градиент · Лес"
+   },
+   "desc": {
+    "uz": "yumshoq gradient fonlar, zamonaviy",
+    "ru": "мягкие градиентные фоны, современно"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635",
+   "inner": "../img/themes/gradient-forest.jpg"
+  },
+  {
+   "key": "dark-ocean",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Okean",
+    "ru": "Тёмный · Океан"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9",
+   "inner": "../img/themes/dark-ocean.jpg"
+  },
+  {
+   "key": "dark-emerald",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business",
+    "nature"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Zumrad",
+    "ru": "Тёмный · Изумруд"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A",
+   "inner": "../img/themes/dark-emerald.jpg"
+  },
+  {
+   "key": "dark-violet",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business",
+    "art"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Binafsha",
+    "ru": "Тёмный · Фиолетовый"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6",
+   "inner": "../img/themes/dark-violet.jpg"
+  },
+  {
+   "key": "dark-sunset",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business",
+    "art"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Quyosh",
+    "ru": "Тёмный · Закат"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B",
+   "inner": "../img/themes/dark-sunset.jpg"
+  },
+  {
+   "key": "dark-ruby",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business",
+    "history",
+    "art"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Yoqut",
+    "ru": "Тёмный · Рубин"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E",
+   "inner": "../img/themes/dark-ruby.jpg"
+  },
+  {
+   "key": "dark-teal",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business",
+    "nature"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Firuza",
+    "ru": "Тёмный · Бирюза"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF",
+   "inner": "../img/themes/dark-teal.jpg"
+  },
+  {
+   "key": "dark-gold",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business",
+    "history"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Oltin",
+    "ru": "Тёмный · Золото"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017",
+   "inner": "../img/themes/dark-gold.jpg"
+  },
+  {
+   "key": "dark-slate",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business",
+    "formal"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Grafit",
+    "ru": "Тёмный · Графит"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16",
+   "inner": "../img/themes/dark-slate.jpg"
+  },
+  {
+   "key": "dark-indigo",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business"
+   ],
+   "name": {
+    "uz": "Qorong‘u · Indigo",
+    "ru": "Тёмный · Индиго"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316",
+   "inner": "../img/themes/dark-indigo.jpg"
+  },
+  {
+   "key": "dark-forest",
+   "tier": "std",
+   "sec": [
+    "science",
+    "business",
+    "nature"
+   ],
+   "name": {
+    "uz": "Qorong‘u · O‘rmon",
+    "ru": "Тёмный · Лес"
+   },
+   "desc": {
+    "uz": "qora fon, yorqin urg‘ular, ekranda chiroyli",
+    "ru": "тёмный фон, яркие акценты, красиво на экране"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635",
+   "inner": "../img/themes/dark-forest.jpg"
+  },
+  {
+   "key": "vivid-ocean",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Okean",
+    "ru": "Яркий · Океан"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9",
+   "inner": "../img/themes/vivid-ocean.jpg"
+  },
+  {
+   "key": "vivid-emerald",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Zumrad",
+    "ru": "Яркий · Изумруд"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A",
+   "inner": "../img/themes/vivid-emerald.jpg"
+  },
+  {
+   "key": "vivid-violet",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Binafsha",
+    "ru": "Яркий · Фиолетовый"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6",
+   "inner": "../img/themes/vivid-violet.jpg"
+  },
+  {
+   "key": "vivid-sunset",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Quyosh",
+    "ru": "Яркий · Закат"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B",
+   "inner": "../img/themes/vivid-sunset.jpg"
+  },
+  {
+   "key": "vivid-ruby",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Yoqut",
+    "ru": "Яркий · Рубин"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E",
+   "inner": "../img/themes/vivid-ruby.jpg"
+  },
+  {
+   "key": "vivid-teal",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Firuza",
+    "ru": "Яркий · Бирюза"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF",
+   "inner": "../img/themes/vivid-teal.jpg"
+  },
+  {
+   "key": "vivid-gold",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Oltin",
+    "ru": "Яркий · Золото"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017",
+   "inner": "../img/themes/vivid-gold.jpg"
+  },
+  {
+   "key": "vivid-slate",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Grafit",
+    "ru": "Яркий · Графит"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16",
+   "inner": "../img/themes/vivid-slate.jpg"
+  },
+  {
+   "key": "vivid-indigo",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · Indigo",
+    "ru": "Яркий · Индиго"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316",
+   "inner": "../img/themes/vivid-indigo.jpg"
+  },
+  {
+   "key": "vivid-forest",
+   "tier": "std",
+   "sec": [
+    "art",
+    "school"
+   ],
+   "name": {
+    "uz": "Yorqin · O‘rmon",
+    "ru": "Яркий · Лес"
+   },
+   "desc": {
+    "uz": "katta rang bloklari, jasur sarlavhalar",
+    "ru": "крупные цветные блоки, смелые заголовки"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635",
+   "inner": "../img/themes/vivid-forest.jpg"
+  },
+  {
+   "key": "playful-ocean",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Okean",
+    "ru": "Детский · Океан"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9",
+   "inner": "../img/themes/playful-ocean.jpg"
+  },
+  {
+   "key": "playful-emerald",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Zumrad",
+    "ru": "Детский · Изумруд"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A",
+   "inner": "../img/themes/playful-emerald.jpg"
+  },
+  {
+   "key": "playful-violet",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Binafsha",
+    "ru": "Детский · Фиолетовый"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6",
+   "inner": "../img/themes/playful-violet.jpg"
+  },
+  {
+   "key": "playful-sunset",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Quyosh",
+    "ru": "Детский · Закат"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B",
+   "inner": "../img/themes/playful-sunset.jpg"
+  },
+  {
+   "key": "playful-ruby",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Yoqut",
+    "ru": "Детский · Рубин"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E",
+   "inner": "../img/themes/playful-ruby.jpg"
+  },
+  {
+   "key": "playful-teal",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Firuza",
+    "ru": "Детский · Бирюза"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF",
+   "inner": "../img/themes/playful-teal.jpg"
+  },
+  {
+   "key": "playful-gold",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Oltin",
+    "ru": "Детский · Золото"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017",
+   "inner": "../img/themes/playful-gold.jpg"
+  },
+  {
+   "key": "playful-slate",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Grafit",
+    "ru": "Детский · Графит"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16",
+   "inner": "../img/themes/playful-slate.jpg"
+  },
+  {
+   "key": "playful-indigo",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · Indigo",
+    "ru": "Детский · Индиго"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316",
+   "inner": "../img/themes/playful-indigo.jpg"
+  },
+  {
+   "key": "playful-forest",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Bolalar · O‘rmon",
+    "ru": "Детский · Лес"
+   },
+   "desc": {
+    "uz": "maktab va bolalar uchun: yumaloq shakllar, quvnoq ranglar",
+    "ru": "для школы и детей: круглые формы, весёлые цвета"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635",
+   "inner": "../img/themes/playful-forest.jpg"
+  },
+  {
+   "key": "sport-ocean",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Okean",
+    "ru": "Спорт · Океан"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#0F3D6E",
+   "c2": "#14B8C9",
+   "inner": "../img/themes/sport-ocean.jpg"
+  },
+  {
+   "key": "sport-emerald",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Zumrad",
+    "ru": "Спорт · Изумруд"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#0B6B4F",
+   "c2": "#E8A93A",
+   "inner": "../img/themes/sport-emerald.jpg"
+  },
+  {
+   "key": "sport-violet",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Binafsha",
+    "ru": "Спорт · Фиолетовый"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#5B21B6",
+   "c2": "#F472B6",
+   "inner": "../img/themes/sport-violet.jpg"
+  },
+  {
+   "key": "sport-sunset",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Quyosh",
+    "ru": "Спорт · Закат"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#C2410C",
+   "c2": "#F59E0B",
+   "inner": "../img/themes/sport-sunset.jpg"
+  },
+  {
+   "key": "sport-ruby",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Yoqut",
+    "ru": "Спорт · Рубин"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#9F1239",
+   "c2": "#F43F5E",
+   "inner": "../img/themes/sport-ruby.jpg"
+  },
+  {
+   "key": "sport-teal",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Firuza",
+    "ru": "Спорт · Бирюза"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#0F766E",
+   "c2": "#2DD4BF",
+   "inner": "../img/themes/sport-teal.jpg"
+  },
+  {
+   "key": "sport-gold",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Oltin",
+    "ru": "Спорт · Золото"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#1F2937",
+   "c2": "#D4A017",
+   "inner": "../img/themes/sport-gold.jpg"
+  },
+  {
+   "key": "sport-slate",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Grafit",
+    "ru": "Спорт · Графит"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#18181B",
+   "c2": "#84CC16",
+   "inner": "../img/themes/sport-slate.jpg"
+  },
+  {
+   "key": "sport-indigo",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · Indigo",
+    "ru": "Спорт · Индиго"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#1E3A8A",
+   "c2": "#F97316",
+   "inner": "../img/themes/sport-indigo.jpg"
+  },
+  {
+   "key": "sport-forest",
+   "tier": "std",
+   "sec": [
+    "school"
+   ],
+   "name": {
+    "uz": "Sport · O‘rmon",
+    "ru": "Спорт · Лес"
+   },
+   "desc": {
+    "uz": "sport va faol mavzular: diagonal chiziqlar, dinamika",
+    "ru": "спорт и активные темы: диагонали, динамика"
+   },
+   "c1": "#14532D",
+   "c2": "#A3E635",
+   "inner": "../img/themes/sport-forest.jpg"
+  }
+ ]
+}
