@@ -1,25 +1,329 @@
 {
  "items": [
   {
-   "key": "pro-vip-imperial",
-   "slug": "vip-imperial",
+   "key": "pro-vip-royal",
+   "slug": "vip-royal",
    "num": 1,
    "name": "Imperial Royal",
    "desc": {
-    "uz": "kinematik tarixiy sahna, oltin naqsh, nafis serif",
-    "ru": "кинематографичная историческая сцена, золотой орнамент, изящный serif"
+    "uz": "to‘q ko‘k va oltin, kechki saroy, nafis ramka",
+    "ru": "тёмно-синий и золото, вечерний дворец, изящная рамка"
    },
    "fits": {
-    "uz": "tarix, madaniyat, davlat arboblari, rasmiy taqdimot",
-    "ru": "история, культура, государственные деятели, официальные доклады"
+    "uz": "tarix, davlat, rasmiy taqdimot, yetakchilik",
+    "ru": "история, государство, официальные доклады, лидерство"
    },
-   "c1": "#17100C",
-   "c2": "#D6AD5C"
+   "c1": "#06152F",
+   "c2": "#D9A441"
+  },
+  {
+   "key": "pro-vip-alpine",
+   "slug": "vip-alpine",
+   "num": 2,
+   "name": "Nature Luxe",
+   "desc": {
+    "uz": "katta tabiat manzarasi, toza ko‘l, botanika kartalari",
+    "ru": "большой природный пейзаж, чистое озеро, ботанические карточки"
+   },
+   "fits": {
+    "uz": "ekologiya, biologiya, geografiya, turizm",
+    "ru": "экология, биология, география, туризм"
+   },
+   "c1": "#073D3B",
+   "c2": "#B7D49A"
+  },
+  {
+   "key": "pro-vip-cosmos",
+   "slug": "vip-cosmos",
+   "num": 3,
+   "name": "Cosmic Universe",
+   "desc": {
+    "uz": "koinot chuqurligi, sayyoralar, yorug‘lik izlari",
+    "ru": "глубина космоса, планеты, световые следы"
+   },
+   "fits": {
+    "uz": "kosmos, fizika, astronomiya, IT, ilm-fan",
+    "ru": "космос, физика, астрономия, IT, наука"
+   },
+   "c1": "#050A2D",
+   "c2": "#8FA8FF"
+  },
+  {
+   "key": "pro-vip-glass",
+   "slug": "vip-glass",
+   "num": 4,
+   "name": "Modern Glass",
+   "desc": {
+    "uz": "shaffof shisha shakllar, muzli panellar, toza ko‘k",
+    "ru": "прозрачные стеклянные формы, матовые панели, чистый синий"
+   },
+   "fits": {
+    "uz": "texnologiya, mahsulot, xizmat, startap",
+    "ru": "технологии, продукт, сервис, стартап"
+   },
+   "c1": "#F4F8FF",
+   "c2": "#1875D1"
+  },
+  {
+   "key": "pro-vip-art",
+   "slug": "vip-art",
+   "num": 5,
+   "name": "Art Gallery",
+   "desc": {
+    "uz": "marmar haykal, jasur bo‘yoq zarbalari, krem qog‘oz",
+    "ru": "мраморный бюст, смелые мазки краски, кремовая бумага"
+   },
+   "fits": {
+    "uz": "san’at, adabiyot, falsafa, ijodiy loyihalar",
+    "ru": "искусство, литература, философия, творческие проекты"
+   },
+   "c1": "#F4E7D0",
+   "c2": "#B5461A"
+  },
+  {
+   "key": "pro-vip-neon",
+   "slug": "vip-neon",
+   "num": 6,
+   "name": "Future City",
+   "desc": {
+    "uz": "neon megapolis, tungi yorug‘lik, ufq to‘ri",
+    "ru": "неоновый мегаполис, ночные огни, сетка горизонта"
+   },
+   "fits": {
+    "uz": "smart city, arxitektura, innovatsiya, transport",
+    "ru": "умный город, архитектура, инновации, транспорт"
+   },
+   "c1": "#030B24",
+   "c2": "#7FA0FF"
+  },
+  {
+   "key": "pro-vip-luxe",
+   "slug": "vip-luxe",
+   "num": 7,
+   "name": "Minimal Luxe",
+   "desc": {
+    "uz": "krem devor, keramika, yumshoq soya, keng bo‘shliq",
+    "ru": "кремовая стена, керамика, мягкие тени, много воздуха"
+   },
+   "fits": {
+    "uz": "biznes, portfolio, hisobot, psixologiya",
+    "ru": "бизнес, портфолио, отчёт, психология"
+   },
+   "c1": "#F4F0E8",
+   "c2": "#8C6A45"
+  },
+  {
+   "key": "pro-vip-dark",
+   "slug": "vip-dark",
+   "num": 8,
+   "name": "Dark Prestige",
+   "desc": {
+    "uz": "qora-qizil fon, dramatik yorug‘lik, oltin raqamlar",
+    "ru": "чёрно-красный фон, драматичный свет, золотые цифры"
+   },
+   "fits": {
+    "uz": "strategiya, investitsiya, sport, liderlik",
+    "ru": "стратегия, инвестиции, спорт, лидерство"
+   },
+   "c1": "#17070B",
+   "c2": "#D8A34A"
+  },
+  {
+   "key": "pro-vip-dream",
+   "slug": "vip-dream",
+   "num": 9,
+   "name": "Kids Dream",
+   "desc": {
+    "uz": "yorqin 3D sahna, bulutlar va yulduzlar, yumaloq kartalar",
+    "ru": "яркая 3D-сцена, облака и звёзды, круглые карточки"
+   },
+   "fits": {
+    "uz": "boshlang‘ich sinf, maktab darsi, bolalar mavzulari",
+    "ru": "начальная школа, школьный урок, детские темы"
+   },
+   "c1": "#152B91",
+   "c2": "#FFD43B"
+  },
+  {
+   "key": "pro-vip-heritage",
+   "slug": "vip-heritage",
+   "num": 10,
+   "name": "Culture Heritage",
+   "desc": {
+    "uz": "o‘zbek koshinlari, tarixiy me’morchilik, girih naqsh",
+    "ru": "узбекские изразцы, историческая архитектура, гирих"
+   },
+   "fits": {
+    "uz": "tarix, me’morchilik, turizm, milliy qadriyatlar",
+    "ru": "история, архитектура, туризм, национальные ценности"
+   },
+   "c1": "#07384A",
+   "c2": "#E9B66B"
+  },
+  {
+   "key": "pro-vip-kinetic",
+   "slug": "vip-kinetic",
+   "num": 11,
+   "name": "Kinetic Editorial",
+   "desc": {
+    "uz": "jasur poster tipografikasi, qiya bloklar, asimmetriya",
+    "ru": "смелая постерная типографика, диагональные блоки"
+   },
+   "fits": {
+    "uz": "marketing, strategiya, pitch, kampaniya",
+    "ru": "маркетинг, стратегия, питч, кампания"
+   },
+   "c1": "#F4F0E8",
+   "c2": "#FF4D24"
+  },
+  {
+   "key": "pro-vip-holo",
+   "slug": "vip-holo",
+   "num": 12,
+   "name": "Holographic Lab",
+   "desc": {
+    "uz": "kamalak tusli materiallar, spektral gradient, 3D obyektlar",
+    "ru": "переливающиеся материалы, спектральный градиент, 3D-объекты"
+   },
+   "fits": {
+    "uz": "mahsulot innovatsiyasi, ilm-fan, IT, dizayn",
+    "ru": "инновации продукта, наука, IT, дизайн"
+   },
+   "c1": "#F7F8FC",
+   "c2": "#6A5AE0"
+  },
+  {
+   "key": "pro-vip-pop",
+   "slug": "vip-pop",
+   "num": 13,
+   "name": "Neo-Brutalist Pop",
+   "desc": {
+    "uz": "qalin chiziqlar, qattiq soya, sariq stiker, poster energiyasi",
+    "ru": "толстые линии, жёсткая тень, жёлтый стикер, энергия плаката"
+   },
+   "fits": {
+    "uz": "kreativ kampaniya, yoshlar, ta’lim, brend",
+    "ru": "креативные кампании, молодёжь, образование, бренд"
+   },
+   "c1": "#F8F1E5",
+   "c2": "#FFD928"
+  },
+  {
+   "key": "pro-vip-data",
+   "slug": "vip-data",
+   "num": 14,
+   "name": "Data Noir",
+   "desc": {
+    "uz": "grafit sahna, mint signallar, aniq to‘r va katta raqamlar",
+    "ru": "графитовая сцена, мятные сигналы, точная сетка и крупные цифры"
+   },
+   "fits": {
+    "uz": "analitika, KPI, moliya, texnik hisobot",
+    "ru": "аналитика, KPI, финансы, технический отчёт"
+   },
+   "c1": "#090D12",
+   "c2": "#00E0B8"
+  },
+  {
+   "key": "pro-vip-atelier",
+   "slug": "vip-atelier",
+   "num": 15,
+   "name": "Analog Atelier",
+   "desc": {
+    "uz": "film donachalari, qog‘oz qatlamlari, qo‘l yozuvi izohlari",
+    "ru": "плёночное зерно, слои бумаги, рукописные пометки"
+   },
+   "fits": {
+    "uz": "brend tarixi, sayohat, keys-stadi, loyiha jarayoni",
+    "ru": "история бренда, путешествия, кейсы, процесс проекта"
+   },
+   "c1": "#E8D9C2",
+   "c2": "#733B2D"
+  },
+  {
+   "key": "pro-vip-ocean",
+   "slug": "vip-ocean",
+   "num": 16,
+   "name": "Ocean Vibe",
+   "desc": {
+    "uz": "havodan okean, suv oqimi, mineral teksturalar",
+    "ru": "океан с высоты, течение воды, минеральные текстуры"
+   },
+   "fits": {
+    "uz": "suv, okean, turizm, sog‘lomlashtirish, ekologiya",
+    "ru": "вода, океан, туризм, оздоровление, экология"
+   },
+   "c1": "#F2FBFA",
+   "c2": "#0B8A8A"
+  },
+  {
+   "key": "pro-vip-islamic",
+   "slug": "vip-islamic",
+   "num": 17,
+   "name": "Royal Islamic",
+   "desc": {
+    "uz": "islomiy geometriya, ravoqlar, koshin va oltin",
+    "ru": "исламская геометрия, арки, изразцы и золото"
+   },
+   "fits": {
+    "uz": "me’morchilik, tarix, madaniy meros, din tarixi",
+    "ru": "архитектура, история, культурное наследие, история религии"
+   },
+   "c1": "#071C3C",
+   "c2": "#D9A441"
+  },
+  {
+   "key": "pro-vip-cinema",
+   "slug": "vip-cinema",
+   "num": 18,
+   "name": "Cinematic Pro",
+   "desc": {
+    "uz": "kino kadri, keng panorama, hikoya bosqichlari",
+    "ru": "кадр из фильма, широкая панорама, этапы истории"
+   },
+   "fits": {
+    "uz": "keys-stadi, loyiha hikoyasi, sayohat, biografiya",
+    "ru": "кейсы, история проекта, путешествия, биография"
+   },
+   "c1": "#0B0D10",
+   "c2": "#F3A45C"
+  },
+  {
+   "key": "pro-vip-3d",
+   "slug": "vip-3d",
+   "num": 19,
+   "name": "Creative 3D",
+   "desc": {
+    "uz": "haykaltarosh 3D obyektlar, kamalak material, nafis kompozitsiya",
+    "ru": "скульптурные 3D-объекты, перламутровый материал, изящная композиция"
+   },
+   "fits": {
+    "uz": "mahsulot taqdimoti, kreativ pitch, dizayn",
+    "ru": "презентация продукта, креативный питч, дизайн"
+   },
+   "c1": "#F8F7FF",
+   "c2": "#6B4EFF"
+  },
+  {
+   "key": "pro-vip-eco",
+   "slug": "vip-eco",
+   "num": 20,
+   "name": "Eco Future",
+   "desc": {
+    "uz": "yashil fasadlar, barqaror arxitektura, toza diagrammalar",
+    "ru": "зелёные фасады, устойчивая архитектура, чистые схемы"
+   },
+   "fits": {
+    "uz": "barqarorlik, ESG, arxitektura, energiya",
+    "ru": "устойчивое развитие, ESG, архитектура, энергетика"
+   },
+   "c1": "#173D2D",
+   "c2": "#B7D49A"
   },
   {
    "key": "pro-vip-boutique",
    "slug": "vip-boutique",
-   "num": 2,
+   "num": 21,
    "name": "Luxury Boutique",
    "desc": {
     "uz": "baxmal bordo, mahsulot/interyer foto, oltin chiziqlar",
@@ -35,7 +339,7 @@
   {
    "key": "pro-vip-universe",
    "slug": "vip-universe",
-   "num": 3,
+   "num": 22,
    "name": "Cinematic Universe",
    "desc": {
     "uz": "fazoviy chuqurlik, kinematik yorug‘lik, sokin panel",
@@ -49,57 +353,9 @@
    "c2": "#7FD3FF"
   },
   {
-   "key": "pro-vip-nature",
-   "slug": "vip-nature",
-   "num": 4,
-   "name": "Nature Luxe",
-   "desc": {
-    "uz": "realistik tabiat, tabiiy yorug‘lik, sokin yashil kartalar",
-    "ru": "реалистичная природа, естественный свет, спокойные зелёные карточки"
-   },
-   "fits": {
-    "uz": "tabiat, ekologiya, biologiya, geografiya",
-    "ru": "природа, экология, биология, география"
-   },
-   "c1": "#0E3023",
-   "c2": "#B6D29C"
-  },
-  {
-   "key": "pro-vip-gallery",
-   "slug": "vip-gallery",
-   "num": 5,
-   "name": "Art Gallery",
-   "desc": {
-    "uz": "galereya yorug‘ligi, badiiy asarlar, kuratorlik maketi",
-    "ru": "свет галереи, произведения искусства, кураторская вёрстка"
-   },
-   "fits": {
-    "uz": "san’at, adabiyot, madaniyat, ijodiy loyihalar",
-    "ru": "искусство, литература, культура, творческие проекты"
-   },
-   "c1": "#260B12",
-   "c2": "#D7B37A"
-  },
-  {
-   "key": "pro-vip-city",
-   "slug": "vip-city",
-   "num": 6,
-   "name": "Future City",
-   "desc": {
-    "uz": "futuristik shahar, blueprint qatlamlari, toza ko‘k aksent",
-    "ru": "футуристичный город, слои чертежа, чистый голубой акцент"
-   },
-   "fits": {
-    "uz": "arxitektura, shaharsozlik, infratuzilma, innovatsiya",
-    "ru": "архитектура, урбанистика, инфраструктура, инновации"
-   },
-   "c1": "#071D35",
-   "c2": "#59D8E8"
-  },
-  {
    "key": "pro-vip-academic",
    "slug": "vip-academic",
-   "num": 7,
+   "num": 23,
    "name": "Elegant Academic",
    "desc": {
     "uz": "kutubxona, kitob va qo‘lyozma, akademik tipografika",
@@ -115,7 +371,7 @@
   {
    "key": "pro-vip-prestige",
    "slug": "vip-prestige",
-   "num": 8,
+   "num": 24,
    "name": "Burgundy Prestige",
    "desc": {
     "uz": "chuqur bordo, oltin aksent, dramatik yorug‘lik",
@@ -129,10 +385,74 @@
    "c2": "#CFA45E"
   },
   {
+   "key": "pro-vip-imperial",
+   "slug": "vip-imperial",
+   "num": 25,
+   "name": "Imperial Signature",
+   "desc": {
+    "uz": "kinematik tarixiy sahna, oltin naqsh, nafis serif",
+    "ru": "кинематографичная историческая сцена, золотой орнамент, изящный serif"
+   },
+   "fits": {
+    "uz": "tarix, madaniyat, davlat arboblari, rasmiy taqdimot",
+    "ru": "история, культура, государственные деятели, официальные доклады"
+   },
+   "c1": "#17100C",
+   "c2": "#D6AD5C"
+  },
+  {
+   "key": "pro-vip-nature",
+   "slug": "vip-nature",
+   "num": 26,
+   "name": "Botanical Luxe",
+   "desc": {
+    "uz": "realistik tabiat, tabiiy yorug‘lik, sokin yashil kartalar",
+    "ru": "реалистичная природа, естественный свет, спокойные зелёные карточки"
+   },
+   "fits": {
+    "uz": "tabiat, ekologiya, biologiya, geografiya",
+    "ru": "природа, экология, биология, география"
+   },
+   "c1": "#0E3023",
+   "c2": "#B6D29C"
+  },
+  {
+   "key": "pro-vip-gallery",
+   "slug": "vip-gallery",
+   "num": 27,
+   "name": "Sculpture Atelier",
+   "desc": {
+    "uz": "galereya yorug‘ligi, badiiy asarlar, kuratorlik maketi",
+    "ru": "свет галереи, произведения искусства, кураторская вёрстка"
+   },
+   "fits": {
+    "uz": "san’at, adabiyot, madaniyat, ijodiy loyihalar",
+    "ru": "искусство, литература, культура, творческие проекты"
+   },
+   "c1": "#260B12",
+   "c2": "#D7B37A"
+  },
+  {
+   "key": "pro-vip-city",
+   "slug": "vip-city",
+   "num": 28,
+   "name": "Future Transit",
+   "desc": {
+    "uz": "futuristik shahar, blueprint qatlamlari, toza ko‘k aksent",
+    "ru": "футуристичный город, слои чертежа, чистый голубой акцент"
+   },
+   "fits": {
+    "uz": "arxitektura, shaharsozlik, infratuzilma, innovatsiya",
+    "ru": "архитектура, урбанистика, инфраструктура, инновации"
+   },
+   "c1": "#071D35",
+   "c2": "#59D8E8"
+  },
+  {
    "key": "pro-vip-minimal",
    "slug": "vip-minimal",
-   "num": 9,
-   "name": "Minimal Luxe",
+   "num": 29,
+   "name": "Minimal Still-Life",
    "desc": {
     "uz": "abstrakt 3D shakllar, marmar va qog‘oz, keng bo‘shliq",
     "ru": "абстрактные 3D-формы, мрамор и бумага, много воздуха"
@@ -147,7 +467,7 @@
   {
    "key": "pro-vip-kids",
    "slug": "vip-kids",
-   "num": 10,
+   "num": 30,
    "name": "Children’s Dream",
    "desc": {
     "uz": "3D personajlar, yumshoq yorug‘lik, rang-barang kartalar",
