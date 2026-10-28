@@ -410,7 +410,8 @@
    "tier": "vip",
    "sec": [
     "art",
-    "science"
+    "science",
+    "school"
    ],
    "name": "Creative 3D",
    "num": 19,
@@ -468,26 +469,6 @@
    "inner": "../vip/img/vip-boutique-in.jpg"
   },
   {
-   "key": "pro-vip-universe",
-   "tier": "vip",
-   "sec": [
-    "science"
-   ],
-   "name": "Cinematic Universe",
-   "num": 22,
-   "desc": {
-    "uz": "fazoviy chuqurlik, kinematik yorug‘lik, sokin panel",
-    "ru": "космическая глубина, кинематографичный свет, спокойные панели"
-   },
-   "fits": {
-    "uz": "kosmos, fizika, ilm-fan, texnologiya, kelajak",
-    "ru": "космос, физика, наука, технологии, будущее"
-   },
-   "c1": "#080E28",
-   "c2": "#7FD3FF",
-   "inner": "../vip/img/vip-universe-in.jpg"
-  },
-  {
    "key": "pro-vip-academic",
    "tier": "vip",
    "sec": [
@@ -495,7 +476,7 @@
     "history"
    ],
    "name": "Elegant Academic",
-   "num": 23,
+   "num": 22,
    "desc": {
     "uz": "kutubxona, kitob va qo‘lyozma, akademik tipografika",
     "ru": "библиотека, книги и рукописи, академическая типографика"
@@ -507,147 +488,6 @@
    "c1": "#21170F",
    "c2": "#C7A56A",
    "inner": "../vip/img/vip-academic-in.jpg"
-  },
-  {
-   "key": "pro-vip-prestige",
-   "tier": "vip",
-   "sec": [
-    "business",
-    "formal"
-   ],
-   "name": "Burgundy Prestige",
-   "num": 24,
-   "desc": {
-    "uz": "chuqur bordo, oltin aksent, dramatik yorug‘lik",
-    "ru": "глубокое бордо, золотой акцент, драматичный свет"
-   },
-   "fits": {
-    "uz": "korporativ strategiya, investitsiya, biznes",
-    "ru": "корпоративная стратегия, инвестиции, бизнес"
-   },
-   "c1": "#3D0B1C",
-   "c2": "#CFA45E",
-   "inner": "../vip/img/vip-prestige-in.jpg"
-  },
-  {
-   "key": "pro-vip-imperial",
-   "tier": "vip",
-   "sec": [
-    "history"
-   ],
-   "name": "Imperial Signature",
-   "num": 25,
-   "desc": {
-    "uz": "kinematik tarixiy sahna, oltin naqsh, nafis serif",
-    "ru": "кинематографичная историческая сцена, золотой орнамент, изящный serif"
-   },
-   "fits": {
-    "uz": "tarix, madaniyat, davlat arboblari, rasmiy taqdimot",
-    "ru": "история, культура, государственные деятели, официальные доклады"
-   },
-   "c1": "#17100C",
-   "c2": "#D6AD5C",
-   "inner": "../vip/img/vip-imperial-in.jpg"
-  },
-  {
-   "key": "pro-vip-nature",
-   "tier": "vip",
-   "sec": [
-    "nature"
-   ],
-   "name": "Botanical Luxe",
-   "num": 26,
-   "desc": {
-    "uz": "realistik tabiat, tabiiy yorug‘lik, sokin yashil kartalar",
-    "ru": "реалистичная природа, естественный свет, спокойные зелёные карточки"
-   },
-   "fits": {
-    "uz": "tabiat, ekologiya, biologiya, geografiya",
-    "ru": "природа, экология, биология, география"
-   },
-   "c1": "#0E3023",
-   "c2": "#B6D29C",
-   "inner": "../vip/img/vip-nature-in.jpg"
-  },
-  {
-   "key": "pro-vip-gallery",
-   "tier": "vip",
-   "sec": [
-    "art"
-   ],
-   "name": "Sculpture Atelier",
-   "num": 27,
-   "desc": {
-    "uz": "galereya yorug‘ligi, badiiy asarlar, kuratorlik maketi",
-    "ru": "свет галереи, произведения искусства, кураторская вёрстка"
-   },
-   "fits": {
-    "uz": "san’at, adabiyot, madaniyat, ijodiy loyihalar",
-    "ru": "искусство, литература, культура, творческие проекты"
-   },
-   "c1": "#260B12",
-   "c2": "#D7B37A",
-   "inner": "../vip/img/vip-gallery-in.jpg"
-  },
-  {
-   "key": "pro-vip-city",
-   "tier": "vip",
-   "sec": [
-    "science"
-   ],
-   "name": "Future Transit",
-   "num": 28,
-   "desc": {
-    "uz": "futuristik shahar, blueprint qatlamlari, toza ko‘k aksent",
-    "ru": "футуристичный город, слои чертежа, чистый голубой акцент"
-   },
-   "fits": {
-    "uz": "arxitektura, shaharsozlik, infratuzilma, innovatsiya",
-    "ru": "архитектура, урбанистика, инфраструктура, инновации"
-   },
-   "c1": "#071D35",
-   "c2": "#59D8E8",
-   "inner": "../vip/img/vip-city-in.jpg"
-  },
-  {
-   "key": "pro-vip-minimal",
-   "tier": "vip",
-   "sec": [
-    "formal"
-   ],
-   "name": "Minimal Still-Life",
-   "num": 29,
-   "desc": {
-    "uz": "abstrakt 3D shakllar, marmar va qog‘oz, keng bo‘shliq",
-    "ru": "абстрактные 3D-формы, мрамор и бумага, много воздуха"
-   },
-   "fits": {
-    "uz": "universal premium, biznes, ta’lim, portfolio",
-    "ru": "универсальный премиум, бизнес, образование, портфолио"
-   },
-   "c1": "#F8F5EF",
-   "c2": "#8A6638",
-   "inner": "../vip/img/vip-minimal-in.jpg"
-  },
-  {
-   "key": "pro-vip-kids",
-   "tier": "vip",
-   "sec": [
-    "school"
-   ],
-   "name": "Children’s Dream",
-   "num": 30,
-   "desc": {
-    "uz": "3D personajlar, yumshoq yorug‘lik, rang-barang kartalar",
-    "ru": "3D-персонажи, мягкий свет, разноцветные карточки"
-   },
-   "fits": {
-    "uz": "bog‘cha, boshlang‘ich sinf, bolalar mavzulari",
-    "ru": "детский сад, начальная школа, детские темы"
-   },
-   "c1": "#EAF7FF",
-   "c2": "#B4501A",
-   "inner": "../vip/img/vip-kids-in.jpg"
   },
   {
    "key": "pro-royal",
@@ -712,33 +552,13 @@
    "inner": "../premium/img/nature-in.jpg"
   },
   {
-   "key": "pro-tech",
-   "tier": "pro",
-   "sec": [
-    "science"
-   ],
-   "name": "Tech Future",
-   "num": 4,
-   "desc": {
-    "uz": "raqamli vizual, neon gradient, shisha kartalar",
-    "ru": "цифровые визуалы, неоновый градиент, стеклянные карточки"
-   },
-   "fits": {
-    "uz": "IT, sun’iy intellekt, muhandislik, innovatsiya",
-    "ru": "IT, ИИ, инженерия, инновации"
-   },
-   "c1": "#0B1026",
-   "c2": "#A78BFA",
-   "inner": "../premium/img/tech-in.jpg"
-  },
-  {
    "key": "pro-islamic",
    "tier": "pro",
    "sec": [
     "history"
    ],
    "name": "Islamic Geometric",
-   "num": 5,
+   "num": 4,
    "desc": {
     "uz": "girih naqshi, ravoq shakllari, firuza va oltin",
     "ru": "орнамент гирих, арки, бирюза и золото"
@@ -752,27 +572,6 @@
    "inner": "../premium/img/islamic-in.jpg"
   },
   {
-   "key": "pro-infographic",
-   "tier": "pro",
-   "sec": [
-    "business",
-    "science"
-   ],
-   "name": "Infographic Modern",
-   "num": 6,
-   "desc": {
-    "uz": "raqamlar, timeline, diagramma, ko‘rsatkich paneli",
-    "ru": "цифры, хронология, панель показателей"
-   },
-   "fits": {
-    "uz": "statistika, iqtisod, tadqiqot, xronologiya",
-    "ru": "статистика, экономика, исследования"
-   },
-   "c1": "#0B1F33",
-   "c2": "#F0B44D",
-   "inner": "../premium/img/infographic-in.jpg"
-  },
-  {
    "key": "pro-card",
    "tier": "pro",
    "sec": [
@@ -780,7 +579,7 @@
     "formal"
    ],
    "name": "Card Style",
-   "num": 7,
+   "num": 5,
    "desc": {
     "uz": "modul kartalar, ikonkalar, aniq grid",
     "ru": "модульные карточки, иконки, чёткая сетка"
@@ -794,33 +593,13 @@
    "inner": "../premium/img/card-in.jpg"
   },
   {
-   "key": "pro-artistic",
-   "tier": "pro",
-   "sec": [
-    "art"
-   ],
-   "name": "Artistic Clean",
-   "num": 8,
-   "desc": {
-    "uz": "editorial kompozitsiya, bo‘yoq dog‘lari, katta tasvir",
-    "ru": "редакционная композиция, пятна краски, крупное изображение"
-   },
-   "fits": {
-    "uz": "san’at, adabiyot, kreativ loyiha, madaniyat",
-    "ru": "искусство, литература, творчество"
-   },
-   "c1": "#F8F6F1",
-   "c2": "#1E67A8",
-   "inner": "../premium/img/artistic-in.jpg"
-  },
-  {
    "key": "pro-luxury",
    "tier": "pro",
    "sec": [
     "business"
    ],
    "name": "Luxury Dark",
-   "num": 9,
+   "num": 6,
    "desc": {
     "uz": "kino darajasidagi foto, dramatik yorug‘lik, chuqur fon",
     "ru": "кинематографичное фото, драматичный свет, глубокий фон"
@@ -840,7 +619,7 @@
     "science"
    ],
    "name": "Glass Modern",
-   "num": 10,
+   "num": 7,
    "desc": {
     "uz": "yarim shaffof kartalar, qatlamli gradient, nozik chegara",
     "ru": "полупрозрачные карточки, слоистый градиент"
@@ -861,7 +640,7 @@
     "business"
    ],
    "name": "Bento Editorial",
-   "num": 11,
+   "num": 8,
    "desc": {
     "uz": "turli o‘lchamdagi kartalar, bitta katta vizual",
     "ru": "карточки разного размера и одно большое фото"
@@ -881,7 +660,7 @@
     "art"
    ],
    "name": "Type as Hero",
-   "num": 12,
+   "num": 9,
    "desc": {
     "uz": "juda katta tipografika, bitta asosiy fikr",
     "ru": "очень крупная типографика, одна главная мысль"
@@ -902,7 +681,7 @@
     "school"
    ],
    "name": "Neo-Brutalist",
-   "num": 13,
+   "num": 10,
    "desc": {
     "uz": "qalin chegara, keskin rang maydoni, grafik stiker",
     "ru": "толстые рамки, яркие плашки, графичные стикеры"
@@ -923,7 +702,7 @@
     "art"
    ],
    "name": "Cinematic Full-Bleed",
-   "num": 14,
+   "num": 11,
    "desc": {
     "uz": "butun slayd foto, qorong‘i overlay, qisqa matn",
     "ru": "фото на весь слайд, тёмный оверлей, короткий текст"
@@ -943,7 +722,7 @@
     "art"
    ],
    "name": "Zine Collage",
-   "num": 15,
+   "num": 12,
    "desc": {
     "uz": "qog‘oz qirqimlari, foto kollaj, tekstura",
     "ru": "бумажные вырезки, фотоколлаж, текстура"
@@ -963,7 +742,7 @@
     "school"
    ],
    "name": "Soft 3D Objects",
-   "num": 16,
+   "num": 13,
    "desc": {
     "uz": "yumshoq 3D shakllar, silliq soyalar, pastel ranglar",
     "ru": "мягкие 3D-формы, плавные тени, пастель"
@@ -977,47 +756,6 @@
    "inner": "../premium/img/soft3d-in.jpg"
   },
   {
-   "key": "pro-data",
-   "tier": "pro",
-   "sec": [
-    "business"
-   ],
-   "name": "Data Storytelling",
-   "num": 17,
-   "desc": {
-    "uz": "bitta asosiy topilma, katta raqam, sodda diagramma",
-    "ru": "одна главная находка, крупная цифра, простая диаграмма"
-   },
-   "fits": {
-    "uz": "iqtisod, tadqiqot, biznes, statistika",
-    "ru": "экономика, исследования, бизнес"
-   },
-   "c1": "#081B2B",
-   "c2": "#F3B54A",
-   "inner": "../premium/img/data-in.jpg"
-  },
-  {
-   "key": "pro-warm",
-   "tier": "pro",
-   "sec": [
-    "history",
-    "art"
-   ],
-   "name": "Warm Tactile Editorial",
-   "num": 18,
-   "desc": {
-    "uz": "iliq qog‘oz teksturasi, nafis serif, haqiqiy foto",
-    "ru": "тёплая бумажная текстура, изящный serif, живое фото"
-   },
-   "fits": {
-    "uz": "adabiyot, tarix, hunarmandchilik, inson hikoyalari",
-    "ru": "литература, история, ремёсла"
-   },
-   "c1": "#F0E5D2",
-   "c2": "#7C452B",
-   "inner": "../premium/img/warm-in.jpg"
-  },
-  {
    "key": "pro-mono",
    "tier": "pro",
    "sec": [
@@ -1025,7 +763,7 @@
     "art"
    ],
    "name": "Monochrome Geometric",
-   "num": 19,
+   "num": 14,
    "desc": {
     "uz": "oq-qora foto, geometrik chiziqlar, kuchli kontrast",
     "ru": "чёрно-белое фото, геометрия, сильный контраст"
@@ -1039,27 +777,6 @@
    "inner": "../premium/img/mono-in.jpg"
   },
   {
-   "key": "pro-teal",
-   "tier": "pro",
-   "sec": [
-    "nature",
-    "science"
-   ],
-   "name": "Restorative Teal",
-   "num": 20,
-   "desc": {
-    "uz": "sokin teal, organik shakllar, keng bo‘sh joy",
-    "ru": "спокойный бирюзовый, органичные формы"
-   },
-   "fits": {
-    "uz": "sog‘lom turmush, ta’lim, farovonlik, ekologiya",
-    "ru": "здоровье, образование, экология"
-   },
-   "c1": "#E8F3EF",
-   "c2": "#2E7D70",
-   "inner": "../premium/img/teal-in.jpg"
-  },
-  {
    "key": "pro-meros-ivory",
    "tier": "pro",
    "sec": [
@@ -1067,7 +784,7 @@
     "formal"
    ],
    "name": "Meros · Ivory Gold",
-   "num": 21,
+   "num": 15,
    "desc": {
     "uz": "fil suyagi va oltin, nozik girih naqshi",
     "ru": "слоновая кость и золото, тонкий орнамент"
@@ -1081,47 +798,6 @@
    "inner": "../premium/img/meros-ivory-in.jpg"
   },
   {
-   "key": "pro-meros-midnight",
-   "tier": "pro",
-   "sec": [
-    "history"
-   ],
-   "name": "Meros · Midnight Blue",
-   "num": 22,
-   "desc": {
-    "uz": "tungi ko‘k va oltin, naqshli fon",
-    "ru": "ночной синий и золото, узорный фон"
-   },
-   "fits": {
-    "uz": "tarix, yetakchilik, davlatchilik",
-    "ru": "история, государственность"
-   },
-   "c1": "#0A1730",
-   "c2": "#E2B85E",
-   "inner": "../premium/img/meros-midnight-in.jpg"
-  },
-  {
-   "key": "pro-meros-emerald",
-   "tier": "pro",
-   "sec": [
-    "history",
-    "nature"
-   ],
-   "name": "Meros · Emerald",
-   "num": 23,
-   "desc": {
-    "uz": "zumrad va oltin, sharqona naqsh",
-    "ru": "изумруд и золото, восточный орнамент"
-   },
-   "fits": {
-    "uz": "me’morchilik, ekologiya, madaniy meros",
-    "ru": "архитектура, экология, наследие"
-   },
-   "c1": "#0A3A33",
-   "c2": "#E3C47D",
-   "inner": "../premium/img/meros-emerald-in.jpg"
-  },
-  {
    "key": "pro-meros-bronze",
    "tier": "pro",
    "sec": [
@@ -1129,7 +805,7 @@
     "art"
    ],
    "name": "Meros · Black Bronze",
-   "num": 24,
+   "num": 16,
    "desc": {
     "uz": "qora va bronza, dramatik yorug‘lik",
     "ru": "чёрный и бронза, драматичный свет"
@@ -1143,27 +819,6 @@
    "inner": "../premium/img/meros-bronze-in.jpg"
   },
   {
-   "key": "pro-meros-lavender",
-   "tier": "pro",
-   "sec": [
-    "art",
-    "school"
-   ],
-   "name": "Meros · Lavender Sunset",
-   "num": 25,
-   "desc": {
-    "uz": "lavanda va shaftoli, yumshoq naqsh",
-    "ru": "лаванда и персик, мягкий орнамент"
-   },
-   "fits": {
-    "uz": "til, adabiyot, san’at, ta’lim",
-    "ru": "языки, литература, искусство"
-   },
-   "c1": "#EEE2F3",
-   "c2": "#6A3AA3",
-   "inner": "../premium/img/meros-lavender-in.jpg"
-  },
-  {
    "key": "pro-swiss",
    "tier": "pro",
    "sec": [
@@ -1171,7 +826,7 @@
     "business"
    ],
    "name": "Swiss International",
-   "num": 26,
+   "num": 17,
    "desc": {
     "uz": "qat’iy grid, katta sans-serif, qizil aksent va bo‘sh joy",
     "ru": "строгая сетка, крупный гротеск, красный акцент и воздух"
@@ -1193,7 +848,7 @@
     "formal"
    ],
    "name": "Scientific Journal",
-   "num": 27,
+   "num": 18,
    "desc": {
     "uz": "ilmiy jurnal sahifasi, rasm izohi, manba va diagramma",
     "ru": "страница научного журнала: подписи, источники, диаграммы"
@@ -1214,7 +869,7 @@
     "art"
    ],
    "name": "Haute Couture Editorial",
-   "num": 28,
+   "num": 19,
    "desc": {
     "uz": "nafis serif, katta sifatli foto, jurnal kompozitsiyasi",
     "ru": "изящный serif, крупное фото, журнальная композиция"
@@ -1235,7 +890,7 @@
     "business"
    ],
    "name": "Executive Consulting",
-   "num": 29,
+   "num": 20,
    "desc": {
     "uz": "bitta asosiy xulosa, framework, muammo → dalil → yechim",
     "ru": "один главный вывод, фреймворк, проблема → факты → решение"
@@ -1257,7 +912,7 @@
     "formal"
    ],
    "name": "Architecture Portfolio",
-   "num": 30,
+   "num": 21,
    "desc": {
     "uz": "arxitektura fotosi, chizma chiziqlari, material va geometriya",
     "ru": "архитектурное фото, линии чертежа, материалы и геометрия"
@@ -1278,7 +933,7 @@
     "science"
    ],
    "name": "Blueprint Engineering",
-   "num": 31,
+   "num": 22,
    "desc": {
     "uz": "ko‘k chizma foni, texnik chiziqlar, sxema va izohlar",
     "ru": "синий чертёж, технические линии, схемы и подписи"
@@ -1300,7 +955,7 @@
     "nature"
    ],
    "name": "Japanese Wabi-Sabi",
-   "num": 32,
+   "num": 23,
    "desc": {
     "uz": "tabiiy tekstura, assimetriya, nozik siyoh chizig‘i va bo‘shliq",
     "ru": "природная текстура, асимметрия, тонкая линия туши и пустота"
@@ -1322,7 +977,7 @@
     "science"
    ],
    "name": "Retro-Futurism",
-   "num": 33,
+   "num": 24,
    "desc": {
     "uz": "retro-futuristik geometriya, ufq to‘ri, gradient va katta sarlavha",
     "ru": "ретрофутуризм: горизонт-сетка, градиент, крупный заголовок"
@@ -1344,7 +999,7 @@
     "school"
    ],
    "name": "Isometric World",
-   "num": 34,
+   "num": 25,
    "desc": {
     "uz": "izometrik fazoviy sahna, jarayon va bog‘liqliklar",
     "ru": "изометрическая сцена, процессы и связи"
@@ -1366,7 +1021,7 @@
     "business"
    ],
    "name": "Data Terminal",
-   "num": 35,
+   "num": 26,
    "desc": {
     "uz": "analitik panellar, katta raqamlar, vaqt qatorlari, jadvallar",
     "ru": "аналитические панели, крупные цифры, таблицы"
@@ -1381,27 +1036,6 @@
    "open": true
   },
   {
-   "key": "pro-burgundy-editorial",
-   "tier": "pro",
-   "sec": [
-    "formal",
-    "art"
-   ],
-   "name": "Burgundy Editorial",
-   "num": 36,
-   "desc": {
-    "uz": "jurnal kompozitsiyasi, nafis serif, fil suyagi qog‘oz va vino rangi",
-    "ru": "журнальная композиция, изящный serif, бумага цвета слоновой кости и бордо"
-   },
-   "fits": {
-    "uz": "adabiyot, tarix, madaniyat, moda, universitet",
-    "ru": "литература, история, культура, мода, университет"
-   },
-   "c1": "#F7F1E8",
-   "c2": "#8E2A4E",
-   "inner": "../premium/img/burgundy-editorial-in.jpg"
-  },
-  {
    "key": "pro-burgundy-gold",
    "tier": "pro",
    "sec": [
@@ -1409,7 +1043,7 @@
     "history"
    ],
    "name": "Burgundy Gold Luxe",
-   "num": 37,
+   "num": 27,
    "desc": {
     "uz": "chuqur vino fon, nozik oltin ramka va metallik aksent",
     "ru": "глубокий винный фон, тонкая золотая рамка, металлический акцент"
@@ -1430,7 +1064,7 @@
     "business"
    ],
    "name": "Burgundy Modern Classic",
-   "num": 38,
+   "num": 28,
    "desc": {
     "uz": "tartibli grid, katta raqamlar, och panellar va vino aksent",
     "ru": "строгая сетка, крупные цифры, светлые панели и винный акцент"
@@ -1461,7 +1095,7 @@
    },
    "c1": "#0F3D6E",
    "c2": "#14B8C9",
-   "inner": "../img/themes/minimal-ocean.jpg"
+   "inner": "../img/themes/minimal-ocean.jpg?v=3"
   },
   {
    "key": "minimal-emerald",
@@ -1481,7 +1115,7 @@
    },
    "c1": "#0B6B4F",
    "c2": "#E8A93A",
-   "inner": "../img/themes/minimal-emerald.jpg"
+   "inner": "../img/themes/minimal-emerald.jpg?v=3"
   },
   {
    "key": "minimal-violet",
@@ -1502,7 +1136,7 @@
    },
    "c1": "#5B21B6",
    "c2": "#F472B6",
-   "inner": "../img/themes/minimal-violet.jpg"
+   "inner": "../img/themes/minimal-violet.jpg?v=3"
   },
   {
    "key": "minimal-sunset",
@@ -1522,7 +1156,7 @@
    },
    "c1": "#C2410C",
    "c2": "#F59E0B",
-   "inner": "../img/themes/minimal-sunset.jpg"
+   "inner": "../img/themes/minimal-sunset.jpg?v=3"
   },
   {
    "key": "minimal-ruby",
@@ -1543,7 +1177,7 @@
    },
    "c1": "#9F1239",
    "c2": "#F43F5E",
-   "inner": "../img/themes/minimal-ruby.jpg"
+   "inner": "../img/themes/minimal-ruby.jpg?v=3"
   },
   {
    "key": "minimal-teal",
@@ -1563,7 +1197,7 @@
    },
    "c1": "#0F766E",
    "c2": "#2DD4BF",
-   "inner": "../img/themes/minimal-teal.jpg"
+   "inner": "../img/themes/minimal-teal.jpg?v=3"
   },
   {
    "key": "minimal-gold",
@@ -1583,7 +1217,7 @@
    },
    "c1": "#1F2937",
    "c2": "#D4A017",
-   "inner": "../img/themes/minimal-gold.jpg"
+   "inner": "../img/themes/minimal-gold.jpg?v=3"
   },
   {
    "key": "minimal-slate",
@@ -1602,7 +1236,7 @@
    },
    "c1": "#18181B",
    "c2": "#84CC16",
-   "inner": "../img/themes/minimal-slate.jpg"
+   "inner": "../img/themes/minimal-slate.jpg?v=3"
   },
   {
    "key": "minimal-indigo",
@@ -1622,7 +1256,7 @@
    },
    "c1": "#1E3A8A",
    "c2": "#F97316",
-   "inner": "../img/themes/minimal-indigo.jpg"
+   "inner": "../img/themes/minimal-indigo.jpg?v=3"
   },
   {
    "key": "minimal-forest",
@@ -1642,7 +1276,7 @@
    },
    "c1": "#14532D",
    "c2": "#A3E635",
-   "inner": "../img/themes/minimal-forest.jpg"
+   "inner": "../img/themes/minimal-forest.jpg?v=3"
   },
   {
    "key": "corporate-ocean",
@@ -1662,7 +1296,7 @@
    },
    "c1": "#0F3D6E",
    "c2": "#14B8C9",
-   "inner": "../img/themes/corporate-ocean.jpg"
+   "inner": "../img/themes/corporate-ocean.jpg?v=3"
   },
   {
    "key": "corporate-emerald",
@@ -1682,7 +1316,7 @@
    },
    "c1": "#0B6B4F",
    "c2": "#E8A93A",
-   "inner": "../img/themes/corporate-emerald.jpg"
+   "inner": "../img/themes/corporate-emerald.jpg?v=3"
   },
   {
    "key": "corporate-violet",
@@ -1703,7 +1337,7 @@
    },
    "c1": "#5B21B6",
    "c2": "#F472B6",
-   "inner": "../img/themes/corporate-violet.jpg"
+   "inner": "../img/themes/corporate-violet.jpg?v=3"
   },
   {
    "key": "corporate-sunset",
@@ -1723,7 +1357,7 @@
    },
    "c1": "#C2410C",
    "c2": "#F59E0B",
-   "inner": "../img/themes/corporate-sunset.jpg"
+   "inner": "../img/themes/corporate-sunset.jpg?v=3"
   },
   {
    "key": "corporate-ruby",
@@ -1744,7 +1378,7 @@
    },
    "c1": "#9F1239",
    "c2": "#F43F5E",
-   "inner": "../img/themes/corporate-ruby.jpg"
+   "inner": "../img/themes/corporate-ruby.jpg?v=3"
   },
   {
    "key": "corporate-teal",
@@ -1764,7 +1398,7 @@
    },
    "c1": "#0F766E",
    "c2": "#2DD4BF",
-   "inner": "../img/themes/corporate-teal.jpg"
+   "inner": "../img/themes/corporate-teal.jpg?v=3"
   },
   {
    "key": "corporate-gold",
@@ -1784,7 +1418,7 @@
    },
    "c1": "#1F2937",
    "c2": "#D4A017",
-   "inner": "../img/themes/corporate-gold.jpg"
+   "inner": "../img/themes/corporate-gold.jpg?v=3"
   },
   {
    "key": "corporate-slate",
@@ -1803,7 +1437,7 @@
    },
    "c1": "#18181B",
    "c2": "#84CC16",
-   "inner": "../img/themes/corporate-slate.jpg"
+   "inner": "../img/themes/corporate-slate.jpg?v=3"
   },
   {
    "key": "corporate-indigo",
@@ -1823,7 +1457,7 @@
    },
    "c1": "#1E3A8A",
    "c2": "#F97316",
-   "inner": "../img/themes/corporate-indigo.jpg"
+   "inner": "../img/themes/corporate-indigo.jpg?v=3"
   },
   {
    "key": "corporate-forest",
@@ -1843,7 +1477,7 @@
    },
    "c1": "#14532D",
    "c2": "#A3E635",
-   "inner": "../img/themes/corporate-forest.jpg"
+   "inner": "../img/themes/corporate-forest.jpg?v=3"
   },
   {
    "key": "academic-ocean",
@@ -1863,7 +1497,7 @@
    },
    "c1": "#0F3D6E",
    "c2": "#14B8C9",
-   "inner": "../img/themes/academic-ocean.jpg"
+   "inner": "../img/themes/academic-ocean.jpg?v=3"
   },
   {
    "key": "academic-emerald",
@@ -1883,7 +1517,7 @@
    },
    "c1": "#0B6B4F",
    "c2": "#E8A93A",
-   "inner": "../img/themes/academic-emerald.jpg"
+   "inner": "../img/themes/academic-emerald.jpg?v=3"
   },
   {
    "key": "academic-violet",
@@ -1904,7 +1538,7 @@
    },
    "c1": "#5B21B6",
    "c2": "#F472B6",
-   "inner": "../img/themes/academic-violet.jpg"
+   "inner": "../img/themes/academic-violet.jpg?v=3"
   },
   {
    "key": "academic-sunset",
@@ -1924,7 +1558,7 @@
    },
    "c1": "#C2410C",
    "c2": "#F59E0B",
-   "inner": "../img/themes/academic-sunset.jpg"
+   "inner": "../img/themes/academic-sunset.jpg?v=3"
   },
   {
    "key": "academic-ruby",
@@ -1944,7 +1578,7 @@
    },
    "c1": "#9F1239",
    "c2": "#F43F5E",
-   "inner": "../img/themes/academic-ruby.jpg"
+   "inner": "../img/themes/academic-ruby.jpg?v=3"
   },
   {
    "key": "academic-teal",
@@ -1964,7 +1598,7 @@
    },
    "c1": "#0F766E",
    "c2": "#2DD4BF",
-   "inner": "../img/themes/academic-teal.jpg"
+   "inner": "../img/themes/academic-teal.jpg?v=3"
   },
   {
    "key": "academic-gold",
@@ -1983,7 +1617,7 @@
    },
    "c1": "#1F2937",
    "c2": "#D4A017",
-   "inner": "../img/themes/academic-gold.jpg"
+   "inner": "../img/themes/academic-gold.jpg?v=3"
   },
   {
    "key": "academic-slate",
@@ -2002,7 +1636,7 @@
    },
    "c1": "#18181B",
    "c2": "#84CC16",
-   "inner": "../img/themes/academic-slate.jpg"
+   "inner": "../img/themes/academic-slate.jpg?v=3"
   },
   {
    "key": "academic-indigo",
@@ -2022,7 +1656,7 @@
    },
    "c1": "#1E3A8A",
    "c2": "#F97316",
-   "inner": "../img/themes/academic-indigo.jpg"
+   "inner": "../img/themes/academic-indigo.jpg?v=3"
   },
   {
    "key": "academic-forest",
@@ -2042,7 +1676,7 @@
    },
    "c1": "#14532D",
    "c2": "#A3E635",
-   "inner": "../img/themes/academic-forest.jpg"
+   "inner": "../img/themes/academic-forest.jpg?v=3"
   },
   {
    "key": "gradient-ocean",
@@ -2061,7 +1695,7 @@
    },
    "c1": "#0F3D6E",
    "c2": "#14B8C9",
-   "inner": "../img/themes/gradient-ocean.jpg"
+   "inner": "../img/themes/gradient-ocean.jpg?v=3"
   },
   {
    "key": "gradient-emerald",
@@ -2081,7 +1715,7 @@
    },
    "c1": "#0B6B4F",
    "c2": "#E8A93A",
-   "inner": "../img/themes/gradient-emerald.jpg"
+   "inner": "../img/themes/gradient-emerald.jpg?v=3"
   },
   {
    "key": "gradient-violet",
@@ -2101,7 +1735,7 @@
    },
    "c1": "#5B21B6",
    "c2": "#F472B6",
-   "inner": "../img/themes/gradient-violet.jpg"
+   "inner": "../img/themes/gradient-violet.jpg?v=3"
   },
   {
    "key": "gradient-sunset",
@@ -2121,7 +1755,7 @@
    },
    "c1": "#C2410C",
    "c2": "#F59E0B",
-   "inner": "../img/themes/gradient-sunset.jpg"
+   "inner": "../img/themes/gradient-sunset.jpg?v=3"
   },
   {
    "key": "gradient-ruby",
@@ -2142,7 +1776,7 @@
    },
    "c1": "#9F1239",
    "c2": "#F43F5E",
-   "inner": "../img/themes/gradient-ruby.jpg"
+   "inner": "../img/themes/gradient-ruby.jpg?v=3"
   },
   {
    "key": "gradient-teal",
@@ -2162,7 +1796,7 @@
    },
    "c1": "#0F766E",
    "c2": "#2DD4BF",
-   "inner": "../img/themes/gradient-teal.jpg"
+   "inner": "../img/themes/gradient-teal.jpg?v=3"
   },
   {
    "key": "gradient-gold",
@@ -2182,7 +1816,7 @@
    },
    "c1": "#1F2937",
    "c2": "#D4A017",
-   "inner": "../img/themes/gradient-gold.jpg"
+   "inner": "../img/themes/gradient-gold.jpg?v=3"
   },
   {
    "key": "gradient-slate",
@@ -2202,7 +1836,7 @@
    },
    "c1": "#18181B",
    "c2": "#84CC16",
-   "inner": "../img/themes/gradient-slate.jpg"
+   "inner": "../img/themes/gradient-slate.jpg?v=3"
   },
   {
    "key": "gradient-indigo",
@@ -2221,7 +1855,7 @@
    },
    "c1": "#1E3A8A",
    "c2": "#F97316",
-   "inner": "../img/themes/gradient-indigo.jpg"
+   "inner": "../img/themes/gradient-indigo.jpg?v=3"
   },
   {
    "key": "gradient-forest",
@@ -2241,7 +1875,7 @@
    },
    "c1": "#14532D",
    "c2": "#A3E635",
-   "inner": "../img/themes/gradient-forest.jpg"
+   "inner": "../img/themes/gradient-forest.jpg?v=3"
   },
   {
    "key": "dark-ocean",
@@ -2260,7 +1894,7 @@
    },
    "c1": "#0F3D6E",
    "c2": "#14B8C9",
-   "inner": "../img/themes/dark-ocean.jpg"
+   "inner": "../img/themes/dark-ocean.jpg?v=3"
   },
   {
    "key": "dark-emerald",
@@ -2280,7 +1914,7 @@
    },
    "c1": "#0B6B4F",
    "c2": "#E8A93A",
-   "inner": "../img/themes/dark-emerald.jpg"
+   "inner": "../img/themes/dark-emerald.jpg?v=3"
   },
   {
    "key": "dark-violet",
@@ -2300,7 +1934,7 @@
    },
    "c1": "#5B21B6",
    "c2": "#F472B6",
-   "inner": "../img/themes/dark-violet.jpg"
+   "inner": "../img/themes/dark-violet.jpg?v=3"
   },
   {
    "key": "dark-sunset",
@@ -2320,7 +1954,7 @@
    },
    "c1": "#C2410C",
    "c2": "#F59E0B",
-   "inner": "../img/themes/dark-sunset.jpg"
+   "inner": "../img/themes/dark-sunset.jpg?v=3"
   },
   {
    "key": "dark-ruby",
@@ -2341,7 +1975,7 @@
    },
    "c1": "#9F1239",
    "c2": "#F43F5E",
-   "inner": "../img/themes/dark-ruby.jpg"
+   "inner": "../img/themes/dark-ruby.jpg?v=3"
   },
   {
    "key": "dark-teal",
@@ -2361,7 +1995,7 @@
    },
    "c1": "#0F766E",
    "c2": "#2DD4BF",
-   "inner": "../img/themes/dark-teal.jpg"
+   "inner": "../img/themes/dark-teal.jpg?v=3"
   },
   {
    "key": "dark-gold",
@@ -2381,7 +2015,7 @@
    },
    "c1": "#1F2937",
    "c2": "#D4A017",
-   "inner": "../img/themes/dark-gold.jpg"
+   "inner": "../img/themes/dark-gold.jpg?v=3"
   },
   {
    "key": "dark-slate",
@@ -2401,7 +2035,7 @@
    },
    "c1": "#18181B",
    "c2": "#84CC16",
-   "inner": "../img/themes/dark-slate.jpg"
+   "inner": "../img/themes/dark-slate.jpg?v=3"
   },
   {
    "key": "dark-indigo",
@@ -2420,7 +2054,7 @@
    },
    "c1": "#1E3A8A",
    "c2": "#F97316",
-   "inner": "../img/themes/dark-indigo.jpg"
+   "inner": "../img/themes/dark-indigo.jpg?v=3"
   },
   {
    "key": "dark-forest",
@@ -2440,7 +2074,7 @@
    },
    "c1": "#14532D",
    "c2": "#A3E635",
-   "inner": "../img/themes/dark-forest.jpg"
+   "inner": "../img/themes/dark-forest.jpg?v=3"
   },
   {
    "key": "vivid-ocean",
@@ -2459,7 +2093,7 @@
    },
    "c1": "#0F3D6E",
    "c2": "#14B8C9",
-   "inner": "../img/themes/vivid-ocean.jpg"
+   "inner": "../img/themes/vivid-ocean.jpg?v=3"
   },
   {
    "key": "vivid-emerald",
@@ -2478,7 +2112,7 @@
    },
    "c1": "#0B6B4F",
    "c2": "#E8A93A",
-   "inner": "../img/themes/vivid-emerald.jpg"
+   "inner": "../img/themes/vivid-emerald.jpg?v=3"
   },
   {
    "key": "vivid-violet",
@@ -2497,7 +2131,7 @@
    },
    "c1": "#5B21B6",
    "c2": "#F472B6",
-   "inner": "../img/themes/vivid-violet.jpg"
+   "inner": "../img/themes/vivid-violet.jpg?v=3"
   },
   {
    "key": "vivid-sunset",
@@ -2516,7 +2150,7 @@
    },
    "c1": "#C2410C",
    "c2": "#F59E0B",
-   "inner": "../img/themes/vivid-sunset.jpg"
+   "inner": "../img/themes/vivid-sunset.jpg?v=3"
   },
   {
    "key": "vivid-ruby",
@@ -2535,7 +2169,7 @@
    },
    "c1": "#9F1239",
    "c2": "#F43F5E",
-   "inner": "../img/themes/vivid-ruby.jpg"
+   "inner": "../img/themes/vivid-ruby.jpg?v=3"
   },
   {
    "key": "vivid-teal",
@@ -2554,7 +2188,7 @@
    },
    "c1": "#0F766E",
    "c2": "#2DD4BF",
-   "inner": "../img/themes/vivid-teal.jpg"
+   "inner": "../img/themes/vivid-teal.jpg?v=3"
   },
   {
    "key": "vivid-gold",
@@ -2573,7 +2207,7 @@
    },
    "c1": "#1F2937",
    "c2": "#D4A017",
-   "inner": "../img/themes/vivid-gold.jpg"
+   "inner": "../img/themes/vivid-gold.jpg?v=3"
   },
   {
    "key": "vivid-slate",
@@ -2592,7 +2226,7 @@
    },
    "c1": "#18181B",
    "c2": "#84CC16",
-   "inner": "../img/themes/vivid-slate.jpg"
+   "inner": "../img/themes/vivid-slate.jpg?v=3"
   },
   {
    "key": "vivid-indigo",
@@ -2611,7 +2245,7 @@
    },
    "c1": "#1E3A8A",
    "c2": "#F97316",
-   "inner": "../img/themes/vivid-indigo.jpg"
+   "inner": "../img/themes/vivid-indigo.jpg?v=3"
   },
   {
    "key": "vivid-forest",
@@ -2630,7 +2264,7 @@
    },
    "c1": "#14532D",
    "c2": "#A3E635",
-   "inner": "../img/themes/vivid-forest.jpg"
+   "inner": "../img/themes/vivid-forest.jpg?v=3"
   },
   {
    "key": "playful-ocean",
@@ -2648,7 +2282,7 @@
    },
    "c1": "#0F3D6E",
    "c2": "#14B8C9",
-   "inner": "../img/themes/playful-ocean.jpg"
+   "inner": "../img/themes/playful-ocean.jpg?v=3"
   },
   {
    "key": "playful-emerald",
@@ -2666,7 +2300,7 @@
    },
    "c1": "#0B6B4F",
    "c2": "#E8A93A",
-   "inner": "../img/themes/playful-emerald.jpg"
+   "inner": "../img/themes/playful-emerald.jpg?v=3"
   },
   {
    "key": "playful-violet",
@@ -2684,7 +2318,7 @@
    },
    "c1": "#5B21B6",
    "c2": "#F472B6",
-   "inner": "../img/themes/playful-violet.jpg"
+   "inner": "../img/themes/playful-violet.jpg?v=3"
   },
   {
    "key": "playful-sunset",
@@ -2702,7 +2336,7 @@
    },
    "c1": "#C2410C",
    "c2": "#F59E0B",
-   "inner": "../img/themes/playful-sunset.jpg"
+   "inner": "../img/themes/playful-sunset.jpg?v=3"
   },
   {
    "key": "playful-ruby",
@@ -2720,7 +2354,7 @@
    },
    "c1": "#9F1239",
    "c2": "#F43F5E",
-   "inner": "../img/themes/playful-ruby.jpg"
+   "inner": "../img/themes/playful-ruby.jpg?v=3"
   },
   {
    "key": "playful-teal",
@@ -2738,7 +2372,7 @@
    },
    "c1": "#0F766E",
    "c2": "#2DD4BF",
-   "inner": "../img/themes/playful-teal.jpg"
+   "inner": "../img/themes/playful-teal.jpg?v=3"
   },
   {
    "key": "playful-gold",
@@ -2756,7 +2390,7 @@
    },
    "c1": "#1F2937",
    "c2": "#D4A017",
-   "inner": "../img/themes/playful-gold.jpg"
+   "inner": "../img/themes/playful-gold.jpg?v=3"
   },
   {
    "key": "playful-slate",
@@ -2774,7 +2408,7 @@
    },
    "c1": "#18181B",
    "c2": "#84CC16",
-   "inner": "../img/themes/playful-slate.jpg"
+   "inner": "../img/themes/playful-slate.jpg?v=3"
   },
   {
    "key": "playful-indigo",
@@ -2792,7 +2426,7 @@
    },
    "c1": "#1E3A8A",
    "c2": "#F97316",
-   "inner": "../img/themes/playful-indigo.jpg"
+   "inner": "../img/themes/playful-indigo.jpg?v=3"
   },
   {
    "key": "playful-forest",
@@ -2810,7 +2444,7 @@
    },
    "c1": "#14532D",
    "c2": "#A3E635",
-   "inner": "../img/themes/playful-forest.jpg"
+   "inner": "../img/themes/playful-forest.jpg?v=3"
   },
   {
    "key": "sport-ocean",
@@ -2828,7 +2462,7 @@
    },
    "c1": "#0F3D6E",
    "c2": "#14B8C9",
-   "inner": "../img/themes/sport-ocean.jpg"
+   "inner": "../img/themes/sport-ocean.jpg?v=3"
   },
   {
    "key": "sport-emerald",
@@ -2846,7 +2480,7 @@
    },
    "c1": "#0B6B4F",
    "c2": "#E8A93A",
-   "inner": "../img/themes/sport-emerald.jpg"
+   "inner": "../img/themes/sport-emerald.jpg?v=3"
   },
   {
    "key": "sport-violet",
@@ -2864,7 +2498,7 @@
    },
    "c1": "#5B21B6",
    "c2": "#F472B6",
-   "inner": "../img/themes/sport-violet.jpg"
+   "inner": "../img/themes/sport-violet.jpg?v=3"
   },
   {
    "key": "sport-sunset",
@@ -2882,7 +2516,7 @@
    },
    "c1": "#C2410C",
    "c2": "#F59E0B",
-   "inner": "../img/themes/sport-sunset.jpg"
+   "inner": "../img/themes/sport-sunset.jpg?v=3"
   },
   {
    "key": "sport-ruby",
@@ -2900,7 +2534,7 @@
    },
    "c1": "#9F1239",
    "c2": "#F43F5E",
-   "inner": "../img/themes/sport-ruby.jpg"
+   "inner": "../img/themes/sport-ruby.jpg?v=3"
   },
   {
    "key": "sport-teal",
@@ -2918,7 +2552,7 @@
    },
    "c1": "#0F766E",
    "c2": "#2DD4BF",
-   "inner": "../img/themes/sport-teal.jpg"
+   "inner": "../img/themes/sport-teal.jpg?v=3"
   },
   {
    "key": "sport-gold",
@@ -2936,7 +2570,7 @@
    },
    "c1": "#1F2937",
    "c2": "#D4A017",
-   "inner": "../img/themes/sport-gold.jpg"
+   "inner": "../img/themes/sport-gold.jpg?v=3"
   },
   {
    "key": "sport-slate",
@@ -2954,7 +2588,7 @@
    },
    "c1": "#18181B",
    "c2": "#84CC16",
-   "inner": "../img/themes/sport-slate.jpg"
+   "inner": "../img/themes/sport-slate.jpg?v=3"
   },
   {
    "key": "sport-indigo",
@@ -2972,7 +2606,7 @@
    },
    "c1": "#1E3A8A",
    "c2": "#F97316",
-   "inner": "../img/themes/sport-indigo.jpg"
+   "inner": "../img/themes/sport-indigo.jpg?v=3"
   },
   {
    "key": "sport-forest",
@@ -2990,7 +2624,7 @@
    },
    "c1": "#14532D",
    "c2": "#A3E635",
-   "inner": "../img/themes/sport-forest.jpg"
+   "inner": "../img/themes/sport-forest.jpg?v=3"
   }
  ],
  "styles": [

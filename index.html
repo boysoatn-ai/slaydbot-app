@@ -137,7 +137,7 @@
     $('grid').innerHTML = pals.map(p => {
       const key = `${st.key}-${p.key}`;
       return `<div class="card ${key === state.theme ? 'sel' : ''}" data-k="${key}">
-        <img loading="lazy" src="img/themes/${key}.jpg" alt="${st.name} ${p.name}">
+        <img loading="lazy" src="img/themes/${key}.jpg?v=3" alt="${st.name} ${p.name}">
         <div class="check">✓</div>
         <div class="cap"><span class="dot" style="--c1:${p.primary};--c2:${p.accent}"></span>${p.name}</div></div>`;
     }).join('');

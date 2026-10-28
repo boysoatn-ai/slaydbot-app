@@ -168,7 +168,7 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const tx = v => (v && typeof v === 'object') ? (v[lang] || v.uz) : (v || '');
   document.documentElement.lang = lang;
-  const data = await fetch('data.json?v=3&t=' + Math.floor(Date.now() / 600000)).then(r => r.json());
+  const data = await fetch('data.json?v=4&t=' + Math.floor(Date.now() / 600000)).then(r => r.json());
   const byKey = Object.fromEntries(data.items.map(it => [it.key, it]));
   const avail = it => it.tier === 'std' || (it.tier === 'pro' ? (tier !== 'std' || !!it.open) : tier === 'vip');
   const recItems = rec.map(k => byKey[k]).filter(Boolean);
@@ -184,7 +184,7 @@
     const badge = it.tier === 'vip' ? `<span class="badge vip">💎 ${L.badge.vip}</span>`
       : it.tier === 'pro' ? (it.open ? `<span class="badge open">${L.badge.open}</span>` : `<span class="badge pro">👑 ${L.badge.pro}</span>`) : '';
     return `<div class="card ${lock ? 'locked' : ''} ${it.key === state.key ? 'sel' : ''}" data-k="${it.key}">
-      <div class="thumb"><img loading="lazy" src="img/${it.key}.jpg?v=1" alt="${esc(tx(it.name))}">${badge}
+      <div class="thumb"><img loading="lazy" src="img/${it.key}.jpg?v=2" alt="${esc(tx(it.name))}">${badge}
         ${lock ? '<span class="lock">🔒</span>' : ''}<span class="check">✓</span></div>
       <div class="name"><span class="dot" style="--c1:${it.c1};--c2:${it.c2}"></span>${esc(tx(it.name))}</div></div>`;
   }
@@ -241,7 +241,7 @@
     const pal = data.palettes.map(p => `<div class="pal ${p.key === state.pal ? 'active' : ''}" data-p="${p.key}">
         <span style="--c1:${p.c1};--c2:${p.c2}"></span>${esc(tx(p.name))}</div>`).join('');
     const key = state.style && state.pal ? `${state.style}-${state.pal}` : '';
-    const prev = key ? `<div class="preview"><img src="../img/themes/${key}.jpg?v=2" alt=""><p>${L.conSample}</p></div>` : '';
+    const prev = key ? `<div class="preview"><img src="../img/themes/${key}.jpg?v=3" alt=""><p>${L.conSample}</p></div>` : '';
     return `<div class="step">${L.step1}</div><div class="styles">${st}</div>
       <div class="step">${L.step2}</div><div class="pals">${pal}</div>${prev}`;
   }

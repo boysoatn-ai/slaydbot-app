@@ -97,27 +97,9 @@
    "std": false
   },
   {
-   "key": "pro-tech",
-   "slug": "tech",
-   "num": 4,
-   "name": "Tech Future",
-   "cat": "creative",
-   "desc": {
-    "uz": "raqamli vizual, neon gradient, shisha kartalar",
-    "ru": "цифровые визуалы, неоновый градиент, стеклянные карточки"
-   },
-   "fits": {
-    "uz": "IT, sun’iy intellekt, muhandislik, innovatsiya",
-    "ru": "IT, ИИ, инженерия, инновации"
-   },
-   "c1": "#0B1026",
-   "c2": "#A78BFA",
-   "std": false
-  },
-  {
    "key": "pro-islamic",
    "slug": "islamic",
-   "num": 5,
+   "num": 4,
    "name": "Islamic Geometric",
    "cat": "classic",
    "desc": {
@@ -133,27 +115,9 @@
    "std": false
   },
   {
-   "key": "pro-infographic",
-   "slug": "infographic",
-   "num": 6,
-   "name": "Infographic Modern",
-   "cat": "data",
-   "desc": {
-    "uz": "raqamlar, timeline, diagramma, ko‘rsatkich paneli",
-    "ru": "цифры, хронология, панель показателей"
-   },
-   "fits": {
-    "uz": "statistika, iqtisod, tadqiqot, xronologiya",
-    "ru": "статистика, экономика, исследования"
-   },
-   "c1": "#0B1F33",
-   "c2": "#F0B44D",
-   "std": false
-  },
-  {
    "key": "pro-card",
    "slug": "card",
-   "num": 7,
+   "num": 5,
    "name": "Card Style",
    "cat": "minimal",
    "desc": {
@@ -169,27 +133,9 @@
    "std": false
   },
   {
-   "key": "pro-artistic",
-   "slug": "artistic",
-   "num": 8,
-   "name": "Artistic Clean",
-   "cat": "creative",
-   "desc": {
-    "uz": "editorial kompozitsiya, bo‘yoq dog‘lari, katta tasvir",
-    "ru": "редакционная композиция, пятна краски, крупное изображение"
-   },
-   "fits": {
-    "uz": "san’at, adabiyot, kreativ loyiha, madaniyat",
-    "ru": "искусство, литература, творчество"
-   },
-   "c1": "#F8F6F1",
-   "c2": "#1E67A8",
-   "std": false
-  },
-  {
    "key": "pro-luxury",
    "slug": "luxury",
-   "num": 9,
+   "num": 6,
    "name": "Luxury Dark",
    "cat": "photo",
    "desc": {
@@ -207,7 +153,7 @@
   {
    "key": "pro-glass",
    "slug": "glass",
-   "num": 10,
+   "num": 7,
    "name": "Glass Modern",
    "cat": "soft",
    "desc": {
@@ -225,7 +171,7 @@
   {
    "key": "pro-bento",
    "slug": "bento",
-   "num": 11,
+   "num": 8,
    "name": "Bento Editorial",
    "cat": "data",
    "desc": {
@@ -243,7 +189,7 @@
   {
    "key": "pro-type",
    "slug": "type",
-   "num": 12,
+   "num": 9,
    "name": "Type as Hero",
    "cat": "creative",
    "desc": {
@@ -261,7 +207,7 @@
   {
    "key": "pro-brutal",
    "slug": "brutal",
-   "num": 13,
+   "num": 10,
    "name": "Neo-Brutalist",
    "cat": "creative",
    "desc": {
@@ -279,7 +225,7 @@
   {
    "key": "pro-cinematic",
    "slug": "cinematic",
-   "num": 14,
+   "num": 11,
    "name": "Cinematic Full-Bleed",
    "cat": "photo",
    "desc": {
@@ -297,7 +243,7 @@
   {
    "key": "pro-zine",
    "slug": "zine",
-   "num": 15,
+   "num": 12,
    "name": "Zine Collage",
    "cat": "creative",
    "desc": {
@@ -315,7 +261,7 @@
   {
    "key": "pro-soft3d",
    "slug": "soft3d",
-   "num": 16,
+   "num": 13,
    "name": "Soft 3D Objects",
    "cat": "soft",
    "desc": {
@@ -331,45 +277,9 @@
    "std": false
   },
   {
-   "key": "pro-data",
-   "slug": "data",
-   "num": 17,
-   "name": "Data Storytelling",
-   "cat": "data",
-   "desc": {
-    "uz": "bitta asosiy topilma, katta raqam, sodda diagramma",
-    "ru": "одна главная находка, крупная цифра, простая диаграмма"
-   },
-   "fits": {
-    "uz": "iqtisod, tadqiqot, biznes, statistika",
-    "ru": "экономика, исследования, бизнес"
-   },
-   "c1": "#081B2B",
-   "c2": "#F3B54A",
-   "std": false
-  },
-  {
-   "key": "pro-warm",
-   "slug": "warm",
-   "num": 18,
-   "name": "Warm Tactile Editorial",
-   "cat": "classic",
-   "desc": {
-    "uz": "iliq qog‘oz teksturasi, nafis serif, haqiqiy foto",
-    "ru": "тёплая бумажная текстура, изящный serif, живое фото"
-   },
-   "fits": {
-    "uz": "adabiyot, tarix, hunarmandchilik, inson hikoyalari",
-    "ru": "литература, история, ремёсла"
-   },
-   "c1": "#F0E5D2",
-   "c2": "#7C452B",
-   "std": false
-  },
-  {
    "key": "pro-mono",
    "slug": "mono",
-   "num": 19,
+   "num": 14,
    "name": "Monochrome Geometric",
    "cat": "minimal",
    "desc": {
@@ -385,27 +295,9 @@
    "std": false
   },
   {
-   "key": "pro-teal",
-   "slug": "teal",
-   "num": 20,
-   "name": "Restorative Teal",
-   "cat": "soft",
-   "desc": {
-    "uz": "sokin teal, organik shakllar, keng bo‘sh joy",
-    "ru": "спокойный бирюзовый, органичные формы"
-   },
-   "fits": {
-    "uz": "sog‘lom turmush, ta’lim, farovonlik, ekologiya",
-    "ru": "здоровье, образование, экология"
-   },
-   "c1": "#E8F3EF",
-   "c2": "#2E7D70",
-   "std": false
-  },
-  {
    "key": "pro-meros-ivory",
    "slug": "meros-ivory",
-   "num": 21,
+   "num": 15,
    "name": "Meros · Ivory Gold",
    "cat": "classic",
    "desc": {
@@ -421,45 +313,9 @@
    "std": false
   },
   {
-   "key": "pro-meros-midnight",
-   "slug": "meros-midnight",
-   "num": 22,
-   "name": "Meros · Midnight Blue",
-   "cat": "classic",
-   "desc": {
-    "uz": "tungi ko‘k va oltin, naqshli fon",
-    "ru": "ночной синий и золото, узорный фон"
-   },
-   "fits": {
-    "uz": "tarix, yetakchilik, davlatchilik",
-    "ru": "история, государственность"
-   },
-   "c1": "#0A1730",
-   "c2": "#E2B85E",
-   "std": false
-  },
-  {
-   "key": "pro-meros-emerald",
-   "slug": "meros-emerald",
-   "num": 23,
-   "name": "Meros · Emerald",
-   "cat": "classic",
-   "desc": {
-    "uz": "zumrad va oltin, sharqona naqsh",
-    "ru": "изумруд и золото, восточный орнамент"
-   },
-   "fits": {
-    "uz": "me’morchilik, ekologiya, madaniy meros",
-    "ru": "архитектура, экология, наследие"
-   },
-   "c1": "#0A3A33",
-   "c2": "#E3C47D",
-   "std": false
-  },
-  {
    "key": "pro-meros-bronze",
    "slug": "meros-bronze",
-   "num": 24,
+   "num": 16,
    "name": "Meros · Black Bronze",
    "cat": "classic",
    "desc": {
@@ -475,27 +331,9 @@
    "std": false
   },
   {
-   "key": "pro-meros-lavender",
-   "slug": "meros-lavender",
-   "num": 25,
-   "name": "Meros · Lavender Sunset",
-   "cat": "soft",
-   "desc": {
-    "uz": "lavanda va shaftoli, yumshoq naqsh",
-    "ru": "лаванда и персик, мягкий орнамент"
-   },
-   "fits": {
-    "uz": "til, adabiyot, san’at, ta’lim",
-    "ru": "языки, литература, искусство"
-   },
-   "c1": "#EEE2F3",
-   "c2": "#6A3AA3",
-   "std": false
-  },
-  {
    "key": "pro-swiss",
    "slug": "swiss",
-   "num": 26,
+   "num": 17,
    "name": "Swiss International",
    "cat": "minimal",
    "desc": {
@@ -513,7 +351,7 @@
   {
    "key": "pro-journal",
    "slug": "journal",
-   "num": 27,
+   "num": 18,
    "name": "Scientific Journal",
    "cat": "science",
    "desc": {
@@ -531,7 +369,7 @@
   {
    "key": "pro-couture",
    "slug": "couture",
-   "num": 28,
+   "num": 19,
    "name": "Haute Couture Editorial",
    "cat": "photo",
    "desc": {
@@ -549,7 +387,7 @@
   {
    "key": "pro-consulting",
    "slug": "consulting",
-   "num": 29,
+   "num": 20,
    "name": "Executive Consulting",
    "cat": "minimal",
    "desc": {
@@ -567,7 +405,7 @@
   {
    "key": "pro-architecture",
    "slug": "architecture",
-   "num": 30,
+   "num": 21,
    "name": "Architecture Portfolio",
    "cat": "tech",
    "desc": {
@@ -585,7 +423,7 @@
   {
    "key": "pro-blueprint",
    "slug": "blueprint",
-   "num": 31,
+   "num": 22,
    "name": "Blueprint Engineering",
    "cat": "tech",
    "desc": {
@@ -603,7 +441,7 @@
   {
    "key": "pro-wabi",
    "slug": "wabi",
-   "num": 32,
+   "num": 23,
    "name": "Japanese Wabi-Sabi",
    "cat": "soft",
    "desc": {
@@ -621,7 +459,7 @@
   {
    "key": "pro-retro",
    "slug": "retro",
-   "num": 33,
+   "num": 24,
    "name": "Retro-Futurism",
    "cat": "creative",
    "desc": {
@@ -639,7 +477,7 @@
   {
    "key": "pro-iso",
    "slug": "iso",
-   "num": 34,
+   "num": 25,
    "name": "Isometric World",
    "cat": "tech",
    "desc": {
@@ -657,7 +495,7 @@
   {
    "key": "pro-terminal",
    "slug": "terminal",
-   "num": 35,
+   "num": 26,
    "name": "Data Terminal",
    "cat": "data",
    "desc": {
@@ -673,27 +511,9 @@
    "std": true
   },
   {
-   "key": "pro-burgundy-editorial",
-   "slug": "burgundy-editorial",
-   "num": 36,
-   "name": "Burgundy Editorial",
-   "cat": "classic",
-   "desc": {
-    "uz": "jurnal kompozitsiyasi, nafis serif, fil suyagi qog‘oz va vino rangi",
-    "ru": "журнальная композиция, изящный serif, бумага цвета слоновой кости и бордо"
-   },
-   "fits": {
-    "uz": "adabiyot, tarix, madaniyat, moda, universitet",
-    "ru": "литература, история, культура, мода, университет"
-   },
-   "c1": "#F7F1E8",
-   "c2": "#8E2A4E",
-   "std": false
-  },
-  {
    "key": "pro-burgundy-gold",
    "slug": "burgundy-gold",
-   "num": 37,
+   "num": 27,
    "name": "Burgundy Gold Luxe",
    "cat": "photo",
    "desc": {
@@ -711,7 +531,7 @@
   {
    "key": "pro-burgundy-modern",
    "slug": "burgundy-modern",
-   "num": 38,
+   "num": 28,
    "name": "Burgundy Modern Classic",
    "cat": "minimal",
    "desc": {

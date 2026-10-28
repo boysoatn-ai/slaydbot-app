@@ -85,20 +85,22 @@
   const lang = q.get('lang') === 'ru' ? 'ru' : 'uz';
   const L = {
     uz: { title: '👑 Premium dizaynlar', all: 'Hammasi',
-          sub: '38 ta dizayn. Namunadagi rasm — faqat misol: sizning taqdimotingizda mavzuingiz rasmi bo‘ladi.',
+          sub: '{n} ta dizayn. Namunadagi rasm — faqat misol: sizning taqdimotingizda mavzuingiz rasmi bo‘ladi.',
           fits: 'Mos mavzular', inside: 'Ichki slaydlar shunday ko‘rinadi', none: 'Dizaynni bosib tanlang',
           chosen: 'Tanlandi', ok: '✅ Shu dizaynni tanlash', std: 'Standartda ham',
-          subStd: 'Standart variantda ochiq 10 ta premium dizayn. Qolgan 25 tasi — Premium va VIP’da.' },
+          subStd: 'Standart variantda ochiq {open} ta premium dizayn. Qolgan {rest} tasi — Premium va VIP’da.' },
     ru: { title: '👑 Премиум-дизайны', all: 'Все',
-          sub: '38 дизайнов. Фото в примере — только образец: в вашей презентации будет фото по вашей теме.',
+          sub: 'Дизайнов: {n}. Фото в примере — только образец: в вашей презентации будет фото по вашей теме.',
           fits: 'Подходит для', inside: 'Так выглядят внутренние слайды', none: 'Нажмите на дизайн',
           chosen: 'Выбрано', ok: '✅ Выбрать этот дизайн', std: 'И в Стандарте',
-          subStd: '10 премиум-дизайнов, открытых в варианте Стандарт. Остальные 25 — в Premium и VIP.' },
+          subStd: 'Премиум-дизайнов, открытых в варианте Стандарт: {open}. Остальные ({rest}) — в Premium и VIP.' },
   }[lang];
   const $ = id => document.getElementById(id);
   const stdOnly = q.get('std') === '1';           // Standart variantdan ochilgan — faqat ochiq 10 tasi
-  $('h1').textContent = L.title; $('sub').textContent = stdOnly ? L.subStd : L.sub; document.documentElement.lang = lang;
-  const data = await fetch('data.json?v=4').then(r => r.json());
+  $('h1').textContent = L.title; document.documentElement.lang = lang;
+  const data = await fetch('data.json?v=5').then(r => r.json());
+  const nAll = data.items.length, nOpen = data.items.filter(it => it.std).length;   // sanoq — katalogdan (yashirilganlar kirmaydi)
+  $('sub').textContent = (stdOnly ? L.subStd : L.sub).replace('{n}', nAll).replace('{open}', nOpen).replace('{rest}', nAll - nOpen);
   if (stdOnly) {
     data.items = data.items.filter(it => it.std);
     data.cats = data.cats.filter(c => data.items.some(it => it.cat === c.key));
@@ -116,13 +118,13 @@
     const items = data.items.filter(it => !state.cat || it.cat === state.cat);
     $('list').innerHTML = items.map(it => `
       <div class="card ${it.key === state.key ? 'sel' : ''}" data-k="${it.key}">
-        <div class="img"><img loading="lazy" src="img/${it.slug}.jpg?v=4" alt="${esc(it.name)}">
+        <div class="img"><img loading="lazy" src="img/${it.slug}.jpg?v=5" alt="${esc(it.name)}">
           <div class="num">${String(it.num).padStart(2, '0')}</div><div class="check">✓</div></div>
         <div class="body">
           <div class="name"><span class="dot" style="--c1:${it.c1};--c2:${it.c2}"></span>${esc(it.name)}${it.std && !stdOnly ? ` <span class="stdtag">${L.std}</span>` : ''}</div>
           <div class="desc">${esc(it.desc[lang])}</div>
           <div class="fits">${L.fits}: ${esc(it.fits[lang])}</div>
-          <div class="inner"><img loading="lazy" src="img/${it.slug}-in.jpg?v=4" alt=""><p>${L.inside}</p></div>
+          <div class="inner"><img loading="lazy" src="img/${it.slug}-in.jpg?v=5" alt=""><p>${L.inside}</p></div>
         </div>
       </div>`).join('');
     $('list').querySelectorAll('.card').forEach(el => el.onclick = () => {
