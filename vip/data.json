@@ -351,6 +351,38 @@
    },
    "c1": "#21170F",
    "c2": "#C7A56A"
+  },
+  {
+   "key": "pro-vip-burgundy-royal",
+   "slug": "vip-burgundy-royal",
+   "num": 23,
+   "name": "Burgundy Royal",
+   "desc": {
+    "uz": "imperial bordo baxmal, oltin girih va ramka, toj",
+    "ru": "имперский бордовый бархат, золотой гирих и рамка, корона"
+   },
+   "fits": {
+    "uz": "tarix, huquq, davlat boshqaruvi, bitiruv himoyasi, tadbir",
+    "ru": "история, право, госуправление, защита диплома, мероприятие"
+   },
+   "c1": "#3B0A17",
+   "c2": "#E2BE7E"
+  },
+  {
+   "key": "pro-vip-burgundy-noir",
+   "slug": "vip-burgundy-noir",
+   "num": 24,
+   "name": "Burgundy Noir",
+   "desc": {
+    "uz": "qora-bordo kinematik fon, qirmizi nur, oltin chiziq",
+    "ru": "чёрно-бордовый кинематографичный фон, алый свет, золотая линия"
+   },
+   "fits": {
+    "uz": "strategiya, texnologiya, sport, liderlik, tanlov",
+    "ru": "стратегия, технологии, спорт, лидерство, конкурс"
+   },
+   "c1": "#1A0A0E",
+   "c2": "#D9A441"
   }
  ]
 }

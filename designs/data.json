@@ -490,6 +490,48 @@
    "inner": "../vip/img/vip-academic-in.jpg"
   },
   {
+   "key": "pro-vip-burgundy-royal",
+   "tier": "vip",
+   "sec": [
+    "history",
+    "formal"
+   ],
+   "name": "Burgundy Royal",
+   "num": 23,
+   "desc": {
+    "uz": "imperial bordo baxmal, oltin girih va ramka, toj",
+    "ru": "имперский бордовый бархат, золотой гирих и рамка, корона"
+   },
+   "fits": {
+    "uz": "tarix, huquq, davlat boshqaruvi, bitiruv himoyasi, tadbir",
+    "ru": "история, право, госуправление, защита диплома, мероприятие"
+   },
+   "c1": "#3B0A17",
+   "c2": "#E2BE7E",
+   "inner": "../vip/img/vip-burgundy-royal-in.jpg"
+  },
+  {
+   "key": "pro-vip-burgundy-noir",
+   "tier": "vip",
+   "sec": [
+    "business",
+    "formal"
+   ],
+   "name": "Burgundy Noir",
+   "num": 24,
+   "desc": {
+    "uz": "qora-bordo kinematik fon, qirmizi nur, oltin chiziq",
+    "ru": "чёрно-бордовый кинематографичный фон, алый свет, золотая линия"
+   },
+   "fits": {
+    "uz": "strategiya, texnologiya, sport, liderlik, tanlov",
+    "ru": "стратегия, технологии, спорт, лидерство, конкурс"
+   },
+   "c1": "#1A0A0E",
+   "c2": "#D9A441",
+   "inner": "../vip/img/vip-burgundy-noir-in.jpg"
+  },
+  {
    "key": "pro-royal",
    "tier": "pro",
    "sec": [
@@ -1076,6 +1118,92 @@
    "c1": "#FAF7F3",
    "c2": "#7A263A",
    "inner": "../premium/img/burgundy-modern-in.jpg"
+  },
+  {
+   "key": "pro-bordo-classic",
+   "tier": "pro",
+   "sec": [
+    "formal",
+    "history"
+   ],
+   "name": "Bordo Klassik",
+   "num": 29,
+   "desc": {
+    "uz": "bordo zig‘ir fon, krem qog‘oz ichki slaydlar, sokin akademik",
+    "ru": "бордовый льняной фон, кремовая бумага внутри, спокойный академический стиль"
+   },
+   "fits": {
+    "uz": "adabiyot, tarix, pedagogika, universitet ma’ruzasi",
+    "ru": "литература, история, педагогика, лекция в университете"
+   },
+   "c1": "#F6EFE6",
+   "c2": "#8A2A3C",
+   "inner": "../premium/img/bordo-classic-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-bordo-modern",
+   "tier": "pro",
+   "sec": [
+    "business",
+    "formal"
+   ],
+   "name": "Bordo Zamonaviy",
+   "num": 30,
+   "desc": {
+    "uz": "vino rangli silliq fon, och pushti ichki slaydlar, zamonaviy sans",
+    "ru": "гладкий винный фон, светло-розовые внутренние слайды, современный гротеск"
+   },
+   "fits": {
+    "uz": "biznes, psixologiya, marketing, hisobot",
+    "ru": "бизнес, психология, маркетинг, отчёт"
+   },
+   "c1": "#F3E3E5",
+   "c2": "#9A2A44",
+   "inner": "../premium/img/bordo-modern-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-burgundy-velvet",
+   "tier": "pro",
+   "sec": [
+    "formal",
+    "business"
+   ],
+   "name": "Burgundy Velvet",
+   "num": 31,
+   "desc": {
+    "uz": "baxmal bordo muqova, oltin tasma, shampan rangli qog‘oz ichki slaydlar",
+    "ru": "бархатная бордовая обложка, золотая лента, бумага цвета шампанского внутри"
+   },
+   "fits": {
+    "uz": "himoya, tadbir, brend, biznes, huquq",
+    "ru": "защита, мероприятие, бренд, бизнес, право"
+   },
+   "c1": "#F1E3C8",
+   "c2": "#9A2A44",
+   "inner": "../premium/img/burgundy-velvet-in.jpg"
+  },
+  {
+   "key": "pro-burgundy-ivory",
+   "tier": "pro",
+   "sec": [
+    "art",
+    "formal"
+   ],
+   "name": "Burgundy Ivory",
+   "num": 32,
+   "desc": {
+    "uz": "fil suyagi qog‘oz, vino rangli akvarel dog‘i, nafis serif",
+    "ru": "бумага цвета слоновой кости, винное акварельное пятно, изящный serif"
+   },
+   "fits": {
+    "uz": "adabiyot, san’at, psixologiya, universitet",
+    "ru": "литература, искусство, психология, университет"
+   },
+   "c1": "#F4EDE3",
+   "c2": "#7A1F33",
+   "inner": "../premium/img/burgundy-ivory-in.jpg"
   },
   {
    "key": "minimal-ocean",
