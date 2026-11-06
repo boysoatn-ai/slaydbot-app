@@ -353,36 +353,100 @@
    "c2": "#C7A56A"
   },
   {
-   "key": "pro-vip-burgundy-royal",
-   "slug": "vip-burgundy-royal",
+   "key": "pro-vip-ivory-palace",
+   "slug": "vip-ivory-palace",
    "num": 23,
-   "name": "Burgundy Royal",
+   "name": "Ivory Palace",
    "desc": {
-    "uz": "imperial bordo baxmal, oltin girih va ramka, toj",
-    "ru": "имперский бордовый бархат, золотой гирих и рамка, корона"
+    "uz": "fil suyagi marmar saroy, oltin ravoqlar, haykaltarosh bezak",
+    "ru": "мраморный дворец цвета слоновой кости, золотые арки"
    },
    "fits": {
-    "uz": "tarix, huquq, davlat boshqaruvi, bitiruv himoyasi, tadbir",
-    "ru": "история, право, госуправление, защита диплома, мероприятие"
+    "uz": "tarix, me’morchilik, huquq, bitiruv himoyasi, tadbir",
+    "ru": "история, архитектура, право, защита диплома"
    },
-   "c1": "#3B0A17",
-   "c2": "#E2BE7E"
+   "c1": "#F6F0E5",
+   "c2": "#8A6A36"
   },
   {
-   "key": "pro-vip-burgundy-noir",
-   "slug": "vip-burgundy-noir",
+   "key": "pro-vip-ivory-ethereal",
+   "slug": "vip-ivory-ethereal",
    "num": 24,
-   "name": "Burgundy Noir",
+   "name": "Ivory Ethereal",
    "desc": {
-    "uz": "qora-bordo kinematik fon, qirmizi nur, oltin chiziq",
-    "ru": "чёрно-бордовый кинематографичный фон, алый свет, золотая линия"
+    "uz": "havodor fil suyagi to‘lqinlar, marvarid va shampan sharlar",
+    "ru": "воздушные волны слоновой кости, жемчуг и сферы шампань"
    },
    "fits": {
-    "uz": "strategiya, texnologiya, sport, liderlik, tanlov",
-    "ru": "стратегия, технологии, спорт, лидерство, конкурс"
+    "uz": "psixologiya, san’at, tibbiyot, innovatsiya, nutq",
+    "ru": "психология, искусство, медицина, инновации"
    },
-   "c1": "#1A0A0E",
-   "c2": "#D9A441"
+   "c1": "#F8F4EC",
+   "c2": "#8A6E40"
+  },
+  {
+   "key": "pro-vip-burgundy-crown",
+   "slug": "vip-burgundy-crown",
+   "num": 25,
+   "name": "Burgundy Crown",
+   "desc": {
+    "uz": "chuqur bordo baxmal, oltin toj va qimmatbaho toshlar",
+    "ru": "бордовый бархат, золотая корона и драгоценные камни"
+   },
+   "fits": {
+    "uz": "tarix, davlat boshqaruvi, huquq, bitiruv himoyasi, tadbir",
+    "ru": "история, госуправление, право, защита диплома"
+   },
+   "c1": "#3A0A16",
+   "c2": "#E0BE72"
+  },
+  {
+   "key": "pro-vip-burgundy-glass",
+   "slug": "vip-burgundy-glass",
+   "num": 26,
+   "name": "Burgundy Glass",
+   "desc": {
+    "uz": "suyuq bordo shisha, granat kristallar, rose-gold chegaralar",
+    "ru": "жидкое бордовое стекло, гранатовые кристаллы, розовое золото"
+   },
+   "fits": {
+    "uz": "biznes, strategiya, innovatsiya, marketing, tanlov",
+    "ru": "бизнес, стратегия, инновации, маркетинг"
+   },
+   "c1": "#1E070C",
+   "c2": "#E2AE96"
+  },
+  {
+   "key": "pro-vip-olive-majesty",
+   "slug": "vip-olive-majesty",
+   "num": 27,
+   "name": "Olive Majesty",
+   "desc": {
+    "uz": "to‘q zaytun va oltin varaq, haykal novdalar va dafna",
+    "ru": "тёмная олива и сусальное золото, лавровые ветви"
+   },
+   "fits": {
+    "uz": "tarix, huquq, sport g‘alabalari, bitiruv himoyasi",
+    "ru": "история, право, спорт, защита диплома"
+   },
+   "c1": "#262C18",
+   "c2": "#D6B460"
+  },
+  {
+   "key": "pro-vip-olive-zen",
+   "slug": "vip-olive-zen",
+   "num": 28,
+   "name": "Olive Zen",
+   "desc": {
+    "uz": "silliq toshlar, sokin suv, zaytun yog‘ochi va bronza",
+    "ru": "гладкие камни, тихая вода, оливковое дерево и бронза"
+   },
+   "fits": {
+    "uz": "psixologiya, sog‘liq, ekologiya, falsafa, sport",
+    "ru": "психология, здоровье, экология, философия"
+   },
+   "c1": "#F2EFE6",
+   "c2": "#7A5E36"
   }
  ]
 }

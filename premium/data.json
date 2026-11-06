@@ -547,75 +547,219 @@
    "std": false
   },
   {
-   "key": "pro-bordo-classic",
-   "slug": "bordo-classic",
+   "key": "pro-ivory-silk",
+   "slug": "ivory-silk",
    "num": 29,
-   "name": "Bordo Klassik",
+   "name": "Ivory Silk",
    "cat": "classic",
    "desc": {
-    "uz": "bordo zig‘ir fon, krem qog‘oz ichki slaydlar, sokin akademik",
-    "ru": "бордовый льняной фон, кремовая бумага внутри, спокойный академический стиль"
+    "uz": "fil suyagi atlas, shampan-oltin barg naqshi, nafis serif",
+    "ru": "атлас цвета слоновой кости, золотые веточки, изящный serif"
    },
    "fits": {
-    "uz": "adabiyot, tarix, pedagogika, universitet ma’ruzasi",
-    "ru": "литература, история, педагогика, лекция в университете"
+    "uz": "adabiyot, san’at, pedagogika, tadbir, nutq",
+    "ru": "литература, искусство, педагогика, мероприятие"
    },
-   "c1": "#F6EFE6",
-   "c2": "#8A2A3C",
+   "c1": "#F7F2E9",
+   "c2": "#8A6630",
    "std": true
   },
   {
-   "key": "pro-bordo-modern",
-   "slug": "bordo-modern",
+   "key": "pro-ivory-marble",
+   "slug": "ivory-marble",
    "num": 30,
-   "name": "Bordo Zamonaviy",
+   "name": "Ivory Marble",
    "cat": "minimal",
    "desc": {
-    "uz": "vino rangli silliq fon, och pushti ichki slaydlar, zamonaviy sans",
-    "ru": "гладкий винный фон, светло-розовые внутренние слайды, современный гротеск"
+    "uz": "fil suyagi marmar, latun chiziq, zamonaviy toza shrift",
+    "ru": "мрамор цвета слоновой кости, латунная линия, чистый гротеск"
    },
    "fits": {
-    "uz": "biznes, psixologiya, marketing, hisobot",
-    "ru": "бизнес, психология, маркетинг, отчёт"
+    "uz": "biznes, huquq, iqtisod, ilmiy hisobot",
+    "ru": "бизнес, право, экономика, научный отчёт"
    },
-   "c1": "#F3E3E5",
-   "c2": "#9A2A44",
+   "c1": "#F4EFE7",
+   "c2": "#7A5C34",
    "std": true
   },
   {
-   "key": "pro-burgundy-velvet",
-   "slug": "burgundy-velvet",
+   "key": "pro-burgundy-linen",
+   "slug": "burgundy-linen",
    "num": 31,
-   "name": "Burgundy Velvet",
-   "cat": "photo",
+   "name": "Burgundy Linen",
+   "cat": "classic",
    "desc": {
-    "uz": "baxmal bordo muqova, oltin tasma, shampan rangli qog‘oz ichki slaydlar",
-    "ru": "бархатная бордовая обложка, золотая лента, бумага цвета шампанского внутри"
+    "uz": "vino rangli zig‘ir mato, oltin kashta gullar, krem ichki slaydlar",
+    "ru": "винный лён, золотая вышивка цветов, кремовые слайды"
    },
    "fits": {
-    "uz": "himoya, tadbir, brend, biznes, huquq",
-    "ru": "защита, мероприятие, бренд, бизнес, право"
+    "uz": "tarix, adabiyot, huquq, madaniyat",
+    "ru": "история, литература, право, культура"
    },
-   "c1": "#F1E3C8",
-   "c2": "#9A2A44",
+   "c1": "#F5EEE3",
+   "c2": "#7A2235",
+   "std": true
+  },
+  {
+   "key": "pro-burgundy-rose",
+   "slug": "burgundy-rose",
+   "num": 32,
+   "name": "Burgundy Rosé",
+   "cat": "minimal",
+   "desc": {
+    "uz": "chuqur vino va changli atirgul, rose-gold chiziqli gullar",
+    "ru": "глубокое вино и пыльная роза, цветы из розового золота"
+   },
+   "fits": {
+    "uz": "psixologiya, marketing, moda, sog‘liq, biznes",
+    "ru": "психология, маркетинг, мода, здоровье"
+   },
+   "c1": "#F8EEEE",
+   "c2": "#8E2E46",
+   "std": true
+  },
+  {
+   "key": "pro-olive-grove",
+   "slug": "olive-grove",
+   "num": 33,
+   "name": "Olive Grove",
+   "cat": "classic",
+   "desc": {
+    "uz": "krem akvarel qog‘oz, zaytun novdalari, nozik oltin chiziq",
+    "ru": "кремовая акварель, оливковые ветви, тонкое золото"
+   },
+   "fits": {
+    "uz": "biologiya, ekologiya, adabiyot, pedagogika",
+    "ru": "биология, экология, литература, педагогика"
+   },
+   "c1": "#F6F2E5",
+   "c2": "#5E6B30",
+   "std": true
+  },
+  {
+   "key": "pro-olive-sage",
+   "slug": "olive-sage",
+   "num": 34,
+   "name": "Olive Sage",
+   "cat": "minimal",
+   "desc": {
+    "uz": "shalfey-zaytun suvoq, barg soyalari, sokin zamonaviy",
+    "ru": "штукатурка цвета шалфея, тени листьев, спокойный модерн"
+   },
+   "fits": {
+    "uz": "psixologiya, sog‘liq, ekologiya, biznes",
+    "ru": "психология, здоровье, экология, бизнес"
+   },
+   "c1": "#F3F2EA",
+   "c2": "#56633A",
+   "std": true
+  },
+  {
+   "key": "pro-ivory-pearl",
+   "slug": "ivory-pearl",
+   "num": 35,
+   "name": "Ivory Pearl",
+   "cat": "photo",
+   "desc": {
+    "uz": "fil suyagi atlas, marvaridlar, oltin filigran ramka",
+    "ru": "атлас слоновой кости, жемчуг, золотая филигрань"
+   },
+   "fits": {
+    "uz": "tadbir, san’at, moda, nutq, himoya",
+    "ru": "мероприятие, искусство, мода, защита"
+   },
+   "c1": "#F8F3EA",
+   "c2": "#8A6630",
    "std": false
   },
   {
-   "key": "pro-burgundy-ivory",
-   "slug": "burgundy-ivory",
-   "num": 32,
-   "name": "Burgundy Ivory",
+   "key": "pro-ivory-atelier",
+   "slug": "ivory-atelier",
+   "num": 36,
+   "name": "Ivory Atelier",
    "cat": "classic",
    "desc": {
-    "uz": "fil suyagi qog‘oz, vino rangli akvarel dog‘i, nafis serif",
-    "ru": "бумага цвета слоновой кости, винное акварельное пятно, изящный serif"
+    "uz": "qo‘lda yasalgan qog‘oz, quritilgan gullar, oltin varaq",
+    "ru": "бумага ручной работы, засушенные цветы, золотая фольга"
    },
    "fits": {
-    "uz": "adabiyot, san’at, psixologiya, universitet",
-    "ru": "литература, искусство, психология, университет"
+    "uz": "adabiyot, san’at, tarix, pedagogika",
+    "ru": "литература, искусство, история, педагогика"
    },
-   "c1": "#F4EDE3",
-   "c2": "#7A1F33",
+   "c1": "#F6F0E4",
+   "c2": "#7E5E34",
+   "std": false
+  },
+  {
+   "key": "pro-burgundy-opera",
+   "slug": "burgundy-opera",
+   "num": 37,
+   "name": "Burgundy Opera",
+   "cat": "photo",
+   "desc": {
+    "uz": "baxmal parda, oltin barokko, opera teatri ruhi",
+    "ru": "бархатный занавес, золотое барокко, дух оперы"
+   },
+   "fits": {
+    "uz": "san’at, tarix, adabiyot, tadbir, himoya",
+    "ru": "искусство, история, литература, защита"
+   },
+   "c1": "#F4EADB",
+   "c2": "#8A2238",
+   "std": false
+  },
+  {
+   "key": "pro-burgundy-bloom",
+   "slug": "burgundy-bloom",
+   "num": 38,
+   "name": "Burgundy Bloom",
+   "cat": "creative",
+   "desc": {
+    "uz": "to‘q vino fon, pion va atirgullar, Gollandiya natyurmorti",
+    "ru": "тёмное вино, пионы и розы, голландский натюрморт"
+   },
+   "fits": {
+    "uz": "adabiyot, psixologiya, san’at, moda, tadbir",
+    "ru": "литература, психология, искусство, мода"
+   },
+   "c1": "#F6ECEA",
+   "c2": "#8A2A3E",
+   "std": false
+  },
+  {
+   "key": "pro-olive-tuscan",
+   "slug": "olive-tuscan",
+   "num": 39,
+   "name": "Olive Tuscan",
+   "cat": "photo",
+   "desc": {
+    "uz": "Toskana quyoshi, zaytunzor, terrakota va oltin qum",
+    "ru": "солнце Тосканы, оливковая роща, терракота"
+   },
+   "fits": {
+    "uz": "geografiya, ekologiya, tarix, turizm, biznes",
+    "ru": "география, экология, история, туризм"
+   },
+   "c1": "#F7F0E1",
+   "c2": "#7A4A2E",
+   "std": false
+  },
+  {
+   "key": "pro-olive-botanica",
+   "slug": "olive-botanica",
+   "num": 40,
+   "name": "Olive Botanica",
+   "cat": "creative",
+   "desc": {
+    "uz": "to‘q zaytun fon, botanika gravyurasi, latun chiziqlar",
+    "ru": "тёмная олива, ботаническая гравюра, латунь"
+   },
+   "fits": {
+    "uz": "biologiya, tibbiyot, ekologiya, ilmiy tadqiqot",
+    "ru": "биология, медицина, экология, наука"
+   },
+   "c1": "#1E2416",
+   "c2": "#E0C27E",
    "std": false
   }
  ]
