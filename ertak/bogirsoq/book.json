@@ -143,7 +143,17 @@
      "id": "s_3454a118",
      "t": "— Qo‘shig‘ingni eshitolmayapman, burnimga chiqib ayt-chi!"
     }
-   ]
+   ],
+   "ask": {
+    "q": "Tulki Bo‘g‘irsoqni maqtayapti. Unga nima deysan?",
+    "o": [
+     "Maqtovga uchma, qoch!",
+     "Burniga chiqib qo‘shiq ayt"
+    ],
+    "a": 0,
+    "okv": "s_e7f23eac",
+    "nov": "s_e3e4367c"
+   }
   },
   {
    "img": "b10",
@@ -246,6 +256,23 @@
     "n": "",
     "id": "s_5040db89",
     "t": "To‘g‘ri! Sen juda aqllisan!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ],
+  "ask": [
+   {
+    "n": "",
+    "id": "s_ff5c0231",
+    "t": "Tulki Bo‘g‘irsoqni maqtayapti. Unga nima deysan?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
    },
    {
     "n": "",

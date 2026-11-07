@@ -99,7 +99,17 @@
      "id": "s_2dfcc725",
      "t": "uning qo‘lidan ushladi: — Oyimiz notanishlar bilan gaplashmanglar degan!"
     }
-   ]
+   ],
+   "ask": {
+    "q": "Bo‘ri shirin gapiryapti. Sen nima qilarding?",
+    "o": [
+     "Notanish bilan gaplashmayman",
+     "Javob berib, u bilan ketaman"
+    ],
+    "a": 0,
+    "okv": "s_e7f23eac",
+    "nov": "s_e3e4367c"
+   }
   },
   {
    "img": "q6",
@@ -276,6 +286,23 @@
     "n": "",
     "id": "s_a376ac9c",
     "t": "Yo‘q, bunday qilish xavfli. Yana o‘ylab ko‘r!"
+   }
+  ],
+  "ask": [
+   {
+    "n": "",
+    "id": "s_12bc3afb",
+    "t": "Bo‘ri shirin gapiryapti. Sen nima qilarding?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
    }
   ]
  },

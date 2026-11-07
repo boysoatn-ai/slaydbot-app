@@ -111,7 +111,17 @@
      "id": "s_67350639",
      "t": "uni to‘xtatdi: — Yo‘q, Jek! So‘ramay olish — o‘g‘rilik. Kel, Devdan so‘raymiz."
     }
-   ]
+   ],
+   "ask": {
+    "q": "Jek tovuqni so‘ramay olmoqchi. Unga nima deysan?",
+    "o": [
+     "So‘ramay olish — yomon ish",
+     "Ol, Jek, hech kim ko‘rmaydi"
+    ],
+    "a": 0,
+    "okv": "s_e7f23eac",
+    "nov": "s_e3e4367c"
+   }
   },
   {
    "img": "j8",
@@ -246,6 +256,23 @@
     "n": "",
     "id": "s_a27fb6d4",
     "t": "Qani, aytchi: bu halolmi?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ],
+  "ask": [
+   {
+    "n": "",
+    "id": "s_2d7e98a4",
+    "t": "Jek tovuqni so‘ramay olmoqchi. Unga nima deysan?"
    },
    {
     "n": "",

@@ -95,7 +95,17 @@
      "id": "s_7de79dda",
      "t": "Bo‘ri asal yeb, ovozini mayin qildi va yana keldi: — Bolalarim, eshikni oching!"
     }
-   ]
+   ],
+   "ask": {
+    "q": "Eshik ortidan mayin ovoz kelyapti. Eshikni ochasanmi?",
+    "o": [
+     "Yo‘q, oyimizni kutamiz",
+     "Ha, darhol ochaman"
+    ],
+    "a": 0,
+    "okv": "s_e7f23eac",
+    "nov": "s_e3e4367c"
+   }
   },
   {
    "img": "e7",
@@ -251,6 +261,23 @@
     "n": "",
     "id": "s_19f0031f",
     "t": "Yo‘q, bu xavfli. Yana o‘ylab ko‘r!"
+   }
+  ],
+  "ask": [
+   {
+    "n": "",
+    "id": "s_6a67db3c",
+    "t": "Eshik ortidan mayin ovoz kelyapti. Eshikni ochasanmi?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
    }
   ]
  },

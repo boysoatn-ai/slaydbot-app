@@ -95,7 +95,17 @@
      "id": "s_c10ac955",
      "t": "Ular birga supurishdi, gullarni sug‘orishdi, idishlarni yuvishdi."
     }
-   ]
+   ],
+   "ask": {
+    "q": "Zolushkaning ishi juda ko‘p. Qanday yordam berasan?",
+    "o": [
+     "Birga ishlab, tez tugatamiz",
+     "Uni tashlab o‘ynagani ketaman"
+    ],
+    "a": 0,
+    "okv": "s_e7f23eac",
+    "nov": "s_e3e4367c"
+   }
   },
   {
    "img": "c7",
@@ -246,6 +256,23 @@
     "n": "",
     "id": "s_cec7f6c9",
     "t": "Qani, aytchi: bu mehribonlikmi?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ],
+  "ask": [
+   {
+    "n": "",
+    "id": "s_93df3250",
+    "t": "Zolushkaning ishi juda ko‘p. Qanday yordam berasan?"
    },
    {
     "n": "",

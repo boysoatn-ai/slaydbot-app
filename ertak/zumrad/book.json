@@ -121,7 +121,17 @@
      "id": "s_fa61611d",
      "t": "Zumrad dedi: — Biz yordam uchun keldik, kichkinasi ham bo‘laveradi."
     }
-   ]
+   ],
+   "ask": {
+    "q": "Momo ikkita sandiq ko‘rsatdi. Sen qaysi birini olarding?",
+    "o": [
+     "Kichkinasini — kamtarlik yaxshi",
+     "Eng kattasini"
+    ],
+    "a": 0,
+    "okv": "s_e7f23eac",
+    "nov": "s_e3e4367c"
+   }
   },
   {
    "img": "z8",
@@ -261,6 +271,23 @@
     "n": "",
     "id": "s_e701f485",
     "t": "To‘g‘ri! Sen juda odoblisan!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ],
+  "ask": [
+   {
+    "n": "",
+    "id": "s_50ea0977",
+    "t": "Momo ikkita sandiq ko‘rsatdi. Sen qaysi birini olarding?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
    },
    {
     "n": "",

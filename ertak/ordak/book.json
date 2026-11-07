@@ -57,7 +57,17 @@
      "id": "s_ab8a795e",
      "t": "O‘rdakcha xafa bo‘lib, qamish orasiga yashirinib oldi."
     }
-   ]
+   ],
+   "ask": {
+    "q": "Hamma o‘rdakchaning ustidan kulyapti. Sen-chi?",
+    "o": [
+     "U bilan do‘st bo‘laman",
+     "Men ham kulaman"
+    ],
+    "a": 0,
+    "okv": "s_e7f23eac",
+    "nov": "s_e3e4367c"
+   }
   },
   {
    "img": "o4",
@@ -251,6 +261,23 @@
     "n": "",
     "id": "s_e9eb2987",
     "t": "Qani, aytchi: nima qilish to‘g‘ri?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ],
+  "ask": [
+   {
+    "n": "",
+    "id": "s_fe1c6abc",
+    "t": "Hamma o‘rdakchaning ustidan kulyapti. Sen-chi?"
    },
    {
     "n": "",

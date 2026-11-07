@@ -1,1 +1,344 @@
-{"pages": [{"img": "cover", "fx": "magic", "s": [{"n": "J", "id": "s_d8218f43", "t": "bu ertak faqat sen uchun!"}]}, {"img": "s1", "fx": "sun", "s": [{"n": "", "id": "s_0fea93d2", "t": "Bir bor ekan, bir yo‘q ekan, tog‘ etagidagi bir qishloqda Bobo bilan Momo yashar ekan."}, {"n": "", "id": "s_6e55d830", "t": "Hovlisida Olapar it, Mosh mushuk va kichkina Sichqoncha ham yashar ekan."}]}, {"img": "s2", "fx": "hearts", "s": [{"n": "I", "id": "s_0afbb174", "t": "Bobo va Momoning eng sevimli nabirasi edi."}, {"n": "", "id": "s_e074e9ee", "t": "U har bahorda qishloqqa kelib, bog‘da Boboga yordam berardi."}]}, {"img": "s3", "fx": "seed", "s": [{"n": "", "id": "s_849725f0", "t": "Bahor keldi. Bobo yerni yumshatib, bitta sholg‘om urug‘ini ekdi."}, {"n": "I", "id": "s_875c0321", "t": "chelakda suv tashib, urug‘ni sug‘ordi: — O‘s, sholg‘omjon, katta bo‘l!"}]}, {"img": "s4", "fx": "grow", "s": [{"n": "", "id": "s_c5f0b282", "t": "Kunlar o‘tdi. Quyosh isitdi, yomg‘ir sug‘ordi."}, {"n": "", "id": "s_f7996f8e", "t": "Sholg‘om o‘sdi, o‘sdi — shunaqangi katta bo‘lib ketdiki, bunaqasini hech kim ko‘rmagan edi!"}]}, {"img": "s5", "fx": "pull", "s": [{"n": "", "id": "s_1bd971a1", "t": "Kuz keldi. Bobo sholg‘omni bandidan ushlab tortdi."}, {"n": "", "id": "s_6a8e2dd3", "t": "Tortadi-tortadi — sug‘urib ololmaydi!"}]}, {"img": "s6", "fx": "pull", "s": [{"n": "", "id": "s_727a143d", "t": "Bobo Momoni chaqirdi. Momo Boboni ushladi, Bobo sholg‘omni."}, {"n": "", "id": "s_89786deb", "t": "Tortishadi-tortishadi — sug‘urib ololmaydi!"}]}, {"img": "s7", "fx": "call", "s": [{"n": "", "id": "s_e8ba6c39", "t": "Momo baland ovozda chaqirdi:"}, {"n": "J", "id": "s_711ffb54", "t": "tezroq kel, yordam ber!"}, {"n": "I", "id": "s_c0fba8d6", "t": "yugurib keldi va Momoni mahkam ushladi."}, {"n": "", "id": "s_89786deb", "t": "Tortishadi-tortishadi — sug‘urib ololmaydi!"}]}, {"img": "s8", "fx": "dog", "s": [{"n": "I", "id": "s_99c1b9d6", "t": "Olaparni chaqirdi: — Olapar, yordamga kel!"}, {"n": "", "id": "s_1a00bb48", "t": "Olapar ham kelib ushladi. Tortishadi-tortishadi — sug‘urib ololmaydi!"}]}, {"img": "s9", "fx": "cat", "s": [{"n": "", "id": "s_7fe027b4", "t": "Olapar Moshni chaqirdi: — Vov-vov! Mosh, yordam ber!"}, {"n": "", "id": "s_d9d5941f", "t": "Mosh ham kelib ushladi. Tortishadi-tortishadi — sug‘urib ololmaydi!"}]}, {"img": "s10", "fx": "mouse", "s": [{"n": "", "id": "s_cb465628", "t": "Shunda kichkina Sichqoncha chiyilladi: — Men ham yordam beraman!"}, {"n": "", "id": "s_043602e7", "t": "Hamma kulib yubordi: — Shunaqa kichkina bo‘lsang ham-a?"}, {"n": "I", "id": "s_ea34d9bf", "t": "esa dedi: — Kichkina bo‘lsa ham, yordami katta bo‘ladi!"}]}, {"img": "s11", "fx": "final", "s": [{"n": "", "id": "s_16149da6", "t": "Sichqoncha Moshni ushladi. Hammasi birga: — Bir, ikki, uch!"}, {"n": "", "id": "s_e65a1261", "t": "Tortishdi… va — dup! — sholg‘om yerdan sug‘urilib chiqdi! Hammasi yumalab ketdi!"}]}, {"img": "s12", "fx": "fireworks", "s": [{"n": "", "id": "s_c6aa4cd2", "t": "Kechqurun Momo sholg‘omdan mazali taom pishirdi. Hamma dasturxon atrofida yig‘ildi."}, {"n": "J", "id": "s_3d11b7e9", "t": "esingda bo‘lsin: birgalikda qilingan ishda eng kichik yordam ham katta kuch!"}, {"n": "", "id": "s_a5c09639", "t": "Ertagimiz shu yerda tugadi."}]}], "games": {"quiz": [{"n": "", "id": "s_416b38c4", "t": "Endi savollarga javob ber!"}, {"n": "", "id": "s_527c9cf5", "t": "Bobo nimani ekdi?"}, {"n": "", "id": "s_994377f7", "t": "Sholg‘omni birinchi bo‘lib kim tortdi?"}, {"n": "", "id": "s_ddd0034c", "t": "Momo kimni yordamga chaqirdi?"}, {"n": "", "id": "s_800867e1", "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"}], "color": [{"n": "", "id": "s_140aed92", "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."}], "cert": [{"n": "J", "id": "s_0fbc7864", "t": "sen haqiqiy yordamchisan! Mana senga sertifikat!"}]}, "quiz": [{"q": "Bobo nimani ekdi?", "o": ["Sholg‘om", "Olma", "Tarvuz"], "a": 0}, {"q": "Sholg‘omni birinchi bo‘lib kim tortdi?", "o": ["Momo", "Bobo", "Olapar"], "a": 1}, {"q": "Momo kimni yordamga chaqirdi?", "o": ["{NAME}", "Moshni", "Sichqonchani"], "a": 0}, {"q": "Eng oxirida kim yordamga keldi?", "o": ["Olapar", "Mosh", "Sichqoncha"], "a": 2}, {"q": "Sholg‘om nima uchun sug‘urildi?", "o": ["Hammasi birga tortgani uchun", "Yomg‘ir yoqqani uchun", "Bobo yolg‘iz tortgani uchun"], "a": 0}]}
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "s1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_0fea93d2",
+     "t": "Bir bor ekan, bir yo‘q ekan, tog‘ etagidagi bir qishloqda Bobo bilan Momo yashar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_6e55d830",
+     "t": "Hovlisida Olapar it, Mosh mushuk va kichkina Sichqoncha ham yashar ekan."
+    }
+   ]
+  },
+  {
+   "img": "s2",
+   "fx": "hearts",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_0afbb174",
+     "t": "Bobo va Momoning eng sevimli nabirasi edi."
+    },
+    {
+     "n": "",
+     "id": "s_e074e9ee",
+     "t": "U har bahorda qishloqqa kelib, bog‘da Boboga yordam berardi."
+    }
+   ]
+  },
+  {
+   "img": "s3",
+   "fx": "seed",
+   "s": [
+    {
+     "n": "",
+     "id": "s_849725f0",
+     "t": "Bahor keldi. Bobo yerni yumshatib, bitta sholg‘om urug‘ini ekdi."
+    },
+    {
+     "n": "I",
+     "id": "s_875c0321",
+     "t": "chelakda suv tashib, urug‘ni sug‘ordi: — O‘s, sholg‘omjon, katta bo‘l!"
+    }
+   ]
+  },
+  {
+   "img": "s4",
+   "fx": "grow",
+   "s": [
+    {
+     "n": "",
+     "id": "s_c5f0b282",
+     "t": "Kunlar o‘tdi. Quyosh isitdi, yomg‘ir sug‘ordi."
+    },
+    {
+     "n": "",
+     "id": "s_f7996f8e",
+     "t": "Sholg‘om o‘sdi, o‘sdi — shunaqangi katta bo‘lib ketdiki, bunaqasini hech kim ko‘rmagan edi!"
+    }
+   ]
+  },
+  {
+   "img": "s5",
+   "fx": "pull",
+   "s": [
+    {
+     "n": "",
+     "id": "s_1bd971a1",
+     "t": "Kuz keldi. Bobo sholg‘omni bandidan ushlab tortdi."
+    },
+    {
+     "n": "",
+     "id": "s_6a8e2dd3",
+     "t": "Tortadi-tortadi — sug‘urib ololmaydi!"
+    }
+   ]
+  },
+  {
+   "img": "s6",
+   "fx": "pull",
+   "s": [
+    {
+     "n": "",
+     "id": "s_727a143d",
+     "t": "Bobo Momoni chaqirdi. Momo Boboni ushladi, Bobo sholg‘omni."
+    },
+    {
+     "n": "",
+     "id": "s_89786deb",
+     "t": "Tortishadi-tortishadi — sug‘urib ololmaydi!"
+    }
+   ]
+  },
+  {
+   "img": "s7",
+   "fx": "call",
+   "s": [
+    {
+     "n": "",
+     "id": "s_e8ba6c39",
+     "t": "Momo baland ovozda chaqirdi:"
+    },
+    {
+     "n": "J",
+     "id": "s_711ffb54",
+     "t": "tezroq kel, yordam ber!"
+    },
+    {
+     "n": "I",
+     "id": "s_c0fba8d6",
+     "t": "yugurib keldi va Momoni mahkam ushladi."
+    },
+    {
+     "n": "",
+     "id": "s_89786deb",
+     "t": "Tortishadi-tortishadi — sug‘urib ololmaydi!"
+    }
+   ]
+  },
+  {
+   "img": "s8",
+   "fx": "dog",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_99c1b9d6",
+     "t": "Olaparni chaqirdi: — Olapar, yordamga kel!"
+    },
+    {
+     "n": "",
+     "id": "s_1a00bb48",
+     "t": "Olapar ham kelib ushladi. Tortishadi-tortishadi — sug‘urib ololmaydi!"
+    }
+   ]
+  },
+  {
+   "img": "s9",
+   "fx": "cat",
+   "s": [
+    {
+     "n": "",
+     "id": "s_7fe027b4",
+     "t": "Olapar Moshni chaqirdi: — Vov-vov! Mosh, yordam ber!"
+    },
+    {
+     "n": "",
+     "id": "s_d9d5941f",
+     "t": "Mosh ham kelib ushladi. Tortishadi-tortishadi — sug‘urib ololmaydi!"
+    }
+   ]
+  },
+  {
+   "img": "s10",
+   "fx": "mouse",
+   "s": [
+    {
+     "n": "",
+     "id": "s_cb465628",
+     "t": "Shunda kichkina Sichqoncha chiyilladi: — Men ham yordam beraman!"
+    },
+    {
+     "n": "",
+     "id": "s_043602e7",
+     "t": "Hamma kulib yubordi: — Shunaqa kichkina bo‘lsang ham-a?"
+    },
+    {
+     "n": "I",
+     "id": "s_ea34d9bf",
+     "t": "esa dedi: — Kichkina bo‘lsa ham, yordami katta bo‘ladi!"
+    }
+   ],
+   "ask": {
+    "q": "Kichkina Sichqoncha yordam bermoqchi. Uni ham chaqiramizmi?",
+    "o": [
+     "Ha! Birgalikda kuchliroqmiz",
+     "Yo‘q, u juda kichkina"
+    ],
+    "a": 0,
+    "okv": "s_e7f23eac",
+    "nov": "s_e3e4367c"
+   }
+  },
+  {
+   "img": "s11",
+   "fx": "final",
+   "s": [
+    {
+     "n": "",
+     "id": "s_16149da6",
+     "t": "Sichqoncha Moshni ushladi. Hammasi birga: — Bir, ikki, uch!"
+    },
+    {
+     "n": "",
+     "id": "s_e65a1261",
+     "t": "Tortishdi… va — dup! — sholg‘om yerdan sug‘urilib chiqdi! Hammasi yumalab ketdi!"
+    }
+   ]
+  },
+  {
+   "img": "s12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_c6aa4cd2",
+     "t": "Kechqurun Momo sholg‘omdan mazali taom pishirdi. Hamma dasturxon atrofida yig‘ildi."
+    },
+    {
+     "n": "J",
+     "id": "s_3d11b7e9",
+     "t": "esingda bo‘lsin: birgalikda qilingan ishda eng kichik yordam ham katta kuch!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_527c9cf5",
+    "t": "Bobo nimani ekdi?"
+   },
+   {
+    "n": "",
+    "id": "s_994377f7",
+    "t": "Sholg‘omni birinchi bo‘lib kim tortdi?"
+   },
+   {
+    "n": "",
+    "id": "s_ddd0034c",
+    "t": "Momo kimni yordamga chaqirdi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_0fbc7864",
+    "t": "sen haqiqiy yordamchisan! Mana senga sertifikat!"
+   }
+  ],
+  "ask": [
+   {
+    "n": "",
+    "id": "s_4450da5c",
+    "t": "Kichkina Sichqoncha yordam bermoqchi. Uni ham chaqiramizmi?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Bobo nimani ekdi?",
+   "o": [
+    "Sholg‘om",
+    "Olma",
+    "Tarvuz"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Sholg‘omni birinchi bo‘lib kim tortdi?",
+   "o": [
+    "Momo",
+    "Bobo",
+    "Olapar"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Momo kimni yordamga chaqirdi?",
+   "o": [
+    "{NAME}",
+    "Moshni",
+    "Sichqonchani"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Eng oxirida kim yordamga keldi?",
+   "o": [
+    "Olapar",
+    "Mosh",
+    "Sichqoncha"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Sholg‘om nima uchun sug‘urildi?",
+   "o": [
+    "Hammasi birga tortgani uchun",
+    "Yomg‘ir yoqqani uchun",
+    "Bobo yolg‘iz tortgani uchun"
+   ],
+   "a": 0
+  }
+ ]
+}
