@@ -1,0 +1,313 @@
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "b1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_2880664d",
+     "t": "Bir bor ekan, bir yo‘q ekan, bir qishloqda Bobo bilan Momo yashar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_d6b93a5d",
+     "t": "Bir kuni Bobo: — Kampir, menga bo‘g‘irsoq pishirib ber, — dedi."
+    }
+   ]
+  },
+  {
+   "img": "b2",
+   "fx": "bake",
+   "s": [
+    {
+     "n": "",
+     "id": "s_c35dd5cb",
+     "t": "Momo un elab, xamir qordi va dumaloq, qip-qizil bo‘g‘irsoq pishirdi."
+    },
+    {
+     "n": "",
+     "id": "s_c7b2d5e9",
+     "t": "Uni sovusin deb deraza tokchasiga qo‘ydi."
+    }
+   ]
+  },
+  {
+   "img": "b3",
+   "fx": "roll",
+   "s": [
+    {
+     "n": "",
+     "id": "s_1abc2623",
+     "t": "Bo‘g‘irsoq yotib-yotib zerikdi va birdan dumalab ketdi: tokchadan — supaga, supadan — hovliga, hovlidan — yo‘lga!"
+    }
+   ]
+  },
+  {
+   "img": "b4",
+   "fx": "meet",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_b1e8dcef",
+     "t": "yo‘lda o‘ynab yurgan edi va dumalab kelayotgan Bo‘g‘irsoqni ko‘rdi."
+    },
+    {
+     "n": "",
+     "id": "s_da731dfa",
+     "t": "— To‘xta, Bo‘g‘irsoq! Uyingga qayt, Bobo bilan Momo seni izlashyapti!"
+    }
+   ]
+  },
+  {
+   "img": "b5",
+   "fx": "song",
+   "s": [
+    {
+     "n": "",
+     "id": "s_b9d42181",
+     "t": "Bo‘g‘irsoq quloq solmadi va qo‘shiq aytdi: — Men Bo‘g‘irsoqman, Bobodan qochdim, Momodan qochdim!"
+    },
+    {
+     "n": "I",
+     "id": "s_45a9fad4",
+     "t": "uni yolg‘iz qoldirmaslik uchun ortidan yugurdi."
+    }
+   ]
+  },
+  {
+   "img": "b6",
+   "fx": "hare",
+   "s": [
+    {
+     "n": "",
+     "id": "s_b6af5ea8",
+     "t": "O‘rmonda Bo‘g‘irsoqqa Quyon uchradi: — Bo‘g‘irsoq, seni yeyman!"
+    },
+    {
+     "n": "",
+     "id": "s_342246ee",
+     "t": "— Yemagin, men senga qo‘shiq aytaman! — dedi-da, Bo‘g‘irsoq yana dumalab ketdi."
+    }
+   ]
+  },
+  {
+   "img": "b7",
+   "fx": "wolf",
+   "s": [
+    {
+     "n": "",
+     "id": "s_183bdd58",
+     "t": "Keyin unga Bo‘ri uchradi, undan ham qochib ketdi."
+    },
+    {
+     "n": "",
+     "id": "s_24e5dbc4",
+     "t": "Bo‘g‘irsoq o‘zidan juda mamnun edi: — Men eng epchilman, meni hech kim ushlay olmaydi!"
+    }
+   ]
+  },
+  {
+   "img": "b8",
+   "fx": "bear",
+   "s": [
+    {
+     "n": "",
+     "id": "s_8db51d3a",
+     "t": "Katta Ayiq ham uni ushlay olmadi. Bo‘g‘irsoq yanada maqtanib ketdi."
+    }
+   ]
+  },
+  {
+   "img": "b9",
+   "fx": "fox",
+   "s": [
+    {
+     "n": "",
+     "id": "s_b70370df",
+     "t": "Shunda Tulki chiqdi va shirin ovozda gapirdi: — Voy, qanday chiroyli Bo‘g‘irsoq!"
+    },
+    {
+     "n": "",
+     "id": "s_3454a118",
+     "t": "— Qo‘shig‘ingni eshitolmayapman, burnimga chiqib ayt-chi!"
+    }
+   ]
+  },
+  {
+   "img": "b10",
+   "fx": "warn",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_3960ce0f",
+     "t": "yugurib yetib keldi va baland ovozda qichqirdi: — Bo‘g‘irsoq, maqtovga uchma! Tulki seni aldayapti!"
+    }
+   ]
+  },
+  {
+   "img": "b11",
+   "fx": "save",
+   "s": [
+    {
+     "n": "",
+     "id": "s_fff64536",
+     "t": "Bo‘g‘irsoq Tulkining burniga emas, to‘g‘ri savatga sakradi. Tulki hech narsasiz o‘rmonga qaytdi."
+    },
+    {
+     "n": "I",
+     "id": "s_3844b592",
+     "t": "savatni mahkam ushlab, uyga yugurdi."
+    }
+   ]
+  },
+  {
+   "img": "b12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_7ef70b5d",
+     "t": "Bobo bilan Momo ularni quchoqlab kutib olishdi. Bo‘g‘irsoq endi hech qayoqqa qochmaslikka va’da berdi."
+    },
+    {
+     "n": "J",
+     "id": "s_fb637040",
+     "t": "esingda bo‘lsin: uyingdan so‘ramay ketma va shirin so‘zli notanishga ishonma!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_74c35f94",
+    "t": "Bo‘g‘irsoqni kim pishirdi?"
+   },
+   {
+    "n": "",
+    "id": "s_0072bebb",
+    "t": "O‘rmonda Bo‘g‘irsoqqa birinchi bo‘lib kim uchradi?"
+   },
+   {
+    "n": "",
+    "id": "s_50d8b842",
+    "t": "Tulki Bo‘g‘irsoqni qanday aldamoqchi bo‘ldi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_e4153cec",
+    "t": "sen haqiqiy ziyrak do‘stsan! Mana senga sertifikat!"
+   }
+  ],
+  "stay": [
+   {
+    "n": "",
+    "id": "s_eaa34fa2",
+    "t": "Qani, aytchi: bu vaziyatda nima qilasan?"
+   },
+   {
+    "n": "",
+    "id": "s_5040db89",
+    "t": "To‘g‘ri! Sen juda aqllisan!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Bo‘g‘irsoqni kim pishirdi?",
+   "o": [
+    "Bobo",
+    "Momo",
+    "Quyon"
+   ],
+   "a": 1
+  },
+  {
+   "q": "O‘rmonda Bo‘g‘irsoqqa birinchi bo‘lib kim uchradi?",
+   "o": [
+    "Quyon",
+    "Ayiq",
+    "Tulki"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Tulki Bo‘g‘irsoqni qanday aldamoqchi bo‘ldi?",
+   "o": [
+    "Qo‘rqitib",
+    "Maqtab",
+    "Yugurib"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Bo‘g‘irsoqni kim qutqardi?",
+   "o": [
+    "Bo‘ri",
+    "Ayiq",
+    "{NAME}"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Uydan so‘ramay ketish to‘g‘rimi?",
+   "o": [
+    "Yo‘q, avval ota-onadan so‘rash kerak",
+    "Ha, mumkin",
+    "Faqat kechqurun"
+   ],
+   "a": 0
+  }
+ ],
+ "parents": {
+  "lesson": "uydan so‘ramay ketmaslik, maqtovga uchmaslik va maqtanchoq bo‘lmaslik.",
+  "q": [
+   "Bo‘g‘irsoq nega uydan qochdi? To‘g‘ri qildimi?",
+   "Tulki nima uchun Bo‘g‘irsoqni maqtadi?",
+   "Seni kimdir juda maqtab, «yur, ketamiz» desa, nima qilasan?"
+  ],
+  "task": "Bugun {NAME} bilan «uydan qayerga borsam ham avval oyim yoki dadamdan so‘rayman» qoidasini kelishib oling va uni bir kun davomida eslatib turing."
+ }
+}
