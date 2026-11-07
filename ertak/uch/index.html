@@ -465,8 +465,17 @@ function showPage(silent){
   else if(p.ask&&!ASKED.has(cur)) later(2500,()=>{ if(mode==='story'&&!view.querySelector('.askbox')) askNow(p.ask) });
 }
 function turn(fn){ world.classList.remove('turn'); void world.offsetWidth; world.classList.add('turn'); SFX.flip(); for(let i=0;i<40;i++) add({kind:'spark',x:VW*rnd(.9,1),y:rnd(0,VH),vx:rnd(-14,-6)*U,vy:rnd(-1,1),r:rnd(2,4),max:40}); setTimeout(fn,260) }
-function next(){ if(mode!=='story') return; if(cur<BOOK.pages.length-1){ cur++; turn(()=>showPage()) } else turn(openHall) }
-function prev(){ if(mode!=='story'){ cur=BOOK.pages.length-1; return turn(()=>showPage()) } if(cur>0){ cur--; turn(()=>showPage()) } }
+// 🔒 Namuna (tokensiz havola, 2026-11-08): muqova + 2 sahifa, keyin «Davomi — farzandingiz ismi bilan»
+const DEMO=!TOK, DEMO_PAGES=3;
+function next(){ if(mode!=='story') return; if(DEMO&&cur>=DEMO_PAGES-1) return turn(openLock); if(cur<BOOK.pages.length-1){ cur++; turn(()=>showPage()) } else turn(openHall) }
+function buyLink(r){ const bot=(window.GO_CONFIG&&window.GO_CONFIG.bot)||'slaydol_bot'; const o=document.createElement('a'); o.className='sbtn'; o.style.cssText='background:linear-gradient(180deg,#ffe08a,#ffcf5a);color:#2a1f3d;text-decoration:none'; o.textContent='🧚 Bolam ismi bilan olish'; o.href='https://t.me/'+bot+'?start=ertak'; o.onclick=e=>{ try{ if(TG&&TG.openTelegramLink){ e.preventDefault(); TG.openTelegramLink(o.href) } }catch(x){} }; r.appendChild(o) }
+function openLock(){ stopVoice(); clearScene(); stopAmb(); mode='lock'; $('#ov').hidden=false; dots(); grade({}); view.classList.remove('cine');
+  gst.innerHTML=`<img class="bgi" src="${img(BOOK.pages[Math.min(DEMO_PAGES,BOOK.pages.length-1)].img)}" alt="" style="filter:brightness(.4) blur(6px)">`;
+  const left=BOOK.pages.length-DEMO_PAGES;
+  gtx.innerHTML=`<p><b>🔒 Bu — namuna.</b></p><p>Davomi (yana ${left} sahifa), o‘yinlar zali va sertifikat — <b>farzandingizning ismi bilan</b>: ertakni uning ismini aytib o‘qiydi, sertifikatga ham ismi yoziladi.</p>`;
+  const r=document.createElement('div'); r.className='row'; buyLink(r); const bk=document.createElement('button'); bk.className='sbtn'; bk.textContent='📖 Boshidan'; bk.onclick=()=>{ cur=0; showPage() }; r.appendChild(bk); gtx.appendChild(r);
+  amb=every(10,()=>add({kind:'spark',x:rnd(0,VW),y:VH+4,vy:-1.5*U,r:rnd(2,4),max:160})) }
+function prev(){ if(mode!=='story'){ cur=DEMO?DEMO_PAGES-1:BOOK.pages.length-1; return turn(()=>showPage()) } if(cur>0){ cur--; turn(()=>showPage()) } }
 let sx=null, sy=0, lastTrail=0;
 view.addEventListener('pointerdown',e=>{ if(e.target.closest('button,#ov')) return; A(); sx=e.clientX; sy=e.clientY; lastTap=Date.now(); hideHand();
   if(mode==='story'){ const fx=FX[BOOK.pages[cur].fx]; if(fx&&fx.tap) fx.tap(e.clientX,e.clientY); else { burst(e.clientX,e.clientY,20,'spark'); SFX.sparkle() } } });
@@ -485,7 +494,7 @@ function openHall(){ stopVoice(); clearScene(); stopAmb(); startAmb('birds'); mo
   gst.innerHTML=`<img class="bgi" src="${img(TALE.hallBg)}" alt="" style="filter:brightness(.35) blur(2px)">`; const h=document.createElement('div'); h.className='hall'; gst.appendChild(h);
   GAMES.forEach(g=>{ const b=document.createElement('button'); b.className='gcard'; const s=g.k==='cert'?`${totalStars()} ★`:'★'.repeat(STARS[g.k]||0)+'☆'.repeat(3-(STARS[g.k]||0)); b.innerHTML=`<span class="ic">${g.ic}</span>${g.n}<span class="st">${s}</span>`; b.onclick=()=>{ A(); SFX.pop(); openGame(g.k) }; h.appendChild(b) });
   gtx.innerHTML=`<p><b>🎮 O‘yinlar zali!</b> Har o‘yindan 3 tagacha yulduz yig‘ — ular sertifikatga yoziladi.</p><p>⭐ Ertakdagi yashirin yulduzchalar: <b>${FOUND.size} / ${BOOK.pages.length}</b>${FOUND.size<BOOK.pages.length?' — qolganlarini ertakdan qidirib top!':' — hammasini topding! 🏆'}</p>`; starBox(); const r=document.createElement('div'); r.className='row'; const bk=document.createElement('button'); bk.className='sbtn'; bk.textContent='📖 Ertakka qaytish'; bk.onclick=()=>{ cur=BOOK.pages.length-1; showPage() }; r.appendChild(bk); gtx.appendChild(r);
-  if(!TOK){ const bot=(window.GO_CONFIG&&window.GO_CONFIG.bot)||'slaydol_bot'; const o=document.createElement('a'); o.className='sbtn'; o.style.cssText='background:linear-gradient(180deg,#ffe08a,#ffcf5a);color:#2a1f3d;text-decoration:none'; o.textContent='🧚 Bolam ismi bilan olish'; o.href='https://t.me/'+bot+'?start=ertak'; o.onclick=e=>{ try{ if(TG&&TG.openTelegramLink){ e.preventDefault(); TG.openTelegramLink(o.href) } }catch(x){} }; r.appendChild(o) }
+  if(!TOK) buyLink(r);
   amb=every(10,()=>add({kind:'spark',x:rnd(0,VW),y:VH+4,vy:-1.5*U,r:rnd(2,4),max:160})) }
 function backBtn(){ const r=document.createElement('div'); r.className='row'; const b=document.createElement('button'); b.className='sbtn'; b.textContent='◀ O‘yinlar zali'; b.onclick=()=>{ SFX.flip(); openHall() }; r.appendChild(b); return r }
 function board(cls,bg){ clearTimers(); amb=null; gst.innerHTML=bg?`<img class="bgi" src="${bg}" alt="">`:''; const b=document.createElement('div'); b.className='board '+cls; gst.appendChild(b); gtx.innerHTML=''; return b }
@@ -541,14 +550,14 @@ $('#go').onclick=async()=>{ NAME=norm($('#nm').value)||TALE.hero; A(); SFX.open(
   if(!BOOK) BOOK=await fetch('book.json').then(r=>r.json()); loadName();
   try{ if(TG){ TG.expand&&TG.expand(); TG.requestFullscreen&&TG.requestFullscreen() } }catch(e){}
   $('#start').hidden=true; $('#sky').hidden=true; view.hidden=false; $('#ttl').innerHTML=`<b>${esc(NAME)}</b> ${esc(TALE.suffix)}`; cvSize(); region();
-  cur=0; try{ const s=+localStorage.getItem(KEY+'p_'+NAME); if(s>0&&s<BOOK.pages.length) cur=s }catch(e){}
+  cur=0; try{ const s=+localStorage.getItem(KEY+'p_'+NAME); if(s>0&&s<(DEMO?DEMO_PAGES:BOOK.pages.length)) cur=s }catch(e){}
   flash('#ffe9a8'); burst(VW/2,VH/2,90,'spark',{sp:9,g:.02}); add({kind:'glow',x:VW/2,y:VH/2,r:260,max:30,grow:.02});
   showPage(true); later(900,()=>{ if(cur===0) fireworks(2); showPage() }); music(true) };
 $('#prev').onclick=()=>{ A(); prev() }; $('#next').onclick=()=>{ A(); next() };
 $('#play').onclick=()=>{ A(); if(playing) return stopVoice(); if(mode==='story') read(BOOK.pages[cur].s,()=>renderAll()) };
 $('#mus').onclick=()=>{ A(); music(!musicOn) };
 $('#aut').onclick=()=>{ autoOn=!autoOn; $('#aut').setAttribute('aria-pressed',autoOn) };
-$('#gm').onclick=()=>{ A(); turn(openHall) };
+$('#gm').onclick=()=>{ A(); turn(DEMO?openLock:openHall) };
 $('#fs').onclick=()=>{ try{ if(TG&&TG.requestFullscreen) return TG.requestFullscreen(); const d=document; if(d.fullscreenElement) d.exitFullscreen(); else d.documentElement.requestFullscreen().catch(()=>{}) }catch(e){} };
 document.addEventListener('keydown',e=>{ if(view.hidden) return; if(e.key==='ArrowRight') next(); if(e.key==='ArrowLeft') prev() });
 document.addEventListener('visibilitychange',()=>{ if(document.hidden){ stopVoice(); if(ac) ac.suspend() } else if(ac) ac.resume() });
