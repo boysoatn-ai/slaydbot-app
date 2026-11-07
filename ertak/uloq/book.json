@@ -1,0 +1,313 @@
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "e1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_8323c524",
+     "t": "Bir bor ekan, bir yo‘q ekan, tog‘ etagidagi kichkina uyda Ona echki yetti uloqchasi bilan yashar ekan."
+    }
+   ]
+  },
+  {
+   "img": "e2",
+   "fx": "hearts",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_b7114187",
+     "t": "uloqchalarning qo‘shnisi va eng yaqin do‘sti edi."
+    },
+    {
+     "n": "",
+     "id": "s_86fa1700",
+     "t": "U har kuni ular bilan quvlashmachoq o‘ynar ekan."
+    }
+   ]
+  },
+  {
+   "img": "e3",
+   "fx": "leave",
+   "s": [
+    {
+     "n": "",
+     "id": "s_661d3b6f",
+     "t": "Bir kuni Ona echki bozorga otlandi: — Bolalarim, men qaytguncha eshikni hech kimga ochmanglar!"
+    },
+    {
+     "n": "",
+     "id": "s_416bb5f0",
+     "t": "— Men kelsam, mayin ovozda qo‘shiq aytaman, — dedi u."
+    },
+    {
+     "n": "I",
+     "id": "s_b5a1c0f9",
+     "t": "uloqchalar bilan qolib, ularga qarashishga va’da berdi."
+    }
+   ]
+  },
+  {
+   "img": "e4",
+   "fx": "knock",
+   "s": [
+    {
+     "n": "",
+     "id": "s_0a5568dd",
+     "t": "Ko‘p o‘tmay eshik taqilladi. Do‘rillagan ovoz eshitildi: — Eshikni oching, bolalarim, men oyingizman!"
+    }
+   ]
+  },
+  {
+   "img": "e5",
+   "fx": "voice",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_bc14cccb",
+     "t": "quloq solib dedi: — Bu oyimiz emas! Oyimizning ovozi mayin!"
+    },
+    {
+     "n": "",
+     "id": "s_2c156871",
+     "t": "Uloqchalar eshikni ochishmadi. Bu esa Bo‘ri edi!"
+    }
+   ]
+  },
+  {
+   "img": "e6",
+   "fx": "honey",
+   "s": [
+    {
+     "n": "",
+     "id": "s_7de79dda",
+     "t": "Bo‘ri asal yeb, ovozini mayin qildi va yana keldi: — Bolalarim, eshikni oching!"
+    }
+   ]
+  },
+  {
+   "img": "e7",
+   "fx": "paw",
+   "s": [
+    {
+     "n": "",
+     "id": "s_8e1491e2",
+     "t": "Uloqchalar eshikni ochmoqchi bo‘lishdi, lekin"
+    },
+    {
+     "n": "I",
+     "id": "s_b9472765",
+     "t": "derazadan qarab, qop-qora junli panjani ko‘rib qoldi: — To‘xtanglar! Oyimizning oyog‘i oppoq-ku! Bu yana Bo‘ri!"
+    }
+   ]
+  },
+  {
+   "img": "e8",
+   "fx": "flour",
+   "s": [
+    {
+     "n": "",
+     "id": "s_7bdcd512",
+     "t": "Ayyor Bo‘ri panjasini unga botirib, oqartirib keldi: — Mana, oyog‘im oppoq, oching!"
+    }
+   ]
+  },
+  {
+   "img": "e9",
+   "fx": "stay",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_df6f4754",
+     "t": "dedi: — Oyimiz «qaytguncha hech kimga ochmanglar» degan. Biz oyimizni kutamiz!"
+    },
+    {
+     "n": "",
+     "id": "s_e406b7da",
+     "t": "Uloqchalar eshikni mahkam bekitib, sandal ostiga yashirinishdi."
+    }
+   ]
+  },
+  {
+   "img": "e10",
+   "fx": "dog",
+   "s": [
+    {
+     "n": "",
+     "id": "s_c9025b1e",
+     "t": "Shu payt qo‘shnining katta iti Olapar Bo‘rini ko‘rib qoldi va vovillab quvib ketdi."
+    },
+    {
+     "n": "",
+     "id": "s_036f836a",
+     "t": "Bo‘ri dumini qisib, tog‘ ortiga qochdi!"
+    }
+   ]
+  },
+  {
+   "img": "e11",
+   "fx": "song",
+   "s": [
+    {
+     "n": "",
+     "id": "s_573a889f",
+     "t": "Kechqurun Ona echki qaytib, mayin ovozda qo‘shiq aytdi."
+    },
+    {
+     "n": "",
+     "id": "s_1d9aa9ea",
+     "t": "Uloqchalar uni darhol tanishdi va eshikni ochishdi."
+    }
+   ]
+  },
+  {
+   "img": "e12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_b61f0bb0",
+     "t": "Ona echki hammasini quchoqladi va bozordan olib kelgan shirinliklarni ulashdi."
+    },
+    {
+     "n": "J",
+     "id": "s_ad22ad5a",
+     "t": "esingda bo‘lsin: uyda yolg‘iz qolsang, kim bo‘lmasin, eshikni ochma — avval kattalardan so‘ra!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_c16f9d44",
+    "t": "Ona echki qayerga ketdi?"
+   },
+   {
+    "n": "",
+    "id": "s_26424329",
+    "t": "Bo‘ri ovozini qanday mayin qildi?"
+   },
+   {
+    "n": "",
+    "id": "s_e1aaab1f",
+    "t": "Uloqchalar Bo‘rini qanday tanishdi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_d18c2c92",
+    "t": "sen haqiqiy ziyrak qo‘riqchisan! Mana senga sertifikat!"
+   }
+  ],
+  "door": [
+   {
+    "n": "",
+    "id": "s_f126781e",
+    "t": "Qani, aytchi: eshikni ochamizmi?"
+   },
+   {
+    "n": "",
+    "id": "s_54b81ccc",
+    "t": "To‘g‘ri! Sen juda ehtiyotkorsan!"
+   },
+   {
+    "n": "",
+    "id": "s_19f0031f",
+    "t": "Yo‘q, bu xavfli. Yana o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Ona echki qayerga ketdi?",
+   "o": [
+    "O‘rmonga",
+    "Bozorga",
+    "Mehmonga"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Bo‘ri ovozini qanday mayin qildi?",
+   "o": [
+    "Asal yeb",
+    "Qo‘shiq aytib",
+    "Suv ichib"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Uloqchalar Bo‘rini qanday tanishdi?",
+   "o": [
+    "Dumidan",
+    "Shlyapasidan",
+    "Qop-qora panjasidan"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Bo‘rini kim quvib yubordi?",
+   "o": [
+    "Ona echki",
+    "Olapar it",
+    "Mushuk"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Uyda yolg‘iz bo‘lsang va eshik taqillasa, nima qilasan?",
+   "o": [
+    "Ochmayman, kattalarga qo‘ng‘iroq qilaman",
+    "Darhol ochaman",
+    "Kim ekanini so‘ramay ochaman"
+   ],
+   "a": 0
+  }
+ ],
+ "parents": {
+  "lesson": "uyda yolg‘iz qolganda eshikni hech kimga ochmaslik va avval kattalardan so‘rash.",
+  "q": [
+   "Uloqchalar Bo‘rini qanday tanib olishdi?",
+   "Nega «men oyingizman» degan gapga ishonish mumkin emas edi?",
+   "Uyda yolg‘iz bo‘lsang va eshik taqillasa, kimga qo‘ng‘iroq qilasan?"
+  ],
+  "task": "Bugun {NAME} bilan «eshik o‘yini» o‘ynang: siz eshik ortidan turli ovozlarda gapirasiz, u esa ochmasdan sizga qo‘ng‘iroq qilishni mashq qiladi."
+ }
+}
