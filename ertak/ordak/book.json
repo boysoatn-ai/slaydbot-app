@@ -1,0 +1,323 @@
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "o1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_2175ed57",
+     "t": "Bir bor ekan, bir yo‘q ekan, qishloq chetidagi hovuz bo‘yida Ona o‘rdak tuxum ochib o‘tirgan ekan."
+    },
+    {
+     "n": "",
+     "id": "s_361eec23",
+     "t": "Tuxumlardan birin-ketin sap-sariq jo‘jalar chiqdi."
+    }
+   ]
+  },
+  {
+   "img": "o2",
+   "fx": "egg",
+   "s": [
+    {
+     "n": "",
+     "id": "s_d72c6fde",
+     "t": "Eng katta tuxum esa hammasidan keyin yorildi."
+    },
+    {
+     "n": "",
+     "id": "s_f701fdbc",
+     "t": "Undan kulrang, uzun bo‘yinli, boshqalarga o‘xshamagan bir o‘rdakcha chiqdi."
+    }
+   ]
+  },
+  {
+   "img": "o3",
+   "fx": "mock",
+   "s": [
+    {
+     "n": "",
+     "id": "s_1af746e6",
+     "t": "Parrandalar uni ko‘rib kulishdi: — Voy, qanday xunuk! Bu bizga o‘xshamaydi!"
+    },
+    {
+     "n": "",
+     "id": "s_ab8a795e",
+     "t": "O‘rdakcha xafa bo‘lib, qamish orasiga yashirinib oldi."
+    }
+   ]
+  },
+  {
+   "img": "o4",
+   "fx": "friend",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_505c1b1e",
+     "t": "hovuz bo‘yida o‘ynab yurib, yig‘layotgan o‘rdakchani ko‘rib qoldi."
+    },
+    {
+     "n": "",
+     "id": "s_367e1e77",
+     "t": "— Yig‘lama! Kel, do‘st bo‘lamiz, — dedi va unga non ushatib berdi."
+    }
+   ]
+  },
+  {
+   "img": "o5",
+   "fx": "hearts",
+   "s": [
+    {
+     "n": "",
+     "id": "s_843db557",
+     "t": "Shundan beri ular har kuni birga suzishar, birga quyosh nuriga isinishar ekan."
+    },
+    {
+     "n": "I",
+     "id": "s_f67923b2",
+     "t": "o‘rdakchaga: — Sen o‘zgachasan, lekin o‘zgacha bo‘lish yomon emas! — der edi."
+    }
+   ]
+  },
+  {
+   "img": "o6",
+   "fx": "autumn",
+   "s": [
+    {
+     "n": "",
+     "id": "s_8d6b3555",
+     "t": "Kuz keldi. Osmonda oppoq, chiroyli qushlar janubga uchib o‘tishdi."
+    },
+    {
+     "n": "",
+     "id": "s_0e370cdd",
+     "t": "O‘rdakcha ularga uzoq tikilib qoldi: — Qanday go‘zal qushlar!"
+    }
+   ]
+  },
+  {
+   "img": "o7",
+   "fx": "winter",
+   "s": [
+    {
+     "n": "",
+     "id": "s_375f5796",
+     "t": "Qish qattiq keldi. Hovuz muzladi, o‘rdakcha sovuqda qoldi."
+    }
+   ]
+  },
+  {
+   "img": "o8",
+   "fx": "warm",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_43acda79",
+     "t": "o‘rdakchani topib oldi va uyiga olib keldi."
+    },
+    {
+     "n": "",
+     "id": "s_47d5067f",
+     "t": "Butun qish davomida uni issiq joyda boqdi, unga ertaklar aytib berdi."
+    }
+   ]
+  },
+  {
+   "img": "o9",
+   "fx": "spring",
+   "s": [
+    {
+     "n": "",
+     "id": "s_d743a223",
+     "t": "Bahor keldi. Quyosh isitdi, hovuzdagi muzlar eridi."
+    },
+    {
+     "n": "",
+     "id": "s_b7dd6da0",
+     "t": "O‘rdakcha suvga tushib, aksiga qaradi va hayron qoldi."
+    }
+   ]
+  },
+  {
+   "img": "o10",
+   "fx": "swan",
+   "s": [
+    {
+     "n": "",
+     "id": "s_4c296326",
+     "t": "Suvda kulrang o‘rdakcha emas, oppoq, chiroyli oqqush suzib yurardi!"
+    },
+    {
+     "n": "",
+     "id": "s_0a97fbe7",
+     "t": "U o‘sha go‘zal qushlarning biri edi."
+    }
+   ]
+  },
+  {
+   "img": "o11",
+   "fx": "thanks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_f572a70d",
+     "t": "Oqqushlar uni o‘z davrasiga chaqirishdi. Uni masxara qilgan parrandalar uyalib qolishdi."
+    },
+    {
+     "n": "",
+     "id": "s_6e0443ad",
+     "t": "Oqqush esa birinchi bo‘lib do‘stining oldiga suzib keldi: — Rahmat, sen menga hamma qiyin paytda ishonding!"
+    }
+   ]
+  },
+  {
+   "img": "o12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_2663d888",
+     "t": "Shundan beri Oqqush har bahorda do‘stini ko‘rgani hovuzga qaytib keladi."
+    },
+    {
+     "n": "J",
+     "id": "s_9f440907",
+     "t": "esingda bo‘lsin: hech kimni tashqi ko‘rinishiga qarab baholama. Har kimning o‘z go‘zalligi bor!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_afd552b0",
+    "t": "O‘rdakcha nega xafa bo‘ldi?"
+   },
+   {
+    "n": "",
+    "id": "s_2022a166",
+    "t": "O‘rdakchaning birinchi do‘sti kim bo‘ldi?"
+   },
+   {
+    "n": "",
+    "id": "s_60a20996",
+    "t": "Qishda o‘rdakchaga kim g‘amxo‘rlik qildi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_6bffab9d",
+    "t": "sen haqiqiy mehribon do‘stsan! Mana senga sertifikat!"
+   }
+  ],
+  "kind": [
+   {
+    "n": "",
+    "id": "s_e9eb2987",
+    "t": "Qani, aytchi: nima qilish to‘g‘ri?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "O‘rdakcha nega xafa bo‘ldi?",
+   "o": [
+    "Uni hamma masxara qildi",
+    "Oyog‘i og‘ridi",
+    "Ovqati yo‘q edi"
+   ],
+   "a": 0
+  },
+  {
+   "q": "O‘rdakchaning birinchi do‘sti kim bo‘ldi?",
+   "o": [
+    "Tovuq",
+    "{NAME}",
+    "Mushuk"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Qishda o‘rdakchaga kim g‘amxo‘rlik qildi?",
+   "o": [
+    "Hech kim",
+    "Oqqushlar",
+    "{NAME}"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Bahorda o‘rdakcha kimga aylandi?",
+   "o": [
+    "Oqqushga",
+    "Tovuqqa",
+    "G‘ozga"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Biror bola boshqalarga o‘xshamasa, nima qilasan?",
+   "o": [
+    "Kulaman",
+    "Do‘st bo‘laman",
+    "O‘ynamayman"
+   ],
+   "a": 1
+  }
+ ],
+ "parents": {
+  "lesson": "hech kimni tashqi ko‘rinishiga qarab baholamaslik va yolg‘iz qolganga do‘st bo‘lish.",
+  "q": [
+   "Parrandalar o‘rdakchaga nega kulishdi? Bu to‘g‘rimidi?",
+   "O‘rdakcha xafa bo‘lganda o‘zini qanday his qildi?",
+   "Bog‘changda yolg‘iz o‘tirgan bolani ko‘rsang, nima qilasan?"
+  ],
+  "task": "Bugun {NAME} bilan oila a’zolari va do‘stlarining 3 ta yaxshi fazilatini aytib chiqing — ko‘rinishi haqida emas, qilgan yaxshi ishlari haqida."
+ }
+}

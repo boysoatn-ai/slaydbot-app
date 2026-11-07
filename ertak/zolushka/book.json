@@ -1,0 +1,318 @@
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "c1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_f372b39f",
+     "t": "Bir bor ekan, bir yo‘q ekan, bir shaharchada Zolushka degan mehribon qiz yashar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_2cc31d7b",
+     "t": "U kun bo‘yi uy ishlarini qilar, o‘gay opalari esa faqat buyruq berishar ekan."
+    }
+   ]
+  },
+  {
+   "img": "c2",
+   "fx": "work",
+   "s": [
+    {
+     "n": "",
+     "id": "s_7b1fdc5b",
+     "t": "Zolushka shunda ham hech kimdan xafa bo‘lmas, qushlar va sichqonchalarga don berib, qo‘shiq aytar ekan."
+    }
+   ]
+  },
+  {
+   "img": "c3",
+   "fx": "invite",
+   "s": [
+    {
+     "n": "",
+     "id": "s_035a4a4f",
+     "t": "Bir kuni shaharga xabar keldi: saroyda katta bayram bo‘ladi, hamma taklif qilinadi!"
+    },
+    {
+     "n": "",
+     "id": "s_d13334bf",
+     "t": "Opalari chiroyli liboslar kiyib ketishdi, Zolushkani esa uyda qoldirishdi."
+    }
+   ]
+  },
+  {
+   "img": "c4",
+   "fx": "cry",
+   "s": [
+    {
+     "n": "",
+     "id": "s_3042ca93",
+     "t": "Zolushka bog‘da yolg‘iz qolib, yig‘lab o‘tirdi."
+    }
+   ]
+  },
+  {
+   "img": "c5",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "",
+     "id": "s_d94b8959",
+     "t": "Birdan atrof yorishdi va sehrgar Momo paydo bo‘ldi. Uning yonida shogirdi ham bor edi."
+    },
+    {
+     "n": "I",
+     "id": "s_e49119da",
+     "t": "sehrgar Momoning shogirdi edi."
+    }
+   ]
+  },
+  {
+   "img": "c6",
+   "fx": "help",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_0e521240",
+     "t": "dedi: — Avval ishlaringni birga tugatamiz, keyin bayramga borasan!"
+    },
+    {
+     "n": "",
+     "id": "s_c10ac955",
+     "t": "Ular birga supurishdi, gullarni sug‘orishdi, idishlarni yuvishdi."
+    }
+   ]
+  },
+  {
+   "img": "c7",
+   "fx": "pumpkin",
+   "s": [
+    {
+     "n": "",
+     "id": "s_707cb796",
+     "t": "Keyin sehrgar Momo tayoqchasini silkitdi: qovoq — chiroyli aravaga, sichqonchalar — oppoq otlarga aylandi!"
+    },
+    {
+     "n": "",
+     "id": "s_3b5bef49",
+     "t": "Zolushkaning eski ko‘ylagi esa yaltiroq libosga aylandi."
+    }
+   ]
+  },
+  {
+   "img": "c8",
+   "fx": "clock",
+   "s": [
+    {
+     "n": "",
+     "id": "s_d9f6aac1",
+     "t": "— Faqat esingda bo‘lsin, — dedi Momo, — soat o‘n ikkida sehr tugaydi. O‘z vaqtida qaytish kerak!"
+    },
+    {
+     "n": "I",
+     "id": "s_90ca4e78",
+     "t": "Zolushkaga hamroh bo‘lib, soatni kuzatib turishga va’da berdi."
+    }
+   ]
+  },
+  {
+   "img": "c9",
+   "fx": "ball",
+   "s": [
+    {
+     "n": "",
+     "id": "s_cdf433f8",
+     "t": "Saroyda musiqa yangradi. Hamma mehribon va kamtar Zolushkaga havas bilan qaradi."
+    },
+    {
+     "n": "",
+     "id": "s_5f3b9538",
+     "t": "U opalarini ko‘rib, ularga ham shirinlik olib keldi."
+    }
+   ]
+  },
+  {
+   "img": "c10",
+   "fx": "midnight",
+   "s": [
+    {
+     "n": "",
+     "id": "s_b562e129",
+     "t": "Soat o‘n ikkiga yaqinlashdi!"
+    },
+    {
+     "n": "I",
+     "id": "s_79e37d24",
+     "t": "Zolushkaning qo‘lidan ushladi: — Vaqt bo‘ldi, ketdik! — va ular o‘z vaqtida uyga yetib kelishdi."
+    }
+   ]
+  },
+  {
+   "img": "c11",
+   "fx": "forgive",
+   "s": [
+    {
+     "n": "",
+     "id": "s_03d60ee7",
+     "t": "Ertasi kuni opalari Zolushkaning mehribonligini eslab, uyalib qolishdi."
+    },
+    {
+     "n": "",
+     "id": "s_8fcf50aa",
+     "t": "— Kechir bizni, — deyishdi ular. Zolushka ularni kechirdi va endi uy ishlarini hammasi birga qiladigan bo‘ldi."
+    }
+   ]
+  },
+  {
+   "img": "c12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_434a0996",
+     "t": "Shundan beri uyda hamma bir-biriga mehribon bo‘lib qoldi, Zolushka esa har kuni kulib yurdi."
+    },
+    {
+     "n": "J",
+     "id": "s_b2c5e9b0",
+     "t": "esingda bo‘lsin: mehribonlik va sabr hech qachon bekor ketmaydi!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_f5930446",
+    "t": "Zolushka qanday qiz edi?"
+   },
+   {
+    "n": "",
+    "id": "s_548cbc9f",
+    "t": "Sehrgar Momo qovoqni nimaga aylantirdi?"
+   },
+   {
+    "n": "",
+    "id": "s_c921fdfa",
+    "t": "Sehr soat nechada tugaydi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_be872d25",
+    "t": "sen haqiqiy mehribon yordamchisan! Mana senga sertifikat!"
+   }
+  ],
+  "kind": [
+   {
+    "n": "",
+    "id": "s_cec7f6c9",
+    "t": "Qani, aytchi: bu mehribonlikmi?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Zolushka qanday qiz edi?",
+   "o": [
+    "Injiq",
+    "Mehribon va mehnatkash",
+    "Erinchoq"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Sehrgar Momo qovoqni nimaga aylantirdi?",
+   "o": [
+    "Aravaga",
+    "Uyga",
+    "Qayiqqa"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Sehr soat nechada tugaydi?",
+   "o": [
+    "Uchda",
+    "Oltida",
+    "O‘n ikkida"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Zolushkaga ishlarni tugatishda kim yordam berdi?",
+   "o": [
+    "{NAME}",
+    "Opalari",
+    "Qirol"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Kimdir seni xafa qilib, keyin kechirim so‘rasa?",
+   "o": [
+    "Kechiraman",
+    "Gaplashmayman",
+    "Men ham xafa qilaman"
+   ],
+   "a": 0
+  }
+ ],
+ "parents": {
+  "lesson": "mehribonlik va sabr hech qachon bekor ketmaydi; kechira olish ham katta kuch.",
+  "q": [
+   "Opalari xafa qilsa ham Zolushka nega mehribon qoldi?",
+   "Zolushkaga kim va qanday yordam berdi?",
+   "Seni kimdir xafa qilsa-yu, keyin kechirim so‘rasa, nima qilasan?"
+  ],
+  "task": "Bugun {NAME} bilan «mehribonlik kuni» o‘tkazing: kun davomida 3 ta mehribonlik ishini qiling (buviga qo‘ng‘iroq, qushlarga don, ukaga yordam) va kechqurun ularni eslang."
+ }
+}

@@ -1,0 +1,328 @@
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "t1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_546e194d",
+     "t": "Bir bor ekan, bir yo‘q ekan, tog‘ etagidagi yashil o‘tloqda Toshbaqa va Quyon yashar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_462cccfb",
+     "t": "Quyon juda tez yugurar, lekin juda maqtanchoq ekan."
+    }
+   ]
+  },
+  {
+   "img": "t2",
+   "fx": "brag",
+   "s": [
+    {
+     "n": "",
+     "id": "s_1342f407",
+     "t": "Quyon har kuni Toshbaqani masxara qilardi: — Sen shunaqa sekinsanki, uyga ertaga yetib borasan!"
+    },
+    {
+     "n": "",
+     "id": "s_b4569fa1",
+     "t": "Toshbaqa xafa bo‘lsa ham, xotirjam javob berdi: — Kel, poyga qilamiz!"
+    }
+   ]
+  },
+  {
+   "img": "t3",
+   "fx": "hearts",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_06697d29",
+     "t": "o‘tloqning eng adolatli bolasi edi."
+    },
+    {
+     "n": "",
+     "id": "s_b4ca8320",
+     "t": "Hayvonlar uni poygaga hakam qilib saylashdi."
+    }
+   ]
+  },
+  {
+   "img": "t4",
+   "fx": "start",
+   "s": [
+    {
+     "n": "",
+     "id": "s_7c5699c9",
+     "t": "Ertasi kuni butun o‘tloq yig‘ildi. Marra katta tut daraxti yonida edi."
+    },
+    {
+     "n": "I",
+     "id": "s_7b9ef957",
+     "t": "bayroqchani ko‘tardi: — Bir, ikki, uch — boshladik!"
+    }
+   ]
+  },
+  {
+   "img": "t5",
+   "fx": "run",
+   "s": [
+    {
+     "n": "",
+     "id": "s_58ecf33f",
+     "t": "Quyon o‘qday uchib ketdi va bir zumda ko‘zdan g‘oyib bo‘ldi."
+    },
+    {
+     "n": "",
+     "id": "s_21a267c0",
+     "t": "Toshbaqa esa sekin, lekin to‘xtamasdan oldinga yurdi."
+    }
+   ]
+  },
+  {
+   "img": "t6",
+   "fx": "sleep",
+   "s": [
+    {
+     "n": "",
+     "id": "s_6a927039",
+     "t": "Yo‘lning yarmida Quyon orqasiga qaradi: Toshbaqa ko‘rinmasdi."
+    },
+    {
+     "n": "",
+     "id": "s_807342b1",
+     "t": "— Hali vaqtim ko‘p, bir oz dam olay, — dedi-da, soya joyda uxlab qoldi."
+    }
+   ]
+  },
+  {
+   "img": "t7",
+   "fx": "tired",
+   "s": [
+    {
+     "n": "",
+     "id": "s_262cb690",
+     "t": "Quyosh qizdirdi, Toshbaqa charchadi."
+    },
+    {
+     "n": "I",
+     "id": "s_6b1090df",
+     "t": "unga bir qultum suv berdi: — Sen uddalaysan! To‘xtama, oz qoldi!"
+    }
+   ]
+  },
+  {
+   "img": "t8",
+   "fx": "keep",
+   "s": [
+    {
+     "n": "",
+     "id": "s_c9ebb43c",
+     "t": "Toshbaqa yana yo‘lga tushdi: qadam, qadam, yana bir qadam…"
+    },
+    {
+     "n": "",
+     "id": "s_f899396f",
+     "t": "U uxlab yotgan Quyonning yonidan jimgina o‘tib ketdi."
+    }
+   ]
+  },
+  {
+   "img": "t9",
+   "fx": "wake",
+   "s": [
+    {
+     "n": "",
+     "id": "s_515f877a",
+     "t": "Quyon uyg‘onib, ko‘zlarini ishqaladi: — Voy! Qancha uxladim?"
+    },
+    {
+     "n": "",
+     "id": "s_7f6f785b",
+     "t": "U bor kuchi bilan marraga yugurdi."
+    }
+   ]
+  },
+  {
+   "img": "t10",
+   "fx": "finish",
+   "s": [
+    {
+     "n": "",
+     "id": "s_b1722620",
+     "t": "Lekin kech edi! Toshbaqa marra chizig‘idan birinchi bo‘lib o‘tdi!"
+    },
+    {
+     "n": "",
+     "id": "s_412e96ef",
+     "t": "Hamma hayvonlar qarsak chalib yubordi."
+    }
+   ]
+  },
+  {
+   "img": "t11",
+   "fx": "sorry",
+   "s": [
+    {
+     "n": "",
+     "id": "s_96f23212",
+     "t": "Quyon uyalib, boshini egdi: — Kechir, Toshbaqa. Endi hech kimni masxara qilmayman."
+    },
+    {
+     "n": "I",
+     "id": "s_6e6b3f43",
+     "t": "ikkalasining qo‘lini ushlab: — Endi do‘st bo‘linglar! — dedi."
+    }
+   ]
+  },
+  {
+   "img": "t12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_c41c37eb",
+     "t": "Kechqurun o‘tloqda katta bayram bo‘ldi. Toshbaqa va Quyon endi eng yaqin do‘st edi."
+    },
+    {
+     "n": "J",
+     "id": "s_6e80f3d4",
+     "t": "esingda bo‘lsin: sekin bo‘lsa ham to‘xtamay harakat qilgan kishi albatta marraga yetadi!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_4dc2a415",
+    "t": "Quyon qanday edi?"
+   },
+   {
+    "n": "",
+    "id": "s_e3232584",
+    "t": "Poygada hakam kim bo‘ldi?"
+   },
+   {
+    "n": "",
+    "id": "s_08612568",
+    "t": "Quyon nega yutqazdi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_fd3ef3b5",
+    "t": "sen haqiqiy sabrli do‘stsan! Mana senga sertifikat!"
+   }
+  ],
+  "steady": [
+   {
+    "n": "",
+    "id": "s_a5ac592b",
+    "t": "Qani, aytchi: kim to‘g‘ri qildi?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Quyon qanday edi?",
+   "o": [
+    "Kamtar",
+    "Tez, lekin maqtanchoq",
+    "Sekin"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Poygada hakam kim bo‘ldi?",
+   "o": [
+    "{NAME}",
+    "Tulki",
+    "Ayiq"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Quyon nega yutqazdi?",
+   "o": [
+    "Oyog‘i og‘ridi",
+    "Yo‘ldan adashdi",
+    "Yo‘lda uxlab qoldi"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Toshbaqa nima uchun yutdi?",
+   "o": [
+    "To‘xtamasdan yurgani uchun",
+    "Yugurgani uchun",
+    "Quyonni aldagani uchun"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Do‘sting sekin bo‘lsa, nima qilasan?",
+   "o": [
+    "Masxara qilaman",
+    "Dalda beraman",
+    "Tashlab ketaman"
+   ],
+   "a": 1
+  }
+ ],
+ "parents": {
+  "lesson": "sabr va to‘xtamay harakat qilish maqtanchoqlikdan kuchli.",
+  "q": [
+   "Quyon nega yutqazdi?",
+   "Toshbaqa charchaganda unga nima yordam berdi?",
+   "Sen qaysi ishda sabr qilib, oxirigacha yetkazding?"
+  ],
+  "task": "Bugun {NAME} bilan biror ishni (pazl, rasm, kubik minora) boshlang va qiyin bo‘lsa ham birga oxirigacha yetkazing. Oxirida «sabr qilding, barakalla» deb maqtang."
+ }
+}

@@ -1,0 +1,318 @@
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "j1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_4088d6ce",
+     "t": "Bir bor ekan, bir yo‘q ekan, bir qishloqda Jek degan bola onasi bilan yashar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_24ee5f38",
+     "t": "Ularning bitta sigiridan boshqa hech narsasi yo‘q ekan."
+    }
+   ]
+  },
+  {
+   "img": "j2",
+   "fx": "hearts",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_e68a8494",
+     "t": "Jekning eng yaqin do‘sti edi. Ular hamma joyga birga borishar ekan."
+    }
+   ]
+  },
+  {
+   "img": "j3",
+   "fx": "market",
+   "s": [
+    {
+     "n": "",
+     "id": "s_b0c0055c",
+     "t": "Bir kuni Jek sigirni bozorga olib ketdi. Yo‘lda keksa bir chol uchradi."
+    },
+    {
+     "n": "",
+     "id": "s_9f4e9525",
+     "t": "— Sigiringni menga ber, evaziga sehrli loviya beraman, — dedi chol."
+    }
+   ]
+  },
+  {
+   "img": "j4",
+   "fx": "beans",
+   "s": [
+    {
+     "n": "",
+     "id": "s_e7897f1c",
+     "t": "Jek loviyani olib uyga keldi. Onasi xafa bo‘lib, loviyani derazadan tashlab yubordi."
+    }
+   ]
+  },
+  {
+   "img": "j5",
+   "fx": "grow",
+   "s": [
+    {
+     "n": "",
+     "id": "s_2f0f06de",
+     "t": "Ertalab qarashsa, hovlida osmongacha yetadigan ulkan loviya poyasi o‘sib chiqibdi!"
+    },
+    {
+     "n": "I",
+     "id": "s_ab639608",
+     "t": "Jek bilan birga poyaga tirmashib chiqa boshladi."
+    }
+   ]
+  },
+  {
+   "img": "j6",
+   "fx": "clouds",
+   "s": [
+    {
+     "n": "",
+     "id": "s_a715d746",
+     "t": "Bulutlar ustida ulkan qasr turardi. Ichkarida bahaybat Dev yashar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_fa4cf9bf",
+     "t": "Stol ustida tilla tuxum qo‘yadigan tovuq bor edi."
+    }
+   ]
+  },
+  {
+   "img": "j7",
+   "fx": "grab",
+   "s": [
+    {
+     "n": "",
+     "id": "s_d009fed2",
+     "t": "Jek pichirladi: — Kel, tovuqni olib qochamiz!"
+    },
+    {
+     "n": "I",
+     "id": "s_67350639",
+     "t": "uni to‘xtatdi: — Yo‘q, Jek! So‘ramay olish — o‘g‘rilik. Kel, Devdan so‘raymiz."
+    }
+   ]
+  },
+  {
+   "img": "j8",
+   "fx": "giant",
+   "s": [
+    {
+     "n": "",
+     "id": "s_85b70479",
+     "t": "Ular qo‘rqa-pisa Devning oldiga chiqishdi. — Assalomu alaykum, Dev amaki!"
+    },
+    {
+     "n": "",
+     "id": "s_8ed478ba",
+     "t": "Dev hayron bo‘ldi: — Menga hech kim salom bermagan edi…"
+    }
+   ]
+  },
+  {
+   "img": "j9",
+   "fx": "lonely",
+   "s": [
+    {
+     "n": "",
+     "id": "s_8fe8b342",
+     "t": "Ma’lum bo‘lishicha, Dev juda yolg‘iz ekan. Hamma undan qo‘rqib, qochib ketar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_d46f5b09",
+     "t": "Bolalar u bilan birga choy ichib, o‘yin o‘ynashdi."
+    }
+   ]
+  },
+  {
+   "img": "j10",
+   "fx": "gift",
+   "s": [
+    {
+     "n": "",
+     "id": "s_280504a8",
+     "t": "Kechqurun Dev xursand bo‘lib, bolalarga bitta tilla tuxum sovg‘a qildi."
+    },
+    {
+     "n": "",
+     "id": "s_b279c4fa",
+     "t": "— Halolligingiz uchun! Meni yana ko‘rgani kelinglar, — dedi u."
+    }
+   ]
+  },
+  {
+   "img": "j11",
+   "fx": "home",
+   "s": [
+    {
+     "n": "",
+     "id": "s_33529198",
+     "t": "Bolalar poyadan pastga tushib, tuxumni Jekning onasiga berishdi."
+    },
+    {
+     "n": "",
+     "id": "s_43e3844b",
+     "t": "Onasi xursand bo‘lib, ikkalasini quchoqladi."
+    }
+   ]
+  },
+  {
+   "img": "j12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_3bb82dc9",
+     "t": "Shundan beri Jek va do‘sti har hafta Devni ko‘rgani borishadi. Endi Dev yolg‘iz emas."
+    },
+    {
+     "n": "J",
+     "id": "s_bbc45440",
+     "t": "esingda bo‘lsin: boshqaning narsasini so‘ramay olma. Halollik eng yaxshi do‘stlarni topib beradi!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_da805b61",
+    "t": "Jek sigirni nimaga almashtirdi?"
+   },
+   {
+    "n": "",
+    "id": "s_e76624ab",
+    "t": "Bulutlar ustida kim yashar edi?"
+   },
+   {
+    "n": "",
+    "id": "s_c9adecf9",
+    "t": "Jek tovuqni olib qochmoqchi bo‘lganda kim to‘xtatdi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_c5d4624f",
+    "t": "sen haqiqiy halol do‘stsan! Mana senga sertifikat!"
+   }
+  ],
+  "honest": [
+   {
+    "n": "",
+    "id": "s_a27fb6d4",
+    "t": "Qani, aytchi: bu halolmi?"
+   },
+   {
+    "n": "",
+    "id": "s_e7f23eac",
+    "t": "To‘g‘ri! Barakalla!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Jek sigirni nimaga almashtirdi?",
+   "o": [
+    "Sehrli loviyaga",
+    "Tilla tuxumga",
+    "Nonga"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Bulutlar ustida kim yashar edi?",
+   "o": [
+    "Chol",
+    "Bahaybat Dev",
+    "Qirol"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Jek tovuqni olib qochmoqchi bo‘lganda kim to‘xtatdi?",
+   "o": [
+    "Onasi",
+    "Dev",
+    "{NAME}"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Dev nega xafa edi?",
+   "o": [
+    "U juda yolg‘iz edi",
+    "Och edi",
+    "Kasal edi"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Do‘stingning o‘yinchog‘i yoqib qolsa, nima qilasan?",
+   "o": [
+    "Indamay olaman",
+    "So‘rayman, bersa — o‘ynayman",
+    "Yashirib qo‘yaman"
+   ],
+   "a": 1
+  }
+ ],
+ "parents": {
+  "lesson": "boshqaning narsasini so‘ramay olmaslik; halollik va xushmuomalalik do‘st orttiradi.",
+  "q": [
+   "Jek nega tovuqni olib qochmoqchi bo‘ldi? Bu to‘g‘rimidi?",
+   "Dev nega yolg‘iz edi?",
+   "Sen biror narsani so‘ramay olganmisan? Keyin nima qilish kerak edi?"
+  ],
+  "task": "Bugun {NAME} bilan «so‘rash — rahmat aytish — qaytarish» qoidasini o‘ynab mashq qiling: bir-biringizdan narsalarni so‘rab oling va qaytaring."
+ }
+}
