@@ -202,8 +202,8 @@
     },
     {
      "n": "",
-     "id": "s_ad309d36",
-     "t": "— Barakalla, bolajonlarim! Oyilaringizning gapiga quloq solibsizlar, — dedi buvi."
+     "id": "s_3bb29c3d",
+     "t": "— Barakalla, bolajonlarim! Kattalarning gapiga quloq solibsizlar, — dedi buvi."
     }
    ]
   },
@@ -255,6 +255,11 @@
     "n": "",
     "id": "s_800867e1",
     "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   },
+   {
+    "n": "",
+    "id": "s_03c33e0c",
+    "t": "Yaxshi harakat! Yana bir marta o‘ynab ko‘r — albatta uddalaysan!"
    }
   ],
   "color": [

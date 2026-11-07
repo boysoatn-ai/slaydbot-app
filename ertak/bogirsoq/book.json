@@ -22,8 +22,8 @@
     },
     {
      "n": "",
-     "id": "s_d6b93a5d",
-     "t": "Bir kuni Bobo: — Kampir, menga bo‘g‘irsoq pishirib ber, — dedi."
+     "id": "s_0502f0e0",
+     "t": "Bir kuni Bobo: — Momojon, menga bo‘g‘irsoq pishirib ber, — dedi."
     }
    ]
   },
@@ -140,8 +140,8 @@
     },
     {
      "n": "",
-     "id": "s_3454a118",
-     "t": "— Qo‘shig‘ingni eshitolmayapman, burnimga chiqib ayt-chi!"
+     "id": "s_18ce4fee",
+     "t": "— Qo‘shig‘ingni eshita olmayapman, burnimga chiqib ayt-chi!"
     }
    ],
    "ask": {
@@ -172,8 +172,8 @@
    "s": [
     {
      "n": "",
-     "id": "s_fff64536",
-     "t": "Bo‘g‘irsoq Tulkining burniga emas, to‘g‘ri savatga sakradi. Tulki hech narsasiz o‘rmonga qaytdi."
+     "id": "s_9c0688c1",
+     "t": "Bo‘g‘irsoq Tulkining burniga emas, do‘stining savatchasiga sakradi. Tulki hech narsasiz o‘rmonga qaytdi."
     },
     {
      "n": "I",
@@ -230,6 +230,11 @@
     "n": "",
     "id": "s_800867e1",
     "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   },
+   {
+    "n": "",
+    "id": "s_03c33e0c",
+    "t": "Yaxshi harakat! Yana bir marta o‘ynab ko‘r — albatta uddalaysan!"
    }
   ],
   "color": [

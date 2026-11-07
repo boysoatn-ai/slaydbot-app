@@ -187,8 +187,8 @@
     },
     {
      "n": "",
-     "id": "s_6e0443ad",
-     "t": "Oqqush esa birinchi bo‘lib do‘stining oldiga suzib keldi: — Rahmat, sen menga hamma qiyin paytda ishonding!"
+     "id": "s_80d9be96",
+     "t": "Oqqush esa birinchi bo‘lib do‘stining oldiga suzib keldi: — Rahmat, sen eng qiyin paytda ham menga ishonding!"
     }
    ]
   },
@@ -240,6 +240,11 @@
     "n": "",
     "id": "s_800867e1",
     "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   },
+   {
+    "n": "",
+    "id": "s_03c33e0c",
+    "t": "Yaxshi harakat! Yana bir marta o‘ynab ko‘r — albatta uddalaysan!"
    }
   ],
   "color": [

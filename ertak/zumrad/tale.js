@@ -1,6 +1,6 @@
 // «Zumrad va Qimmat» — ertakka xos qism. Dvigatel (index.html) umumiy.
 window.TALE={
- id:'zumrad', title:'Zumrad va Qimmat', suffix:'Zumrad va Qimmat bilan', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:false,
+ id:'zumrad', title:'Zumrad va Qimmat', suffix:'va mehnatkash Zumrad', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:false,
  hallBg:'z12', puzzleImg:'cover', certPic:'card_boy', memCards:['zumrad','qimmat','boy','momo','sandiq','non'],
  cert:{line1:'«Zumrad va Qimmat» ertagida Momoga', line2:'mehnat qilib yordam berdi va do‘stini qo‘llab-quvvatladi', badge:'MEHNATKASH BOLA'},
  games:[{k:'quiz',ic:'❓',n:'Savol-javob'},{k:'good',ic:'⭐',n:'Yaxshi odatmi?',run:()=>goodGame()},{k:'mem',ic:'🃏',n:'Xotira kartalari'},{k:'puz',ic:'🧩',n:'Boshqotirma'},{k:'color',ic:'🎨',n:'Bo‘yash'},{k:'cert',ic:'🏅',n:'Sertifikat'}],

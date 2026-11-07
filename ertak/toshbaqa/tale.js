@@ -1,6 +1,6 @@
 // «Toshbaqa va quyon» — ertakka xos qism (make_tale.py). Dvigatel (index.html) umumiy.
 window.TALE={
- id:'toshbaqa', title:"Toshbaqa va quyon", suffix:"va Toshbaqa bilan Quyon", kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:false,
+ id:'toshbaqa', title:"Toshbaqa va quyon", suffix:"va sabrli Toshbaqa", kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:false,
  hallBg:'t12', puzzleImg:'cover', certPic:'card_boy', memCards:["toshbaqa", "quyon", "boy", "bayroq", "tut", "marra"],
  cert:{line1:"«Toshbaqa va quyon» ertagida adolatli hakam bo‘ldi", line2:"va do‘stiga dalda berib, marraga yetkazdi", badge:"SABRLI DO‘ST"},
  games:[{k:'quiz',ic:'❓',n:'Savol-javob'},{k:'steady',ic:'🐢',n:"Kim to‘g‘ri qildi?",run:()=>choiceGame()},{k:'mem',ic:'🃏',n:'Xotira kartalari'},{k:'puz',ic:'🧩',n:'Boshqotirma'},{k:'color',ic:'🎨',n:'Bo‘yash'},{k:'cert',ic:'🏅',n:'Sertifikat'}],
