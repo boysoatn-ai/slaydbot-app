@@ -1,0 +1,328 @@
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "z1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_2877480c",
+     "t": "Bir bor ekan, bir yo‘q ekan, bir qishloqda Zumrad va Qimmat degan ikki opa-singil yashar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_0189adaa",
+     "t": "Zumrad mehnatkash va odobli, Qimmat esa erinchoq va injiq ekan."
+    }
+   ]
+  },
+  {
+   "img": "z2",
+   "fx": "hearts",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_a9984974",
+     "t": "Zumradning eng yaqin do‘sti edi."
+    },
+    {
+     "n": "",
+     "id": "s_578126bb",
+     "t": "Ular birga suv tashishar, tovuqlarga don berishar, har ishni o‘yinday quvnoq bajarishar ekan."
+    }
+   ]
+  },
+  {
+   "img": "z3",
+   "fx": "walk",
+   "s": [
+    {
+     "n": "",
+     "id": "s_3aa47439",
+     "t": "Bir kuni Zumrad o‘rmonda o‘tin terayotib, yo‘ldan adashib qoldi."
+    },
+    {
+     "n": "I",
+     "id": "s_a441b28e",
+     "t": "uni yolg‘iz qoldirmadi va ikkalasi birga yo‘l izlashdi."
+    }
+   ]
+  },
+  {
+   "img": "z4",
+   "fx": "house",
+   "s": [
+    {
+     "n": "",
+     "id": "s_7dfe9016",
+     "t": "Ular o‘rmon ichida kichkina uyga duch kelishdi. Ostonada keksa Momo o‘tirardi."
+    },
+    {
+     "n": "",
+     "id": "s_e12af2c2",
+     "t": "— Bolajonlarim, juda charchadim. Uy ishlariga yordam berasizlarmi?"
+    }
+   ]
+  },
+  {
+   "img": "z5",
+   "fx": "work",
+   "s": [
+    {
+     "n": "",
+     "id": "s_35a90b03",
+     "t": "Zumrad hovlini supurdi, idishlarni yuvdi."
+    },
+    {
+     "n": "I",
+     "id": "s_0e023758",
+     "t": "esa suv tashib, tandirga o‘tin qaladi."
+    }
+   ]
+  },
+  {
+   "img": "z6",
+   "fx": "bread",
+   "s": [
+    {
+     "n": "",
+     "id": "s_50f33e13",
+     "t": "Keyin uchalasi birga tandirga non yopishdi. Butun o‘rmonga issiq non hidi taraldi."
+    },
+    {
+     "n": "",
+     "id": "s_9c95487c",
+     "t": "Momo xursand bo‘lib kuldi: — Qo‘lingiz gul ekan, bolajonlarim!"
+    }
+   ]
+  },
+  {
+   "img": "z7",
+   "fx": "chest",
+   "s": [
+    {
+     "n": "",
+     "id": "s_7a114b8c",
+     "t": "Kechqurun Momo ikkita sandiq ko‘rsatdi: biri katta, biri kichkina. — Qaysi birini olasizlar?"
+    },
+    {
+     "n": "",
+     "id": "s_fa61611d",
+     "t": "Zumrad dedi: — Biz yordam uchun keldik, kichkinasi ham bo‘laveradi."
+    }
+   ]
+  },
+  {
+   "img": "z8",
+   "fx": "gold",
+   "s": [
+    {
+     "n": "",
+     "id": "s_23e5908a",
+     "t": "Uyga qaytib sandiqni ochishgan edi, ichidan tillalar va chiroyli sovg‘alar chiqdi!"
+    },
+    {
+     "n": "I",
+     "id": "s_f0e59de9",
+     "t": "Zumrad bilan sovg‘alarni qishloqning hamma bolalariga ulashdi."
+    }
+   ]
+  },
+  {
+   "img": "z9",
+   "fx": "greedy",
+   "s": [
+    {
+     "n": "",
+     "id": "s_ab1adb9f",
+     "t": "Buni ko‘rgan Qimmat ham Momoning uyiga yugurdi."
+    },
+    {
+     "n": "",
+     "id": "s_49c1e65b",
+     "t": "Lekin u hech qanday ish qilmadi, Momoga qo‘pol gapirdi va eng katta sandiqni talab qildi."
+    }
+   ]
+  },
+  {
+   "img": "z10",
+   "fx": "ash",
+   "s": [
+    {
+     "n": "",
+     "id": "s_b26d400d",
+     "t": "Qimmat og‘ir sandiqni uyga zo‘rg‘a sudrab keldi. Ochsa — ichida faqat kul va eski latta!"
+    },
+    {
+     "n": "",
+     "id": "s_adec0765",
+     "t": "Qimmat yig‘lab yubordi."
+    }
+   ]
+  },
+  {
+   "img": "z11",
+   "fx": "hearts",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_f18edc34",
+     "t": "Qimmatning yoniga keldi: — Yig‘lama! Yur, Momoga birga yordam beramiz."
+    },
+    {
+     "n": "",
+     "id": "s_f73824c6",
+     "t": "Ertasi kuni uchalasi Momoning hovlisini supurishdi. Qimmat birinchi marta mehnat qilib, xursand bo‘ldi."
+    }
+   ]
+  },
+  {
+   "img": "z12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_ac8a4f32",
+     "t": "Shundan beri Qimmat ham mehnatkash va odobli bo‘lib qoldi. Hamma birga dasturxon atrofida yig‘ildi."
+    },
+    {
+     "n": "J",
+     "id": "s_61b9411e",
+     "t": "esingda bo‘lsin: mehnat va shirin so‘z — eng katta boylik!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_b13c31e9",
+    "t": "Zumrad qanday qiz edi?"
+   },
+   {
+    "n": "",
+    "id": "s_7d0d5923",
+    "t": "Momo bolalardan nima so‘radi?"
+   },
+   {
+    "n": "",
+    "id": "s_46a6f0f3",
+    "t": "Zumrad qaysi sandiqni tanladi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_0a125b77",
+    "t": "sen haqiqiy mehnatkashsan! Mana senga sertifikat!"
+   }
+  ],
+  "good": [
+   {
+    "n": "",
+    "id": "s_c107892a",
+    "t": "Qani, aytchi: bu yaxshi odatmi?"
+   },
+   {
+    "n": "",
+    "id": "s_e701f485",
+    "t": "To‘g‘ri! Sen juda odoblisan!"
+   },
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Zumrad qanday qiz edi?",
+   "o": [
+    "Erinchoq",
+    "Mehnatkash va odobli",
+    "Injiq"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Momo bolalardan nima so‘radi?",
+   "o": [
+    "Uy ishlariga yordam",
+    "Ertak aytib berishni",
+    "Pul"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Zumrad qaysi sandiqni tanladi?",
+   "o": [
+    "Kattasini",
+    "Ikkalasini",
+    "Kichkinasini"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Qimmatning sandig‘idan nima chiqdi?",
+   "o": [
+    "Tilla",
+    "Kul va eski latta",
+    "Issiq non"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Momo nega Zumradga sovg‘a berdi?",
+   "o": [
+    "Mehnat qilgani va odobli bo‘lgani uchun",
+    "Yig‘lagani uchun",
+    "Katta bo‘lgani uchun"
+   ],
+   "a": 0
+  }
+ ],
+ "parents": {
+  "lesson": "mehnat va shirin so‘z — eng katta boylik, ochko‘zlik esa foyda keltirmaydi.",
+  "q": [
+   "Momo nega Zumradga sovg‘a berdi?",
+   "Qimmat nima uchun bo‘sh sandiq oldi?",
+   "Sen uyda qaysi ishni o‘zing qila olasan?"
+  ],
+  "task": "Bugun {NAME}ga bitta doimiy uy vazifasi bering (dasturxonga non qo‘yish yoki gullarni sug‘orish) va bajargach albatta maqtang."
+ }
+}
