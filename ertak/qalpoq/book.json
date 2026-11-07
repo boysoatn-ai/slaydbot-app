@@ -1,0 +1,338 @@
+{
+ "pages": [
+  {
+   "img": "cover",
+   "fx": "magic",
+   "s": [
+    {
+     "n": "J",
+     "id": "s_d8218f43",
+     "t": "bu ertak faqat sen uchun!"
+    }
+   ]
+  },
+  {
+   "img": "q1",
+   "fx": "sun",
+   "s": [
+    {
+     "n": "",
+     "id": "s_649996af",
+     "t": "Bir bor ekan, bir yo‘q ekan, tog‘ etagidagi bir qishloqda kichkina qizcha yashar ekan."
+    },
+    {
+     "n": "",
+     "id": "s_cf20303c",
+     "t": "Buvisi unga qizil qalpoqcha tikib bergani uchun hamma uni Qizil qalpoqcha der ekan."
+    }
+   ]
+  },
+  {
+   "img": "q2",
+   "fx": "hearts",
+   "s": [
+    {
+     "n": "I",
+     "id": "s_4212266e",
+     "t": "Qizil qalpoqchaning eng yaqin do‘sti edi."
+    },
+    {
+     "n": "",
+     "id": "s_c930ded3",
+     "t": "Ular har kuni birga o‘ynashar, birga kulishar ekan."
+    }
+   ]
+  },
+  {
+   "img": "q3",
+   "fx": "basket",
+   "s": [
+    {
+     "n": "",
+     "id": "s_8a611027",
+     "t": "Bir kuni Oyisi savatga issiq non, somsa va asal soldi."
+    },
+    {
+     "n": "",
+     "id": "s_7f4b8948",
+     "t": "— Buving betob, shularni olib borib ber. Yo‘ldan chiqmanglar, notanishlar bilan gaplashmanglar!"
+    },
+    {
+     "n": "I",
+     "id": "s_c3aa2cbb",
+     "t": "dedi: — Men Qalpoqchani yolg‘iz qo‘ymayman, birga boraman!"
+    }
+   ]
+  },
+  {
+   "img": "q4",
+   "fx": "walk",
+   "s": [
+    {
+     "n": "",
+     "id": "s_48adf99d",
+     "t": "Ikki do‘st o‘rmon yo‘lidan ketishdi. Qushlar sayrar, kapalaklar uchar edi."
+    },
+    {
+     "n": "",
+     "id": "s_62984cbf",
+     "t": "Buvining uyi o‘rmonning narigi chetida edi."
+    }
+   ]
+  },
+  {
+   "img": "q5",
+   "fx": "wolf",
+   "s": [
+    {
+     "n": "",
+     "id": "s_1239241f",
+     "t": "Birdan daraxt ortidan Bo‘ri chiqdi va shirin ovozda gapirdi: — Salom, bolajonlar! Qayoqqa ketyapsizlar?"
+    },
+    {
+     "n": "",
+     "id": "s_e717d649",
+     "t": "Qalpoqcha javob bermoqchi edi, lekin"
+    },
+    {
+     "n": "I",
+     "id": "s_2dfcc725",
+     "t": "uning qo‘lidan ushladi: — Oyimiz notanishlar bilan gaplashmanglar degan!"
+    }
+   ]
+  },
+  {
+   "img": "q6",
+   "fx": "flowers",
+   "s": [
+    {
+     "n": "",
+     "id": "s_580800e4",
+     "t": "Bo‘ri ayyorlik qildi: — Anavi o‘tloqda qanday chiroyli gullar bor! Yo‘ldan chiqib, terib olinglar!"
+    },
+    {
+     "n": "",
+     "id": "s_a0ac3fb6",
+     "t": "Qalpoqcha gullarga qarab bir qadam tashladi."
+    },
+    {
+     "n": "I",
+     "id": "s_59f52eff",
+     "t": "dedi: — Yo‘q! Yo‘ldan chiqmaymiz. To‘g‘ri buvingnikiga boramiz!"
+    }
+   ]
+  },
+  {
+   "img": "q7",
+   "fx": "run",
+   "s": [
+    {
+     "n": "",
+     "id": "s_02936005",
+     "t": "Bo‘rining jahli chiqdi. U bolalardan oldin yetib olish uchun to‘g‘ri buvining uyiga yugurdi."
+    }
+   ]
+  },
+  {
+   "img": "q8",
+   "fx": "knock",
+   "s": [
+    {
+     "n": "",
+     "id": "s_8ca8e419",
+     "t": "Bo‘ri eshikni taqillatdi: — Buvijon, eshikni oching, bu men, Qalpoqcha!"
+    },
+    {
+     "n": "",
+     "id": "s_6ee5b105",
+     "t": "Lekin aqlli buvi derazadan qaradi va kulrang dumni ko‘rib qoldi. U eshikni ochmadi!"
+    }
+   ]
+  },
+  {
+   "img": "q9",
+   "fx": "help",
+   "s": [
+    {
+     "n": "",
+     "id": "s_23c5229a",
+     "t": "Shu payt bolalar ham yetib kelishdi va eshik oldidagi Bo‘rini ko‘rishdi."
+    },
+    {
+     "n": "I",
+     "id": "s_4ffbeaca",
+     "t": "qo‘rqib qochmadi va baland ovozda chaqirdi: — Yordam bering! Bo‘ri!"
+    }
+   ]
+  },
+  {
+   "img": "q10",
+   "fx": "axe",
+   "s": [
+    {
+     "n": "",
+     "id": "s_2b1bed76",
+     "t": "Yaqinda o‘tin yorayotgan O‘tinchi amaki ovozni eshitib, yugurib keldi."
+    },
+    {
+     "n": "",
+     "id": "s_c40fb693",
+     "t": "Bo‘ri uni ko‘rib shunaqangi qo‘rqib ketdiki, dumini qisib o‘rmonga qochdi va boshqa qaytib kelmadi!"
+    }
+   ]
+  },
+  {
+   "img": "q11",
+   "fx": "tea",
+   "s": [
+    {
+     "n": "",
+     "id": "s_95fb952e",
+     "t": "Buvi eshikni ochib, bolalarni bag‘riga bosdi. Hamma birga issiq non va asal bilan choy ichdi."
+    },
+    {
+     "n": "",
+     "id": "s_ad309d36",
+     "t": "— Barakalla, bolajonlarim! Oyilaringizning gapiga quloq solibsizlar, — dedi buvi."
+    }
+   ]
+  },
+  {
+   "img": "q12",
+   "fx": "fireworks",
+   "s": [
+    {
+     "n": "",
+     "id": "s_8b7df56d",
+     "t": "Kechqurun ikki do‘st uyga qaytishdi. Oyisi ularni quchoqlab kutib oldi."
+    },
+    {
+     "n": "J",
+     "id": "s_a01ac126",
+     "t": "esingda bo‘lsin: notanish odamga ergashma, yo‘ldan chiqma, qiyin bo‘lsa — kattalarni yordamga chaqir!"
+    },
+    {
+     "n": "",
+     "id": "s_a5c09639",
+     "t": "Ertagimiz shu yerda tugadi."
+    }
+   ]
+  }
+ ],
+ "games": {
+  "quiz": [
+   {
+    "n": "",
+    "id": "s_416b38c4",
+    "t": "Endi savollarga javob ber!"
+   },
+   {
+    "n": "",
+    "id": "s_a25a82e6",
+    "t": "Qalpoqcha savatni kimga olib bordi?"
+   },
+   {
+    "n": "",
+    "id": "s_04e2183f",
+    "t": "Bo‘ri gapirganda Qalpoqchaning do‘sti nima dedi?"
+   },
+   {
+    "n": "",
+    "id": "s_b2aca7ae",
+    "t": "Buvi eshikni nega ochmadi?"
+   },
+   {
+    "n": "",
+    "id": "s_800867e1",
+    "t": "Barakalla! Hamma savolga to‘g‘ri javob berding!"
+   }
+  ],
+  "color": [
+   {
+    "n": "",
+    "id": "s_140aed92",
+    "t": "Endi rasmni o‘zing bo‘ya! Bo‘yoqni tanla va rasmga bos."
+   }
+  ],
+  "cert": [
+   {
+    "n": "J",
+    "id": "s_e4153cec",
+    "t": "sen haqiqiy ziyrak do‘stsan! Mana senga sertifikat!"
+   }
+  ],
+  "safe": [
+   {
+    "n": "",
+    "id": "s_07c891e2",
+    "t": "Qani, aytchi: bu vaziyatda nima qilish kerak?"
+   },
+   {
+    "n": "",
+    "id": "s_a9d9a1c4",
+    "t": "To‘g‘ri! Sen juda ziyraksan!"
+   },
+   {
+    "n": "",
+    "id": "s_a376ac9c",
+    "t": "Yo‘q, bunday qilish xavfli. Yana o‘ylab ko‘r!"
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Qalpoqcha savatni kimga olib bordi?",
+   "o": [
+    "Bo‘riga",
+    "Buvisiga",
+    "Qo‘shnisiga"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Bo‘ri gapirganda Qalpoqchaning do‘sti nima dedi?",
+   "o": [
+    "Notanishlar bilan gaplashmaymiz",
+    "Keling, o‘ynaymiz",
+    "Gul teramiz"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Buvi eshikni nega ochmadi?",
+   "o": [
+    "Uxlab yotgan edi",
+    "Kaliti yo‘q edi",
+    "Derazadan bo‘rining dumini ko‘rdi"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Bo‘rini ko‘rganda bolalar nima qilishdi?",
+   "o": [
+    "Jim yashirinishdi",
+    "Kattalarni yordamga chaqirishdi",
+    "Bo‘ri bilan ketishdi"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Notanish kishi shirinlik bersa nima qilasan?",
+   "o": [
+    "Olmayman va kattalarga aytaman",
+    "Olaman",
+    "U bilan ketaman"
+   ],
+   "a": 0
+  }
+ ],
+ "parents": {
+  "lesson": "notanish odamga ergashmaslik, yo‘ldan chiqmaslik va qiyin paytda kattalarni chaqirish.",
+  "q": [
+   "Bo‘ri nega shirin gapirdi? U nimani xohlardi?",
+   "Agar ko‘chada notanish odam «yur, ketamiz» desa, nima qilasan?",
+   "Adashib qolsang, kimdan yordam so‘raysan?"
+  ],
+  "task": "Bugun {NAME} bilan uy manzilingiz va ota-onasining telefon raqamini birga yodlang. Ko‘chada adashsa kimga murojaat qilishini (do‘kondagi xola, militsioner) aytib bering."
+ }
+}
