@@ -214,6 +214,20 @@ const API=(Q.get('api')||(window.GO_CONFIG&&window.GO_CONFIG.apiBase)||'').repla
 // O'g'il / qiz: ?s=g — qiz versiyasi rasmlari (TALE.girl bo'lsa, img/g/ papkada)
 const GIRL=Q.get('s')==='g' && !!TALE.girl;
 if(GIRL){ TALE.sex='girl'; TALE.hero='Madina'; TALE.certPic='card_girl'; TALE.memCards=TALE.memCards.map(k=>k==='boy'?'girl':k) }
+// 📸 Bolaning o'z rasmi bilan (?p=1): qahramon chiqqan sahifalar shaxsiy — bot API'dan token bilan (blob URL, Cache)
+const PHOTO=Q.get('p')==='1' && !!(TOK&&API);
+const PIMG={}; let photoReady=null;
+async function pfetch(body){ const r=await fetch(API+'/api/t/view',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}); if(!r.ok) throw r.status; return r.json() }
+function loadPhotos(onProg){ if(!PHOTO) return Promise.resolve(0); if(photoReady) return photoReady;
+  photoReady=(async()=>{ let cache=null; try{ cache=await caches.open('ertak-'+TOK) }catch(e){}
+    let keys=[]; for(let t=0;t<3&&!keys.length;t++){ try{ const j=await pfetch({e:TOK,imgs:1}); keys=(j&&j.keys)||[]; if(!keys.length) break }catch(e){ await new Promise(r=>setTimeout(r,1000)) } }
+    let done=0; onProg&&onProg(0,keys.length);
+    const one=async k=>{ const ck='https://cache.local/'+TOK+'/'+k; let blob=null;
+      try{ const hit=cache&&await cache.match(ck); if(hit) blob=await hit.blob() }catch(e){}
+      for(let t=0;t<3&&!blob;t++){ try{ const d=await pfetch({e:TOK,img:k}); if(d&&d.d){ blob=new Blob([Uint8Array.from(atob(d.d),c=>c.charCodeAt(0))],{type:d.t||'image/jpeg'}); try{ cache&&await cache.put(ck,new Response(blob)) }catch(e){} } }catch(e){ await new Promise(r=>setTimeout(r,800)) } }
+      if(blob) PIMG[k]=URL.createObjectURL(blob); done++; onProg&&onProg(done,keys.length) };
+    const q=[...keys]; await Promise.all([0,1,2].map(async()=>{ while(q.length) await one(q.shift()) }));
+    return keys.length })(); return photoReady }
 // Botdan kelgan havola: ism ovozi bot API'dan (Worker o'tkazadigan POST /api/t/view, {"e": token}) — fayl manzili ochiq emas
 const NAMEB={}; let nameReady=null;
 function loadName(){ if(!(PRE&&TOK&&API)) return Promise.resolve(); if(nameReady) return nameReady;
@@ -435,7 +449,7 @@ function confetti(){ for(let i=0;i<130;i++) add({kind:'confetti',x:rnd(0,VW),y:r
 
 
 /* ================= SAHIFALAR ================= */
-const img=k=>(GIRL&&(!k.startsWith('card_')||k==='card_girl'))?`img/g/${k}.jpg`:`img/${k}.jpg`;
+const img=k=>PIMG[k]||((GIRL&&(!k.startsWith('card_')||k==='card_girl'))?`img/g/${k}.jpg`:`img/${k}.jpg`);
 function dots(){ const d=$('#dots'); d.innerHTML=''; if(mode!=='story') return; BOOK.pages.forEach((_,i)=>{ const s=document.createElement('span'); s.className='dot'+(i===cur?' on me':i<cur?' seen':''); if(i===cur) s.style.backgroundImage=`url(${img(TALE.certPic)})`; d.appendChild(s) }) }
 function clearScene(){ clearTimers(); amb=null; P=[]; busy=false; view.querySelectorAll('.fxui,.cover-title').forEach(e=>e.remove()); $('#acts').innerHTML=''; tip('') }
 function showPage(silent){
@@ -518,7 +532,11 @@ document.title=TALE.title; $('#tomeSuffix').textContent=TALE.suffix; $('#tomeNam
 if(PRE){ $('.start p').textContent='Bu sehrli kitob faqat '+norm(PRE)+' uchun. Tugmani bosing — ertakchi o‘qib beradi, oxirida o‘yinlar va sertifikat kutadi.'; $('.start h1').innerHTML=esc(norm(PRE))+' — ertakning <span class="shine">qahramoni</span>'; $('#nm').readOnly=true; $('#chips').hidden=true; $('.note').textContent=NAMEURL?'Kitob shu ism uchun tayyorlandi — ertakchi ismni o‘zi aytadi.':'Kitob shu ism uchun tayyorlandi.' }
 const chips=$('#chips'); if(!PRE) VOICED.forEach(n=>{ const b=document.createElement('button'); b.className='chip'; b.textContent=n; b.setAttribute('aria-pressed',n===TALE.hero); b.onclick=()=>{ $('#nm').value=n; $('#nm').dispatchEvent(new Event('input')) }; chips.appendChild(b) });
 $('#nm').addEventListener('input',()=>{ const v=norm($('#nm').value)||'…'; $('#tomeName').textContent=v; chips.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x.textContent===v)) });
+// 📸 shaxsiy rasmlar sahifa ochilishi bilan yuklana boshlaydi; muqova o'zgaradi, «Ochish» rasmlar kelgach ishlaydi
+const photoNote=(d,n)=>{ if(n) $('.note').textContent=d<n?`🎨 ${norm(PRE||NAME)} rasmlari yuklanmoqda… ${d}/${n}`:'✨ Har sahifada — '+norm(PRE||NAME)+'ning o‘zi!' };
+if(PHOTO) loadPhotos(photoNote).then(()=>{ if(PIMG.cover) $('#tomeImg').src=PIMG.cover });
 $('#go').onclick=async()=>{ NAME=norm($('#nm').value)||TALE.hero; A(); SFX.open(); haptic('medium');
+  if(PHOTO){ const g=$('#go'); g.disabled=true; const t0=g.textContent; g.textContent='🎨 Rasmlar tayyorlanmoqda…'; await loadPhotos(photoNote); g.disabled=false; g.textContent=t0 }
   if(!BOOK) BOOK=await fetch('book.json').then(r=>r.json()); loadName();
   try{ if(TG){ TG.expand&&TG.expand(); TG.requestFullscreen&&TG.requestFullscreen() } }catch(e){}
   $('#start').hidden=true; $('#sky').hidden=true; view.hidden=false; $('#ttl').innerHTML=`<b>${esc(NAME)}</b> ${esc(TALE.suffix)}`; cvSize(); region();
