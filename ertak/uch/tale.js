@@ -1,6 +1,6 @@
 // «Uch cho‘chqacha» — ertakka xos qism. Dvigatel (index.html) umumiy.
 window.TALE={
- id:'uch', title:'Uch cho‘chqacha', suffix:'va uch cho‘chqacha', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy',
+ id:'uch', title:'Uch cho‘chqacha', suffix:'va uch cho‘chqacha', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:true,
  hallBg:'p12', puzzleImg:'cover', certPic:'card_boy', memCards:['pix','pax','puxta','boy','wolf','mom'],
  cert:{line1:'«Uch cho‘chqacha» ertagida bo‘rini aldab,', line2:'do‘stlariga g‘isht uy qurishga yordam berdi', badge:'PUXTA USTA'},
  games:[{k:'quiz',ic:'❓',n:'Savol-javob'},{k:'mem',ic:'🃏',n:'Xotira kartalari'},{k:'puz',ic:'🧩',n:'Boshqotirma'},{k:'wall',ic:'🧱',n:'G‘isht uy qur',run:()=>wall()},{k:'color',ic:'🎨',n:'Bo‘yash'},{k:'cert',ic:'🏅',n:'Sertifikat'}],

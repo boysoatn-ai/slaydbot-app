@@ -195,7 +195,7 @@ const Q=new URLSearchParams(location.search); const PRE=(Q.get('n')||'').trim().
 const API=(Q.get('api')||(window.GO_CONFIG&&window.GO_CONFIG.apiBase)||'').replace(/\/$/,'');
 // O'g'il / qiz: ?s=g — qiz versiyasi rasmlari (TALE.girl bo'lsa, img/g/ papkada)
 const GIRL=Q.get('s')==='g' && !!TALE.girl;
-if(GIRL){ TALE.sex='girl'; TALE.certPic='card_girl'; TALE.memCards=TALE.memCards.map(k=>k==='boy'?'girl':k) }
+if(GIRL){ TALE.sex='girl'; TALE.hero='Madina'; TALE.certPic='card_girl'; TALE.memCards=TALE.memCards.map(k=>k==='boy'?'girl':k) }
 // Botdan kelgan havola: ism ovozi bot API'dan (Worker o'tkazadigan POST /api/t/view, {"e": token}) — fayl manzili ochiq emas
 const NAMEB={}; let nameReady=null;
 function loadName(){ if(!(PRE&&TOK&&API)) return Promise.resolve(); if(nameReady) return nameReady;
@@ -463,7 +463,7 @@ function cert(){ const b=board('cv'); const c=document.createElement('canvas'); 
   SFX.fanfare(); later(300,()=>{ confetti(); fireworks(3) }); gtx.innerHTML=`<p class="q">${esc(full(BOOK.games.cert[0]))}</p>`; gtx.appendChild(backBtn()); read([BOOK.games.cert[0]]) }
 
 /* ================= BOSHLASH ================= */
-document.title=TALE.title; $('#tomeSuffix').textContent=TALE.suffix; $('#tomeName').textContent=PRE||TALE.hero; $('#nm').value=PRE||TALE.hero; $('#tomeImg').alt=TALE.title+' muqovasi';
+document.title=TALE.title; $('#tomeSuffix').textContent=TALE.suffix; $('#tomeName').textContent=PRE||TALE.hero; $('#nm').value=PRE||TALE.hero; $('#tomeImg').alt=TALE.title+' muqovasi'; if(GIRL) $('#tomeImg').src=img('cover');
 if(PRE){ $('.start p').textContent='Bu sehrli kitob faqat '+norm(PRE)+' uchun. Tugmani bosing — ertakchi o‘qib beradi, oxirida o‘yinlar va sertifikat kutadi.'; $('.start h1').innerHTML=esc(norm(PRE))+' — ertakning <span class="shine">qahramoni</span>'; $('#nm').readOnly=true; $('#chips').hidden=true; $('.note').textContent=NAMEURL?'Kitob shu ism uchun tayyorlandi — ertakchi ismni o‘zi aytadi.':'Kitob shu ism uchun tayyorlandi.' }
 const chips=$('#chips'); if(!PRE) VOICED.forEach(n=>{ const b=document.createElement('button'); b.className='chip'; b.textContent=n; b.setAttribute('aria-pressed',n===TALE.hero); b.onclick=()=>{ $('#nm').value=n; $('#nm').dispatchEvent(new Event('input')) }; chips.appendChild(b) });
 $('#nm').addEventListener('input',()=>{ const v=norm($('#nm').value)||'…'; $('#tomeName').textContent=v; chips.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x.textContent===v)) });

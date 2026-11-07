@@ -1,6 +1,6 @@
 // «Katta sholg‘om» — ertakka xos qism. Dvigatel (index.html) umumiy.
 window.TALE={
- id:'sholgom', title:'Katta sholg‘om', suffix:'va katta sholg‘om', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:false,
+ id:'sholgom', title:'Katta sholg‘om', suffix:'va katta sholg‘om', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:true,
  hallBg:'s12', puzzleImg:'cover', certPic:'card_boy', memCards:['bobo','momo','boy','dog','cat','mouse'],
  cert:{line1:'«Katta sholg‘om» ertagida Bobo va Momoga', line2:'sholg‘omni sug‘urib olishda yordam berdi', badge:'ZO‘R YORDAMCHI'},
  games:[{k:'quiz',ic:'❓',n:'Savol-javob'},{k:'mem',ic:'🃏',n:'Xotira kartalari'},{k:'puz',ic:'🧩',n:'Boshqotirma'},{k:'pullg',ic:'💪',n:'Sholg‘omni tort',run:()=>pullGame()},{k:'color',ic:'🎨',n:'Bo‘yash'},{k:'cert',ic:'🏅',n:'Sertifikat'}],
