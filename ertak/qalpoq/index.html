@@ -8,6 +8,8 @@
 <style>
 /* Layout: kino-kitob — rasm butun ekran (kamera bilan), ustida rang-yorug'lik qatlamlari, pastda subtitr; yuqorida yupqa boshqaruv; o'yinlar alohida zal. Ataylab bitta sehrli-tun ko'rinishi. */
 :root{
+  /* Telegram to'liq ekranida yuqoridagi tugmalar ostiga tushmasin (2026-11-08) */
+  --sat:max(env(safe-area-inset-top,0px),calc(var(--tg-safe-area-inset-top,0px) + var(--tg-content-safe-area-inset-top,0px)));
   --night:#140e2c; --dusk:#3a2766; --plum:#5a3d8f; --gold:#ffcf5a; --gold-deep:#d99a1e;
   --parch:#fff7e6; --ink:#2a1f3d; --pig:#ff7aa6; --pig-deep:#e0457b; --leaf:#4caf50; --leaf-deep:#2f7d32;
   --display:"Baloo 2","Nunito",system-ui,sans-serif; --body:"Nunito",system-ui,sans-serif;
@@ -78,19 +80,19 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-o
 @keyframes rise{from{opacity:0;transform:translateY(30px) scale(.85)}}
 
 /* Yuqori panel */
-#hud{position:absolute;z-index:10;top:0;left:0;right:0;display:flex;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));background:linear-gradient(#000a,transparent)}
+#hud{position:absolute;z-index:10;top:0;left:0;right:0;display:flex;align-items:center;gap:8px;padding:calc(8px + var(--sat)) max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));background:linear-gradient(#000a,transparent)}
 .ttl{flex:1;min-width:0;font-family:var(--display);font-weight:800;font-size:clamp(15px,2.6vw,20px);line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ttl b{color:var(--gold)}
 .hb{width:40px;height:40px;flex-shrink:0;border-radius:50%;background:#ffffff22;border:1px solid #ffffff33;font-size:18px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .hb[aria-pressed="false"]{opacity:.45}
-.dots{position:absolute;z-index:10;left:50%;transform:translateX(-50%);top:calc(54px + env(safe-area-inset-top,0px));display:flex;gap:5px}
+.dots{position:absolute;z-index:10;left:50%;transform:translateX(-50%);top:calc(54px + var(--sat));display:flex;gap:5px}
 .dot{width:8px;height:8px;border-radius:50%;background:#ffffff40;transition:all .3s}
 .dot.me{width:26px;height:26px;margin-top:-9px;background-size:cover;background-position:center;border:2px solid var(--gold);box-shadow:0 0 12px var(--gold);animation:hop 1.2s ease-in-out infinite}
 @keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 .hidstar{position:absolute;z-index:6;width:44px;height:44px;margin:-22px 0 0 -22px;font-size:30px;line-height:44px;text-align:center;opacity:.55;cursor:pointer;filter:drop-shadow(0 0 6px #ffd76a);animation:twk 2.4s ease-in-out infinite;touch-action:manipulation}
 @keyframes twk{0%,100%{transform:scale(.8) rotate(-8deg);opacity:.35}50%{transform:scale(1.05) rotate(8deg);opacity:.75}}
 .hidstar.got{animation:none;transition:all .7s cubic-bezier(.3,1.4,.5,1);opacity:1;transform:scale(2.2)}
-.starbox{position:absolute;z-index:10;right:12px;top:calc(84px + env(safe-area-inset-top,0px));background:#0006;color:#ffe08a;font:800 15px Nunito,sans-serif;padding:4px 10px;border-radius:14px;pointer-events:none}
+.starbox{position:absolute;z-index:10;right:12px;top:calc(84px + var(--sat));background:#0006;color:#ffe08a;font:800 15px Nunito,sans-serif;padding:4px 10px;border-radius:14px;pointer-events:none}
 .starbox.bump{animation:bump .5s}
 @keyframes bump{40%{transform:scale(1.35)}}
 .askbox{position:absolute;z-index:12;left:50%;top:50%;transform:translate(-50%,-50%) scale(.6);opacity:0;transition:all .45s cubic-bezier(.3,1.5,.5,1);background:linear-gradient(180deg,#fffdf4,#ffe9b3);color:var(--ink);border-radius:26px;padding:18px 20px 16px;width:min(92vw,520px);box-shadow:0 18px 50px #0009,0 0 0 4px var(--gold);text-align:center}
@@ -122,7 +124,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-o
 .tip{font-size:13px;font-weight:800;color:#e9dcff;opacity:.85}
 
 /* --- O'yinlar zali --- */
-#ov{position:absolute;inset:0;z-index:12;background:radial-gradient(circle at 50% 25%,#4a3480,#140e2c 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:calc(64px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+#ov{position:absolute;inset:0;z-index:12;background:radial-gradient(circle at 50% 25%,#4a3480,#140e2c 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:calc(56px + var(--sat)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 #gstage{position:relative;width:min(100%,calc(58vh * 1.5));aspect-ratio:3/2;border-radius:20px;overflow:hidden;background:#2a1f4d;box-shadow:0 0 0 5px var(--gold-deep),0 0 0 9px #6b4a12,0 24px 50px -18px #000d;flex-shrink:0}
 #gstage>img.bgi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #gtext{width:min(100%,900px);background:linear-gradient(180deg,var(--parch),#fdeccb);color:var(--ink);border-radius:18px;padding:12px 16px;font-size:clamp(16px,2.3vw,20px);line-height:1.45}
@@ -160,6 +162,8 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-o
 .sbtn{padding:10px 16px;border-radius:14px;background:var(--plum);color:#fff;font-weight:800}
 @media (prefers-reduced-motion:reduce){.tome,.abtn,.shine,#rays{animation:none}}
 @media (max-aspect-ratio:1/1){#gstage{aspect-ratio:1/1}}
+/* telefon yotiq: o'yin chapda, matn o'ngda (2026-11-08) */
+@media (orientation:landscape) and (max-height:520px){#ov{flex-direction:row;align-items:center;padding-top:calc(48px + var(--sat));padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}#gtext{flex:1;min-width:240px;max-height:100%;overflow:auto;font-size:16px}#gtext .opts{grid-template-columns:1fr}}
 @media (max-width:560px){.hall{grid-template-columns:repeat(2,1fr)}.hb{width:36px;height:36px;font-size:16px}.edge{width:46px;height:46px;font-size:26px}}
 </style>
 
@@ -278,6 +282,9 @@ const full=s=>!s.n? s.t : nameOf(s)+' '+s.t;
 const esc=t=>t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const rnd=(a,b)=>a+Math.random()*(b-a);
 const TG=window.Telegram&&window.Telegram.WebApp;
+// 📱 Telegram'da darhol butun ekran (telefonda to'liq ekran), pastga surish ilovani yopmasin (2026-11-08)
+try{ if(TG){ TG.ready&&TG.ready(); TG.expand&&TG.expand(); TG.disableVerticalSwipes&&TG.disableVerticalSwipes();
+  if(/android|ios/i.test(TG.platform||'')&&TG.requestFullscreen) TG.requestFullscreen() } }catch(e){}
 function haptic(k='medium'){ try{ if(TG&&TG.HapticFeedback) return TG.HapticFeedback.impactOccurred(k) }catch(e){} try{ navigator.vibrate&&navigator.vibrate(k==='heavy'?70:k==='light'?12:30) }catch(e){} }
 const later=(ms,fn)=>{ const id=setTimeout(fn,ms); timers.push(id); return id };
 function clearTimers(){ timers.forEach(clearTimeout); timers=[] }
@@ -558,6 +565,14 @@ $('#play').onclick=()=>{ A(); if(playing) return stopVoice(); if(mode==='story')
 $('#mus').onclick=()=>{ A(); music(!musicOn) };
 $('#aut').onclick=()=>{ autoOn=!autoOn; $('#aut').setAttribute('aria-pressed',autoOn) };
 $('#gm').onclick=()=>{ A(); turn(DEMO?openLock:openHall) };
+// 🎮 O'yin oynasi bo'sh joyni to'ldirsin: matn qutisidan qolgan butun balandlik (2026-11-08, «kichkina, ko'p joy bo'sh»)
+const ROW=matchMedia('(orientation:landscape) and (max-height:520px)');
+function fitStage(){ const ov=$('#ov'); if(!ov||ov.hidden) return; const g=$('#gstage'), t=$('#gtext'), cs=getComputedStyle(ov);
+  if(ROW.matches){ const W=ov.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-250, H=ov.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom); t.style.width=''; g.style.width=Math.max(160,Math.min(W,H*1.5))+'px'; return }
+  const W=ov.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight), H=ov.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-t.offsetHeight-10;
+  t.style.width=Math.min(W,900)+'px'; const r=innerWidth<=innerHeight?1:1.5; g.style.width=Math.max(160,Math.min(W,H*r))+'px' }
+try{ const ro=new ResizeObserver(()=>fitStage()); ro.observe($('#ov')); ro.observe($('#gtext')) }catch(e){}
+addEventListener('resize',fitStage);
 $('#fs').onclick=()=>{ try{ if(TG&&TG.requestFullscreen) return TG.requestFullscreen(); const d=document; if(d.fullscreenElement) d.exitFullscreen(); else d.documentElement.requestFullscreen().catch(()=>{}) }catch(e){} };
 document.addEventListener('keydown',e=>{ if(view.hidden) return; if(e.key==='ArrowRight') next(); if(e.key==='ArrowLeft') prev() });
 document.addEventListener('visibilitychange',()=>{ if(document.hidden){ stopVoice(); if(ac) ac.suspend() } else if(ac) ac.resume() });

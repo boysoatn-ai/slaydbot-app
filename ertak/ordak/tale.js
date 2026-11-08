@@ -56,4 +56,4 @@ function choiceGame(){ board('',img('o5')).remove(); const vs=BOOK.games.kind||[
   function show(){ box.innerHTML=''; if(i>=CHOICES.length){ return win('kind',scr>=CHOICES.length?3:scr>=CHOICES.length-2?2:1,`${scr} / ${CHOICES.length} — sen mehribon bolasan!`) }
     const it=CHOICES[i]; const q=document.createElement('p'); q.className='q'; q.textContent=`${i+1}. ${it.q}`; const os=document.createElement('div'); os.className='opts'; box.append(q,os); let wrong=0;
     it.o.forEach((o,k)=>{ const bt=document.createElement('button'); bt.className='opt'; bt.textContent=o; bt.onclick=()=>{ if(k===it.a){ bt.classList.add('ok'); if(!wrong) scr++; SFX.chime(); haptic('light'); if(vs[1]) read([vs[1]]); gfx(.5,.5,40,'spark',{sp:6,g:.03}); setTimeout(()=>{ i++; show() },1100) } else { wrong++; bt.classList.remove('no'); void bt.offsetWidth; bt.classList.add('no'); SFX.wrong(); if(vs[2]) read([vs[2]]) } }; os.appendChild(bt) }) }
-  if(vs[0]) read([vs[0]],show); else show() }
+  show(); if(vs[0]) read([vs[0]]) }
