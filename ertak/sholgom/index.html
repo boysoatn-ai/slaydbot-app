@@ -115,6 +115,8 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-o
 #sub{position:absolute;z-index:9;left:0;right:0;bottom:0;padding:34px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(transparent,rgba(8,5,22,.82) 42%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;cursor:pointer}
 /* telefon tik (2026-11-08): rasm butun ekranda, subtitr pastda rasm ustida, boshqaruv ixcham */
 #view.portrait #sub{top:auto;padding-top:70px;padding-bottom:calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,rgba(8,5,22,.55) 45%,rgba(8,5,22,.8));gap:8px}
+#view.portrait #bgfill img{filter:blur(22px) brightness(.72) saturate(1.25)}
+#view.portrait #world img{-webkit-mask-image:linear-gradient(transparent,#000 9%,#000 88%,transparent);mask-image:linear-gradient(transparent,#000 9%,#000 88%,transparent)}
 #view.portrait .line{font-size:clamp(16px,4.4vw,21px);line-height:1.32;font-weight:800}
 #view.portrait .line.all{font-size:clamp(15px,4vw,19px)}
 #view.portrait .abtn{font-size:16px;padding:8px 14px}
@@ -435,9 +437,12 @@ function skySize(){ sky.width=innerWidth; sky.height=innerHeight; stars=Array.fr
 const view=$('#view'), world=$('#world');
 let CAM={fx:.5,fy:.5,z:1,x:0,y:0,s:1}, R={x:0,y:0,w:0,h:0}, portrait=false;
 function region(){ VW=innerWidth; VH=innerHeight; portrait=VW/VH<1.15; view.classList.toggle('portrait',portrait);
-  R={x:0,y:0,w:VW,h:VH};   // 2026-11-08: tik ekranda ham rasm butun ekranni to'ldiradi (pastda bo'sh joy yo'q)
+  // 2026-11-09: tik ekranda rasm kengligining ~60% i ko'rinadi (butun ekranga cho'zilsa qahramon kesilib qolardi);
+  // tepa/past — o'sha rasmning xira nusxasi (#bgfill), chetlari unga erib o'tadi, subtitr pastki qismida.
+  if(portrait){ const h=Math.min(VH*.66, 1024*VW/(1536*.6)); R={x:0,y:Math.max(0,(VH-h)/2-VH*.04),w:VW,h} }
+  else R={x:0,y:0,w:VW,h:VH};
   $('#sub').style.top='auto';
-  const mid=portrait?VH*.45:R.y+R.h/2; $('#prev').style.top=mid+'px'; $('#next').style.top=mid+'px' }
+  const mid=portrait?R.y+R.h/2:R.y+R.h/2; $('#prev').style.top=mid+'px'; $('#next').style.top=mid+'px' }
 function cam(fx,fy,z=1,dur=0,ease='cubic-bezier(.45,.05,.35,1)'){ const base=Math.max(R.w/1536,R.h/1024), s=base*z, w=1536*s, h=1024*s;
   const x=Math.min(R.x, Math.max(R.x+R.w-w, R.x+R.w/2-fx*w)), y=Math.min(R.y, Math.max(R.y+R.h-h, R.y+R.h/2-fy*h));
   world.style.transition=dur?`transform ${dur}s ${ease}`:'none'; world.style.transform=`translate(${x}px,${y}px) scale(${s})`; CAM={fx,fy,z,x,y,s} }
