@@ -101,6 +101,8 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-o
 .askbox .who{font-size:34px;line-height:1}
 .askbox button{display:block;width:100%;margin:8px 0 0;font-family:var(--display);font-weight:800;font-size:clamp(16px,2.6vw,20px);padding:12px 14px;border-radius:16px;border:0;background:#fff;color:var(--ink);box-shadow:0 4px 0 #d9b25a;cursor:pointer}
 .askbox button.ok{background:#8fe08a;box-shadow:0 4px 0 #3e9a3a}
+.askbox .fb{margin:10px 0 0;font-weight:800;font-size:clamp(15px,2.4vw,18px);color:#b4442a}
+.askbox button.hint{background:#fff3b0;box-shadow:0 0 0 3px var(--gold),0 0 22px var(--gold);animation:nudge 1.2s ease-in-out infinite}
 .askbox button.no{background:#ffb3a8;animation:shk .4s}
 @keyframes shk{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 .hand{position:absolute;z-index:7;font-size:46px;pointer-events:none;animation:tapme 1.1s ease-in-out infinite;filter:drop-shadow(0 4px 6px #0008)}
@@ -278,11 +280,17 @@ function hideStar(){ const p=BOOK.pages[cur]; if(!p) return; starBox(); if(FOUND
 const ASKED=new Set();
 function askNow(a,done){ ASKED.add(cur); hideHand(); const box=document.createElement('div'); box.className='fxui askbox';
   const vq=(BOOK.games.ask||[]).find(x=>x.t===a.q); const vok=(BOOK.games.ask||[]).find(x=>x.id===a.okv), vno=(BOOK.games.ask||[]).find(x=>x.id===a.nov);
-  box.innerHTML=`<div class="who">🤔</div><p class="q">${esc(a.q.replace('{NAME}',NAME))}</p>`; const ord=a.o.map((t,i)=>i).sort(()=>Math.random()-.5); let tries=0;
+  box.innerHTML=`<div class="who">🤔</div><p class="q">${esc(a.q.replace('{NAME}',NAME))}</p>`; const ord=a.o.map((t,i)=>i).sort(()=>Math.random()-.5); let tries=0; const picked=new Set(), r0=Math.floor(Math.random()*6);
   ord.forEach(i=>{ const b=document.createElement('button'); b.textContent=a.o[i]; b.onclick=e=>{ e.stopPropagation(); A();
     if(i===a.a){ b.classList.add('ok'); SFX.chime(); haptic('medium'); confetti(); const r=b.getBoundingClientRect(); burst(r.left+r.width/2,r.top,40,'spark',{sp:6,g:.03,hue:120});
       if(vok) read([vok]); box.querySelectorAll('button').forEach(x=>x.disabled=true); later(1800,()=>{ box.classList.remove('on'); later(450,()=>{ box.remove(); done&&done() }) }) }
-    else { tries++; b.classList.remove('no'); void b.offsetWidth; b.classList.add('no'); SFX.wrong(); haptic('light'); if(vno) read([vno]) } }; box.appendChild(b) });
+    else { tries++; b.classList.remove('no'); void b.offsetWidth; b.classList.add('no'); SFX.wrong(); haptic('light');
+      // 2026-11-08: har xato har xil javob; o'sha xatoni yana tanlasa — boshqacha; 3-xatodan keyin to'g'risi yaltiraydi
+      const again=picked.has(i); picked.add(i); const W=BOOK.games.wrong||[];
+      const pool=W.filter(x=>x.k===(tries>=3?'h':again?'s':'w')), v=pool.length?pool[(r0+tries)%pool.length]:vno;
+      if(tries>=3){ const ok=[...box.querySelectorAll('button')].find(x=>x.textContent===a.o[a.a]); ok&&ok.classList.add('hint') }
+      if(v){ fb.textContent=v.t; fb.hidden=false; read([v]) } } }; box.appendChild(b) });
+  const fb=document.createElement('p'); fb.className='fb'; fb.hidden=true; box.appendChild(fb);
   view.appendChild(box); requestAnimationFrame(()=>box.classList.add('on')); if(vq) read([vq]) }
 function hideHand(){ clearTimeout(handT); view.querySelectorAll('.hand').forEach(e=>e.remove()) }
 function idleHand(){ hideHand(); handT=setTimeout(()=>{ if(mode!=='story'||Date.now()-lastTap<5000) return; const st=view.querySelector('.hidstar');

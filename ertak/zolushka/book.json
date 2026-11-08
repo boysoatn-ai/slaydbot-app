@@ -289,6 +289,50 @@
     "id": "s_e3e4367c",
     "t": "Yo‘q, yana bir o‘ylab ko‘r!"
    }
+  ],
+  "wrong": [
+   {
+    "n": "",
+    "id": "s_e3e4367c",
+    "t": "Yo‘q, yana bir o‘ylab ko‘r!",
+    "k": "w"
+   },
+   {
+    "n": "",
+    "id": "s_4fc4cad7",
+    "t": "Hmm, unchalik emas. Boshqasini tanlab ko‘r!",
+    "k": "w"
+   },
+   {
+    "n": "",
+    "id": "s_0f248724",
+    "t": "Deyarli! Yana bir bor o‘ylab ko‘r-chi.",
+    "k": "w"
+   },
+   {
+    "n": "",
+    "id": "s_d49c07a5",
+    "t": "Buni allaqachon tanlading. Endi boshqasini sinab ko‘r!",
+    "k": "s"
+   },
+   {
+    "n": "",
+    "id": "s_47fc8dd0",
+    "t": "Shoshilma! Ertakda nima bo‘lganini eslab ko‘r.",
+    "k": "s"
+   },
+   {
+    "n": "",
+    "id": "s_5d032800",
+    "t": "Qahramonlar nima qilganini eslab ko‘r-chi!",
+    "k": "s"
+   },
+   {
+    "n": "",
+    "id": "s_960a2229",
+    "t": "Mana, senga yordam: to‘g‘ri javob yaltirab turibdi!",
+    "k": "h"
+   }
   ]
  },
  "quiz": [
