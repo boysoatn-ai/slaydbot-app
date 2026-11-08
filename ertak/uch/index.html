@@ -111,7 +111,21 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-o
 .edge.l{left:max(10px,env(safe-area-inset-left,0px))}.edge.r{right:max(10px,env(safe-area-inset-right,0px))}
 .edge:disabled{opacity:.25}
 #sub{position:absolute;z-index:9;left:0;right:0;bottom:0;padding:34px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(transparent,rgba(8,5,22,.82) 42%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;cursor:pointer}
-#view.portrait #sub{background:linear-gradient(rgba(8,5,22,.35),rgba(8,5,22,.75));justify-content:flex-start;padding-top:18px}
+/* telefon tik (2026-11-08): rasm butun ekranda, subtitr pastda rasm ustida, boshqaruv ixcham */
+#view.portrait #sub{top:auto;padding-top:70px;padding-bottom:calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,rgba(8,5,22,.55) 45%,rgba(8,5,22,.8));gap:8px}
+#view.portrait .line{font-size:clamp(16px,4.4vw,21px);line-height:1.32;font-weight:800}
+#view.portrait .line.all{font-size:clamp(15px,4vw,19px)}
+#view.portrait .abtn{font-size:16px;padding:8px 14px}
+#view.portrait .tip{font-size:12px}
+#view.portrait #hud{gap:6px;padding:calc(4px + var(--sat)) 10px 4px;background:linear-gradient(#0007,transparent)}
+#view.portrait .ttl{font-size:14px}
+#view.portrait .hb{width:30px;height:30px;font-size:14px;background:#0003;border-color:#ffffff22}
+#view.portrait .dots{top:calc(40px + var(--sat));gap:4px}
+#view.portrait .dot{width:6px;height:6px}
+#view.portrait .dot.me{width:18px;height:18px;margin-top:-6px;border-width:1.5px}
+#view.portrait .starbox{top:calc(38px + var(--sat));right:10px;font-size:12px;padding:2px 8px}
+#view.portrait .edge{width:36px;height:36px;font-size:22px;background:#0002;border-color:#ffffff22;opacity:.55}
+#view.portrait .edge:disabled{opacity:.15}
 .line{max-width:min(900px,92vw);font-weight:900;font-size:clamp(19px,2.7vw,30px);line-height:1.35;text-shadow:0 2px 8px #000,0 0 2px #000;text-wrap:balance}
 .line.all{font-weight:800;font-size:clamp(16px,2.1vw,22px);opacity:.95}
 .w{display:inline-block;transition:color .15s,transform .2s;white-space:pre;margin:0 .07em;transform-origin:50% 70%}
@@ -250,7 +264,7 @@ function saveFound(){ try{ localStorage.setItem(KEY+'found',JSON.stringify([...F
 function hash(str){ let h=2166136261; for(const c of str){ h^=c.charCodeAt(0); h=Math.imul(h,16777619) } return (h>>>0)/4294967295 }
 function starBox(){ let b=$('#starbox'); if(!b){ b=document.createElement('div'); b.id='starbox'; b.className='starbox'; view.appendChild(b) } const n=BOOK.pages.length; b.textContent=`⭐ ${FOUND.size}/${n}`; b.hidden=mode!=='story'; return b }
 function hideStar(){ const p=BOOK.pages[cur]; if(!p) return; starBox(); if(FOUND.has(p.img)) return;
-  const fx=.1+hash(p.img+'x')*.8, fy=.14+hash(p.img+'y')*.42; const el=document.createElement('div'); el.className='fxui hidstar'; el.textContent='⭐';
+  const fx=.1+hash(p.img+'x')*.8, fy=(portrait?.2:.14)+hash(p.img+'y')*(portrait?.38:.42); const el=document.createElement('div'); el.className='fxui hidstar'; el.textContent='⭐';
   el.style.left=(R.x+R.w*fx)+'px'; el.style.top=(R.y+R.h*fy)+'px'; el.setAttribute('role','button'); el.setAttribute('aria-label','Yashirin yulduzcha');
   el.addEventListener('pointerdown',e=>{ e.stopPropagation(); A(); if(FOUND.has(p.img)) return; FOUND.add(p.img); saveFound(); lastTap=Date.now(); hideHand();
     el.classList.add('got'); SFX.chime(); haptic('medium'); burst(e.clientX,e.clientY,40,'spark',{sp:6,g:.02,hue:48}); add({kind:'glow',x:e.clientX,y:e.clientY,r:90,max:30,grow:.03});
@@ -413,14 +427,14 @@ function skySize(){ sky.width=innerWidth; sky.height=innerHeight; stars=Array.fr
 const view=$('#view'), world=$('#world');
 let CAM={fx:.5,fy:.5,z:1,x:0,y:0,s:1}, R={x:0,y:0,w:0,h:0}, portrait=false;
 function region(){ VW=innerWidth; VH=innerHeight; portrait=VW/VH<1.15; view.classList.toggle('portrait',portrait);
-  if(portrait){ const top=58, h=Math.min(VH*.64, VW*1.3); R={x:0,y:top,w:VW,h} } else R={x:0,y:0,w:VW,h:VH};
-  const sub=$('#sub'); if(portrait){ sub.style.top=(R.y+R.h)+'px' } else sub.style.top='auto';
-  const mid=R.y+R.h/2; $('#prev').style.top=mid+'px'; $('#next').style.top=mid+'px' }
+  R={x:0,y:0,w:VW,h:VH};   // 2026-11-08: tik ekranda ham rasm butun ekranni to'ldiradi (pastda bo'sh joy yo'q)
+  $('#sub').style.top='auto';
+  const mid=portrait?VH*.45:R.y+R.h/2; $('#prev').style.top=mid+'px'; $('#next').style.top=mid+'px' }
 function cam(fx,fy,z=1,dur=0,ease='cubic-bezier(.45,.05,.35,1)'){ const base=Math.max(R.w/1536,R.h/1024), s=base*z, w=1536*s, h=1024*s;
   const x=Math.min(R.x, Math.max(R.x+R.w-w, R.x+R.w/2-fx*w)), y=Math.min(R.y, Math.max(R.y+R.h-h, R.y+R.h/2-fy*h));
   world.style.transition=dur?`transform ${dur}s ${ease}`:'none'; world.style.transform=`translate(${x}px,${y}px) scale(${s})`; CAM={fx,fy,z,x,y,s} }
 const S=(n)=>({x:CAM.x+n[0]*1536*CAM.s, y:CAM.y+n[1]*1024*CAM.s});
-function settle(sc,dur=14){ const [a,b]=portrait?sc.pan:[sc.f,sc.f]; cam(a[0],a[1],1.02,0); requestAnimationFrame(()=>requestAnimationFrame(()=>cam(b[0],b[1],1.1,dur,'linear'))) }
+function settle(sc,dur=14){ const [a,b]=portrait?sc.pan:[sc.f,sc.f], z0=portrait?1:1.02, z1=portrait?1.04:1.1; cam(a[0],a[1],z0,0); requestAnimationFrame(()=>requestAnimationFrame(()=>cam(b[0],b[1],z1,dur,'linear'))) }
 function grade(sc){ $('#grade').style.background=sc.grade||'none'; const g=$('#glow'); g.style.background=sc.glow||'none'; g.classList.toggle('flicker',!!sc.flicker); g.style.opacity=sc.glow?1:0;
   const r=$('#rays'); r.style.opacity=sc.rays||0; if(sc.ray){ const p=S(sc.ray); r.style.transformOrigin=''; r.style.left=(p.x-VW*1.1)+'px'; r.style.top=(p.y-VH*1.1)+'px'; r.style.width=VW*2.2+'px'; r.style.height=VH*2.2+'px'; r.style.right='auto'; r.style.bottom='auto' }
   world.classList.toggle('dim',!!sc.dim); view.classList.toggle('cine',!!sc.cine); $('#vig').style.opacity=sc.dim?1:.75 }
@@ -465,7 +479,7 @@ function showPage(silent){
   if(BOOK.pages[cur+1]){ const i=new Image(); i.src=img(BOOK.pages[cur+1].img) }
   $('#prev').disabled=cur===0; $('#next').disabled=false; dots();
   region(); settle(sc); grade(sc); startAmb(sc.amb);
-  if(p.img==='cover'){ const t=document.createElement('div'); t.className='cover-title'; t.style.top=(R.y+R.h*.06+(portrait?0:50))+'px'; t.innerHTML=`<small>${esc(TALE.kicker)}</small><span class="shine">${esc(NAME)}</span> ${esc(TALE.suffix)}`; view.appendChild(t) }
+  if(p.img==='cover'){ const t=document.createElement('div'); t.className='cover-title'; t.style.top=(portrait?($('#hud').offsetHeight+30):(R.y+R.h*.06+50))+'px'; t.innerHTML=`<small>${esc(TALE.kicker)}</small><span class="shine">${esc(NAME)}</span> ${esc(TALE.suffix)}`; view.appendChild(t) }
   renderAll(); const fx=FX[p.fx]; fx&&fx.start&&fx.start(sc,p); hideStar(); idleHand();
   const go=()=>{ if(autoOn&&mode==='story') later(2000,()=>{ if(mode==='story'&&!playing&&!busy&&!view.querySelector('.askbox')) next() }) };
   if(autoOn&&!silent) read(p.s,()=>{ renderAll(); if(p.ask&&!ASKED.has(cur)) later(700,()=>{ if(mode==='story') askNow(p.ask,go) }); else go() });
