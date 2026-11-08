@@ -182,6 +182,18 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-o
 @media (max-aspect-ratio:1/1){#gstage{aspect-ratio:1/1}}
 /* telefon yotiq: o'yin chapda, matn o'ngda (2026-11-08) */
 @media (orientation:landscape) and (max-height:520px){#ov{flex-direction:row;align-items:center;padding-top:calc(48px + var(--sat));padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}#gtext{flex:1;min-width:240px;max-height:100%;overflow:auto;font-size:16px}#gtext .opts{grid-template-columns:1fr}}
+@media (orientation:landscape) and (max-height:520px){
+#hud{gap:5px;padding:calc(3px + var(--sat)) max(10px,env(safe-area-inset-right,0px)) 3px max(10px,env(safe-area-inset-left,0px));background:linear-gradient(#0006,transparent)}
+.ttl{font-size:13px}.hb{width:28px;height:28px;font-size:13px;background:#0003;border-color:#ffffff22}
+.dots{top:calc(34px + var(--sat));gap:4px}.dot{width:5px;height:5px}.dot.me{width:15px;height:15px;margin-top:-5px;border-width:1.5px}
+.starbox{top:calc(32px + var(--sat));right:10px;font-size:11px;padding:2px 7px}
+.edge{width:34px;height:34px;font-size:20px;background:#0002;border-color:#ffffff22;opacity:.5}
+#sub{padding-top:26px;padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));gap:4px;background:linear-gradient(transparent,rgba(8,5,22,.6) 45%,rgba(8,5,22,.78))}
+.line{max-width:min(1100px,84vw);font-size:clamp(14px,1.9vw,18px);line-height:1.28;font-weight:800}
+.line.all{font-size:clamp(13px,1.7vw,16px)}
+.abtn{font-size:14px;padding:6px 12px}.tip{font-size:11px}
+.cover-title{font-size:clamp(26px,5vw,44px)}
+}
 @media (max-width:560px){.hall{grid-template-columns:repeat(2,1fr)}.hb{width:36px;height:36px;font-size:16px}.edge{width:46px;height:46px;font-size:26px}}
 </style>
 
