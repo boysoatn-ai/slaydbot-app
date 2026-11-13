@@ -447,6 +447,54 @@
    },
    "c1": "#F2EFE6",
    "c2": "#7A5E36"
+  },
+  {
+   "key": "pro-vip-olive-atrium",
+   "slug": "vip-olive-atrium",
+   "num": 29,
+   "name": "Olive Atrium",
+   "desc": {
+    "uz": "shisha oranjereya, latun romlar, ko‘hna zaytun daraxtlari, quyosh nurlari",
+    "ru": "стеклянная оранжерея, латунные рамы, старые оливы, лучи солнца"
+   },
+   "fits": {
+    "uz": "biologiya, ekologiya, arxitektura, tibbiyot, bitiruv himoyasi",
+    "ru": "биология, экология, архитектура, медицина"
+   },
+   "c1": "#263019",
+   "c2": "#E6C77A"
+  },
+  {
+   "key": "pro-vip-burgundy-library",
+   "slug": "vip-burgundy-library",
+   "num": 30,
+   "name": "Burgundy Library",
+   "desc": {
+    "uz": "ko‘hna kutubxona: bordo charm, qizil yog‘och javonlar, latun chiroqlar",
+    "ru": "старинная библиотека: бордовая кожа, красное дерево, латунные лампы"
+   },
+   "fits": {
+    "uz": "adabiyot, tarix, huquq, falsafa, dissertatsiya himoyasi",
+    "ru": "литература, история, право, философия"
+   },
+   "c1": "#3A0C17",
+   "c2": "#DDB96E"
+  },
+  {
+   "key": "pro-vip-orange-dune",
+   "slug": "vip-orange-dune",
+   "num": 31,
+   "name": "Orange Dune",
+   "desc": {
+    "uz": "oltin soat sahro qumtepalari, ulkan quyosh, mis sharlar va ipak",
+    "ru": "дюны на закате, огромное солнце, медные сферы и шёлк"
+   },
+   "fits": {
+    "uz": "geografiya, iqtisod, energetika, turizm, startap",
+    "ru": "география, экономика, энергетика, туризм"
+   },
+   "c1": "#2E1810",
+   "c2": "#F0B45A"
   }
  ]
 }

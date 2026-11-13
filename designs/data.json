@@ -616,6 +616,69 @@
    "inner": "../vip/img/vip-olive-zen-in.jpg"
   },
   {
+   "key": "pro-vip-olive-atrium",
+   "tier": "vip",
+   "sec": [
+    "nature",
+    "science"
+   ],
+   "name": "Olive Atrium",
+   "num": 29,
+   "desc": {
+    "uz": "shisha oranjereya, latun romlar, ko‘hna zaytun daraxtlari, quyosh nurlari",
+    "ru": "стеклянная оранжерея, латунные рамы, старые оливы, лучи солнца"
+   },
+   "fits": {
+    "uz": "biologiya, ekologiya, arxitektura, tibbiyot, bitiruv himoyasi",
+    "ru": "биология, экология, архитектура, медицина"
+   },
+   "c1": "#263019",
+   "c2": "#E6C77A",
+   "inner": "../vip/img/vip-olive-atrium-in.jpg"
+  },
+  {
+   "key": "pro-vip-burgundy-library",
+   "tier": "vip",
+   "sec": [
+    "history",
+    "formal"
+   ],
+   "name": "Burgundy Library",
+   "num": 30,
+   "desc": {
+    "uz": "ko‘hna kutubxona: bordo charm, qizil yog‘och javonlar, latun chiroqlar",
+    "ru": "старинная библиотека: бордовая кожа, красное дерево, латунные лампы"
+   },
+   "fits": {
+    "uz": "adabiyot, tarix, huquq, falsafa, dissertatsiya himoyasi",
+    "ru": "литература, история, право, философия"
+   },
+   "c1": "#3A0C17",
+   "c2": "#DDB96E",
+   "inner": "../vip/img/vip-burgundy-library-in.jpg"
+  },
+  {
+   "key": "pro-vip-orange-dune",
+   "tier": "vip",
+   "sec": [
+    "business",
+    "nature"
+   ],
+   "name": "Orange Dune",
+   "num": 31,
+   "desc": {
+    "uz": "oltin soat sahro qumtepalari, ulkan quyosh, mis sharlar va ipak",
+    "ru": "дюны на закате, огромное солнце, медные сферы и шёлк"
+   },
+   "fits": {
+    "uz": "geografiya, iqtisod, energetika, turizm, startap",
+    "ru": "география, экономика, энергетика, туризм"
+   },
+   "c1": "#2E1810",
+   "c2": "#F0B45A",
+   "inner": "../vip/img/vip-orange-dune-in.jpg"
+  },
+  {
    "key": "pro-royal",
    "tier": "pro",
    "sec": [
@@ -1460,6 +1523,135 @@
    "c1": "#1E2416",
    "c2": "#E0C27E",
    "inner": "../premium/img/olive-botanica-in.jpg"
+  },
+  {
+   "key": "pro-olive-arch",
+   "tier": "pro",
+   "sec": [
+    "school",
+    "business"
+   ],
+   "name": "Olive Arch",
+   "num": 41,
+   "desc": {
+    "uz": "zaytun, xantal va loy rangli qog‘oz-kesma arkalar, zamonaviy boho",
+    "ru": "бумажные арки оливы, горчицы и глины, современное бохо"
+   },
+   "fits": {
+    "uz": "pedagogika, psixologiya, ekologiya, biznes, dizayn",
+    "ru": "педагогика, психология, экология, бизнес"
+   },
+   "c1": "#F6F1E4",
+   "c2": "#7A4E2E",
+   "inner": "../premium/img/olive-arch-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-burgundy-wave",
+   "tier": "pro",
+   "sec": [
+    "art",
+    "formal"
+   ],
+   "name": "Burgundy Wave",
+   "num": 42,
+   "desc": {
+    "uz": "vino va pushti qog‘oz to‘lqinlari, nozik oltin chiziq",
+    "ru": "бумажные волны вина и пудры, тонкая золотая линия"
+   },
+   "fits": {
+    "uz": "adabiyot, psixologiya, marketing, san’at, tibbiyot",
+    "ru": "литература, психология, маркетинг, искусство"
+   },
+   "c1": "#F8F1EA",
+   "c2": "#8A2A42",
+   "inner": "../premium/img/burgundy-wave-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-orange-sunset",
+   "tier": "pro",
+   "sec": [
+    "business",
+    "school"
+   ],
+   "name": "Orange Sunset",
+   "num": 43,
+   "desc": {
+    "uz": "iliq shafaq gradienti, quyosh doirasi, o‘rik novdasi chiziqlari",
+    "ru": "тёплый закат, диск солнца, линии абрикосовой ветки"
+   },
+   "fits": {
+    "uz": "geografiya, iqtisod, turizm, sport, marketing",
+    "ru": "география, экономика, туризм, спорт"
+   },
+   "c1": "#FBF0E4",
+   "c2": "#A8431A",
+   "inner": "../premium/img/orange-sunset-in.jpg",
+   "open": true
+  },
+  {
+   "key": "pro-olive-deco",
+   "tier": "pro",
+   "sec": [
+    "formal",
+    "business"
+   ],
+   "name": "Olive Deco",
+   "num": 44,
+   "desc": {
+    "uz": "to‘q zaytun baxmal, Art Deco latun yelpig‘ich va quyosh nurlari",
+    "ru": "оливковый бархат, латунь ар-деко, веер и лучи"
+   },
+   "fits": {
+    "uz": "iqtisod, huquq, arxitektura, tarix, himoya",
+    "ru": "экономика, право, архитектура, история"
+   },
+   "c1": "#F4EEDD",
+   "c2": "#7A5E24",
+   "inner": "../premium/img/olive-deco-in.jpg"
+  },
+  {
+   "key": "pro-burgundy-cellar",
+   "tier": "pro",
+   "sec": [
+    "history",
+    "business"
+   ],
+   "name": "Burgundy Cellar",
+   "num": 45,
+   "desc": {
+    "uz": "vino yerto‘lasi: eman bochkalar, uzum, sham yorug‘i",
+    "ru": "винный погреб: дубовые бочки, виноград, свечи"
+   },
+   "fits": {
+    "uz": "tarix, kimyo, qishloq xo‘jaligi, biznes, turizm",
+    "ru": "история, химия, сельское хозяйство, бизнес"
+   },
+   "c1": "#F3E7D3",
+   "c2": "#8A2238",
+   "inner": "../premium/img/burgundy-cellar-in.jpg"
+  },
+  {
+   "key": "pro-orange-saffron",
+   "tier": "pro",
+   "sec": [
+    "history",
+    "art"
+   ],
+   "name": "Orange Saffron",
+   "num": 46,
+   "desc": {
+    "uz": "za’faron, marigold gullari, mis ko‘za — Ipak yo‘li ziravorlari",
+    "ru": "шафран, бархатцы, медный кувшин — специи Шёлкового пути"
+   },
+   "fits": {
+    "uz": "tarix, madaniyat, turizm, iqtisod, oshpazlik",
+    "ru": "история, культура, туризм, экономика"
+   },
+   "c1": "#FAEFDD",
+   "c2": "#A5500F",
+   "inner": "../premium/img/orange-saffron-in.jpg"
   },
   {
    "key": "minimal-ocean",
