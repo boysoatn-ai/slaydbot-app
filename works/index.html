@@ -196,14 +196,14 @@
   <section class="intro">
     <div class="brand"><svg><use href="#i-slides"/></svg><span>Slayd Ol</span></div>
     <h1 id="h1">Talabalar uchun tayyorlangan so‘nggi taqdimotlar</h1>
-    <p class="lead" id="lead">Har bir ishdan muqova va eng qiziq 2 ta sahifa. Yoqqan dizaynni tanlang — sizga ham xuddi shunday tayyorlab beramiz.</p>
+    <p class="lead" id="lead">Har bir ishdan muqova va 2 ta sahifaning yarmi — to‘liq ish faqat egasida. Yoqqan dizaynni tanlang, sizga ham shunday tayyorlab beramiz.</p>
     <p class="proof" id="proof"></p>
     <div class="flow" aria-label="">
       <span><svg><use href="#i-edit"/></svg><em id="f1">Mavzu yozasiz</em></span>
       <span><svg><use href="#i-clock"/></svg><em id="f2">3–5 daqiqa</em></span>
       <span><svg><use href="#i-file"/></svg><em id="f3">PPTX + PDF</em></span>
     </div>
-    <p class="privacy"><svg><use href="#i-lock"/></svg><span id="privacy">Maxfiylik: ismlar, o‘qituvchi, guruh va boshqa shaxsiy ma’lumotlar olib tashlangan. Faqat mavzu bo‘yicha tayyorlangan ishlar ko‘rsatiladi.</span></p>
+    <p class="privacy"><svg><use href="#i-lock"/></svg><span id="privacy">Maxfiylik: ismlar, o‘qituvchi va guruh olib tashlangan, matnning bir qismi yashirilgan. Ishlar tayyor bo‘lganidan kamida 3 kun o‘tib ko‘rsatiladi.</span></p>
   </section>
 
   <div class="filters" id="filters" role="group"></div>
@@ -238,9 +238,9 @@
     .toLowerCase().startsWith('ru');
   const L = ru ? {
     h1: 'Последние презентации, сделанные для студентов',
-    lead: 'Из каждой работы — обложка и 2 самые интересные страницы. Понравился дизайн — сделаем вам так же.',
+    lead: 'Из каждой работы — обложка и половина 2 страниц, полная работа только у владельца. Понравился дизайн — сделаем вам так же.',
     f1: 'Пишете тему', f2: '3–5 минут', f3: 'PPTX + PDF',
-    privacy: 'Конфиденциальность: имена, преподаватель, группа и другие личные данные удалены. Показываются только работы, сделанные по теме.',
+    privacy: 'Конфиденциальность: имена, преподаватель и группа удалены, часть текста скрыта. Работы показываются не раньше чем через 3 дня после готовности.',
     main: 'Хочу такую же', alt: 'Задание HEMIS', same: 'Хочу в этом дизайне',
     all: 'Все', std: 'Стандарт', pro: 'Премиум', vip: 'VIP',
     slides: n => `${n} слайдов`, likes: n => n ? `Понравилось: ${fmt(n)}` : 'Нравится', likeHint: 'Отметьте, если работа нравится',
@@ -253,9 +253,9 @@
     shown: (i, n) => `${i} / ${n}`, cover: 'Обложка', page: 'Страница', close: 'Закрыть', prev: 'Назад', next: 'Далее',
   } : {
     h1: 'Talabalar uchun tayyorlangan so‘nggi taqdimotlar',
-    lead: 'Har bir ishdan muqova va eng qiziq 2 ta sahifa. Yoqqan dizaynni tanlang — sizga ham xuddi shunday tayyorlab beramiz.',
+    lead: 'Har bir ishdan muqova va 2 ta sahifaning yarmi — to‘liq ish faqat egasida. Yoqqan dizaynni tanlang, sizga ham shunday tayyorlab beramiz.',
     f1: 'Mavzu yozasiz', f2: '3–5 daqiqa', f3: 'PPTX + PDF',
-    privacy: 'Maxfiylik: ismlar, o‘qituvchi, guruh va boshqa shaxsiy ma’lumotlar olib tashlangan. Faqat mavzu bo‘yicha tayyorlangan ishlar ko‘rsatiladi.',
+    privacy: 'Maxfiylik: ismlar, o‘qituvchi va guruh olib tashlangan, matnning bir qismi yashirilgan. Ishlar tayyor bo‘lganidan kamida 3 kun o‘tib ko‘rsatiladi.',
     main: 'Menga ham taqdimot', alt: 'HEMIS topshirig‘i', same: 'Shu dizaynda tayyorlash',
     all: 'Hammasi', std: 'Standart', pro: 'Premium', vip: 'VIP',
     slides: n => `${n} slayd`, likes: n => n ? `${fmt(n)} kishiga yoqdi` : 'Yoqdi', likeHint: 'Ish yoqqan bo‘lsa, belgilang',
