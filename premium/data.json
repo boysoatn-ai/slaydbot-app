@@ -869,6 +869,168 @@
    "c1": "#FAEFDD",
    "c2": "#A5500F",
    "std": false
+  },
+  {
+   "key": "pro-med-mint",
+   "slug": "med-mint",
+   "num": 47,
+   "name": "Clinic Mint",
+   "cat": "science",
+   "desc": {
+    "uz": "toza oq shisha, yalpiz va moviy yorug‘lik, hujayra pufakchalari, puls chizig‘i",
+    "ru": "чистое белое стекло, мятный и бирюзовый свет, клетки, линия пульса"
+   },
+   "fits": {
+    "uz": "tibbiyot, hamshiralik, farmatsiya, biologiya, sog‘lom turmush",
+    "ru": "медицина, сестринское дело, фармация, биология"
+   },
+   "c1": "#F4FAF8",
+   "c2": "#13706F",
+   "std": true
+  },
+  {
+   "key": "pro-med-aqua",
+   "slug": "med-aqua",
+   "num": 48,
+   "name": "Aqua Care",
+   "cat": "minimal",
+   "desc": {
+    "uz": "och moviy qog‘oz to‘lqinlari, molekula zanjiri chizig‘i",
+    "ru": "светло-голубые бумажные волны, линия молекулярной цепочки"
+   },
+   "fits": {
+    "uz": "tibbiyot, anatomiya, stomatologiya, farmakologiya, salomatlik",
+    "ru": "медицина, анатомия, стоматология, здоровье"
+   },
+   "c1": "#F3F8FC",
+   "c2": "#1F639C",
+   "std": true
+  },
+  {
+   "key": "pro-lit-ink",
+   "slug": "lit-ink",
+   "num": 49,
+   "name": "Ink & Paper",
+   "cat": "classic",
+   "desc": {
+    "uz": "iliq qog‘oz, indigo siyoh yuvilishi, pero uchi chizig‘i",
+    "ru": "тёплая бумага, индиговые разводы чернил, перо"
+   },
+   "fits": {
+    "uz": "adabiyot, tilshunoslik, filologiya, tarjima, jurnalistika",
+    "ru": "литература, лингвистика, филология, перевод"
+   },
+   "c1": "#F8F3E6",
+   "c2": "#33467D",
+   "std": true
+  },
+  {
+   "key": "pro-lit-folio",
+   "slug": "lit-folio",
+   "num": 50,
+   "name": "Old Folio",
+   "cat": "classic",
+   "desc": {
+    "uz": "pergament, quritilgan gul, qizil ipak xatcho‘p, kitob sahifalari",
+    "ru": "пергамент, засушенный цветок, красная ленточка-закладка"
+   },
+   "fits": {
+    "uz": "adabiyot, ona tili, adabiyotshunoslik, til o‘qitish, kitobxonlik",
+    "ru": "литература, родной язык, литературоведение, чтение"
+   },
+   "c1": "#F6EEDD",
+   "c2": "#8E2F25",
+   "std": true
+  },
+  {
+   "key": "pro-edu-chalk",
+   "slug": "edu-chalk",
+   "num": 51,
+   "name": "Chalkboard",
+   "cat": "creative",
+   "desc": {
+    "uz": "yashil sinf doskasi, bo‘r changi, oddiy bo‘r chizmalari",
+    "ru": "зелёная школьная доска, меловая пыль, простые рисунки мелом"
+   },
+   "fits": {
+    "uz": "pedagogika, o‘qitish metodikasi, dars ishlanma, tarbiya, boshlang‘ich ta’lim",
+    "ru": "педагогика, методика, разработка урока, воспитание"
+   },
+   "c1": "#22362E",
+   "c2": "#F6DC8E",
+   "std": true
+  },
+  {
+   "key": "pro-edu-note",
+   "slug": "edu-note",
+   "num": 52,
+   "name": "Notebook",
+   "cat": "soft",
+   "desc": {
+    "uz": "katakli daftar, sariq qalam, qisqich, yopishqoq qog‘ozlar",
+    "ru": "тетрадь в клетку, жёлтый карандаш, скрепка, стикеры"
+   },
+   "fits": {
+    "uz": "pedagogika, psixologiya, metodika, maktab, ta’lim texnologiyalari",
+    "ru": "педагогика, психология, методика, школа"
+   },
+   "c1": "#FBFAF5",
+   "c2": "#2D5C99",
+   "std": true
+  },
+  {
+   "key": "pro-med-helix",
+   "slug": "med-helix",
+   "num": 53,
+   "name": "Bio Helix",
+   "cat": "science",
+   "desc": {
+    "uz": "to‘q moviy-firuza shisha, yorug‘ DNK spirali, laboratoriya",
+    "ru": "тёмное сине-бирюзовое стекло, светящаяся спираль ДНК, лаборатория"
+   },
+   "fits": {
+    "uz": "tibbiyot, genetika, biokimyo, farmatsiya, ilmiy tadqiqot",
+    "ru": "медицина, генетика, биохимия, фармация"
+   },
+   "c1": "#EEF6F5",
+   "c2": "#0F6B70",
+   "std": false
+  },
+  {
+   "key": "pro-lit-classic",
+   "slug": "lit-classic",
+   "num": 54,
+   "name": "Ink Classic",
+   "cat": "classic",
+   "desc": {
+    "uz": "to‘q indigo baxmal, oltin sharqona hoshiya, pero va ochiq kitob",
+    "ru": "тёмно-индиговый бархат, золотой восточный орнамент, перо и открытая книга"
+   },
+   "fits": {
+    "uz": "adabiyot, mumtoz adabiyot, tilshunoslik, falsafa, himoya",
+    "ru": "литература, классика, лингвистика, философия"
+   },
+   "c1": "#F2EADA",
+   "c2": "#7A5A22",
+   "std": false
+  },
+  {
+   "key": "pro-edu-mind",
+   "slug": "edu-mind",
+   "num": 55,
+   "name": "Mind Garden",
+   "cat": "soft",
+   "desc": {
+    "uz": "qog‘oz-kesma o‘sayotgan daraxt, shalfey yashil va marjon urg‘u",
+    "ru": "бумажное растущее дерево, шалфей и коралловые акценты"
+   },
+   "fits": {
+    "uz": "pedagogika, psixologiya, ta’lim, rivojlanish, himoya",
+    "ru": "педагогика, психология, образование, развитие"
+   },
+   "c1": "#F6F0E6",
+   "c2": "#A8452C",
+   "std": false
   }
  ]
 }
