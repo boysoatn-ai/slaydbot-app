@@ -1,6 +1,6 @@
 // «Qizil qalpoqcha» — ertakka xos qism. Dvigatel (index.html) umumiy.
 window.TALE={
- id:'qalpoq', title:'Qizil qalpoqcha', suffix:'va Qizil qalpoqcha', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:false,
+ id:'qalpoq', title:'Qizil qalpoqcha', suffix:'va Qizil qalpoqcha', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:true,
  hallBg:'q11', puzzleImg:'cover', certPic:'card_boy', memCards:['qalpoq','boy','buvi','wolf','oyi','otin'],
  cert:{line1:'«Qizil qalpoqcha» ertagida do‘stini', line2:'xavfdan asrab qoldi va kattalarni yordamga chaqirdi', badge:'ZIYRAK DO‘ST'},
  games:[{k:'quiz',ic:'❓',n:'Savol-javob'},{k:'safe',ic:'🛡️',n:'Kimga ishonamiz?',run:()=>safeGame()},{k:'mem',ic:'🃏',n:'Xotira kartalari'},{k:'puz',ic:'🧩',n:'Boshqotirma'},{k:'color',ic:'🎨',n:'Bo‘yash'},{k:'cert',ic:'🏅',n:'Sertifikat'}],

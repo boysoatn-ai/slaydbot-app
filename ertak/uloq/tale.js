@@ -1,6 +1,6 @@
 // «Echki va yetti uloqcha» — ertakka xos qism. Dvigatel (index.html) umumiy.
 window.TALE={
- id:'uloq', title:'Echki va yetti uloqcha', suffix:'va yetti uloqcha', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:false,
+ id:'uloq', title:'Echki va yetti uloqcha', suffix:'va yetti uloqcha', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:true,
  hallBg:'e12', puzzleImg:'cover', certPic:'card_boy', memCards:['echki','uloq','boy','bori','olapar','uy'],
  cert:{line1:'«Echki va yetti uloqcha» ertagida', line2:'uloqchalarni ayyor Bo‘ridan asrab qoldi', badge:'ZIYRAK QO‘RIQCHI'},
  games:[{k:'quiz',ic:'❓',n:'Savol-javob'},{k:'door',ic:'🚪',n:'Eshikni ochamizmi?',run:()=>goodGame()},{k:'mem',ic:'🃏',n:'Xotira kartalari'},{k:'puz',ic:'🧩',n:'Boshqotirma'},{k:'color',ic:'🎨',n:'Bo‘yash'},{k:'cert',ic:'🏅',n:'Sertifikat'}],

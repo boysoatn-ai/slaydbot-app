@@ -1,6 +1,6 @@
 // «Bo‘g‘irsoq» — ertakka xos qism. Dvigatel (index.html) umumiy.
 window.TALE={
- id:'bogirsoq', title:'Bo‘g‘irsoq', suffix:'va Bo‘g‘irsoq', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:false,
+ id:'bogirsoq', title:'Bo‘g‘irsoq', suffix:'va Bo‘g‘irsoq', kicker:'Sehrli ertak', hero:'Mustafo', sex:'boy', girl:true,
  hallBg:'b12', puzzleImg:'cover', certPic:'card_boy', memCards:['bogirsoq','boy','quyon','bori','ayiq','tulki'],
  cert:{line1:'«Bo‘g‘irsoq» ertagida Bo‘g‘irsoqni', line2:'ayyor Tulkidan qutqarib, uyiga qaytardi', badge:'ZIYRAK DO‘ST'},
  games:[{k:'quiz',ic:'❓',n:'Savol-javob'},{k:'stay',ic:'🏠',n:'Nima qilasan?',run:()=>goodGame()},{k:'mem',ic:'🃏',n:'Xotira kartalari'},{k:'puz',ic:'🧩',n:'Boshqotirma'},{k:'color',ic:'🎨',n:'Bo‘yash'},{k:'cert',ic:'🏅',n:'Sertifikat'}],
