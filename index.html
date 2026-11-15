@@ -73,6 +73,17 @@
   .btn:disabled { opacity: .5; }
   .hint { padding: 20px 14px; color: var(--muted); font-size: 13px; text-align: center; }
   .rand { font-size: 13px; color: var(--link); cursor: pointer; float: right; font-weight: 600; }
+
+  /* 🖥 Kompyuter: to'liq ekran va keng tartib (2026-11-15) */
+  body.full header { padding-top: calc(10px + var(--tg-safe-area-inset-top, 0px) + var(--tg-content-safe-area-inset-top, 0px)); }
+  @media (min-width: 760px) {
+    header { padding-left: max(16px, calc((100% - 1160px) / 2 + 16px)); padding-right: max(16px, calc((100% - 1160px) / 2 + 16px)); }
+    h1 { font-size: 20px; }
+    main, .section { max-width: 1160px; margin-left: auto; margin-right: auto; }
+    .grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .subs { grid-template-columns: repeat(6, 1fr); }
+    footer { max-width: 780px; margin: 0 auto; border-radius: 16px 16px 0 0; }
+  }
 </style>
 </head>
 <body>
@@ -105,7 +116,15 @@
 <script>
 (async function () {
   const tg = window.Telegram && window.Telegram.WebApp;
-  if (tg) { tg.ready(); tg.expand(); }
+  if (tg) {
+    tg.ready(); tg.expand();
+    // 🖥 Kompyuterda (Telegram Desktop / macOS / Web) — telefondagidek tor oyna emas: to'liq ekran (Bot API 8.0+)
+    const desktop = ['tdesktop', 'macos', 'web', 'weba', 'webk', 'unigram'].includes(tg.platform);
+    if (desktop) document.body.classList.add('desk');
+    if (desktop && tg.requestFullscreen && tg.isVersionAtLeast && tg.isVersionAtLeast('8.0')) {
+      try { tg.requestFullscreen(); document.body.classList.add('full'); } catch (e) {}
+    }
+  }
   const q = new URLSearchParams(location.search);
   const data = await fetch('data.json?v=2').then(r => r.json());
   const state = { style: q.get('style') || data.styles[0].key, palette: q.get('palette') || '',
