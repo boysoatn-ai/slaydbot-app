@@ -2,290 +2,521 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
 <title>Slayd Ol ofisi</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="../go/config.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;800&family=Red+Hat+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;800&family=Red+Hat+Text:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* VOICE: jonli boshqaruv xonasi — bir qarashda kim ishlayapti, kim sizni kutyapti
-   IDEA: izometrik 3D ofis maketi (kubik o'yinchoq ofis), xodimlar stollar orasida yuradi
-   PICTURE: tungi fonda krem polli ofis maketi, har xodim ustida nom yorlig'i va gap pufagi
-   COLOUR and TYPE: oxford ko'k tasma, to'q binafsha sahna, magenta — sizning qaroringiz kerak; Red Hat
-   LAYOUT: chapda ofis, o'ngda raqamlar va voqealar tasmasi; 1000px dan pastda ustma-ust */
-:root{color-scheme:light dark;--bg:light-dark(#eef1f7,#070f26);--ink:light-dark(#0b1f4b,#e8ecf7);--mut:light-dark(#5a6687,#95a1c2);
---band:#0b1f4b;--panel:light-dark(#ffffff,#0f1b3d);--line:light-dark(#d5dbea,#22305a);--acc:#e0115f;--ok:#2fbf7f;--wait:#f0b429;--idle:#8a94ad}
-:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+/* VOICE: jonli boshqaruv xonasi — bir qarashda kim ishlayapti, kim dam olyapti, kim sizni kutyapti
+   IDEA: kechki ofis maketi — derazalar, yonib turgan monitorlar, dam olish burchagi
+   PICTURE: butun ekranni egallagan 3D ofis; har xodim ustida «hozir nima qilyapti» yorlig'i
+   COLOUR and TYPE: to'q binafsha kecha, iliq yog'och pol, magenta — sizning qaroringiz kerak; Red Hat
+   LAYOUT: sahna to'liq ekran; raqamlar va voqealar o'ngda yig'iladigan shisha panelda */
+:root{--acc:#e0115f;--ok:#2fbf7f;--wait:#f0b429;--idle:#9aa3bd;--glass:rgba(16,14,34,.82);--line:rgba(255,255,255,.12);--mut:#aab3d6}
 *{box-sizing:border-box;min-width:0}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Red Hat Text",system-ui,sans-serif;overflow-x:clip}
-header{background:var(--band);color:#fff;padding:16px max(3vw,16px);display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
-h1{font:800 clamp(24px,3vw,34px)/1.05 "Red Hat Display",sans-serif;margin:0}
-.sub{color:#b9c4e4;font-size:15px}
-.pill{background:var(--acc);color:#fff;border-radius:99px;padding:3px 12px;font-size:13px;font-weight:700;white-space:nowrap}
-.ctl{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.ctl button{font:600 14px "Red Hat Text";min-height:44px;min-width:44px;padding:0 14px;border-radius:10px;border:1px solid #33467d;background:#13295e;color:#fff;cursor:pointer}
-.ctl button[aria-pressed=true]{background:#fff;color:var(--band)}
-.ctl button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-.clock{font:600 18px "Red Hat Display";white-space:nowrap}
-main{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;padding:18px max(3vw,16px);max-width:1560px;margin:auto}
-@media(max-width:1000px){main{grid-template-columns:minmax(0,1fr)}}
-.stage{position:relative;aspect-ratio:16/10;background:radial-gradient(ellipse at 50% 35%,#3a1d3f,#1a0d24 70%);border-radius:16px;overflow:hidden;touch-action:none;cursor:grab}
-@media(max-width:600px){.stage{aspect-ratio:5/4}}
+html,body{margin:0;height:100%;background:#140a1f;color:#fff;font:15px/1.45 "Red Hat Text",system-ui,sans-serif;overflow:hidden}
+.app{position:fixed;inset:0;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;padding:calc(8px + var(--tg-safe-area-inset-top,0px) + var(--tg-content-safe-area-inset-top,0px)) 14px 8px;background:#0b1f4b;z-index:5}
+h1{font:800 20px/1.1 "Red Hat Display",sans-serif;margin:0;white-space:nowrap}
+.live{background:var(--acc);border-radius:99px;padding:2px 11px;font-size:13px;font-weight:700;white-space:nowrap}
+.live.ok{background:#1f8a5b}
+.sp{flex:1}.sm{display:none}
+header button{font:600 14px "Red Hat Text";min-height:40px;min-width:40px;padding:0 12px;border-radius:10px;border:1px solid #33467d;background:#13295e;color:#fff;cursor:pointer}
+header button[aria-pressed=true]{background:#fff;color:#0b1f4b}
+header button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.stage{position:relative;flex:1;overflow:hidden;background:radial-gradient(ellipse at 45% 30%,#3b2050 0%,#1d1030 55%,#120a1c 100%);touch-action:none;cursor:grab}
 .stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hq{position:absolute;top:14px;left:18px;font:700 13px "Red Hat Text";letter-spacing:.2em;color:#f0b88a;pointer-events:none}
 .labs{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .lab{position:absolute;left:0;top:0;will-change:transform}
-.tag{position:absolute;transform:translate(-50%,-100%);background:rgba(14,14,30,.88);color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:3px 9px 4px;white-space:nowrap;pointer-events:auto;cursor:pointer;line-height:1.2}
-.tag b{font-size:13px;display:flex;align-items:center;gap:6px}.tag small{display:block;font-size:13px;color:#aab3d6}
+.tag{position:absolute;transform:translate(-50%,-100%);background:rgba(12,10,28,.86);border:1px solid var(--line);border-radius:9px;padding:3px 9px 4px;white-space:nowrap;pointer-events:auto;cursor:pointer;line-height:1.25;max-width:230px}
+.tag b{font-size:13px;display:flex;align-items:center;gap:6px}
 .tag i{width:8px;height:8px;border-radius:50%;background:var(--idle);flex:none}
-.lab.sel .tag{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc)}
-.lab.you .tag{border-color:var(--acc)}
-.bb{position:absolute;transform:translate(-50%,calc(-100% - 46px));width:200px;background:#fff;color:#0b1f4b;border-radius:10px;padding:5px 9px;font-size:13px;line-height:1.3;box-shadow:0 6px 18px rgba(0,0,0,.35);opacity:0;transition:opacity .3s}
-.bb.on{opacity:1}.lab.you .bb{box-shadow:0 0 0 2px var(--acc),0 6px 18px rgba(0,0,0,.35)}
-.rl{position:absolute;transform:translate(-50%,-50%);font:700 13px "Red Hat Text";color:rgba(60,40,50,.75);white-space:nowrap;background:rgba(255,255,255,.55);padding:1px 8px;border-radius:6px}
-.tick{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);max-width:calc(100% - 24px);display:flex;gap:16px;align-items:center;background:rgba(14,14,30,.85);color:#dfe4f7;border-radius:10px;padding:6px 14px;font-size:13px;white-space:nowrap;overflow:hidden;pointer-events:none}
-.tick em{font-style:normal;font-weight:700;color:#ff7aa8}.tick span{overflow:hidden;text-overflow:ellipsis}
+.tag small{display:block;font-size:13px;color:#d7dcf3;overflow:hidden;text-overflow:ellipsis}
+.lab.you .tag{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+.lab.sel .tag{box-shadow:0 0 0 2px #fff}
+.lab.far small{display:none}
+.bb{position:absolute;transform:translate(-50%,calc(-100% - 50px));width:max-content;max-width:230px;background:#fff;color:#14163a;border-radius:12px;padding:6px 10px;font-size:13px;line-height:1.3;box-shadow:0 8px 20px rgba(0,0,0,.4);opacity:0;transition:opacity .35s,transform .35s}
+.bb::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:0;border-top-color:#fff}
+.bb.on{opacity:1;transform:translate(-50%,calc(-100% - 56px))}
+.lab.you .bb{box-shadow:0 0 0 2px var(--acc),0 8px 20px rgba(0,0,0,.4)}
+.tick{position:absolute;left:14px;right:14px;bottom:12px;display:flex;gap:18px;align-items:center;background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:7px 14px;font-size:13px;white-space:nowrap;overflow:hidden;pointer-events:none}
+.tick em{font-style:normal;font-weight:800;color:#ff6b9e;letter-spacing:.06em}
+.tick span{overflow:hidden;text-overflow:ellipsis;color:#e3e7f8}
 .tick i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:6px}
-@media(max-width:700px){.bb{display:none}.lab.sel .bb{display:block;opacity:1}.tag small{display:none}.rl{display:none}.tick span:nth-child(n+3){display:none}}
-.hint{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--mut);margin-top:10px}
-.hint i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
-aside{display:flex;flex-direction:column;gap:14px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
-h2{font:700 17px "Red Hat Display";margin:0 0 10px}
-.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.st b{display:block;font:800 clamp(20px,2.4vw,26px)/1.1 "Red Hat Display";white-space:nowrap}
-.st small{color:var(--mut);font-size:13px}.st.hot b{color:var(--acc)}
-#det p{margin:4px 0;font-size:15px}#det .k{color:var(--mut);font-size:13px;margin-top:10px}
-.feed{list-style:none;margin:0;padding:0;max-height:420px;overflow:auto}
-.feed li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.35}
-.feed li:first-child{border-top:0}.feed time{color:var(--mut);font-size:13px;white-space:nowrap}
-.feed .who{font-weight:700}.feed li.you .who{color:var(--acc)}
-.note{max-width:1560px;margin:0 auto;padding:0 max(3vw,16px) 28px;color:var(--mut);font-size:14px}
-
-.live{background:#1f8a5b;color:#fff;border-radius:99px;padding:3px 12px;font-size:13px;font-weight:700;white-space:nowrap}
-.live.off{background:var(--acc)}
-.msg{background:var(--panel);border:1px solid var(--acc);border-radius:12px;padding:12px 16px;margin-bottom:12px;font-size:15px}
-.feed li.empty{display:block;color:var(--mut)}
+.panel{position:absolute;top:12px;right:12px;bottom:62px;width:318px;display:flex;flex-direction:column;gap:10px;transition:transform .35s;z-index:3}
+.panel.hide{transform:translateX(calc(100% + 24px))}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:13px 15px;backdrop-filter:blur(8px)}
+.card h2{font:700 15px "Red Hat Display";margin:0 0 8px;color:#fff}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 12px}
+.st b{display:block;font:800 22px/1.1 "Red Hat Display";white-space:nowrap}
+.st small{color:var(--mut);font-size:13px}.st.hot b{color:#ff4f8b}
+.feedc{flex:1;display:flex;flex-direction:column;min-height:0}
+.feed{list-style:none;margin:0;padding:0;overflow:auto;flex:1}
+.feed li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 9px;padding:6px 0;border-top:1px solid var(--line);font-size:13px;line-height:1.35}
+.feed li:first-child{border-top:0}.feed time{color:var(--mut);white-space:nowrap}
+.feed .who{font-weight:700}.feed li.you .who{color:#ff4f8b}.feed li.empty{display:block;color:var(--mut)}
+#det p{margin:2px 0 6px;font-size:14px}#det .k{color:var(--mut);font-size:13px;margin:0}
+#det .x{float:right;background:none;border:0;color:#fff;font-size:20px;cursor:pointer;min-width:36px;min-height:32px}
+.msg{position:absolute;left:50%;top:14px;transform:translateX(-50%);background:var(--glass);border:1px solid var(--acc);border-radius:12px;padding:8px 14px;font-size:14px;z-index:4;max-width:calc(100% - 28px);text-align:center}
+.legend{position:absolute;left:14px;top:12px;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:#cfd5ee;background:var(--glass);border:1px solid var(--line);border-radius:10px;padding:5px 10px;pointer-events:none}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+@media(max-width:760px){
+  .panel{top:auto;left:8px;right:8px;width:auto;bottom:56px;max-height:58%}
+  .panel.hide{transform:translateY(calc(100% + 70px))}
+  .legend{display:none}.tick span:nth-child(n+3){display:none}
+  h1{font-size:17px}.lg{display:none}.sm{display:inline}header{flex-wrap:nowrap;gap:6px;padding-left:10px;padding-right:10px}header button{padding:0 9px}
+}
+@media(prefers-reduced-motion:reduce){.bb,.panel{transition:none}}
 </style>
 </head>
 <body>
+<div class="app">
 <header>
-  <div><h1>Slayd Ol ofisi</h1><div class="sub">Botning ichki ishlari jonli · har 5 soniyada yangilanadi</div></div>
-  <span class="live off" id="live">Ulanmoqda…</span>
-  <div class="ctl">
-    <button id="zin" aria-label="Yaqinlashtirish">+</button>
-    <button id="zout" aria-label="Uzoqlashtirish">−</button>
-  </div>
+  <h1><span class="lg">Slayd Ol </span>Ofis</h1>
+  <span class="live" id="live">Ulanmoqda…</span>
+  <span class="sp"></span>
+  <button id="zin" aria-label="Yaqinlashtirish">+</button>
+  <button id="zout" aria-label="Uzoqlashtirish">−</button>
+  <button id="view" aria-label="Ko'rinishni almashtirish"><span class="lg">Burish</span><span class="sm">⟳</span></button>
+  <button id="pan" aria-pressed="true" aria-label="Panel"><span class="lg">Panel</span><span class="sm">☰</span></button>
+  <button id="full" aria-label="To'liq ekran"><span class="lg">To'liq ekran</span><span class="sm">⛶</span></button>
 </header>
-<main>
-  <section>
-    <div class="msg" id="msg" hidden></div>
-    <div class="stage" id="stage">
-      <div class="hq">SLAYD OL · BOSH OFIS</div>
-      <div class="labs" id="labs"></div>
-      <div class="tick" id="tick"><em>LIVE</em></div>
-    </div>
-    <div class="hint">
-      <span><i style="background:var(--ok)"></i>ishlayapti</span>
-      <span><i style="background:var(--wait)"></i>e'tibor kerak</span>
-      <span><i style="background:var(--idle)"></i>bo'sh</span>
-      <span><i style="background:var(--acc)"></i>sizning qaroringiz kerak</span>
-      <span>Suring — ofis aylanadi. Xodimni bosing — batafsil.</span>
-    </div>
-  </section>
-  <aside>
-    <div class="card" id="det"><h2>Xodimni tanlang</h2><p class="k">Ofisdagi istalgan xodimni bosing: u hozir nima qilyapti va ma'lumotni qayerdan oladi.</p></div>
+<div class="stage" id="stage">
+  <div class="labs" id="labs"></div>
+  <div class="legend"><span><i style="background:var(--ok)"></i>ishlayapti</span><span><i style="background:var(--wait)"></i>e'tibor</span><span><i style="background:var(--idle)"></i>dam olyapti</span><span><i style="background:var(--acc)"></i>sizni kutyapti</span></div>
+  <div class="msg" id="msg" hidden></div>
+  <aside class="panel" id="panel">
+    <div class="card" id="det" hidden></div>
     <div class="card"><h2>Bugun (Toshkent 00:00 dan)</h2>
       <div class="stats">
         <div class="st"><b id="sRev">—</b><small>tushum, so'm</small></div>
         <div class="st"><b id="sCost">—</b><small>AI xarajati, so'm</small></div>
-        <div class="st"><b id="sMar">—</b><small>sof foyda ulushi</small></div>
-        <div class="st"><b id="sDone">—</b><small>yetkazilgan ish</small></div>
+        <div class="st"><b id="sMar">—</b><small>sof foyda</small></div>
+        <div class="st"><b id="sDone">—</b><small>yetkazildi</small></div>
         <div class="st"><b id="sQ">—</b><small>navbatda</small></div>
         <div class="st hot"><b id="sYou">—</b><small>sizni kutmoqda</small></div>
         <div class="st"><b id="sVote">—</b><small>yoqdi / yoqmadi</small></div>
         <div class="st"><b id="sUsers">—</b><small>yangi foydalanuvchi</small></div>
       </div>
     </div>
-    <div class="card"><h2>Voqealar (oxirgi 6 soat)</h2><ul class="feed" id="feed"></ul></div>
+    <div class="card feedc"><h2>Voqealar (oxirgi 6 soat)</h2><ul class="feed" id="feed"></ul></div>
   </aside>
-</main>
-<p class="note">Ma'lumot botning bazasidan faqat o'qiladi: buyurtmalar, to'lovlar, AI xarajati, baholar, mijoz suhbatlari. Mijozlarning ismi, mavzusi va xabarlari bu yerda ko'rsatilmaydi. Sotuvchi va SMM fon rejimida ishlaydi, ularning hisobi keyinroq ulanadi.</p>
+  <div class="tick" id="tick"><em>LIVE</em></div>
+</div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 {
-
-const ROOMS=[["Menejer",20,20,220,170,0xf3e3d3],["Yetkazish",260,20,140,100,0xdde6f5],["Server xonasi",420,20,320,100,0x2c3566],["Kassa",760,20,220,170,0xf6dbe2],
-["Navbat",20,210,220,210,0xe9e2f3],["Ishlab chiqarish zali",260,140,480,280,0xf4ece0],["Sotuv",760,210,220,210,0xe6efe0],
-["Mijozlar xizmati",20,440,300,160,0xf6e7cf],["Sifat nazorati",340,440,320,160,0xdcefee],["Kanal va SMM",680,440,300,160,0xf3dce8]];
-const DESKS=[[330,215],[500,215],[670,215],[415,330],[585,330],[130,95],[870,95],[870,300],[170,505],[500,505],[830,505],[600,60]];
-const P={queue:[130,330],deliver:[330,85],safe:[935,70]};
-const C=[
- {id:"m",nm:"Menejer",sh:"Kunlik xulosa",role:"Hamma hisobotlarni o'qib, sizga kunlik xulosa beradi",src:"09:00 hisobot, pnl.sh, /oqim",c:0x22346e,d:5},
- {id:"w1",nm:"Ishchi 1",sh:"Buyurtmalar",role:"Buyurtmani bajaradi: reja → matn → rasmlar → PPTX/PDF",src:"orders (status=running), ai_usage.stage",c:0x3b6fd8,d:0,w:1},
- {id:"w2",nm:"Ishchi 2",sh:"Buyurtmalar",role:"Buyurtmani bajaradi",src:"orders, ai_usage",c:0x3b6fd8,d:1,w:1},
- {id:"w3",nm:"Ishchi 3",sh:"Buyurtmalar",role:"Buyurtmani bajaradi",src:"orders, ai_usage",c:0x3b6fd8,d:2,w:1},
- {id:"w4",nm:"Ishchi 4",sh:"Buyurtmalar",role:"Buyurtmani bajaradi",src:"orders, ai_usage",c:0x3b6fd8,d:3,w:1},
- {id:"w5",nm:"Ishchi 5",sh:"Buyurtmalar",role:"Buyurtmani bajaradi (bir vaqtda 5 ta ishchi)",src:"orders, ai_usage",c:0x3b6fd8,d:4,w:1},
- {id:"k",nm:"Kassir",sh:"Click · Payme · karta",role:"Click, Payme va karta to'lovlarini qabul qiladi",src:"payments, ledger",c:0xe0115f,d:6},
- {id:"s",nm:"Sotuvchi",sh:"Eslatmalar",role:"To'lamagan va tarifda to'xtaganlarga eslatma yuboradi",src:"reports.tier_reminders, abandon_reminders",c:0x7a3fc4,d:7},
- {id:"y",nm:"Yordamchi",sh:"Mijoz savollari",role:"Mijoz savollariga javob loyihasini tayyorlaydi, siz tasdiqlaysiz",src:"support_chats, support_msgs",c:0xe07a1f,d:8},
- {id:"q",nm:"Sifatchi",sh:"Baholar",role:"Baholar va «yoqmadi» sabablarini kuzatadi, bepul qayta yasashni navbatga qo'yadi",src:"feedback, lint, /sifat",c:0x0f9aa8,d:9},
- {id:"x",nm:"SMM",sh:"Kanal",role:"Kanalga galereyadan anonim ishlarni joylaydi",src:"/kanal, gallery",c:0xc23a7c,d:10},
- {id:"n",nm:"Navbatchi",sh:"Server",role:"Server, ishchilar yurak urishi va xatolarni kuzatadi",src:"worker_heartbeat, errors.sh, stuck.sh",c:0x55617f,d:11}];
 const $=id=>document.getElementById(id),stage=$("stage"),labs=$("labs");
-const fmt=n=>Math.round(n).toLocaleString("ru-RU").replace(/[\s,]/g," ");
-const W=(x,y)=>[x/20-25,y/20-15.5];
+const fmt=n=>Math.round(+n||0).toLocaleString("ru-RU").replace(/[\s,  ]/g," ");
+const rnd=(a,b)=>a+Math.random()*(b-a),pick=a=>a[Math.floor(Math.random()*a.length)];
+const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-
-/* ---------- 3D sahna ---------- */
+/* ================= SAHNA ================= */
 const R=new THREE.WebGLRenderer({antialias:true,alpha:true});
 R.setPixelRatio(Math.min(devicePixelRatio,2));R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
+R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=.92;
 stage.prepend(R.domElement);
-const scene=new THREE.Scene(),cam=new THREE.OrthographicCamera(-1,1,1,-1,.1,400);
-scene.add(new THREE.HemisphereLight(0xfff4ea,0x5a4060,.75));
-const sun=new THREE.DirectionalLight(0xffffff,.65);sun.position.set(-20,40,25);sun.castShadow=true;
-sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-35,right:35,top:30,bottom:-30,near:1,far:120});scene.add(sun);
-const mats={},M=(c,e)=>mats[c+"_"+(e||0)]||(mats[c+"_"+(e||0)]=new THREE.MeshLambertMaterial({color:c,emissive:e||0}));
-function box(w,h,d,c,x,y,z,par=scene,e){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),M(c,e));m.position.set(x,y+h/2,z);m.castShadow=m.receiveShadow=true;par.add(m);return m}
-function cyl(r,h,c,x,y,z,seg=20){const m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,seg),M(c));m.position.set(x,y+h/2,z);m.castShadow=m.receiveShadow=true;scene.add(m);return m}
-box(53,.8,34,0xc98577,0,-.8,0);box(52,.02,33,0xefe6d8,0,0,0);
-box(53,2.6,.5,0xe6d3c8,0,0,-17);box(.5,2.6,34,0xe6d3c8,-26.5,0,0);
-box(53,.25,.6,0xd59c90,0,2.6,-17);box(.6,.25,34,0xd59c90,-26.5,2.6,0);
-const roomLabels=[];
-for(const [t,x,y,w,h,col] of ROOMS){const [cx,cz]=W(x+w/2,y+h/2);box(w/20-.25,.06,h/20-.25,col,cx,.01,cz);
-  box(w/20-.25,.18,.12,0xd2c3b6,cx,0,cz-(h/40-.12));box(.12,.18,h/20-.25,0xd2c3b6,cx-(w/40-.12),0,cz);
-  const el=document.createElement("div");el.className="rl";el.textContent=t;labs.appendChild(el);roomLabels.push({el,v:new THREE.Vector3(cx,.2,cz-(h/40)+.7)})}
-DESKS.forEach(([px,py],i)=>{const [x,z]=W(px,py);const dark=i===11;
-  box(2.6,.9,1.1,dark?0x3a4478:0xa8774c,x,0,z-.6);box(2.8,.12,1.3,dark?0x4a56a0:0xc98f5a,x,.9,z-.6);
-  box(1.2,.75,.12,0x1b2140,x,1.02,z-1,scene,0x16306a);box(.2,.12,.2,0x1b2140,x,1.02,z-.85);
-  box(.85,.12,.85,0x8a5cc0,x,.5,z+.55);box(.85,.8,.12,0x8a5cc0,x,.62,z+.95);box(.12,.5,.12,0x555,x,0,z+.55)});
-const [dx,dz]=W(...P.deliver);box(1.6,1.1,1,0x2f6fe0,dx,0,dz-1);box(1.2,.08,.1,0x0b1f4b,dx,.8,dz-.49);
-const [sx,sz]=W(...P.safe);box(1.6,1.9,1.4,0x3b3f52,sx,0,sz-.9);cyl(.18,.1,0xf0b429,sx,1.1,sz-.18);
-for(let i=0;i<5;i++){const [x,z]=W(450+i*58,40);box(1.3,2.6,1,0x131833,x,0,z-.4,scene,0x0a1640);for(let j=0;j<4;j++)box(1,.06,.02,0x66b3ff,x,.5+j*.5,z+.11,scene,0x3a8cff)}
-const [tx,tz]=W(200,95);cyl(1.6,.12,0xd9875a,tx,.85,tz);cyl(.2,.85,0x8a6a50,tx,0,tz);
-const [qx,qz]=W(130,380);box(3.5,.5,1,0x6a5acd,qx,0,qz);box(3.5,.6,.25,0x6a5acd,qx,.5,qz+.4);
-const [fx,fz]=W(930,540);box(1.2,.5,3,0xd85a8a,fx,0,fz);box(.3,.6,3,0xd85a8a,fx+.5,.5,fz);
-const [gx,gz]=W(500,395);box(3.6,.1,2,0x2fb58a,gx,.75,gz);box(3.4,.75,.15,0x555566,gx,0,gz);box(.05,.2,2,0xffffff,gx,.85,gz);
-[[245,135],[745,135],[245,425],[745,425],[30,600],[970,600],[35,30],[970,200]].forEach(([px,py])=>{const [x,z]=W(px,py);cyl(.35,.5,0xd08a6a,x,0,z,12);
-  const c=new THREE.Mesh(new THREE.ConeGeometry(.45,1.2,8),M(0x4caf7d));c.position.set(x,1.1,z);c.castShadow=true;scene.add(c)});
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,1,400);
+scene.add(new THREE.HemisphereLight(0xfff3e6,0x5b4a70,.5));
+const sun=new THREE.DirectionalLight(0xffe2c4,1.05);sun.position.set(-18,34,22);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);
+Object.assign(sun.shadow.camera,{left:-30,right:30,top:24,bottom:-24,near:1,far:110});sun.shadow.bias=-.0006;scene.add(sun);
+const fill=new THREE.DirectionalLight(0x9fb6ff,.35);fill.position.set(20,12,-10);scene.add(fill);
+const MC={};
+const M=(c,o={})=>{const k=c+JSON.stringify(o);return MC[k]||(MC[k]=new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:.82,metalness:0},o)))};
+function add(m,par){m.castShadow=m.receiveShadow=true;(par||scene).add(m);return m}
+function box(w,h,d,c,x,y,z,par,o){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),typeof c==="object"?c:M(c,o));m.position.set(x,y+h/2,z);return add(m,par)}
+function cyl(rt,rb,h,c,x,y,z,par,seg=18,o){const m=new THREE.Mesh(new THREE.CylinderGeometry(rt,rb,h,seg),typeof c==="object"?c:M(c,o));m.position.set(x,y+h/2,z);return add(m,par)}
+function canvasTex(w,h){const cv=document.createElement("canvas");cv.width=w;cv.height=h;const t=new THREE.CanvasTexture(cv);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;return {cv,ctx:cv.getContext("2d"),t}}
 
-/* ---------- xodimlar ---------- */
-const S={rev:0,cost:0,done:0,you:0,queue:[],sel:null,speed:1,paused:false,oid:3190,ang:Math.PI/4,zoom:1};
-const home=c=>{const [x,z]=W(...DESKS[c.d]);return [x,z+1.45]};
-const pick3=[];
-for(const c of C){
-  const g=new THREE.Group();box(.55,.6,.32,0x2a2a3a,0,0,0,g);box(.66,.7,.38,c.c,0,.6,0,g);box(.52,.52,.52,0xf1c7a3,0,1.3,0,g);box(.56,.18,.56,0x2b1d16,0,1.78,0,g);
-  g.scale.setScalar(1.25);scene.add(g);c.g=g;g.traverse(o=>{if(o.isMesh){o.userData.c=c;pick3.push(o)}});
-  [c.x,c.z]=home(c);c.tx=c.x;c.tz=c.z;c.count=0;c.task="Bo'sh";c.state="idle";c.busy=false;
+// --- bino: pol, devorlar, derazalar
+const FW=44,FD=30;
+box(FW+1.2,1,FD+1.2,0xb9786c,0,-1,0);
+const floorT=canvasTex(1024,700);{const g=floorT.ctx;g.fillStyle="#9c6a3e";g.fillRect(0,0,1024,700);
+  for(let y=0;y<700;y+=35){for(let x=-(y/35%2)*80;x<1024;x+=160){const l=178+Math.random()*30|0;g.fillStyle=`rgb(${l},${l-55},${l-100})`;g.fillRect(x+1,y+1,158,33)}}}
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(FW,FD),new THREE.MeshStandardMaterial({map:floorT.t,roughness:.75}));floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;scene.add(floor);
+const WH=4.2,wallC=0xe9d6c8;
+box(FW,WH,.5,wallC,0,0,-FD/2-.25);box(.5,WH,FD,wallC,-FW/2-.25,0,0);
+box(FW,.35,.7,0xd9a598,0,WH,-FD/2-.25);box(.7,.35,FD,0xd9a598,-FW/2-.25,WH,0);
+box(FW,.3,.56,0xc9998c,0,0,-FD/2+.04);box(.56,.3,FD,0xc9998c,-FW/2+.04,0,0);
+const glassM=new THREE.MeshStandardMaterial({color:0x9fd0ff,emissive:0x4f8fd8,emissiveIntensity:.55,roughness:.15,transparent:true,opacity:.85});
+for(const x of[-2,4.5,11,17.5]){box(4.6,2.4,.12,0x3a3048,x,1.1,-FD/2+.02);box(4.2,2.0,.1,glassM,x,1.3,-FD/2+.1);box(.12,2.0,.12,0x3a3048,x,1.3,-FD/2+.12)}
+for(const z of[-1,6.5]){box(.12,2.4,4.6,0x3a3048,-FW/2+.02,1.1,z);box(.1,2.0,4.2,glassM,-FW/2+.1,1.3,z);box(.12,2.0,.12,0x3a3048,-FW/2+.12,1.3,z)}
+// logotip devorda
+const logoT=canvasTex(512,128);{const g=logoT.ctx;g.fillStyle="#0b1f4b";g.fillRect(0,0,512,128);g.fillStyle="#fff";g.font="800 64px Red Hat Display, sans-serif";g.textAlign="center";g.textBaseline="middle";g.fillText("SLAYD OL",256,58);g.fillStyle="#e0115f";g.fillRect(156,98,200,8)}
+box(5.4,1.35,.1,new THREE.MeshStandardMaterial({map:logoT.t,roughness:.6}),-7.5,2.25,-FD/2+.08);
+// devor soati
+const clockT=canvasTex(256,256);const clockM=new THREE.MeshStandardMaterial({map:clockT.t,roughness:.6});
+const clock=new THREE.Mesh(new THREE.CylinderGeometry(.75,.75,.1,32),[M(0x2b2540),clockM,M(0x2b2540)]);clock.rotation.x=Math.PI/2;clock.position.set(7.8,3.25,-FD/2+.12);scene.add(clock);
+// zonalarga gilam
+function rug(x,z,w,d,c){const m=new THREE.Mesh(new THREE.PlaneGeometry(w,d),M(c,{roughness:1}));m.rotation.x=-Math.PI/2;m.position.set(x,.012,z);m.receiveShadow=true;scene.add(m)}
+rug(-16.5,-11,10.5,7.8,0xb9a6d6);rug(0,-.6,18,9.6,0x8d9bc4);rug(-15.5,11.8,12.5,6,0xe7b17a);rug(15,11.4,13,6,0xa9cfc3);rug(17,-11,9.5,7.8,0xe8a3b9);rug(-7,-12.8,8.5,4,0x39406b);
+
+// --- shisha devor: menejer kabineti
+const gl2=new THREE.MeshStandardMaterial({color:0xcfe8ff,roughness:.05,transparent:true,opacity:.25});
+box(3.8,2.6,.08,gl2,-20.1,0,-7);box(3.8,2.6,.08,gl2,-13.9,0,-7);box(.08,2.6,8,gl2,-12,0,-11);
+for(const x of[-22,-18.2,-15.8,-12])box(.12,2.6,.12,0x6e6a82,x,0,-7);
+
+/* --- ish stoli + monitor (ekran — canvas) */
+const screens=[];
+function workstation(x,z,opt={}){
+  const g=new THREE.Group();g.position.set(x,0,z);scene.add(g);
+  const top=opt.dark?0x4b5594:0xf4f1ec,leg=0x8b8fa3;
+  box(2.6,.1,1.25,top,0,.92,0,g);for(const sx of[-1.2,1.2])for(const sz of[-.52,.52])box(.08,.92,.08,leg,sx,0,sz,g);
+  box(.5,.62,1.05,0xd8d2c8,.95,.25,0,g);
+  const sc=canvasTex(256,160);const scrM=new THREE.MeshStandardMaterial({map:sc.t,emissive:0xffffff,emissiveMap:sc.t,emissiveIntensity:.9,roughness:.4});
+  const mon=new THREE.Group();mon.position.set(0,1.02,-.35);g.add(mon);
+  box(.12,.3,.12,0x2a2a35,0,0,0,mon);box(.45,.04,.3,0x2a2a35,0,0,0,mon);
+  const frame=box(1.42,.9,.07,0x1b1b26,0,.3,0,mon);const scr=new THREE.Mesh(new THREE.PlaneGeometry(1.32,.8),scrM);scr.position.set(0,.75,.04);mon.add(scr);
+  if(opt.two){const m2=mon.clone();m2.position.set(-.95,1.02,-.25);m2.rotation.y=.35;g.add(m2);m2.traverse(o=>{if(o.isMesh&&o.material===scrM)o.material=scrM})}
+  box(.9,.03,.3,0x30303c,0,.97,.1,g);box(.14,.03,.2,0x30303c,.65,.97,.15,g);
+  cyl(.11,.11,.16,0xffffff,-1,.97,.25,g,10);if(opt.plant){cyl(.14,.11,.22,0xd08a6a,1.05,.97,-.3,g,10);const p=new THREE.Mesh(new THREE.SphereGeometry(.2,8,6),M(0x4caf7d));p.position.set(1.05,1.36,-.3);add(p,g)}
+  // stul
+  const ch=new THREE.Group();ch.position.set(0,0,1.05);g.add(ch);
+  cyl(.06,.06,.42,0x333344,0,0,0,ch,8);box(.72,.1,.68,opt.chair||0x5a4fcf,0,.45,0,ch);box(.72,.75,.1,opt.chair||0x5a4fcf,0,.55,.33,ch);
+  const s={g,sc,scrM,mode:"off",t:0,label:opt.label||""};screens.push(s);drawScreen(s,0);
+  return {x,z,seat:[x,z+1.05],screen:s,g};
+}
+function drawScreen(s,t){const g=s.sc.ctx,W=256,H=160;
+  if(s.mode==="work"){g.fillStyle="#f5f6fb";g.fillRect(0,0,W,H);g.fillStyle="#0b1f4b";g.fillRect(0,0,W,16);g.fillStyle="#e0115f";g.fillRect(6,5,6,6);
+    g.fillStyle="#dfe4f2";g.fillRect(8,24,70,128);for(let i=0;i<5;i++){g.fillStyle=i===(t|0)%5?"#3b6fd8":"#c3cbe2";g.fillRect(14,30+i*24,58,18)}
+    g.fillStyle="#fff";g.fillRect(88,24,160,104);g.fillStyle="#0b1f4b";g.fillRect(98,34,90,10);
+    const n=(t*3|0)%7;for(let i=0;i<=n;i++){g.fillStyle="#9aa6c6";g.fillRect(98,54+i*10,40+((i*37)%90),5)}
+    g.fillStyle="#3b6fd8";g.fillRect(196,52,42,40);g.fillStyle="#e3e7f2";g.fillRect(88,136,160,10);g.fillStyle="#2fbf7f";g.fillRect(88,136,160*((t*.07)%1),10)}
+  else if(s.mode==="alert"){g.fillStyle=(t*2|0)%2?"#5a0d2a":"#e0115f";g.fillRect(0,0,W,H);g.fillStyle="#fff";g.font="700 26px sans-serif";g.textAlign="center";g.fillText("DIQQAT",W/2,H/2+8)}
+  else if(s.mode==="sleep"){g.fillStyle="#0c1030";g.fillRect(0,0,W,H);g.fillStyle="#6c7bd8";g.font="700 22px sans-serif";g.textAlign="center";g.fillText("Slayd Ol",W/2+Math.sin(t)*50,H/2+Math.cos(t*.7)*30)}
+  else{g.fillStyle="#0a0a12";g.fillRect(0,0,W,H)}
+  s.sc.t.needsUpdate=true}
+
+// --- joylar
+const D={
+ w1:workstation(-6,-4.2,{plant:1}),w2:workstation(0,-4.2,{two:1}),w3:workstation(6,-4.2,{plant:1}),w4:workstation(-3,1.3,{two:1}),w5:workstation(3,1.3,{plant:1}),
+ m:workstation(-17,-11.6,{two:1,chair:0x2c2c3e,plant:1}),k:workstation(17,-11.2,{chair:0xc0336a}),n:workstation(-9,-12.6,{dark:1,two:1,chair:0x2c2c3e}),
+ y:workstation(-19.5,-2.2,{chair:0xe07a1f}),q:workstation(-15.5,3,{chair:0x0f9aa8,plant:1}),s:workstation(19.5,-2.2,{chair:0x7a3fc4}),x:workstation(14.5,3,{two:1,chair:0xc23a7c})};
+// server javonlari (miltillovchi chiroqlar)
+const leds=[];for(let i=0;i<4;i++){const x=-5.5+i*1.25;box(1.05,2.7,1,0x161a33,x,0,-14.2);
+  for(let j=0;j<6;j++){const m=new THREE.MeshStandardMaterial({color:0x66b3ff,emissive:0x3a8cff,emissiveIntensity:1});const l=box(.7,.05,.02,m,x,.45+j*.38,-13.69);leds.push(m)}}
+// kassa: seyf va kassa apparati
+box(1.4,1.7,1.2,0x3b3f52,20.6,0,-14);cyl(.16,.16,.08,0xf0b429,20.6,1.05,-13.36,null,16).rotation.x=Math.PI/2;
+box(.6,.35,.5,0x2b2b3a,18.05,.97,-11.0);box(.45,.22,.05,0x7fe0a8,18.05,1.25,-11.2,null,{emissive:0x2fbf7f,emissiveIntensity:.8});
+// menejer doskasi (bugungi raqamlar)
+const boardT=canvasTex(512,300);const board=box(4.2,2.4,.08,new THREE.MeshStandardMaterial({map:boardT.t,roughness:.5}),-17,1.2,-14.85);
+box(4.4,.1,.25,0x8a8fa3,-17,1.15,-14.7);
+function drawBoard(d){const g=boardT.ctx;g.fillStyle="#fbfbf7";g.fillRect(0,0,512,300);g.strokeStyle="#c9ccd8";g.lineWidth=6;g.strokeRect(3,3,506,294);
+  g.fillStyle="#0b1f4b";g.font="800 34px Red Hat Display, sans-serif";g.fillText("Bugun",24,52);
+  const t=d?d.today:null,rows=t?[["Tushum",fmt(t.revenue)+" so'm","#1f8a5b"],["AI xarajat",fmt(t.cost)+" so'm","#c25b0c"],["Foyda",(t.revenue?Math.round((t.revenue-t.cost)/t.revenue*100):0)+"%","#e0115f"],["Yetkazildi",t.done+" ta","#3b6fd8"]]:[["Yuklanmoqda…","","#555"]];
+  rows.forEach(([a,b,c],i)=>{g.fillStyle="#3c4363";g.font="500 26px Red Hat Text, sans-serif";g.fillText(a,24,104+i*50);g.fillStyle=c;g.font="700 30px Red Hat Text, sans-serif";g.fillText(b,230,104+i*50)});
+  boardT.t.needsUpdate=true}
+drawBoard(null);
+// dam olish burchagi: qahva, kuler, TV, divan, stol tennisi, puflar
+box(1.2,.95,.8,0x6b5a4a,-21.3,0,8.6);box(.6,.7,.5,0x2b2b35,-21.3,.95,8.6);box(.2,.2,.05,0xff8a3d,-21.3,1.3,8.86,null,{emissive:0xff6a00,emissiveIntensity:.8});
+cyl(.32,.32,1.1,0xe9eef7,-21.4,0,10.6);cyl(.26,.26,.55,0x8fd3ff,-21.4,1.1,10.6,null,16,{transparent:true,opacity:.7});
+const tvT=canvasTex(256,144);box(.1,1.4,2.5,0x111118,-21.85,1.4,12.6);const tv=new THREE.Mesh(new THREE.PlaneGeometry(2.3,1.25),new THREE.MeshStandardMaterial({map:tvT.t,emissive:0xffffff,emissiveMap:tvT.t,emissiveIntensity:.8}));tv.rotation.y=Math.PI/2;tv.position.set(-21.78,2.1,12.6);scene.add(tv);
+function drawTv(t){const g=tvT.ctx;const hue=(t*20)%360;g.fillStyle=`hsl(${hue},60%,45%)`;g.fillRect(0,0,256,144);g.fillStyle=`hsl(${(hue+120)%360},70%,60%)`;g.beginPath();g.arc(128+Math.sin(t)*70,72+Math.cos(t*1.3)*30,26,0,7);g.fill();tvT.t.needsUpdate=true}
+const sofaC=0x5b6bd6;box(1.2,.5,4.8,sofaC,-17.1,0,12.6);box(.35,.6,4.8,sofaC,-16.6,.5,12.6);box(1.2,.35,.35,sofaC,-17.1,.5,10.3);box(1.2,.35,.35,sofaC,-17.1,.5,14.9);
+box(1.1,.08,.7,0xc98f5a,-19.3,.45,12.6);cyl(.04,.04,.45,0x777,-19.3,0,12.6,null,6);
+const pp=new THREE.Group();pp.position.set(-10.5,0,11.5);scene.add(pp);box(4.2,.1,2.3,0x2b8a6a,0,.74,0,pp);box(.04,.16,2.3,0xffffff,0,.84,0,pp);box(.05,.2,2.4,0xeeeeee,0,.84,0,pp);
+for(const sx of[-1.7,1.7])for(const sz of[-.9,.9])box(.1,.74,.1,0x444455,sx,0,sz,pp);
+const ball=new THREE.Mesh(new THREE.SphereGeometry(.08,10,8),M(0xffffff,{emissive:0xffffff,emissiveIntensity:.3}));ball.visible=false;scene.add(ball);
+for(const [x,z,c] of[[0.5,12.2,0xf0b429],[3.2,12.8,0x2fbf7f]]){const b=new THREE.Mesh(new THREE.SphereGeometry(.75,14,10),M(c));b.scale.y=.6;b.position.set(x,.42,z);add(b)}
+// qabulxona: navbat papkalari, «Yetkazish» qutisi
+box(4.2,1.05,1.1,0xffffff,14,0,10.6);box(4.4,.08,1.3,0x0b1f4b,14,1.05,10.6);
+const folders=[];const fc=[0x3b6fd8,0xe0115f,0xf0b429,0x2fbf7f,0x7a3fc4];for(let i=0;i<12;i++){const f=box(.7,.07,.5,fc[i%5],12.6+(i>5?1.1:0),1.13+(i%6)*.08,10.6);f.visible=false;folders.push(f)}
+const qT=canvasTex(256,128);box(1.4,.8,.08,new THREE.MeshStandardMaterial({map:qT.t,emissive:0xffffff,emissiveMap:qT.t,emissiveIntensity:.8}),15.4,1.15,10.4);
+function drawQueue(n){const g=qT.ctx;g.fillStyle="#0b1f4b";g.fillRect(0,0,256,128);g.fillStyle="#9fb3ff";g.font="600 24px sans-serif";g.textAlign="center";g.fillText("NAVBAT",128,38);g.fillStyle="#fff";g.font="800 60px sans-serif";g.fillText(String(n),128,104);qT.t.needsUpdate=true}
+drawQueue(0);
+box(1.3,1.3,1,0x2f6fe0,19.6,0,9.2);box(1.0,.08,.1,0x0b1f4b,19.6,1.05,9.71);
+const delT=canvasTex(256,64);{const g=delT.ctx;g.fillStyle="#2f6fe0";g.fillRect(0,0,256,64);g.fillStyle="#fff";g.font="700 30px sans-serif";g.textAlign="center";g.fillText("YETKAZISH",128,43)}
+box(1.2,.32,.02,new THREE.MeshStandardMaterial({map:delT.t,roughness:.6}),19.6,.5,9.72);
+// o'simliklar
+const plants=[[-21,-6.5],[-12.6,-14.2],[11.5,-14.2],[21.2,-6],[-8.5,8.7],[8.3,8.7],[21.2,14.2],[-21,14.5],[-12.4,6.2],[10.5,-7]];
+for(const [x,z] of plants){cyl(.38,.3,.6,0xd08a6a,x,0,z,null,12);for(let i=0;i<5;i++){const l=new THREE.Mesh(new THREE.ConeGeometry(.28,1.1,6),M(i%2?0x3e9a6a:0x4caf7d));l.position.set(x+Math.cos(i*1.3)*.15,1.05+i*.1,z+Math.sin(i*1.3)*.15);l.rotation.set(Math.cos(i)*.4,0,Math.sin(i)*.4);add(l)}}
+// osma chiroqlar
+// stol chiroqlari (iliq yorug')
+for(const k of["w1","w3","w5","m","k","q","s"]){const d=D[k];box(.05,.5,.05,0x2b2b3a,d.x-1.05,.97,d.z-.35);const sh=cyl(.08,.2,.18,0x2b2b3a,d.x-1.05,1.42,d.z-.25,null,12);
+  const b=new THREE.Mesh(new THREE.SphereGeometry(.07,8,6),M(0xfff1c9,{emissive:0xffd88a,emissiveIntensity:2}));b.position.set(d.x-1.05,1.42,d.z-.2);scene.add(b)}
+
+/* ================= XODIMLAR ================= */
+const SKIN=[0xf1c7a3,0xe2b08a,0xc98e66,0xf3d1b5],HAIR=[0x2b1d16,0x5a3a22,0x111111,0x8a5a2b,0xd9a441];
+const C=[
+ {id:"m",nm:"Menejer",role:"Hamma hisobotlarni kuzatadi, kunlik xulosa beradi",src:"orders, payments, ai_usage — bugungi raqamlar",c:0x22346e},
+ {id:"w1",nm:"Ishchi 1",role:"Buyurtmalarni bajaradi: reja → matn → rasmlar → PPTX/PDF",src:"orders (running), ai_usage.stage",c:0x3b6fd8,w:1},
+ {id:"w2",nm:"Ishchi 2",role:"Buyurtmalarni bajaradi",src:"orders, ai_usage",c:0x3b6fd8,w:1},
+ {id:"w3",nm:"Ishchi 3",role:"Buyurtmalarni bajaradi",src:"orders, ai_usage",c:0x3b6fd8,w:1},
+ {id:"w4",nm:"Ishchi 4",role:"Buyurtmalarni bajaradi",src:"orders, ai_usage",c:0x3b6fd8,w:1},
+ {id:"w5",nm:"Ishchi 5",role:"Buyurtmalarni bajaradi",src:"orders, ai_usage",c:0x3b6fd8,w:1},
+ {id:"k",nm:"Kassir",role:"Click, Payme va karta to'lovlarini qabul qiladi",src:"payments",c:0xe0115f},
+ {id:"s",nm:"Sotuvchi",role:"To'lamaganlarga eslatma yuboradi (fon rejimida; hisobi hali ulanmagan)",src:"—",c:0x7a3fc4},
+ {id:"y",nm:"Yordamchi",role:"Mijoz yozsa — sizga yetkazadi, javobingizni kutadi",src:"support_chats (mijoz ochgan, 2 kunda faol)",c:0xe07a1f},
+ {id:"q",nm:"Sifatchi",role:"Mijoz baholarini kuzatadi",src:"feedback",c:0x0f9aa8},
+ {id:"x",nm:"SMM",role:"Kanalga ishlarni joylaydi (fon rejimida; hisobi hali ulanmagan)",src:"—",c:0xc23a7c},
+ {id:"n",nm:"Navbatchi",role:"Server va ishchilar yurak urishini kuzatadi",src:"kv hb:worker, xato buyurtmalar",c:0x55617f}];
+const BOTTOM=0x2e3346;
+function person(c,i){
+  const root=new THREE.Group(),body=new THREE.Group();root.add(body);scene.add(root);
+  const skin=SKIN[i%4],hair=HAIR[i%5];
+  const leg=(x)=>{const p=new THREE.Group();p.position.set(x,.84,0);body.add(p);box(.24,.84,.26,BOTTOM,0,-.84,0,p);box(.26,.12,.36,0x1a1a22,0,-.84,.05,p);return p};
+  const arm=(x)=>{const p=new THREE.Group();p.position.set(x,1.52,0);body.add(p);box(.18,.62,.2,c.c,0,-.62,0,p);box(.16,.14,.18,skin,0,-.76,0,p);return p};
+  const lL=leg(-.15),lR=leg(.15);
+  const torso=box(.64,.72,.36,c.c,0,.84,0,body);
+  const aL=arm(-.42),aR=arm(.42);
+  const head=new THREE.Group();head.position.set(0,1.56,0);body.add(head);
+  box(.5,.5,.5,skin,0,.02,0,head);box(.54,.16,.54,hair,0,.46,0,head);box(.54,.3,.12,hair,0,.2,-.22,head);
+  for(const x of[-.11,.11])box(.07,.08,.02,0x1a1a22,x,.22,.255,head);box(.14,.03,.02,0xb05a5a,0,.1,.255,head);
+  if(i%3===1){box(.34,.06,.02,0x222,0,.24,.27,head)}
+  const cup=cyl(.07,.06,.16,0xffffff,0,-.86,.12,aR,10);cup.visible=false;
+  const paddle=box(.04,.3,.22,0xd03030,0,-.95,.1,aR);paddle.visible=false;
+  root.scale.setScalar(1.32);
+  return {root,body,lL,lR,aL,aR,head,cup,paddle};
+}
+const ZT=canvasTex(64,64);{const g=ZT.ctx;g.fillStyle="#fff";g.font="800 46px sans-serif";g.textAlign="center";g.fillText("Z",32,48)}
+const pickable=[];
+C.forEach((c,i)=>{
+  Object.assign(c,person(c,i),{desk:D[c.id],x:0,z:0,ry:Math.PI,path:[],speed:3.2,pose:"stand",act:"",status:"",state:"idle",duty:null,jobs:[],busyUntil:0});
+  [c.x,c.z]=c.desk.seat;c.root.traverse(o=>{if(o.isMesh){o.userData.c=c;pickable.push(o)}});
+  c.zs=[0,1,2].map(k=>{const s=new THREE.Sprite(new THREE.SpriteMaterial({map:ZT.t,transparent:true,depthWrite:false}));s.scale.set(.35,.35,.35);s.visible=false;scene.add(s);return s});
   c.lab=document.createElement("div");c.lab.className="lab";
   c.lab.innerHTML=`<div class="bb"></div><div class="tag"><b><i></i><span></span></b><small></small></div>`;
-  c.lab.querySelector("span").textContent=c.nm;c.lab.querySelector("small").textContent=c.sh;labs.appendChild(c.lab);
-  c.lab.querySelector(".tag").addEventListener("click",()=>select(c));
-}
-function select(c){S.sel=c;C.forEach(o=>o.lab.classList.toggle("sel",o===c));showDet()}
-const wait=ms=>new Promise(r=>{let left=ms;const step=()=>{if(!S.paused)left-=200*S.speed;left<=0?r():setTimeout(step,200)};setTimeout(step,0)});
-function go(c,[x,z]){return new Promise(r=>{c.tx=x;c.tz=z;c.arrive=r})}
-const goP=(c,p)=>go(c,W(...p)),back=c=>go(c,home(c));
+  c.lab.querySelector("span").textContent=c.nm;c.lab._c=c;labs.appendChild(c.lab);
+  c.lab.querySelector(".tag").addEventListener("click",e=>{e.stopPropagation();select(c)});
+});
+const by=id=>C.find(c=>c.id===id),workers=C.filter(c=>c.w);
+const DOT={work:"var(--ok)",wait:"var(--wait)",idle:"var(--idle)",you:"var(--acc)"};
+function status(c,txt,state){c.status=txt;c.state=state;c.lab.querySelector("small").textContent=txt;c.lab.querySelector("i").style.background=DOT[state];
+  c.lab.classList.toggle("you",state==="you");if(S.sel===c)showDet()}
+function say(c,txt,ms=6000){const b=c.lab.querySelector(".bb");b.textContent=txt;b.classList.add("on");clearTimeout(c.bt);c.bt=setTimeout(()=>b.classList.remove("on"),ms)}
 
-/* ---------- kamera va chizish ---------- */
-function setCam(){const d=70;cam.position.set(Math.sin(S.ang)*d,d*.85,Math.cos(S.ang)*d);cam.lookAt(0,0.8,0)}
-function resize(){const w=stage.clientWidth,h=stage.clientHeight;R.setSize(w,h,false);const a=w/h,hw=Math.max(31,20.5*a)/S.zoom,hh=hw/a;
-  Object.assign(cam,{left:-hw,right:hw,top:hh,bottom:-hh});cam.updateProjectionMatrix();setCam()}
+/* --- yurish: yo'lak orqali (stollar ustidan o'tmaslik uchun) */
+const AISLE=6.2;
+function route(c,tx,tz){const p=[];const near=(Math.abs(c.z-tz)<1.2&&Math.abs(c.x-tx)<6)||Math.hypot(c.x-tx,c.z-tz)<5;
+  if(!near){if(Math.abs(c.z-AISLE)>.2)p.push([c.x,AISLE]);p.push([tx,AISLE])}p.push([tx,tz]);return p}
+function walkTo(c,tx,tz,face){return new Promise(r=>{c.pose="walk";c.path=route(c,tx,tz);c.face=face;c.arrive=r})}
+const S={sel:null,zoom:1,az:.55,el:.86,game:null,data:null};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function hold(c,ms){const end=Date.now()+ms;while(Date.now()<end){if(c.duty||c.jobs.length)return false;await sleep(400)}return true}
+
+/* --- bo'sh paytdagi mashg'ulotlar */
+const SPOTS={coffee:[-20.2,8.7,-Math.PI/2],cooler:[-20.4,10.6,-Math.PI/2],sofa:[[-17.6,11.1],[-17.6,12.6],[-17.6,14.1]],
+ pingL:[-13.3,11.5,Math.PI/2],pingR:[-7.7,11.5,-Math.PI/2],window:[[11,-13.6],[12.4,-13.6],[4.4,-13.6]],bean:[[.5,12.2],[3.2,12.8]],
+ plant:[[-8.5,7.8],[8.3,7.8],[-12.4,7.1]]};
+const taken=new Set();
+function claim(key){if(taken.has(key))return false;taken.add(key);return true}
+const FUN={
+ coffee:["☕ Qahva ichyapti","☕ Uchinchi qahvasi…","☕ Qahva — ish yoqilg'isi"],
+ cooler:["🥤 Suv ichyapti","💧 Kuler yonida gap sotyapti"],
+ sofa:["🛋️ Divanda dam olyapti","📺 Televizor ko'ryapti","😌 Ko'zini yumib dam olyapti"],
+ sleep:["💤 Mudrayapti","😴 Klaviatura ustida uxlab qoldi","💤 Buyurtma tushini ko'ryapti"],
+ ping:["🏓 Stol tennisi o'ynayapti","🏓 Hisob 7:5 — yutyapti","🏓 Revansh so'rayapti"],
+ pingWait:["🏓 Sherik kutyapti"],
+ stretch:["🙆 Cho'zilyapti","🤸 Badantarbiya qilyapti"],
+ window:["🌇 Derazadan qarayapti","☁️ Ob-havoni kuzatyapti"],
+ plant:["🪴 Gulga suv quyyapti"],
+ bean:["🎧 Musiqa tinglayapti","📱 Telefon titkilayapti"],
+ phone:["📱 Telefon titkilayapti","🎮 O'yin o'ynayapti (sir!)"],
+ roam:["🚶 Ofisni aylanyapti","📋 Kim nima qilayotganini ko'ryapti"]};
+async function idleLife(c){
+  const opts=["coffee","coffee","cooler","sofa","sofa","sleep","sleep","ping","ping","stretch","window","plant","bean","phone"];
+  if(c.id==="m")opts.push("roam","roam","roam");if(c.id==="n")opts.push("server","server");
+  const a=pick(opts);c.act=a;
+  const idleSt=t=>status(c,t,"idle");
+  const GO={coffee:"☕ Qahva olgani ketyapti",cooler:"🥤 Suv ichgani ketyapti",sofa:"🛋️ Dam olgani ketyapti",bean:"🎧 Puf kresloga ketyapti",
+    ping:"🏓 Stol tennisiga ketyapti",window:"🌇 Deraza oldiga ketyapti",plant:"🪴 Gulga suv quygani ketyapti",sleep:"🥱 Esnab joyiga qaytyapti",
+    stretch:"🙆 Joyiga qaytyapti",phone:"📱 Joyiga qaytyapti",roam:"🚶 Ofisni aylanyapti",server:"🖥️ Server xonasiga ketyapti"};
+  idleSt(GO[a]||"🚶 Yuribdi");
+  if(a==="coffee"||a==="cooler"){const [x,z,f]=SPOTS[a];if(!claim(a))return hold(c,3000);try{await walkTo(c,x+rnd(-.2,.2),z,f);idleSt(pick(FUN[a]));c.anim=a==="coffee"?"coffee":"stand";c.cup.visible=true;await hold(c,rnd(9000,16000))}finally{c.cup.visible=false;taken.delete(a)}}
+  else if(a==="sofa"||a==="bean"){const list=SPOTS[a];const i=list.findIndex((_,k)=>!taken.has(a+k));if(i<0)return hold(c,2000);const key=a+i;claim(key);
+    try{const [x,z]=list[i];await walkTo(c,x,z,a==="sofa"?-Math.PI/2:Math.PI);c.pose="sit";c.seatY=a==="sofa"?.08:-.05;idleSt(pick(FUN[a]));await hold(c,rnd(12000,22000))}finally{taken.delete(key)}}
+  else if(a==="ping"){const side=!taken.has("pingL")?"pingL":!taken.has("pingR")?"pingR":null;if(!side)return hold(c,2000);claim(side);
+    try{const [x,z,f]=SPOTS[side];await walkTo(c,x,z,f);c.paddle.visible=true;
+      let waited=0;while(!(taken.has("pingL")&&taken.has("pingR"))&&waited<9000){idleSt(pick(FUN.pingWait));c.anim="stand";if(!await hold(c,1000))return;waited+=1000}
+      if(taken.has("pingL")&&taken.has("pingR")){S.game=S.game||Date.now();idleSt(pick(FUN.ping));c.anim="ping";await hold(c,rnd(14000,22000))}}
+    finally{c.paddle.visible=false;taken.delete(side);if(!(taken.has("pingL")&&taken.has("pingR")))S.game=null}}
+  else if(a==="window"||a==="plant"){const list=SPOTS[a];const i=list.findIndex((_,k)=>!taken.has(a+k));if(i<0)return hold(c,2000);const key=a+i;claim(key);
+    try{const [x,z]=list[i];await walkTo(c,x,z,a==="window"?Math.PI:Math.PI);idleSt(pick(FUN[a]));c.anim=a==="plant"?"water":"stand";await hold(c,rnd(8000,14000))}finally{taken.delete(key)}}
+  else if(a==="roam"){const pts=[[-6,-1.6],[3,4.2],[14.5,6],[-15.5,6],[17,-8.5]];idleSt(pick(FUN.roam));for(const [x,z] of pts.sort(()=>Math.random()-.5).slice(0,3)){await walkTo(c,x,z);c.anim="stand";if(!await hold(c,2500))return}}
+  else if(a==="server"){idleSt("🖥️ Server javonlarini tekshiryapti");await walkTo(c,-4.5,-12.6,Math.PI);c.anim="stand";await hold(c,rnd(7000,11000))}
+  else{ // stol yonida: uxlash, cho'zilish, telefon
+    const [x,z]=c.desk.seat;await walkTo(c,x,z,Math.PI);
+    if(a==="stretch"){idleSt(pick(FUN.stretch));c.pose="stand";c.anim="stretch";await hold(c,rnd(5000,8000))}
+    else{c.pose="sit";c.seatY=0;c.anim=a==="sleep"?"sleep":"phone";idleSt(pick(FUN[a]));if(a==="sleep")c.desk.screen.mode="sleep";await hold(c,rnd(12000,22000));c.desk.screen.mode="off"}}
+}
+async function job(c,j){
+  if(j.t==="fetch"){status(c,`📥 #${j.id} buyurtmani olishga bordi`,"work");await walkTo(c,13+rnd(-1,2),9.6,0);c.anim="stand";await sleep(1300)}
+  else if(j.t==="deliver"){status(c,`📤 #${j.id} tayyor — yetkazishga olib ketyapti`,"work");say(c,`✅ #${j.id} mijozga yetkazildi`);await walkTo(c,19.6+rnd(-.4,.4),8.2,0);c.anim="stand";await sleep(1500)}
+  else if(j.t==="safe"){say(c,j.text);status(c,"💰 Pulni seyfga olib bordi","work");await walkTo(c,20.6,-12.9,Math.PI);c.anim="stand";await sleep(1800)}
+  else if(j.t==="visit"){const w=pick(workers);say(c,j.text);status(c,"🔎 Ishni tekshirgani bordi",j.bad?"wait":"work");await walkTo(c,w.desk.x+1.6,w.desk.z+1.3,-Math.PI/2);c.anim="talk";await sleep(4000)}
+}
+async function life(c){await sleep(rnd(100,2500));
+  for(;;){try{
+    if(c.jobs.length){await job(c,c.jobs.shift());continue}
+    if(c.duty){const [x,z]=c.desk.seat;if(Math.hypot(c.x-x,c.z-z)>.2)await walkTo(c,x,z,Math.PI);c.pose="sit";c.seatY=0;c.anim="type";
+      c.desk.screen.mode=c.duty.alert?"alert":"work";status(c,c.duty.text,c.duty.state||"work");await sleep(800);continue}
+    c.desk.screen.mode="off";c.anim="stand";c.pose="stand";
+    if(Date.now()<c.busyUntil){await sleep(500);continue}
+    await idleLife(c);c.pose="stand";c.anim="stand";
+  }catch(e){console.error(e);await sleep(1500)}}}
+
+/* ================= KAMERA VA KADR ================= */
+function setCam(){const w=stage.clientWidth,h=stage.clientHeight,pw=(w>760&&!$("panel").classList.contains("hide"))?330:0,a=(w+pw)/h;
+  cam.aspect=a;if(pw)cam.setViewOffset(w+pw,h,pw,0,w,h);else cam.clearViewOffset();
+  const base=a>1.6?74:a>1.2?82:Math.min(200,82*1.02/Math.max(.45,a)),r=base/S.zoom;
+  cam.position.set(Math.sin(S.az)*Math.cos(S.el)*r,Math.sin(S.el)*r,Math.cos(S.az)*Math.cos(S.el)*r+1);cam.lookAt(0,0,1);cam.updateProjectionMatrix()}
+function resize(){R.setSize(stage.clientWidth,stage.clientHeight,false);setCam()}
 const ro=new ResizeObserver(resize);ro.observe(stage);
-const v=new THREE.Vector3(),still=matchMedia("(prefers-reduced-motion: reduce)").matches;
-function proj(vec,el){v.copy(vec).project(cam);const x=(v.x+1)/2*stage.clientWidth,y=(1-v.y)/2*stage.clientHeight;el.style.transform=`translate(${x}px,${y}px)`}
-let last=performance.now();
-function frame(t){const dt=Math.min(.05,(t-last)/1000);last=t;
-  for(const c of C){const ddx=c.tx-c.x,ddz=c.tz-c.z,dist=Math.hypot(ddx,ddz);
-    if(dist>.05&&!S.paused){const st=Math.min(dist,5*S.speed*dt);c.x+=ddx/dist*st;c.z+=ddz/dist*st;c.g.rotation.y=Math.atan2(ddx,ddz);c.g.position.y=still?0:Math.abs(Math.sin(t/70))*.15}
-    else{c.g.position.y=0;if(dist<=.05&&c.arrive){const r=c.arrive;c.arrive=null;c.g.rotation.y=Math.PI;r()}}
-    c.g.position.x=c.x;c.g.position.z=c.z;v.set(c.x,3.1,c.z);proj(v,c.lab)}
-  for(const r of roomLabels)proj(r.v,r.el);
+const v3=new THREE.Vector3();
+function proj(x,y,z,el){v3.set(x,y,z).project(cam);if(v3.z>1){el.style.display="none";return null}el.style.display="";
+  const p={el,x:(v3.x+1)/2*stage.clientWidth,y:(1-v3.y)/2*stage.clientHeight,d:v3.z};el.style.transform=`translate(${p.x}px,${p.y}px)`;return p}
+const LP=[];
+function declutter(){ // yaqindagi yorliq to'liq; unga tegib turgan uzoqroqdagisi — faqat ism va biroz yuqoriga
+  LP.sort((a,b)=>a.d-b.d);const placed=[],small=stage.clientWidth<760;
+  for(const p of LP){const c=p.el._c,full=!small||c===S.sel||c.state==="you";let h=full?40:22,w=full?190:96,y=p.y,hit=true,k=0;
+    for(;hit&&k<4;k++){hit=placed.some(q=>Math.abs(q.x-p.x)<(q.w+w)/2&&Math.abs(q.y-y)<(q.h+h)/2-2);if(hit){if(full&&k===0){h=22;w=96}else y-=22}}
+    p.el.classList.toggle("far",h===22&&c!==S.sel);if(y!==p.y)p.el.style.transform=`translate(${p.x}px,${y}px)`;placed.push({x:p.x,y,w,h})}
+  LP.length=0}
+let last=performance.now(),tScreen=0,tLed=0;
+function frame(t){const dt=Math.min(.05,(t-last)/1000);last=t;const T=t/1000;
+  for(const c of C){
+    if(c.path.length){const [tx,tz]=c.path[0],dx=tx-c.x,dz=tz-c.z,d=Math.hypot(dx,dz);
+      if(d<.06){c.path.shift();if(!c.path.length){c.pose="stand";if(c.face!==undefined)c.ry=c.face;const r=c.arrive;c.arrive=null;r&&r()}}
+      else{const st=Math.min(d,c.speed*dt);c.x+=dx/d*st;c.z+=dz/d*st;c.ry=Math.atan2(dx,dz)}}
+    let dr=c.ry-c.root.rotation.y;dr=Math.atan2(Math.sin(dr),Math.cos(dr));c.root.rotation.y+=dr*Math.min(1,dt*10);
+    c.root.position.set(c.x,0,c.z);
+    const B=c.body,sw=still?0:Math.sin(T*9);let y=0;
+    c.lL.rotation.x=c.lR.rotation.x=0;c.aL.rotation.set(0,0,0);c.aR.rotation.set(0,0,0);c.head.rotation.set(0,0,0);B.rotation.x=0;
+    if(c.pose==="walk"){c.lL.rotation.x=sw*.6;c.lR.rotation.x=-sw*.6;c.aL.rotation.x=-sw*.5;c.aR.rotation.x=sw*.5;y=Math.abs(sw)*.06}
+    else if(c.pose==="sit"){c.lL.rotation.x=c.lR.rotation.x=-Math.PI/2;y=-.36+(c.seatY||0);
+      if(c.anim==="type"){c.aL.rotation.x=-1.25+(still?0:Math.sin(T*18)*.12);c.aR.rotation.x=-1.25+(still?0:Math.cos(T*17)*.12);c.head.rotation.x=.08}
+      else if(c.anim==="sleep"){B.rotation.x=.45;c.head.rotation.x=.5;c.aL.rotation.x=c.aR.rotation.x=-1.5}
+      else if(c.anim==="phone"){c.aR.rotation.x=-1.6;c.aL.rotation.x=-1.4;c.head.rotation.x=.35}
+      else{c.aL.rotation.x=c.aR.rotation.x=-.3}}
+    else{ // turish
+      if(c.anim==="coffee"){c.aR.rotation.x=-1.1-(still?0:Math.max(0,Math.sin(T*1.3))*1.1);c.head.rotation.x=-.05}
+      else if(c.anim==="stretch"){const s=still?0:Math.sin(T*2);c.aL.rotation.z=-2.7+s*.2;c.aR.rotation.z=2.7-s*.2;y=Math.max(0,s)*.05}
+      else if(c.anim==="ping"){c.aR.rotation.x=-1.0+(still?0:Math.sin(T*6+(c.x>0?Math.PI:0))*.7);c.aR.rotation.z=.3;y=still?0:Math.abs(Math.sin(T*3))*.04}
+      else if(c.anim==="water"){c.aR.rotation.x=-1.0;c.aR.rotation.z=.2;c.head.rotation.x=.3}
+      else if(c.anim==="talk"){c.aR.rotation.x=-.6+(still?0:Math.sin(T*4)*.4);c.aL.rotation.x=-.2}
+      else if(!still){c.head.rotation.y=Math.sin(T*.6+c.x)*.25;y=Math.sin(T*2+c.z)*.01}}
+    B.position.y=y;
+    const asleep=c.pose==="sit"&&c.anim==="sleep";
+    c.zs.forEach((s,k)=>{s.visible=asleep;if(asleep){const p=((T*.5+k/3)%1);s.position.set(c.x+.3+p*.5,2.3+p*1.4,c.z-.2);s.material.opacity=1-p;s.scale.setScalar(.25+p*.25)}});
+    if(c.root.visible){const p=proj(c.x,c.pose==="sit"?3.05:3.55,c.z,c.lab);if(p)LP.push(p)}
+  }
+  // to'p (stol tennisi)
+  if(S.game&&!still){const p=((t-S.game)/700)%2,u=p<1?p:2-p;ball.visible=true;ball.position.set(-12.3+u*3.6,.95+Math.sin(u*Math.PI)*.8,11.5+Math.sin(T*1.7)*.4)}else ball.visible=false;
+  if(t-tScreen>350){tScreen=t;for(const s of screens)if(s.mode!=="off"||s.drawn!=="off"){drawScreen(s,T);s.drawn=s.mode}drawTv(T)}
+  if(t-tLed>200){tLed=t;for(const m of leds)m.emissiveIntensity=Math.random()<.25?.15:1.1}
+  declutter();
   R.render(scene,cam);requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
-let drag=null;
-stage.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,a:S.ang,moved:false};stage.setPointerCapture(e.pointerId)});
-stage.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>4)drag.moved=true;S.ang=drag.a-dx*.006;setCam()});
-stage.addEventListener("pointerup",e=>{if(drag&&!drag.moved){const r=stage.getBoundingClientRect(),rc=new THREE.Raycaster();
-  rc.setFromCamera({x:(e.clientX-r.left)/r.width*2-1,y:-(e.clientY-r.top)/r.height*2+1},cam);const h=rc.intersectObjects(pick3)[0];if(h)select(h.object.userData.c)}drag=null});
-stage.addEventListener("wheel",e=>{e.preventDefault();S.zoom=Math.min(2.6,Math.max(.7,S.zoom*(e.deltaY<0?1.1:.9)));resize()},{passive:false});
-$("zin").onclick=()=>{S.zoom=Math.min(2.6,S.zoom*1.2);resize()};$("zout").onclick=()=>{S.zoom=Math.max(.7,S.zoom/1.2);resize()};
+function drawClock(){const g=clockT.ctx,now=new Date(Date.now()+(new Date().getTimezoneOffset()+300)*6e4),h=now.getHours()%12,m=now.getMinutes();
+  g.fillStyle="#fff";g.fillRect(0,0,256,256);g.strokeStyle="#0b1f4b";g.lineWidth=14;g.beginPath();g.arc(128,128,112,0,7);g.stroke();
+  for(let i=0;i<12;i++){const a=i/12*Math.PI*2;g.fillStyle="#0b1f4b";g.fillRect(128+Math.sin(a)*90-4,128-Math.cos(a)*90-4,8,8)}
+  const hand=(a,l,w,c)=>{g.strokeStyle=c;g.lineWidth=w;g.lineCap="round";g.beginPath();g.moveTo(128,128);g.lineTo(128+Math.sin(a)*l,128-Math.cos(a)*l);g.stroke()};
+  hand((h+m/60)/12*Math.PI*2,55,12,"#0b1f4b");hand(m/60*Math.PI*2,85,8,"#e0115f");clockT.t.needsUpdate=true}
+drawClock();setInterval(drawClock,30000);
 
+// --- boshqaruv: surish — aylantirish, g'ildirak/qisish — yaqinlashtirish, bosish — xodimni tanlash
+const ptrs=new Map();let drag=null,pinch=0;
+stage.addEventListener("pointerdown",e=>{if(e.target.closest(".panel,.tag,.msg"))return;ptrs.set(e.pointerId,[e.clientX,e.clientY]);stage.setPointerCapture(e.pointerId);
+  drag={x:e.clientX,y:e.clientY,az:S.az,el:S.el,moved:false};if(ptrs.size===2){const [a,b]=[...ptrs.values()];pinch=Math.hypot(a[0]-b[0],a[1]-b[1])}});
+stage.addEventListener("pointermove",e=>{if(!ptrs.has(e.pointerId))return;ptrs.set(e.pointerId,[e.clientX,e.clientY]);
+  if(ptrs.size===2){const [a,b]=[...ptrs.values()],d=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pinch){S.zoom=Math.min(3,Math.max(.7,S.zoom*d/pinch));setCam()}pinch=d;drag.moved=true;return}
+  if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>5)drag.moved=true;
+  S.az=drag.az-dx*.005;S.el=Math.min(1.35,Math.max(.45,drag.el+dy*.004));setCam()});
+stage.addEventListener("pointerup",e=>{ptrs.delete(e.pointerId);if(ptrs.size<2)pinch=0;
+  if(drag&&!drag.moved&&!e.target.closest(".panel,.tag")){const r=stage.getBoundingClientRect(),rc=new THREE.Raycaster();
+    rc.setFromCamera({x:(e.clientX-r.left)/r.width*2-1,y:-(e.clientY-r.top)/r.height*2+1},cam);const h=rc.intersectObjects(pickable)[0];if(h)select(h.object.userData.c)}
+  if(!ptrs.size)drag=null});
+stage.addEventListener("wheel",e=>{e.preventDefault();S.zoom=Math.min(3,Math.max(.7,S.zoom*(e.deltaY<0?1.1:.9)));setCam()},{passive:false});
+$("zin").onclick=()=>{S.zoom=Math.min(3,S.zoom*1.2);setCam()};$("zout").onclick=()=>{S.zoom=Math.max(.7,S.zoom/1.2);setCam()};
+const VIEWS=[[.55,.86],[-.5,.8],[0,1.2],[1.1,.7]];let vi=0;$("view").onclick=()=>{vi=(vi+1)%VIEWS.length;[S.az,S.el]=VIEWS[vi];setCam()};
+$("pan").onclick=e=>{const p=$("panel").classList.toggle("hide");e.currentTarget.setAttribute("aria-pressed",!p);setCam()};
+if(innerWidth<760){$("panel").classList.add("hide");$("pan").setAttribute("aria-pressed","false");if(innerWidth<innerHeight){S.az=.95;S.el=1.0}setCam()}
+const tg=window.Telegram&&Telegram.WebApp&&Telegram.WebApp.initData!==undefined?Telegram.WebApp:null;
+if(tg){try{tg.ready();tg.expand();tg.setHeaderColor&&tg.setHeaderColor("#0b1f4b");tg.disableVerticalSwipes&&tg.disableVerticalSwipes()}catch(e){}}
+$("full").onclick=()=>{try{if(tg&&tg.requestFullscreen){tg.isFullscreen?tg.exitFullscreen():tg.requestFullscreen()}
+  else if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}};
 
-/* ---------- jonli ma'lumot ---------- */
+function select(c){S.sel=c;C.forEach(o=>o.lab.classList.toggle("sel",o===c));$("panel").classList.remove("hide");$("pan").setAttribute("aria-pressed","true");setCam();showDet()}
+function showDet(){const c=S.sel,d=$("det");if(!c){d.hidden=true;return}d.hidden=false;
+  d.innerHTML=`<button class="x" aria-label="Yopish">×</button><h2></h2><p class="k">Hozir</p><p class="t"></p><p class="k">Vazifasi</p><p class="r"></p><p class="k">Ma'lumot manbasi</p><p class="s"></p>`;
+  d.querySelector("h2").textContent=c.nm;d.querySelector(".t").textContent=c.status||"—";d.querySelector(".r").textContent=c.role;d.querySelector(".s").textContent=c.src;
+  d.querySelector(".x").onclick=()=>{S.sel=null;C.forEach(o=>o.lab.classList.remove("sel"));showDet()}}
+
+/* ================= MA'LUMOT ================= */
 const NAMES={queue:"Navbat",worker:"Ishchi",cashier:"Kassir",quality:"Sifatchi",support:"Yordamchi",guard:"Navbatchi",manager:"Menejer"};
-const DOT={work:"var(--ok)",wait:"var(--wait)",idle:"var(--idle)",you:"var(--acc)"};
-function setState(c,txt,state,show=true){c.task=txt;c.state=state;const b=c.lab.querySelector(".bb");b.textContent=txt;b.classList.toggle("on",show&&state!=="idle");
-  c.lab.classList.toggle("you",state==="you");c.lab.querySelector("i").style.background=DOT[state];if(S.sel===c)showDet()}
-const L={tz:18000,first:true,lastT:0,slotOf:{},walking:new Set(),fails:0};
+const L={tz:18000,first:true,lastT:0,slotOf:{},fails:0};
 const hmT=t=>new Date((t+L.tz)*1000).toISOString().slice(11,16);
-function stats(d){const t=d.today;$("sRev").textContent=fmt(t.revenue);$("sCost").textContent=fmt(t.cost);
-  $("sMar").textContent=t.revenue?Math.round((t.revenue-t.cost)/t.revenue*100)+"%":"—";$("sDone").textContent=t.done;
-  $("sQ").textContent=d.queue.n;$("sYou").textContent=d.pending.checks+d.pending.support;
-  $("sVote").textContent=`${t.likes} / ${t.dislikes}`;$("sUsers").textContent=t.users}
-function showDet(){const c=S.sel;if(!c)return;const d=$("det");
-  d.innerHTML=`<h2></h2><p class="k">Vazifasi</p><p class="r"></p><p class="k">Hozir</p><p class="t"></p><p class="k">Ma'lumot manbasi</p><p class="s"></p>`;
-  d.querySelector("h2").textContent=c.nm;d.querySelector(".r").textContent=c.role;d.querySelector(".t").textContent=c.task;d.querySelector(".s").textContent=c.src}
-function feed(evs){const f=$("feed");f.innerHTML="";
-  if(!evs.length){f.innerHTML='<li class="empty">Oxirgi 6 soatda voqea yo\'q.</li>'}
+const ICON=s=>/rasm/.test(s)?"🖼️":/reja/.test(s)?"🗂️":/manba/.test(s)?"🔎":/tekshir|sifat/.test(s)?"🧐":/tuzat/.test(s)?"🛠️":/yig'il|PDF|fayl/.test(s)?"📦":"✍️";
+function apply(d){S.data=d;L.tz=d.tz||18000;const slots=Math.min(workers.length,Math.max(1,d.slots||5));
+  workers.forEach((c,i)=>{const on=i<slots;c.root.visible=on;c.lab.style.display=on?"":"none"});
+  const ids=new Set(d.workers.map(o=>o.id));
+  for(const id of Object.keys(L.slotOf))if(!ids.has(+id)){const c=workers[L.slotOf[id]];if(c&&!L.first)c.jobs.push({t:"deliver",id});delete L.slotOf[id]}
+  for(const o of d.workers)if(L.slotOf[o.id]===undefined){const used=new Set(Object.values(L.slotOf));const f=[...Array(slots).keys()].find(i=>!used.has(i));
+    if(f===undefined)continue;L.slotOf[o.id]=f;if(!L.first)workers[f].jobs.push({t:"fetch",id:o.id})}
+  const bySlot={};for(const o of d.workers)if(L.slotOf[o.id]!==undefined)bySlot[L.slotOf[o.id]]=o;
+  workers.forEach((c,i)=>{const o=bySlot[i];c.duty=o?{text:`${ICON(o.stage)} #${o.id} ${o.title}: ${o.stage} · ${Math.max(0,Math.round((d.now-o.since)/60))} daq`}:null});
+  folders.forEach((f,i)=>f.visible=i<Math.min(12,d.queue.n));drawQueue(d.queue.n);
+  const fresh=L.first?[]:d.events.filter(e=>e.t>L.lastT).reverse();
+  for(const e of fresh){
+    if(e.who==="cashier"&&e.state!=="you")by("k").jobs.push({t:"safe",text:"💰 "+e.text});
+    if(e.who==="quality")by("q").jobs.push({t:"visit",text:(e.state==="wait"?"😟 ":"😊 ")+e.text,bad:e.state==="wait"});
+    if(e.who==="guard"){const n=by("n");say(n,"⚠️ "+e.text,9000);n.busyUntil=Date.now()+60000;n.duty={text:"⚠️ "+e.text,state:"wait",alert:true};n.alertUntil=Date.now()+60000}
+  }
+  L.lastT=Math.max(L.lastT,...d.events.map(e=>e.t),0);
+  const k=by("k");k.duty=d.pending.checks?{text:`🧾 ${d.pending.checks} ta karta cheki tasdig'ingizni kutmoqda`,state:"you"}:null;
+  const y=by("y");y.duty=d.pending.support?{text:`🎧 ${d.pending.support} ta mijoz javobingizni kutmoqda (/chat)`,state:"you"}:null;
+  const n=by("n"),hb=d.heartbeat;
+  if(hb!==null&&hb>600)n.duty={text:`🚨 Ishchilar ${Math.round(hb/60)} daqiqadan beri jim — serverni tekshiring`,state:"you",alert:true};
+  else if(!(n.alertUntil>Date.now()))n.duty=null;
+  const t=d.today,mar=t.revenue?Math.round((t.revenue-t.cost)/t.revenue*100):0,you=d.pending.checks+d.pending.support;
+  const m=by("m");m.summary=`📊 Bugun ${t.done} ta ish yetkazildi${t.failed?`, ${t.failed} ta xato`:""}, foyda ${mar}%. `+(you?`${you} ta masala sizni kutmoqda`:"Hammasi joyida 👌");
+  $("sRev").textContent=fmt(t.revenue);$("sCost").textContent=fmt(t.cost);$("sMar").textContent=t.revenue?mar+"%":"—";$("sDone").textContent=t.done;
+  $("sQ").textContent=d.queue.n;$("sYou").textContent=you;$("sVote").textContent=`${t.likes} / ${t.dislikes}`;$("sUsers").textContent=t.users;
+  drawBoard(d);feed(d.events);L.first=false}
+function feed(evs){const f=$("feed");f.textContent="";
+  if(!evs.length){const li=document.createElement("li");li.className="empty";li.textContent="Oxirgi 6 soatda voqea yo'q.";f.appendChild(li)}
   for(const e of evs){const li=document.createElement("li");if(e.state==="you")li.className="you";
     li.innerHTML=`<time></time><span><span class="who"></span> · <span class="t"></span></span>`;
     li.querySelector("time").textContent=hmT(e.t);li.querySelector(".who").textContent=NAMES[e.who]||e.who;li.querySelector(".t").textContent=e.text;f.appendChild(li)}
   const tk=$("tick");tk.innerHTML="<em>LIVE</em>";
-  for(const e of evs.slice(0,3)){const sp=document.createElement("span");sp.innerHTML="<i></i>";const s=(NAMES[e.who]||e.who)+" · "+e.text;sp.append(s.length>52?s.slice(0,50)+"…":s);tk.appendChild(sp)}}
-async function trip(c,p){if(L.walking.has(c))return;L.walking.add(c);try{await goP(c,p);await wait(1200);await back(c)}finally{L.walking.delete(c)}}
-const workers=C.filter(c=>c.w);
-function apply(d){
-  L.tz=d.tz||18000;const slots=Math.min(workers.length,Math.max(1,d.slots||5));
-  workers.forEach((c,i)=>{c.g.visible=i<slots;c.lab.style.display=i<slots?"":"none"});
-  // ishchilar: buyurtma qaysi stolda — barqaror (bir buyurtma bir ishchida qoladi)
-  const ids=new Set(d.workers.map(o=>o.id));
-  for(const id of Object.keys(L.slotOf))if(!ids.has(+id)){const c=workers[L.slotOf[id]];if(c&&!L.first)trip(c,[P.deliver[0],P.deliver[1]+35]);delete L.slotOf[id]}
-  for(const o of d.workers){if(L.slotOf[o.id]===undefined){const used=new Set(Object.values(L.slotOf));const free=[...Array(slots).keys()].find(i=>!used.has(i));
-    if(free===undefined)continue;L.slotOf[o.id]=free;if(!L.first)trip(workers[free],[P.queue[0]+(free-2)*25,P.queue[1]])}}
-  const bySlot={};for(const o of d.workers)if(L.slotOf[o.id]!==undefined)bySlot[L.slotOf[o.id]]=o;
-  workers.forEach((c,i)=>{const o=bySlot[i];if(o){const m=Math.max(0,Math.round((d.now-o.since)/60));setState(c,`#${o.id} ${o.title}: ${o.stage} · ${m} daq`,"work")}
-    else setState(c,"Bo'sh — navbatdan yangi buyurtma kutyapti","idle")});
-  const extra=d.workers.length-Object.keys(bySlot).length;
-  roomLabels[4].el.textContent=d.queue.n?`Navbat · ${d.queue.n} ta`:"Navbat · bo'sh";
-  // yangi voqealar → xodim yuradi / gapiradi
-  const fresh=L.first?[]:d.events.filter(e=>e.t>L.lastT).reverse();
-  for(const e of fresh){
-    if(e.who==="cashier"&&e.state!=="you"){const c=by("k");setState(c,e.text,"work");trip(c,[P.safe[0]-10,P.safe[1]+30])}
-    if(e.who==="quality"){const c=by("q");setState(c,e.text,e.state||"work");c.hold=d.now+40}
-    if(e.who==="guard"){const c=by("n");setState(c,e.text,"wait");c.hold=d.now+60}}
-  L.lastT=Math.max(L.lastT,...d.events.map(e=>e.t),0);
-  const k=by("k");if(d.pending.checks)setState(k,`${d.pending.checks} ta karta cheki tasdig'ingizni kutmoqda`,"you");
-  else if(!L.walking.has(k))setState(k,`Bugun ${fmt(d.today.revenue)} so'm qabul qilindi`,"idle");
-  const y=by("y");setState(y,d.pending.support?`${d.pending.support} ta mijoz javobingizni kutmoqda (/chat)`:"Ochiq suhbat yo'q",d.pending.support?"you":"idle");
-  const q=by("q");if(!(q.hold>d.now))setState(q,`Bugun: ${d.today.likes} «yoqdi», ${d.today.dislikes} «yoqmadi»`,d.today.dislikes>d.today.likes?"wait":"idle");
-  const n=by("n"),hb=d.heartbeat;
-  if(hb!==null&&hb>600)setState(n,`Ishchilar ${Math.round(hb/60)} daqiqadan beri javob bermayapti — serverni tekshiring`,"you");
-  else if(!(n.hold>d.now))setState(n,hb===null?"Yurak urishi hali yozilmagan":`Ishchilar joyida (oxirgi signal ${hb} s oldin)`+(extra>0?` · yana ${extra} ta buyurtma boshqa ishchida`:""),"idle");
-  for(const id of ["s","x"])setState(by(id),"Fon rejimida ishlaydi — hisobi bu ekranga hali ulanmagan","idle");
-  const m=by("m"),t=d.today,mar=t.revenue?Math.round((t.revenue-t.cost)/t.revenue*100):0,you=d.pending.checks+d.pending.support;
-  setState(m,`Bugun: ${t.done} ta ish yetkazildi${t.failed?`, ${t.failed} ta xato`:""}, foyda ${mar}%. `+(you?`${you} ta masala sizni kutmoqda`:"Hammasi joyida"),you?"you":"work",!!you);
-  stats(d);feed(d.events);L.first=false;
-}
-async function boss(){const c=by("m");const spots=[[500,270],[860,330],[170,560],[500,560],[130,300],[880,150]];
-  for(;;){await wait(rnd(30000,45000));if(!L.walking.has(c))await trip(c,spots[Math.floor(rnd(0,spots.length))])}}
-const by=id=>C.find(c=>c.id===id),rnd=(a,b)=>a+Math.random()*(b-a);
-const tg=window.Telegram&&Telegram.WebApp;if(tg){tg.ready();tg.expand()}
-const API=((window.GO_CONFIG&&GO_CONFIG.apiBase)||"")+"/api/t/view",INIT=tg?tg.initData:"";
-function status(txt,ok){const s=$("live");s.textContent=txt;s.classList.toggle("off",!ok)}
-async function poll(){
-  if(!INIT){status("Telegram'dan oching",false);$("msg").hidden=false;$("msg").textContent="Ofis faqat Telegram ichida, botdagi /ofis buyrug'i orqali ochiladi (adminlar uchun).";return}
-  try{const r=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({of:1,init:INIT})});
-    if(r.status===401||r.status===403){status("Ruxsat yo'q",false);$("msg").hidden=false;$("msg").textContent=r.status===403?"Bu ofis faqat bot adminlari uchun.":"Telegram imzosi eskirgan — /ofis orqali qayta oching.";return}
-    if(!r.ok)throw new Error(r.status);apply(await r.json());L.fails=0;$("msg").hidden=true;status("Jonli · "+hmT(Math.floor(Date.now()/1000)),true)}
-  catch(e){L.fails++;status(L.fails>2?"Aloqa yo'q":"Qayta urinilmoqda…",false)}
-  setTimeout(poll,document.hidden?15000:5000)}
-for(const c of C)setState(c,"Ma'lumot yuklanmoqda…","idle",false);
-poll();boss();
+  for(const e of evs.slice(0,3)){const sp=document.createElement("span");sp.innerHTML="<i></i>";const s=hmT(e.t)+" "+(NAMES[e.who]||e.who)+" · "+e.text;sp.append(s.length>60?s.slice(0,58)+"…":s);tk.appendChild(sp)}}
+// menejer har 50 soniyada xulosa aytadi
+setInterval(()=>{const m=by("m");if(m.summary)say(m,m.summary,9000)},50000);
+setTimeout(()=>{const m=by("m");if(m.summary)say(m,m.summary,9000)},6000);
 
+/* --- ulanish (Telegram) yoki namuna (brauzerda) */
+const INIT=tg?tg.initData:"";const DEMO=!INIT;
+const API=((window.GO_CONFIG&&GO_CONFIG.apiBase)||"")+"/api/t/view";
+function liveSt(txt,ok){const s=$("live");s.textContent=txt;s.classList.toggle("ok",!!ok)}
+async function poll(){
+  try{const r=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({of:1,init:INIT})});
+    if(r.status===401||r.status===403){liveSt("Ruxsat yo'q");$("msg").hidden=false;$("msg").textContent=r.status===403?"Bu ofis faqat bot adminlari uchun.":"Telegram imzosi eskirgan — botda /ofis orqali qayta oching.";return}
+    if(!r.ok)throw new Error(r.status);apply(await r.json());L.fails=0;$("msg").hidden=true;liveSt("● Jonli · "+hmT(Math.floor(Date.now()/1000)),true)}
+  catch(e){L.fails++;liveSt(L.fails>2?"Aloqa yo'q":"Qayta urinilmoqda…")}
+  setTimeout(poll,document.hidden?15000:5000)}
+/* namuna: Telegram tashqarisida ochilsa — o'ylab topilgan ma'lumot (haqiqiy emas) */
+const SIM={oid:3300,run:[],q:[],ev:[],today:{revenue:186400,cost:81200,done:23,failed:0,likes:9,dislikes:2,users:41},checks:1,support:0};
+const KD=[["Standart taqdimot",8900],["Premium taqdimot",14900],["Referat",10000],["Imtihon javoblari",5000],["HEMIS topshirig'i",7000]];
+const STG=["reja tuzilmoqda","manbalar qidirilmoqda","matn yozilmoqda","sifat tekshirilmoqda","rasmlar tanlanmoqda","fayl yig'ilmoqda"];
+function simTick(){const now=Math.floor(Date.now()/1000),E=(who,text,state)=>SIM.ev.unshift({t:now,who,text,state});
+  if(Math.random()<.35){const k=pick(KD),o={id:++SIM.oid,title:k[0],price:k[1]};SIM.q.push(o);E("queue",`Yangi buyurtma #${o.id} · ${o.title} · ${fmt(o.price)} so'm`)}
+  for(const o of SIM.run){o.st++;o.stage=STG[Math.min(STG.length-1,o.st>>1)]}
+  const done=SIM.run.filter(o=>o.st>13);for(const o of done){SIM.run.splice(SIM.run.indexOf(o),1);SIM.today.done++;SIM.today.cost+=o.price*.45;E("worker",`#${o.id} ${o.title} mijozga yetkazildi`);
+    if(Math.random()<.5){const bad=Math.random()<.2;bad?SIM.today.dislikes++:SIM.today.likes++;E("quality",`#${o.id}: mijoz «${bad?"yoqmadi":"yoqdi"}» bosdi`,bad?"wait":"work")}}
+  while(SIM.run.length<3&&SIM.q.length){const o=SIM.q.shift();o.st=0;o.stage=STG[0];o.since=now;SIM.run.push(o)}
+  if(Math.random()<.18){const a=pick([8900,10000,15000,20000]);SIM.today.revenue+=a;E("cashier",`${pick(["Click","Payme"])} · ${fmt(a)} so'm qabul qilindi`)}
+  if(Math.random()<.06)SIM.support=SIM.support?0:1;SIM.ev=SIM.ev.slice(0,30);
+  apply({now,tz:18000,slots:5,workers:SIM.run.map(o=>({id:o.id,title:o.title,stage:o.stage,since:o.since})),queue:{n:SIM.q.length,items:[]},
+    today:SIM.today,pending:{checks:SIM.checks,support:SIM.support},heartbeat:12,events:SIM.ev})}
+for(const c of C)life(c);
+if(DEMO){liveSt("Namuna rejim");$("msg").hidden=false;$("msg").textContent="Namuna: ma'lumot o'ylab topilgan. Haqiqiy ofis — botda /ofis (Telegram ichida).";setTimeout(()=>$("msg").hidden=true,9000);
+  SIM.q.push({id:++SIM.oid,title:"Premium taqdimot",price:14900},{id:++SIM.oid,title:"Referat",price:10000});simTick();setInterval(simTick,4000)}
+else poll();
 }
 </script>
 </body>
