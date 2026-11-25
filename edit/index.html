@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taqdimotni tahrirlash — Slayd Ol</title>
+<meta name="robots" content="noindex">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="../go/config.js"></script>
+<style>
+  :root {
+    --bg-f: #f4f5f9; --surface-f: #ffffff; --fg-f: #10131a; --muted-f: #5d6576; --accent-f: #2f6bff; --accent-fg-f: #ffffff;
+    --bg: var(--tg-theme-secondary-bg-color, var(--bg-f));
+    --surface: var(--tg-theme-section-bg-color, var(--tg-theme-bg-color, var(--surface-f)));
+    --fg: var(--tg-theme-text-color, var(--fg-f));
+    --muted: var(--tg-theme-hint-color, var(--muted-f));
+    --accent: var(--tg-theme-button-color, var(--accent-f));
+    --accent-fg: var(--tg-theme-button-text-color, var(--accent-fg-f));
+    --line: color-mix(in srgb, var(--fg) 12%, transparent);
+    --field: color-mix(in srgb, var(--fg) 4%, var(--surface));
+    --changed: color-mix(in srgb, var(--accent) 14%, var(--surface));
+    --danger: #d64545;
+    --r: 16px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg-f: #0e1117; --surface-f: #171b23; --fg-f: #eef1f6; --muted-f: #98a1b3; --accent-f: #5b8cff; }
+  }
+  :root[data-theme="dark"] { --bg-f: #0e1117; --surface-f: #171b23; --fg-f: #eef1f6; --muted-f: #98a1b3; --accent-f: #5b8cff; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); }
+  body { font: 16px/1.45 -apple-system, "SF Pro Text", "Segoe UI", Roboto, system-ui, sans-serif;
+    padding: 0 0 calc(110px + env(safe-area-inset-bottom)); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 18px 0 8px; }
+  h1 { font-size: 21px; line-height: 1.25; margin: 0 0 6px; letter-spacing: -.01em; }
+  .lead { color: var(--muted); font-size: 14px; margin: 0; }
+  .card { background: var(--surface); border-radius: var(--r); padding: 14px 14px 6px; margin: 12px 0;
+    border: 1px solid var(--line); }
+  .card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px;
+    display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .card h2 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); visibility: hidden; flex: none; }
+  .card.has-change h2 .dot { visibility: visible; }
+  label { display: block; font-size: 13px; color: var(--muted); margin: 0 0 4px; font-weight: 600; }
+  .f { margin: 0 0 12px; }
+  textarea { width: 100%; resize: none; overflow: hidden; border: 1px solid var(--line); border-radius: 12px;
+    background: var(--field); color: var(--fg); font: inherit; padding: 10px 12px; min-height: 44px; display: block; }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+  textarea.title { font-weight: 700; }
+  textarea.changed { background: var(--changed); }
+  textarea.empty { border-color: var(--danger); }
+  .hint { font-size: 12.5px; color: var(--muted); margin: -4px 0 12px; }
+  .note { font-size: 13px; color: var(--muted); background: var(--field); border-radius: 12px; padding: 9px 12px; margin: 0 0 12px; }
+  .state { text-align: center; padding: 70px 16px; color: var(--muted); }
+  .state b { display: block; color: var(--fg); font-size: 18px; margin-bottom: 6px; }
+  .spin { width: 28px; height: 28px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--accent);
+    margin: 0 auto 14px; animation: s .8s linear infinite; }
+  @keyframes s { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
+  .bar button { width: 100%; max-width: 680px; display: block; margin: 0 auto; min-height: 48px; border: 0; border-radius: 12px;
+    background: var(--accent); color: var(--accent-fg); font: 600 16px/1 inherit; font-family: inherit; cursor: pointer; }
+  .bar button:disabled { opacity: .45; cursor: default; }
+  .tg .bar { display: none; }
+  .msg { position: fixed; left: 16px; right: 16px; bottom: calc(84px + env(safe-area-inset-bottom)); max-width: 648px;
+    margin: 0 auto; background: var(--fg); color: var(--bg); border-radius: 12px; padding: 11px 14px; font-size: 14px;
+    display: none; z-index: 5; }
+  .tg .msg { bottom: calc(16px + env(safe-area-inset-bottom)); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="h1">Taqdimot matnini tahrirlash</h1>
+    <p class="lead" id="lead">Kerakli joyni o‘zgartiring va «Saqlash»ni bosing — bot yangi PowerPoint va PDF yuboradi. Dizayn o‘zgarmaydi, bepul.</p>
+  </header>
+  <main id="main"><div class="state"><div class="spin"></div><span id="loading">Yuklanmoqda…</span></div></main>
+</div>
+<div class="bar"><button id="save" type="button" disabled>Saqlash</button></div>
+<div class="msg" id="msg" role="status" aria-live="polite"></div>
+<script>
+(() => {
+  const tg = window.Telegram && Telegram.WebApp;
+  const q = new URLSearchParams(location.search);
+  const RU = q.get("l") === "ru";
+  const L = RU ? {
+    h1: "Редактирование текста презентации",
+    lead: "Измените нужное и нажмите «Сохранить» — бот пришлёт новый PowerPoint и PDF. Дизайн не меняется, бесплатно.",
+    loading: "Загрузка…", cover: "Титульный слайд", slide: n => `Слайд ${n}`, save: "Сохранить",
+    saveN: n => `Сохранить (${n})`, saving: "Сохраняю…",
+    title: "Заголовок", lead2: "Главная мысль", item: i => `Пункт ${i}`, ltitle: "Левая колонка — название",
+    left: i => `Слева ${i}`, rtitle: "Правая колонка — название", right: i => `Справа ${i}`,
+    stepA: i => `Шаг ${i} — название`, stepB: i => `Шаг ${i} — пояснение`, timeA: i => `Дата ${i}`, timeB: i => `Событие ${i}`,
+    statA: i => `Цифра ${i}`, statB: i => `Подпись к цифре ${i}`, quote: "Цитата", author: "Автор", center: "Слово в центре",
+    next: "Следующий шаг", notes: "Заметки докладчика (на слайде не видны)",
+    dtitle: "Тема", dsub: "Подзаголовок", dauthor: "Выполнил(а)", dteacher: "Принял(а)",
+    emptyHint: "Пустой пункт будет удалён.",
+    fixed: { table: "Таблица здесь не меняется — попросите через «✏️ Редактировать».",
+             chart: "Цифры графика здесь не меняются — попросите через «✏️ Редактировать».",
+             code: "Код здесь не меняется.", formula: "Формула здесь не меняется.", flow: "Схема здесь не меняется." },
+    done: "Сохранено! Новый файл придёт в боте через минуту.",
+    err: { auth: "Откройте это окно кнопкой под файлом в боте.", notfound: "Презентация не найдена.",
+           notready: "Презентация ещё не готова.", stale: "Файл уже изменён в другом месте — закройте окно и откройте заново.",
+           busy: "Бот сейчас выполняет другой заказ — дождитесь его и сохраните снова.",
+           limit: "Слишком много сохранений за час — попробуйте позже.", max: "Лимит ручных правок для этой презентации исчерпан.",
+           nochange: "Изменений нет.", net: "Нет связи — проверьте интернет и попробуйте снова.",
+           server: "Ошибка на сервере — попробуйте ещё раз." },
+    outside: "Откройте эту страницу через кнопку «✍️ Отредактировать самому» под файлом в боте @slaydol_bot.",
+    leave: "Изменения не сохранены. Закрыть?",
+  } : {
+    h1: "Taqdimot matnini tahrirlash",
+    lead: "Kerakli joyni o‘zgartiring va «Saqlash»ni bosing — bot yangi PowerPoint va PDF yuboradi. Dizayn o‘zgarmaydi, bepul.",
+    loading: "Yuklanmoqda…", cover: "Muqova", slide: n => `${n}-slayd`, save: "Saqlash",
+    saveN: n => `Saqlash (${n})`, saving: "Saqlanmoqda…",
+    title: "Sarlavha", lead2: "Asosiy fikr", item: i => `${i}-band`, ltitle: "Chap ustun nomi", left: i => `Chap: ${i}`,
+    rtitle: "O‘ng ustun nomi", right: i => `O‘ng: ${i}`, stepA: i => `${i}-qadam nomi`, stepB: i => `${i}-qadam izohi`,
+    timeA: i => `${i}-sana`, timeB: i => `${i}-voqea`, statA: i => `${i}-raqam`, statB: i => `${i}-raqam izohi`,
+    quote: "Iqtibos", author: "Muallif", center: "Markazdagi so‘z", next: "Keyingi qadam",
+    notes: "Ma’ruzachi izohi (slaydda ko‘rinmaydi)",
+    dtitle: "Mavzu", dsub: "Kichik sarlavha", dauthor: "Topshirdi", dteacher: "Qabul qildi",
+    emptyHint: "Bo‘sh qoldirilgan band olib tashlanadi.",
+    fixed: { table: "Jadval bu yerda o‘zgarmaydi — «✏️ Tahrirlash» orqali so‘rang.",
+             chart: "Grafik raqamlari bu yerda o‘zgarmaydi — «✏️ Tahrirlash» orqali so‘rang.",
+             code: "Kod bu yerda o‘zgarmaydi.", formula: "Formula bu yerda o‘zgarmaydi.", flow: "Sxema bu yerda o‘zgarmaydi." },
+    done: "Saqlandi! Yangi fayl bir daqiqada botga keladi.",
+    err: { auth: "Bu oynani botdagi fayl ostidagi tugma orqali oching.", notfound: "Taqdimot topilmadi.",
+           notready: "Taqdimot hali tayyor emas.", stale: "Fayl boshqa joyda o‘zgartirilgan — oynani yopib, qayta oching.",
+           busy: "Bot hozir boshqa buyurtmani bajaryapti — tugagach qayta saqlang.",
+           limit: "Bir soatda juda ko‘p saqlandi — birozdan keyin urinib ko‘ring.",
+           max: "Bu taqdimot uchun qo‘lda tahrirlash chegarasi tugadi.", nochange: "O‘zgarish yo‘q.",
+           net: "Aloqa yo‘q — internetni tekshirib, qayta urinib ko‘ring.", server: "Serverda xato — qayta urinib ko‘ring." },
+    outside: "Bu sahifani @slaydol_bot botidagi fayl ostidagi «✍️ O‘zim tahrirlayman» tugmasi orqali oching.",
+    leave: "O‘zgarishlar saqlanmagan. Yopilsinmi?",
+  };
+  if (RU) document.documentElement.lang = "ru";
+  const $ = id => document.getElementById(id);
+  $("h1").textContent = L.h1; $("lead").textContent = L.lead; $("loading").textContent = L.loading;
+  document.title = L.h1 + " — Slayd Ol";
+
+  const API = (window.GO_CONFIG && GO_CONFIG.apiBase || "") + "/api/t/view";
+  const init = tg ? tg.initData : "";
+  const oid = q.get("o");
+  if (tg) { document.documentElement.classList.add("tg"); tg.ready(); tg.expand();
+            try { tg.enableClosingConfirmation(); } catch (e) {} }
+
+  const fields = [];       // {el, kind:"deck"|"slide", n, key, orig}
+  let version = 0, busy = false;
+
+  function label(key) {
+    const p = key.split("."), i = Number(p[1]) + 1;
+    switch (p[0]) {
+      case "title": return L.title; case "lead": return L.lead2; case "bullets": return L.item(i);
+      case "left_title": return L.ltitle; case "left": return L.left(i); case "right_title": return L.rtitle;
+      case "right": return L.right(i); case "steps": return p[2] === "0" ? L.stepA(i) : L.stepB(i);
+      case "timeline": return p[2] === "0" ? L.timeA(i) : L.timeB(i);
+      case "stats": return p[2] === "0" ? L.statA(i) : L.statB(i);
+      case "quote": return L.quote; case "author": return L.author; case "center": return L.center;
+      case "next": return L.next; case "notes": return L.notes; default: return key;
+    }
+  }
+  const deckLabel = { title: L.dtitle, subtitle: L.dsub, author: L.dauthor, teacher: L.dteacher };
+
+  function grow(el) { el.style.height = "auto"; el.style.height = el.scrollHeight + 2 + "px"; }
+
+  function field(card, kind, n, key, value, text) {
+    const wrap = document.createElement("div"); wrap.className = "f";
+    const id = `f${fields.length}`;
+    const lab = document.createElement("label"); lab.htmlFor = id; lab.textContent = text;
+    const ta = document.createElement("textarea"); ta.id = id; ta.rows = 1; ta.value = value;
+    ta.maxLength = key === "notes" ? 3000 : 600;
+    if (key === "title") ta.classList.add("title");
+    const f = { el: ta, kind, n, key, orig: value, card };
+    ta.addEventListener("input", () => { grow(ta); update(); });
+    wrap.append(lab, ta); card.append(wrap); fields.push(f);
+    return f;
+  }
+
+  function render(data) {
+    const main = $("main"); main.textContent = "";
+    version = data.v;
+    const cover = document.createElement("section"); cover.className = "card";
+    cover.innerHTML = '<h2><span></span><i class="dot" aria-hidden="true"></i></h2>';
+    cover.querySelector("span").textContent = L.cover;
+    for (const [k, v] of data.deck) {
+      if (k === "title" || v) field(cover, "deck", 0, k, v, deckLabel[k] || k);
+    }
+    main.append(cover);
+    for (const sl of data.slides) {
+      if (!sl.f.length && !sl.fixed) continue;
+      const card = document.createElement("section"); card.className = "card";
+      card.innerHTML = '<h2><span></span><i class="dot" aria-hidden="true"></i></h2>';
+      card.querySelector("span").textContent = L.slide(sl.n);
+      let lists = false;
+      for (const [k, v] of sl.f) {
+        field(card, "slide", sl.n, k, v, label(k));
+        if (/^(bullets|left|right)\./.test(k)) lists = true;
+      }
+      if (lists) { const h = document.createElement("p"); h.className = "hint"; h.textContent = L.emptyHint; card.append(h); }
+      if (sl.fixed && L.fixed[sl.fixed]) {
+        const nt = document.createElement("p"); nt.className = "note"; nt.textContent = L.fixed[sl.fixed]; card.append(nt);
+      }
+      main.append(card);
+    }
+    requestAnimationFrame(() => fields.forEach(f => grow(f.el)));
+    update();
+  }
+
+  function changes() {
+    const out = { deck: {}, slides: {} }; let n = 0;
+    for (const f of fields) {
+      if (f.el.value === f.orig) continue;
+      n++;
+      if (f.kind === "deck") out.deck[f.key] = f.el.value;
+      else (out.slides[f.n] = out.slides[f.n] || {})[f.key] = f.el.value;
+    }
+    return [n, out];
+  }
+
+  function update() {
+    const [n] = changes();
+    const cards = new Set();
+    for (const f of fields) {
+      const ch = f.el.value !== f.orig;
+      f.el.classList.toggle("changed", ch);
+      f.el.classList.toggle("empty", ch && !f.el.value.trim() && f.key === "title");
+      if (ch) cards.add(f.card);
+    }
+    document.querySelectorAll(".card").forEach(c => c.classList.toggle("has-change", cards.has(c)));
+    const text = n ? L.saveN(n) : L.save;
+    $("save").textContent = text; $("save").disabled = !n || busy;
+    if (tg) {
+      tg.MainButton.setText(busy ? L.saving : text);
+      if (n) { tg.MainButton.show(); busy ? tg.MainButton.disable() : tg.MainButton.enable(); }
+      else tg.MainButton.hide();
+    }
+  }
+
+  let msgTimer;
+  function say(text, ms = 4000) {
+    const m = $("msg"); m.textContent = text; m.style.display = "block";
+    clearTimeout(msgTimer); if (ms) msgTimer = setTimeout(() => { m.style.display = "none"; }, ms);
+  }
+  function fail(text) {
+    $("main").innerHTML = '<div class="state"><b></b></div>';
+    $("main").querySelector("b").textContent = text;
+  }
+
+  async function call(body) {
+    const r = await fetch(API, { method: "POST", headers: { "Content-Type": "application/json" },
+                                 body: JSON.stringify({ ed: { init, o: oid, ...body } }) });
+    let data = {}; try { data = await r.json(); } catch (e) {}
+    return data;
+  }
+
+  async function save() {
+    const [n, out] = changes();
+    if (!n || busy) return;
+    busy = true; update();
+    if (tg) tg.MainButton.showProgress(false);
+    try {
+      const res = await call({ op: "save", v: version, ...out });
+      if (res.ok) {
+        for (const f of fields) f.orig = f.el.value;
+        busy = false; update();
+        if (tg) { try { tg.disableClosingConfirmation(); } catch (e) {} tg.HapticFeedback && tg.HapticFeedback.notificationOccurred("success"); }
+        say(L.done, 0);
+        setTimeout(() => tg && tg.close(), 1600);
+        return;
+      }
+      say(L.err[res.error] || L.err.server, 6000);
+    } catch (e) {
+      say(L.err.net, 6000);
+    } finally {
+      busy = false; if (tg) tg.MainButton.hideProgress(); update();
+    }
+  }
+  $("save").addEventListener("click", save);
+  if (tg) tg.MainButton.onClick(save);
+  window.addEventListener("beforeunload", e => { if (changes()[0] && !busy) { e.preventDefault(); e.returnValue = L.leave; } });
+
+  if (!init || !oid) { fail(L.outside); return; }
+  call({ op: "load" }).then(res => {
+    if (res.ok) render(res);
+    else fail(L.err[res.error] || L.err.server);
+  }).catch(() => fail(L.err.net));
+})();
+</script>
+</body>
+</html>
